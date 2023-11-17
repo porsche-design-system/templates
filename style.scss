@@ -1,0 +1,5 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+#app {
+  @include pds-grid;
+}
