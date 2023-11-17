@@ -4,5 +4,5 @@ import { load as loadPorscheDesignSystem } from '@porsche-design-system/componen
 loadPorscheDesignSystem();
 
 document.querySelector('#app').innerHTML = `
-  <p-heading>Welcome to Vanilla JS</p-heading>
+  <p-heading align="center">Vite x Porsche Design System</p-heading>
 `;

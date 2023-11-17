@@ -3,3 +3,7 @@
 #app {
   @include pds-grid;
 }
+
+p-heading {
+  grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+}
