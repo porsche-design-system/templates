@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
-import { getInitialStyles, getMetaTagsAndIconLinks, getComponentChunkLinks, getFontFaceStylesheet, getFontLinks, getIconLinks } from '@porsche-design-system/components-js/partials';
+import { getInitialStyles, getMetaTagsAndIconLinks, getComponentChunkLinks, getFontFaceStylesheet, getFontLinks, getIconLinks, getLoaderScript } from '@porsche-design-system/components-js/partials';
 
 const transformIndexHtmlPlugin = () => {
   return {
     name: 'html-transform',
     transformIndexHtml(html) {
-      const partials = [
+      const headPartials = [
         getInitialStyles(),
         getComponentChunkLinks({ components: ['wordmark', 'crest', 'heading', 'text', 'carousel', 'link-tile', 'link-pure', 'button-pure', 'link', 'button'] }),
         getFontFaceStylesheet(),
@@ -13,7 +13,14 @@ const transformIndexHtmlPlugin = () => {
         getIconLinks(),
         getMetaTagsAndIconLinks({ appTitle: 'Patterns' }),
       ].join('');
-      return html.replace(/<\/head>/, `${partials}$&`);
+
+      const bodyPartials = [
+        getLoaderScript(),
+      ].join('');
+
+      return html
+        .replace(/<\/head>/, `${headPartials}$&`)
+        .replace(/<\/body>/, `${bodyPartials}$&`);
     },
   }
 }
