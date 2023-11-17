@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 import { getInitialStyles, getMetaTagsAndIconLinks, getComponentChunkLinks, getFontFaceStylesheet, getFontLinks, getIconLinks, getLoaderScript } from '@porsche-design-system/components-js/partials';
 
 const transformIndexHtmlPlugin = () => {
@@ -11,7 +12,7 @@ const transformIndexHtmlPlugin = () => {
         getFontFaceStylesheet(),
         getFontLinks(),
         getIconLinks(),
-        getMetaTagsAndIconLinks({ appTitle: 'Patterns' }),
+        getMetaTagsAndIconLinks({ appTitle: 'Patterns (Porsche Design System)' }),
       ].join('');
 
       const bodyPartials = [
@@ -26,5 +27,13 @@ const transformIndexHtmlPlugin = () => {
 }
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        'shop-landing-page': resolve(__dirname, 'patterns/shop-landing-page/index.html'),
+      },
+    },
+  },
   plugins: [transformIndexHtmlPlugin()],
 })

@@ -4,6 +4,9 @@
   @include pds-grid;
 }
 
-p-heading {
+.overview {
   grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

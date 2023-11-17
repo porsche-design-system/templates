@@ -3,10 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patterns – Porsche Design System</title>
+    <title>Patterns (Porsche Design System)</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app">
+      <div class="overview">
+        <p-wordmark></p-wordmark>
+        <p-display align="center" tag="h1">Patterns</p-display>
+        <p-heading align="center" size="large" tag="h3">Vite x Porsche Design System</p-heading>
+        <p-text-list [theme]="'auto'">
+          <p-text-list-item>
+            <a href="patterns/shop-landing-page/">Shop Landing Page</a>
+          </p-text-list-item>
+        </p-text-list>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
