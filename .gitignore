@@ -49,7 +49,7 @@ ort/
 # Logs
 pnpm-debug.log*
 
-dist
+# dist
 dist-ssr
 *.local
 

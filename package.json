@@ -15,5 +15,6 @@
     "sass": "^1.69.5",
     "vite": "^5.0.0"
   },
+  "pre-commit": ["build"],
   "packageManager": "yarn@4.0.0-rc.48"
 }
