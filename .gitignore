@@ -17,7 +17,8 @@ node_modules
 # Jest coverage report
 coverage
 
-# Yarn Integrity file
+# Yarn
+.yarn
 .yarn-integrity
 
 # dotenv environment variables file
