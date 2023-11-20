@@ -22,7 +22,7 @@
         href="/"
         label="Shop Collection"
         description="Iconic Racing Design Taken To Perfection"
-        aspect-ratio="16:9"
+        aspect-ratio="{base: '3:4', xs: '1:1', s: '16:9'}"
         weight="regular"
       >
         <img srcset="assets/desktop/martini-teaser@2x.webp 2x" src="assets/desktop/martini-teaser.webp" alt=""/>
@@ -31,7 +31,7 @@
         href="/"
         label="Shop Collection"
         description="Transformers: Rise Of The Beasts X Porsche"
-        aspect-ratio="16:9"
+        aspect-ratio="{base: '3:4', xs: '1:1', s: '16:9'}"
         weight="regular"
       >
         <img srcset="assets/desktop/transformers-teaser@2x.webp 2x" src="assets/desktop/transformers-teaser.webp"
@@ -59,7 +59,7 @@
         <p-link href="/">Shop the Look</p-link>
       </div>
     </div>
-    <p-carousel slides-per-page="2" width="extended">
+    <p-carousel slides-per-page="{ base: 1, xs: 2 }" width="extended">
       <p-link-tile href="/" label="Timeless Enthusiast" description="Timeless Enthusiast" compact="true"
                    aspect-ratio="3:4" weight="regular">
         <img srcset="assets/desktop/timless-enthusiastt-teaser@2x.webp 2x"
@@ -101,18 +101,18 @@
     </div>
     <div class="stories__content">
       <p-link-tile href="/" label="Porsche Mission X: yet another dream takes shape."
-                   description="Porsche Mission X: yet another dream takes shape." compact="true" aspect-ratio="16:9"
+                   description="Porsche Mission X: yet another dream takes shape." compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '16:9'}"
                    weight="regular">
         <img srcset="assets/desktop/mission-x-story@2x.webp 2x" src="assets/desktop/mission-x-story.webp" alt=""/>
       </p-link-tile>
       <p-link-tile href="/" label="Speed meets style: the design of the Porsche 963"
-                   description="Speed meets style: the design of the Porsche 963" compact="true" aspect-ratio="3:4"
+                   description="Speed meets style: the design of the Porsche 963" compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '3:4'}"
                    weight="regular">
         <img srcset="assets/desktop/porsche-963-story@2x.webp 2x" src="assets/desktop/porsche-963-story.webp" alt=""/>
       </p-link-tile>
       <p-link-tile href="/" label="Unique specimen under the hammer: 911 Classic Club Coupe sold for record price"
                    description="Unique specimen under the hammer: 911 Classic Club Coupe sold for record price"
-                   compact="true" aspect-ratio="3:4" weight="regular">
+                   compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '3:4'}" weight="regular">
         <img srcset="assets/desktop/club-sport-story@2x.webp 2x" src="assets/desktop/club-sport-story.webp" alt=""/>
       </p-link-tile>
     </div>

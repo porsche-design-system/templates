@@ -27,7 +27,7 @@
   }
 
   &__header {
-    margin-top: min(1024px, 40vw); // limit margin >=2560px
+    margin-top: clamp(240px, 40vw, 1024px); // limit margin >=2560px
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     grid-row: 1;
     display: flex;
@@ -63,7 +63,10 @@
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     display: grid;
     gap: $pds-grid-gap;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @include pds-media-query-min('xs') {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 
     // no PDS component available for link-tile-product yet
     .link-tile-product {
@@ -140,10 +143,15 @@
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     display: grid;
     gap: $pds-spacing-fluid-medium;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include pds-media-query-min('s') {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     :nth-child(1) {
-      grid-column: span 2;
+      @include pds-media-query-min('s') {
+        grid-column: span 2;
+      }
     }
   }
 }
