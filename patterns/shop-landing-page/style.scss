@@ -1,5 +1,137 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
 #app {
+}
+
+// navigation will be implemented later
+.navigation {
+  @include pds-skeleton('light');
+  position: absolute;
+  top: $pds-spacing-fluid-medium;
+  left: $pds-spacing-fluid-medium;
+  right: $pds-spacing-fluid-medium;
+  height: 50px;
+}
+
+.teaser {
   @include pds-grid;
+  display: grid;
+  background: $pds-theme-dark-background-base;
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: $pds-spacing-fluid-medium;
+    padding: $pds-spacing-fluid-medium 0;
+  }
+
+  &__media {
+    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-row: 1;
+    height: max(30rem, 90vh);
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.intro {
+  @include pds-grid;
+  background: $pds-theme-dark-background-base;
+
+  &__tiles {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    display: grid;
+    gap: $pds-spacing-fluid-large;
+    padding: $pds-spacing-fluid-medium 0 $pds-spacing-fluid-x-large;
+  }
+}
+
+.trending-products {
+  @include pds-grid;
+  background: $pds-theme-light-background-base;
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    gap: $pds-spacing-fluid-small;
+    padding: $pds-spacing-fluid-medium 0 $pds-spacing-fluid-x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// no PDS component available for link-tile-product yet
+.link-tile-product-group {
+  margin-top: $pds-spacing-fluid-large;
+  width: 100%;
+  display: grid;
+  gap: $pds-grid-gap;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.link-tile-product {
+  @include pds-skeleton('light');
+  grid-column-start: span 4;
+  aspect-ratio: 3 / 4;
+}
+
+.shop-the-look {
+  padding-block: $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
+}
+
+.collection {
+  @include pds-grid;
+  background: $pds-theme-dark-background-base;
+
+  &__media {
+    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-row: 1 / 3;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__header {
+    margin-top: max(400px, 50vh);
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    grid-row: 1;
+  }
+
+  &__content {
+    margin-bottom: $pds-spacing-fluid-large;
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    grid-row: 2;
+  }
+}
+
+.stories {
+  @include pds-grid;
+  background: $pds-theme-light-background-base;
+  padding-block: $pds-spacing-fluid-x-large $pds-spacing-fluid-x-large;
+
+  &__header {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    display: grid;
+    gap: $pds-grid-gap;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    :nth-child(1) {
+      grid-column: span 2;
+    }
+  }
 }
