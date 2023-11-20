@@ -10,11 +10,14 @@
   <div class="navigation"></div>
   <div class="teaser">
     <div class="teaser__media">
-      <img srcset="assets/desktop/header@2x.webp 2x" src="assets/desktop/header.webp" width="1920" height="1200"
-           alt=""/>
+      <picture>
+        <source media="(max-width:480px)" srcset="assets/header-mobile@2x.webp 2x, assets/header-mobile.webp 1x" />
+        <img srcset="assets/header@2x.webp 2x" src="assets/header.webp" width="1920" height="1200"
+             alt=""/>
+      </picture>
     </div>
     <div class="teaser__header">
-      <p-display theme="dark" align="center" size="small">Made by Dreamers,<br>for Dreamers</p-display>
+      <p-display theme="dark" align="center" size="small" tag="h1">Made by Dreamers,<br>for Dreamers</p-display>
       <p-button theme="dark" variant="secondary">Shop Collection</p-button>
     </div>
     <div class="teaser__content">
@@ -22,26 +25,28 @@
         href="/"
         label="Shop Collection"
         description="Iconic Racing Design Taken To Perfection"
-        aspect-ratio="{base: '3:4', xs: '1:1', s: '16:9'}"
+        aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
         weight="regular"
       >
-        <img srcset="assets/desktop/martini-teaser@2x.webp 2x" src="assets/desktop/martini-teaser.webp" alt=""/>
+        <img srcset="assets/martini-teaser@2x.webp 2x" src="assets/martini-teaser.webp" width="1308"
+             height="736" alt=""/>
       </p-link-tile>
       <p-link-tile
         href="/"
         label="Shop Collection"
         description="Transformers: Rise Of The Beasts X Porsche"
-        aspect-ratio="{base: '3:4', xs: '1:1', s: '16:9'}"
+        aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
         weight="regular"
       >
-        <img srcset="assets/desktop/transformers-teaser@2x.webp 2x" src="assets/desktop/transformers-teaser.webp"
+        <img srcset="assets/transformers-teaser@2x.webp 2x" src="assets/transformers-teaser.webp"
+             width="1308" height="736"
              alt=""/>
       </p-link-tile>
     </div>
   </div>
   <div class="trending-products">
     <div class="trending-products__header">
-      <p-display size="small" tag="h3" align="center">Trending Products</p-display>
+      <p-display size="small" align="center" tag="h2">Trending Products</p-display>
       <p-link-pure href="/">Discover all trending products</p-link-pure>
     </div>
     <div class="trending-products__content">
@@ -51,44 +56,49 @@
     </div>
   </div>
   <div class="shop-the-look">
-    <div class="shop-the-look__wrapper">
-      <div class="shop-the-look__header">
+    <p-carousel slides-per-page="{ base: 1, xs: 2 }" align-header="center" width="extended">
+      <div slot="heading" class="shop-the-look__header">
         <p-text size="x-large" align="center">Put a spring in your step and refresh your wardrobe with inspired looks
           from the Porsche catalogue.
         </p-text>
         <p-link href="/">Shop the Look</p-link>
       </div>
-    </div>
-    <p-carousel slides-per-page="{ base: 1, xs: 2 }" width="extended">
       <p-link-tile href="/" label="Timeless Enthusiast" description="Timeless Enthusiast" compact="true"
-                   aspect-ratio="3:4" weight="regular">
-        <img srcset="assets/desktop/timless-enthusiastt-teaser@2x.webp 2x"
-             src="assets/desktop/timless-enthusiastt-teaser.webp" alt=""/>
+                   aspect-ratio="{base: '1:1', xs: '3:4'}" weight="regular">
+        <img srcset="assets/timless-enthusiastt-teaser@2x.webp 2x"
+             src="assets/timless-enthusiastt-teaser.webp" width="636" height="848" alt=""/>
       </p-link-tile>
-      <p-link-tile href="/" label="The Loyalist" description="The Loyalist" compact="true" aspect-ratio="3:4"
+      <p-link-tile href="/" label="The Loyalist" description="The Loyalist" compact="true"
+                   aspect-ratio="{base: '1:1', xs: '3:4'}"
                    weight="regular">
-        <img srcset="assets/desktop/loyalist-teaser@2x.webp 2x" src="assets/desktop/loyalist-teaser.webp" alt=""/>
+        <img srcset="assets/loyalist-teaser@2x.webp 2x" src="assets/loyalist-teaser.webp" width="636"
+             height="848" alt=""/>
       </p-link-tile>
-      <p-link-tile href="/" label="Urbanist" description="Urbanist" compact="true" aspect-ratio="3:4" weight="regular">
-        <img srcset="assets/desktop/urbanist-teaser@2x.webp 2x" src="assets/desktop/urbanist-teaser.webp" alt=""/>
+      <p-link-tile href="/" label="Urbanist" description="Urbanist" compact="true"
+                   aspect-ratio="{base: '1:1', xs: '3:4'}" weight="regular">
+        <img srcset="assets/urbanist-teaser@2x.webp 2x" src="assets/urbanist-teaser.webp" width="636"
+             height="848" alt=""/>
       </p-link-tile>
     </p-carousel>
   </div>
   <div class="collection">
     <div class="collection__media">
-      <img srcset="assets/desktop/collection-header@2x.webp 2x" src="assets/desktop/collection-header.webp" alt=""/>
+      <img srcset="assets/collection-header@2x.webp 2x" src="assets/collection-header.webp" width="1920"
+           height="1600" alt=""/>
     </div>
     <div class="collection__header">
-      <p-display theme="dark" size="small" align="center">FIN Crafted Goods X Porsche</p-display>
+      <p-display theme="dark" size="small" align="center" tag="h2">FIN Crafted Goods X Porsche</p-display>
       <p-text theme="dark" align="center">In collaboration with local workshop and creative studio FIN Crafted, Porsche
         presents a limited collection with artistically upcycled apparels to carry-all pieces.
       </p-text>
     </div>
     <div class="collection__content">
       <p-link-tile href="/" label="FIN Crafted Goods X Porsche Collection"
-                   description="FIN Crafted Goods X Porsche Collection" compact="true" aspect-ratio="16:9"
+                   description="FIN Crafted Goods X Porsche Collection" compact="true"
+                   aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
                    weight="regular">
-        <img srcset="assets/desktop/collection-teaser@2x.webp 2x" src="assets/desktop/collection-teaser.webp" alt=""/>
+        <img srcset="assets/collection-teaser@2x.webp 2x" src="assets/collection-teaser.webp"
+             width="1308" height="847" alt=""/>
       </p-link-tile>
     </div>
     <div class="collection__footer">
@@ -97,23 +107,28 @@
   </div>
   <div class="stories">
     <div class="stories__header">
-      <p-display size="small" align="center">Stories</p-display>
+      <p-display size="small" align="center" tag="h2">Stories</p-display>
     </div>
     <div class="stories__content">
       <p-link-tile href="/" label="Porsche Mission X: yet another dream takes shape."
-                   description="Porsche Mission X: yet another dream takes shape." compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '16:9'}"
+                   description="Porsche Mission X: yet another dream takes shape." compact="true"
+                   aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
                    weight="regular">
-        <img srcset="assets/desktop/mission-x-story@2x.webp 2x" src="assets/desktop/mission-x-story.webp" alt=""/>
+        <img srcset="assets/mission-x-story@2x.webp 2x" src="assets/mission-x-story.webp" width="1308"
+             height="847" alt=""/>
       </p-link-tile>
       <p-link-tile href="/" label="Speed meets style: the design of the Porsche 963"
-                   description="Speed meets style: the design of the Porsche 963" compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '3:4'}"
+                   description="Speed meets style: the design of the Porsche 963" compact="true"
+                   aspect-ratio="{base: '1:1', xs: '4:3', s: '3:4'}"
                    weight="regular">
-        <img srcset="assets/desktop/porsche-963-story@2x.webp 2x" src="assets/desktop/porsche-963-story.webp" alt=""/>
+        <img srcset="assets/porsche-963-story@2x.webp 2x" src="assets/porsche-963-story.webp"
+             width="636" height="847" alt=""/>
       </p-link-tile>
       <p-link-tile href="/" label="Unique specimen under the hammer: 911 Classic Club Coupe sold for record price"
                    description="Unique specimen under the hammer: 911 Classic Club Coupe sold for record price"
-                   compact="true" aspect-ratio="{base: '3:4', xs: '4:3', s: '3:4'}" weight="regular">
-        <img srcset="assets/desktop/club-sport-story@2x.webp 2x" src="assets/desktop/club-sport-story.webp" alt=""/>
+                   compact="true" aspect-ratio="{base: '1:1', xs: '4:3', s: '3:4'}" weight="regular">
+        <img srcset="assets/club-sport-story@2x.webp 2x" src="assets/club-sport-story.webp" width="636"
+             height="847" alt=""/>
       </p-link-tile>
     </div>
   </div>

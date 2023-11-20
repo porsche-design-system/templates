@@ -8,7 +8,7 @@ const transformIndexHtmlPlugin = () => {
     transformIndexHtml(html) {
       const headPartials = [
         getInitialStyles(),
-        getComponentChunkLinks({ components: ['wordmark', 'crest', 'heading', 'text', 'carousel', 'link-tile', 'link-pure', 'button-pure', 'link', 'button'] }),
+        getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
         getFontFaceStylesheet(),
         getFontLinks(),
         getIconLinks(),

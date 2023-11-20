@@ -27,7 +27,7 @@
   }
 
   &__header {
-    margin-top: clamp(240px, 40vw, 1024px); // limit margin >=2560px
+    margin-top: max(105vw, 336px); // limit margin <=320px
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     grid-row: 1;
     display: flex;
@@ -35,6 +35,10 @@
     justify-content: flex-end;
     align-items: center;
     row-gap: $pds-spacing-fluid-medium;
+
+    @include pds-media-query-min('xs') {
+      margin-top: min(40vw, 1024px); // limit margin >=2560px
+    }
   }
 
   &__content {
@@ -64,14 +68,22 @@
     display: grid;
     gap: $pds-grid-gap;
 
-    @include pds-media-query-min('xs') {
+    @include pds-media-query-min('s') {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     // no PDS component available for link-tile-product yet
     .link-tile-product {
       @include pds-skeleton('light');
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 1 / 1;
+
+      @include pds-media-query-min('xs') {
+        aspect-ratio: 4 / 3;
+      }
+
+      @include pds-media-query-min('s') {
+        aspect-ratio: 3 / 4;
+      }
     }
   }
 }
@@ -79,16 +91,12 @@
 .shop-the-look {
   margin: $pds-spacing-fluid-xx-large 0;
 
-  &__wrapper {
-    @include pds-grid;
-  }
-
   &__header {
-    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
-    row-gap: $pds-spacing-fluid-large;
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: $pds-spacing-fluid-large;
+    padding-bottom: $pds-spacing-fluid-x-large;
   }
 }
 
@@ -146,11 +154,9 @@
 
     @include pds-media-query-min('s') {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
-    :nth-child(1) {
-      @include pds-media-query-min('s') {
-        grid-column: span 2;
+      :nth-child(1) {
+          grid-column: span 2;
       }
     }
   }
