@@ -1,8 +1,5 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
-#app {
-}
-
 // navigation will be implemented later
 .navigation {
   @include pds-skeleton('light');
@@ -16,7 +13,7 @@
 .teaser {
   @include pds-grid;
   display: grid;
-  row-gap: $pds-spacing-fluid-large;
+  row-gap: $pds-spacing-fluid-x-large;
   background: $pds-theme-dark-background-base;
 
   &__media {
@@ -24,52 +21,39 @@
     grid-row: 1 / 3;
 
     img {
-      object-fit: contain;
       width: 100%;
+      height: auto;
     }
   }
 
   &__header {
-    margin-top: 40vw;
-    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    margin-top: min(1024px, 40vw); // limit margin >=2560px
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     grid-row: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: $pds-spacing-fluid-medium;
+    row-gap: $pds-spacing-fluid-medium;
   }
 
   &__content {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     grid-row: 2;
     display: grid;
-    gap: $pds-spacing-fluid-medium;
-    margin-bottom: $pds-spacing-fluid-x-large;
-  }
-}
-
-.intro {
-  @include pds-grid;
-  background: $pds-theme-dark-background-base;
-
-  &__tiles {
-    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
-    display: grid;
-    gap: $pds-spacing-fluid-large;
-    padding: $pds-spacing-fluid-medium 0 $pds-spacing-fluid-x-large;
+    row-gap: $pds-spacing-fluid-x-large;
+    margin-bottom: $pds-spacing-fluid-xx-large;
   }
 }
 
 .trending-products {
   @include pds-grid;
-  row-gap: $pds-spacing-fluid-x-large;
-  background: $pds-theme-light-background-base;
-  padding-block: $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
+  row-gap: $pds-spacing-fluid-large;
+  margin: $pds-spacing-fluid-xx-large 0;
 
   &__header {
-    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
-    gap: $pds-spacing-fluid-small;
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    row-gap: $pds-spacing-fluid-small;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,30 +61,38 @@
 
   &__content {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    display: grid;
+    gap: $pds-grid-gap;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    // no PDS component available for link-tile-product yet
+    .link-tile-product {
+      @include pds-skeleton('light');
+      aspect-ratio: 3 / 4;
+    }
   }
 }
 
-// no PDS component available for link-tile-product yet
-.link-tile-product-group {
-  width: 100%;
-  display: grid;
-  gap: $pds-grid-gap;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.link-tile-product {
-  @include pds-skeleton('light');
-  grid-column-start: span 4;
-  aspect-ratio: 3 / 4;
-}
-
 .shop-the-look {
-  padding-block: $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
+  margin: $pds-spacing-fluid-xx-large 0;
+
+  &__wrapper {
+    @include pds-grid;
+  }
+
+  &__header {
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    row-gap: $pds-spacing-fluid-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .collection {
   @include pds-grid;
   background: $pds-theme-dark-background-base;
+  row-gap: $pds-spacing-fluid-x-large;
 
   &__media {
     grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
@@ -109,14 +101,17 @@
     img {
       width: 100%;
       height: auto;
-      display: block;
     }
   }
 
   &__header {
-    margin-top: max(400px, 50vh);
+    margin-top: min(1024px, 40vw); // limit margin >=2560px
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: $pds-spacing-fluid-medium;
   }
 
   &__content {
@@ -125,7 +120,7 @@
   }
 
   &__footer {
-    margin-bottom: $pds-spacing-fluid-large;
+    margin-bottom: $pds-spacing-fluid-xx-large;
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     grid-row: 3;
     display: flex;
@@ -135,17 +130,16 @@
 
 .stories {
   @include pds-grid;
-  background: $pds-theme-light-background-base;
-  padding-block: $pds-spacing-fluid-x-large $pds-spacing-fluid-x-large;
+  margin: $pds-spacing-fluid-xx-large 0;
 
   &__header {
-    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
   }
 
   &__content {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     display: grid;
-    gap: $pds-grid-gap;
+    gap: $pds-spacing-fluid-medium;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     :nth-child(1) {
