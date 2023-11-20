@@ -16,9 +16,21 @@
 .teaser {
   @include pds-grid;
   display: grid;
+  row-gap: $pds-spacing-fluid-large;
   background: $pds-theme-dark-background-base;
 
-  &__content {
+  &__media {
+    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-row: 1 / 3;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    margin-top: 40vw;
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     grid-row: 1;
     display: flex;
@@ -26,19 +38,14 @@
     justify-content: flex-end;
     align-items: center;
     gap: $pds-spacing-fluid-medium;
-    padding: $pds-spacing-fluid-medium 0;
   }
 
-  &__media {
-    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
-    grid-row: 1;
-    height: max(30rem, 90vh);
-  }
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    grid-row: 2;
+    display: grid;
+    gap: $pds-spacing-fluid-medium;
+    margin-bottom: $pds-spacing-fluid-x-large;
   }
 }
 
@@ -56,21 +63,25 @@
 
 .trending-products {
   @include pds-grid;
+  row-gap: $pds-spacing-fluid-x-large;
   background: $pds-theme-light-background-base;
+  padding-block: $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
 
-  &__content {
+  &__header {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     gap: $pds-spacing-fluid-small;
-    padding: $pds-spacing-fluid-medium 0 $pds-spacing-fluid-x-large;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
   }
 }
 
 // no PDS component available for link-tile-product yet
 .link-tile-product-group {
-  margin-top: $pds-spacing-fluid-large;
   width: 100%;
   display: grid;
   gap: $pds-grid-gap;
@@ -93,7 +104,7 @@
 
   &__media {
     grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
 
     img {
       width: 100%;
@@ -109,9 +120,16 @@
   }
 
   &__content {
-    margin-bottom: $pds-spacing-fluid-large;
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     grid-row: 2;
+  }
+
+  &__footer {
+    margin-bottom: $pds-spacing-fluid-large;
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
   }
 }
 
