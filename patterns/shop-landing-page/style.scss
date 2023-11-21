@@ -1,7 +1,7 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
-// navigation will be implemented later
-.navigation {
+// header will be implemented later
+.header {
   @include pds-skeleton('light');
   position: absolute;
   top: $pds-spacing-fluid-medium;
@@ -160,4 +160,10 @@
       }
     }
   }
+}
+
+// footer will be implemented later
+.footer {
+  @include pds-skeleton('light');
+  height: 500px;
 }
