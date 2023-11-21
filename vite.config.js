@@ -27,6 +27,7 @@ const transformIndexHtmlPlugin = () => {
 }
 
 export default defineConfig({
+  base: '/patterns/',
   build: {
     rollupOptions: {
       input: {
