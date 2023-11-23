@@ -59,6 +59,10 @@
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
+    flex-flow: wrap;
+    column-gap: $pds-spacing-fluid-medium;
+    row-gap: $pds-spacing-fluid-small;
+    white-space: nowrap;
 
     @include pds-media-query-max('s') {
       display: none;
