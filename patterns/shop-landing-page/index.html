@@ -7,7 +7,33 @@
 </head>
 <body>
 <div id="app">
-  <header class="header"></header>
+  <header class="header">
+    <div class="header__part header__part--start">
+      <p-button-pure class="header__button" theme="dark" icon="menu-lines" hide-label="{base: true, xs: false}">Menu
+      </p-button-pure>
+      <p-button-pure class="header__button" theme="dark" icon="search" hide-label="true">Search</p-button-pure>
+    </div>
+    <p-wordmark class="header__wordmark" href="/" theme="dark"></p-wordmark>
+    <p-crest class="header__crest" href="/"></p-crest>
+    <div class="header__part header__part--end">
+      <p-link-pure href="/" class="header__link" theme="dark" icon="user" hide-label="true">Account</p-link-pure>
+      <p-link-pure href="/" class="header__link header__link--favorites" theme="dark" icon="heart" hide-label="true">
+        Favorites
+      </p-link-pure>
+      <p-link-pure href="/" class="header__link" theme="dark" icon="shopping-cart" hide-label="true">Shopping cart
+      </p-link-pure>
+    </div>
+    <div class="header__categories">
+      <p-tabs-bar theme="dark">
+        <button>Women</button>
+        <button>Men</button>
+        <button>Accessories</button>
+        <button>Model Cars</button>
+        <button>Porsche Originals</button>
+        <button>Porsche Design</button>
+      </p-tabs-bar>
+    </div>
+  </header>
   <main>
     <section class="teaser">
       <div class="teaser__media">
@@ -67,7 +93,8 @@
         <p-link-tile href="/" label="Timeless Enthusiast" description="Timeless Enthusiast" compact="true"
                      aspect-ratio="{base: '1:1', xs: '3:4'}" weight="regular">
           <img srcset="assets/timless-enthusiastt-teaser@2x.webp 2x"
-               src="assets/timless-enthusiastt-teaser.webp" width="636" height="848" alt="Some alternative text for screen readers describing the image"/>
+               src="assets/timless-enthusiastt-teaser.webp" width="636" height="848"
+               alt="Some alternative text for screen readers describing the image"/>
         </p-link-tile>
         <p-link-tile href="/" label="The Loyalist" description="The Loyalist" compact="true"
                      aspect-ratio="{base: '1:1', xs: '3:4'}"
