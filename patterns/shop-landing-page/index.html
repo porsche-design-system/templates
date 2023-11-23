@@ -9,7 +9,7 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure class="header__button" theme="dark" icon="menu-lines" hide-label="{base: true, xs: false}">Menu
+      <p-button-pure class="header__button" theme="dark" icon="menu-lines" hide-label="{base: true, xs: false}" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
       <p-button-pure class="header__button" theme="dark" icon="search" hide-label="true">Search</p-button-pure>
     </div>
@@ -23,16 +23,16 @@
       <p-link-pure href="/" class="header__link" theme="dark" icon="shopping-cart" hide-label="true">Shopping cart
       </p-link-pure>
     </div>
-    <div class="header__categories">
+    <nav class="header__categories" aria-label="Category Navigation">
       <p-tabs-bar theme="dark">
-        <button>Women</button>
-        <button>Men</button>
-        <button>Accessories</button>
-        <button>Model Cars</button>
-        <button>Porsche Originals</button>
-        <button>Porsche Design</button>
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">Model Cars</a>
+        <a href="#">Porsche Originals</a>
+        <a href="#">Porsche Design</a>
       </p-tabs-bar>
-    </div>
+    </nav>
   </header>
   <main>
     <section class="teaser">
