@@ -89,40 +89,46 @@
 .teaser {
   @include pds-grid;
   display: grid;
+  align-items: center;
   row-gap: $pds-spacing-fluid-x-large;
-  background: $pds-theme-dark-background-base;
-
+  margin-top: 140px; // TODO: adapt spacing
   &__media {
-    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     grid-row: 1 / 3;
 
     img {
+      display: block;
       width: 100%;
       height: auto;
     }
   }
 
   &__header {
-    margin-top: max(105vw, 336px); // limit margin <=320px
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
-    grid-row: 1;
+    grid-row: 1/3;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    row-gap: $pds-spacing-fluid-medium;
-
-    @include pds-media-query-min('xs') {
-      margin-top: min(40vw, 1024px); // limit margin >=2560px
-    }
+    row-gap: $pds-spacing-fluid-small;
   }
+}
 
-  &__content {
+.product-list {
+  @include pds-grid;
+  display: grid;
+  row-gap: $pds-spacing-fluid-large;
+  margin: $pds-spacing-fluid-medium 0;
+  &__settings {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
-    grid-row: 2;
-    display: grid;
-    row-gap: $pds-spacing-fluid-x-large;
-    margin-bottom: $pds-spacing-fluid-xx-large;
+    display: flex;
+    justify-content: space-between;
+    row-gap: $pds-spacing-fluid-small;
+  }
+  &__filter {
+    display: flex;
+    column-gap: $pds-spacing-fluid-small;
+    align-items: center;
   }
 }
 

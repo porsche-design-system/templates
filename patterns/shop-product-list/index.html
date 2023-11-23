@@ -9,9 +9,9 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
+      <p-button-pure class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
-      <p-button-pure class="header__button" icon="search" hide-label="true">Search</p-button-pure>
+      <p-button-pure class="header__button" icon="search" hide-label="true" type="button">Search</p-button-pure>
     </div>
     <p-wordmark class="header__wordmark" href="/"></p-wordmark>
     <p-crest class="header__crest" href="/"></p-crest>
@@ -55,6 +55,21 @@
       <div class="teaser__header">
         <p-display theme="dark" align="center" size="small" tag="h1">Woman</p-display>
         <p-link-pure href="/" theme="dark" variant="secondary">See Products</p-link-pure>
+      </div>
+    </section>
+    <section class="product-list">
+      <div class="product-list__settings">
+        <p-select-wrapper>
+          <select name="sort">
+            <option value="">New Items</option>
+            <option value="">Price up</option>
+            <option value="">Price down</option>
+          </select>
+        </p-select-wrapper>
+        <div class="product-list__filter">
+          <p-button-pure icon="none" type="button">Remove All</p-button-pure>
+          <p-button variant="secondary" type="button" icon="filter">Filter (3)</p-button>
+        </div>
       </div>
     </section>
   </main>
