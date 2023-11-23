@@ -33,14 +33,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: 'Cache node_modules'
-        if: inputs.install == 'true'
         uses: actions/cache@v3
         id: cache-node_modules
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install
-        if: inputs.install == 'true' && steps.cache-node_modules.outputs.cache-hit != 'true'
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: Build
         run: yarn build
