@@ -30,7 +30,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 'Checkout'
         uses: actions/checkout@v4
       - name: 'Cache node_modules'
         uses: actions/cache@v3
@@ -38,17 +38,17 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install
+      - name: 'Install'
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
-      - name: Build
+      - name: 'Build'
         run: yarn build
-      - name: Setup Pages
+      - name: 'Setup Pages'
         uses: actions/configure-pages@v3
-      - name: Upload artifact
+      - name: 'Upload artifact'
         uses: actions/upload-pages-artifact@v2
         with:
           path: './dist'
-      - name: Deploy to GitHub Pages
+      - name: 'Deploy to GitHub Pages'
         id: deployment
         uses: actions/deploy-pages@v2
