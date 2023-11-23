@@ -1,0 +1,133 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+.header {
+  position: absolute;
+  top: $pds-spacing-fluid-medium;
+  left: $pds-grid-wide-offset-base;
+  right: $pds-grid-wide-offset-base;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  row-gap: $pds-spacing-fluid-medium;
+  align-items: center;
+
+  @include pds-media-query-min('s') {
+    left: $pds-grid-wide-offset-s;
+    right: $pds-grid-wide-offset-s;
+  }
+
+  @include pds-media-query-min('xxl') {
+    left: $pds-grid-wide-offset-xxl;
+    right: $pds-grid-wide-offset-xxl;
+  }
+
+  &__part {
+    display: flex;
+
+    &--start {
+      justify-content: flex-start;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+  }
+
+  &__wordmark {
+    @include pds-media-query-max('s') {
+      display: none;
+    }
+  }
+
+  &__crest {
+    @include pds-media-query-min('s') {
+      display: none;
+    }
+  }
+
+  &__button,
+  &__link {
+    padding: $pds-spacing-static-x-small $pds-spacing-static-small;
+
+    &--favorites {
+      @include pds-media-query-max('xs') {
+        display: none;
+      }
+    }
+  }
+
+  &__categories {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+
+    @include pds-media-query-max('s') {
+      display: none;
+    }
+  }
+}
+
+.breadcrumb {
+  grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+  @include pds-media-query-min('l') {
+    grid-column: $pds-grid-wide-column-start / span 2;
+  }
+  ol {
+    list-style: "";
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  &__divider {
+    padding: 0 $pds-spacing-fluid-x-small;
+    color: $pds-theme-light-contrast-high;
+  }
+  &--current {
+    color: $pds-theme-light-contrast-medium;
+  }
+}
+
+.teaser {
+  @include pds-grid;
+  display: grid;
+  row-gap: $pds-spacing-fluid-x-large;
+  background: $pds-theme-dark-background-base;
+
+  &__media {
+    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-row: 1 / 3;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__header {
+    margin-top: max(105vw, 336px); // limit margin <=320px
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    row-gap: $pds-spacing-fluid-medium;
+
+    @include pds-media-query-min('xs') {
+      margin-top: min(40vw, 1024px); // limit margin >=2560px
+    }
+  }
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    grid-row: 2;
+    display: grid;
+    row-gap: $pds-spacing-fluid-x-large;
+    margin-bottom: $pds-spacing-fluid-xx-large;
+  }
+}
+
+// footer will be implemented later
+.footer {
+  @include pds-skeleton('light');
+  height: 500px;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Product List – Patterns (Porsche Design System)</title>
+</head>
+<body>
+<div id="app">
+  <header class="header">
+    <div class="header__part header__part--start">
+      <p-button-pure class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
+      </p-button-pure>
+      <p-button-pure class="header__button" icon="search" hide-label="true">Search</p-button-pure>
+    </div>
+    <p-wordmark class="header__wordmark" href="/"></p-wordmark>
+    <p-crest class="header__crest" href="/"></p-crest>
+    <div class="header__part header__part--end">
+      <p-link-pure href="/" class="header__link" icon="user" hide-label="true">Account</p-link-pure>
+      <p-link-pure href="/" class="header__link header__link--favorites" icon="heart" hide-label="true">
+        Favorites
+      </p-link-pure>
+      <p-link-pure href="/" class="header__link" icon="shopping-cart" hide-label="true">Shopping cart
+      </p-link-pure>
+    </div>
+    <nav class="header__categories" aria-label="Category Navigation">
+      <p-tabs-bar>
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">Model Cars</a>
+        <a href="#">Porsche Originals</a>
+        <a href="#">Porsche Design</a>
+      </p-tabs-bar>
+    </nav>
+  </header>
+  <main>
+<!--    <section class="content-navigation">-->
+<!--      <nav class="breadcrumb" aria-label="Breadcrumb navigation">-->
+<!--        <ol>-->
+<!--          <li><p-link-pure href="/" size="x-small" underline="true" icon="none">Home</p-link-pure></li>-->
+<!--          <li class="breadcrumb__divider" aria-hidden="true">/</li>-->
+<!--          <li><p-link-pure href="./" size="x-small" icon="none" aria="{ 'aria-current': 'page' }" class="breadcrumb&#45;&#45;current">Woman</p-link-pure></li>-->
+<!--        </ol>-->
+<!--      </nav>-->
+<!--    </section>-->
+    <section class="teaser">
+      <div class="teaser__media">
+        <picture>
+          <source media="(max-width:480px)" srcset="assets/header-mobile@2x.webp 2x, assets/header-mobile.webp 1x"/>
+          <img srcset="assets/header@2x.webp 2x" src="assets/header.webp" width="1920" height="1200"
+               alt="Some alternative text for screen readers describing the image"/>
+        </picture>
+      </div>
+      <div class="teaser__header">
+        <p-display theme="dark" align="center" size="small" tag="h1">Woman</p-display>
+        <p-link-pure href="/" theme="dark" variant="secondary">See Products</p-link-pure>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

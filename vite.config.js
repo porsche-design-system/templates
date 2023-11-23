@@ -41,6 +41,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         'shop-landing-page': resolve(__dirname, 'patterns/shop-landing-page/index.html'),
+        'shop-products-list': resolve(__dirname, 'patterns/shop-products-list/index.html'),
       },
     },
   },
