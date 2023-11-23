@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Product List – Patterns (Porsche Design System)</title>
+</head>
+<body>
+<div id="app">
+  <header class="header"></header>
+  <main>
+    <section class="content-navigation">
+      <nav class="breadcrumb" aria-label="Breadcrumb navigation">
+        <ol>
+          <li><p-link-pure href="/" size="x-small" underline="true" icon="none">Home</p-link-pure></li>
+          <li class="breadcrumb__divider" aria-hidden="true">/</li>
+          <li><p-link-pure href="./" size="x-small" icon="none" aria="{ 'aria-current': 'page' }" class="breadcrumb--current">Woman</p-link-pure></li>
+        </ol>
+      </nav>
+    </section>
+    <section class="teaser">
+      <div class="teaser__media">
+        <picture>
+          <source media="(max-width:480px)" srcset="assets/header-mobile@2x.webp 2x, assets/header-mobile.webp 1x"/>
+          <img srcset="assets/header@2x.webp 2x" src="assets/header.webp" width="1920" height="1200"
+               alt="Some alternative text for screen readers describing the image"/>
+        </picture>
+      </div>
+      <div class="teaser__header">
+        <p-display theme="dark" align="center" size="small" tag="h1">Made by Dreamers,<br>for Dreamers</p-display>
+        <p-link href="/" theme="dark" variant="secondary">Shop Collection</p-link>
+      </div>
+      <div class="teaser__content">
+        <p-link-tile
+          href="/"
+          label="Shop Collection"
+          description="Iconic Racing Design Taken To Perfection"
+          aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
+          weight="regular"
+        >
+          <img srcset="assets/martini-teaser@2x.webp 2x" src="assets/martini-teaser.webp" width="1308"
+               height="736" alt="Some alternative text for screen readers describing the image"/>
+        </p-link-tile>
+        <p-link-tile
+          href="/"
+          label="Shop Collection"
+          description="Transformers: Rise Of The Beasts X Porsche"
+          aspect-ratio="{base: '1:1', xs: '4:3', s: '16:9'}"
+          weight="regular"
+        >
+          <img srcset="assets/transformers-teaser@2x.webp 2x" src="assets/transformers-teaser.webp"
+               width="1308" height="736"
+               alt="Some alternative text for screen readers describing the image"/>
+        </p-link-tile>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

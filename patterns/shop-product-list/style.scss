@@ -1,0 +1,21 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+.breadcrumb {
+  grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+  @include pds-media-query-min('l') {
+    grid-column: $pds-grid-wide-column-start / span 2;
+  }
+  ol {
+    list-style: "";
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  &__divider {
+    padding: 0 $pds-spacing-fluid-x-small;
+    color: $pds-theme-light-contrast-high;
+  }
+  &--current {
+    color: $pds-theme-light-contrast-medium;
+  }
+}
