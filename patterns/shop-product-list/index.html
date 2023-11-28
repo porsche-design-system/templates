@@ -57,7 +57,7 @@
     </section>
     <section class="product-list">
       <div class="product-list__sort">
-        <p-select-wrapper>
+        <p-select-wrapper label="Sort product list" hide-label="true">
           <select name="sort">
             <option value="">New Items</option>
             <option value="">Price up</option>
@@ -67,7 +67,7 @@
       </div>
       <div class="product-list__filter">
         <p-button-pure icon="none" type="button">Remove All</p-button-pure>
-        <p-button variant="secondary" type="button" icon="filter">Filter (3)</p-button>
+        <p-button variant="secondary" type="button" icon="filter" hide-label="{base: true, s: false }">Filter (3)</p-button>
       </div>
       <article class="product-list__item"></article>
       <article class="product-list__item"></article>
