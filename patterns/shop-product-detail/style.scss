@@ -1,0 +1,175 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+.header {
+  @include pds-grid;
+  align-items: center;
+  margin-top: $pds-spacing-fluid-medium;
+
+  &__part {
+    display: flex;
+
+    &--start {
+      grid-column: $pds-grid-wide-column-start / span 2;
+      justify-content: flex-start;
+      @include pds-media-query-min('s') {
+        grid-column: $pds-grid-wide-column-start / span 4;
+      }
+    }
+
+    &--end {
+      grid-column: 6 / $pds-grid-wide-column-end;
+      justify-content: flex-end;
+      @include pds-media-query-min('s') {
+        grid-column: 14 / $pds-grid-wide-column-end;
+      }
+    }
+  }
+
+  &__wordmark {
+    grid-column: 6 / span 8;
+    justify-self: center;
+    @include pds-media-query-max('s') {
+      display: none;
+    }
+  }
+
+  &__crest {
+    grid-column: 4 / span 2;
+    justify-self: center;
+    @include pds-media-query-min('s') {
+      display: none;
+    }
+  }
+
+  &__button,
+  &__link {
+    padding: $pds-spacing-static-x-small $pds-spacing-static-small;
+
+    &--favorites {
+      @include pds-media-query-max('xs') {
+        display: none;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  @include pds-grid;
+
+  ol {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    list-style: "";
+    display: flex;
+    margin: $pds-spacing-fluid-medium 0 0;
+    padding: 0;
+
+  }
+
+  &__divider {
+    padding: 0 $pds-spacing-fluid-x-small;
+    color: $pds-theme-light-contrast-high;
+  }
+
+  &--current {
+    color: $pds-theme-light-contrast-medium;
+  }
+}
+
+.product-detail {
+  @include pds-grid;
+  margin-top: $pds-spacing-fluid-medium;
+
+  &__gallery {
+    @include pds-skeleton('light');
+    height: 600px;
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    @include pds-media-query-min('s') {
+      grid-column: $pds-grid-extended-column-start / span 8;
+    }
+  }
+
+  &__article {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    @include pds-media-query-min('s') {
+      grid-column: 12 / $pds-grid-extended-column-end;
+    }
+  }
+
+  &__description {
+    margin-top: $pds-spacing-fluid-small;
+  }
+
+  &__color,
+  &__size {
+    margin-top: $pds-spacing-fluid-small;
+    h2 {
+      @include pds-heading-small;
+      font-weight: initial;
+      margin: $pds-spacing-fluid-medium 0 0;
+      span {
+        font-weight: $pds-font-weight-bold;
+      }
+    }
+  }
+
+  &__color-swatch {
+    margin-top: $pds-spacing-fluid-x-small;
+    @include pds-skeleton('light');
+    height: 40px;
+  }
+
+  &__size {
+    p-segmented-control {
+      margin-top: $pds-spacing-fluid-x-small;
+    }
+    p-button-pure {
+      margin-top: $pds-spacing-fluid-x-small;
+    }
+    p-button {
+      margin-top: $pds-spacing-fluid-medium;
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    margin-top: $pds-spacing-fluid-small;
+    display: flex;
+    justify-content: space-between;
+    > * {
+      padding: $pds-spacing-static-x-small;
+      @include pds-media-query-min('l') {
+        padding: $pds-spacing-static-medium;
+      }
+    }
+  }
+
+  &__benefits {
+    list-style: "";
+    margin: $pds-spacing-fluid-medium 0 0;
+    padding: 0;
+    li {
+      display: flex;
+      column-gap: $pds-spacing-fluid-x-small;
+      + li {
+        margin-top: $pds-spacing-fluid-x-small;
+      }
+    }
+  }
+
+  &__about {
+    margin-top: $pds-spacing-fluid-large;
+
+    p-heading + p-text {
+      margin-top: $pds-spacing-fluid-x-small;
+    }
+    p-text + p-text {
+      margin-top: $pds-spacing-fluid-medium;
+    }
+  }
+}
+
+// footer will be implemented later
+.footer {
+  @include pds-skeleton('light');
+  height: 500px;
+}

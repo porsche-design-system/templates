@@ -42,6 +42,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         'shop-landing-page': resolve(__dirname, 'patterns/shop-landing-page/index.html'),
         'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
+        'shop-product-detail': resolve(__dirname, 'patterns/shop-product-detail/index.html'),
       },
     },
   },

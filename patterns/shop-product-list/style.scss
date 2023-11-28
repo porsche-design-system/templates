@@ -1,44 +1,41 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
 .header {
-  position: absolute;
-  top: $pds-spacing-fluid-medium;
-  left: $pds-grid-wide-offset-base;
-  right: $pds-grid-wide-offset-base;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  row-gap: $pds-spacing-fluid-medium;
+  @include pds-grid;
   align-items: center;
-
-  @include pds-media-query-min('s') {
-    left: $pds-grid-wide-offset-s;
-    right: $pds-grid-wide-offset-s;
-  }
-
-  @include pds-media-query-min('xxl') {
-    left: $pds-grid-wide-offset-xxl;
-    right: $pds-grid-wide-offset-xxl;
-  }
+  margin-top: $pds-spacing-fluid-medium;
 
   &__part {
     display: flex;
 
     &--start {
+      grid-column: $pds-grid-wide-column-start / span 2;
       justify-content: flex-start;
+      @include pds-media-query-min('s') {
+        grid-column: $pds-grid-wide-column-start / span 4;
+      }
     }
 
     &--end {
+      grid-column: 6 / $pds-grid-wide-column-end;
       justify-content: flex-end;
+      @include pds-media-query-min('s') {
+        grid-column: 14 / $pds-grid-wide-column-end;
+      }
     }
   }
 
   &__wordmark {
+    grid-column: 6 / span 8;
+    justify-self: center;
     @include pds-media-query-max('s') {
       display: none;
     }
   }
 
   &__crest {
+    grid-column: 4 / span 2;
+    justify-self: center;
     @include pds-media-query-min('s') {
       display: none;
     }
@@ -92,10 +89,9 @@
 
 .teaser {
   @include pds-grid;
-  display: grid;
   align-items: center;
   row-gap: $pds-spacing-fluid-x-large;
-  margin-top: 180px; // TODO: adapt spacing
+  margin-top: $pds-spacing-fluid-medium;
   &__media {
     position: relative;
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
