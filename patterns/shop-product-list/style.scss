@@ -210,6 +210,57 @@
     align-items: center;
     margin-top: $pds-spacing-fluid-large;
   }
+
+  &__thumbnail {
+    width: 134px;
+    height: 134px;
+    margin-top: $pds-spacing-fluid-medium;
+    @include pds-skeleton('light');
+  }
+
+  &__heading {
+    margin-top: $pds-spacing-fluid-small;
+  }
+
+  &__description {
+    margin-top: $pds-spacing-fluid-x-small;
+  }
+
+  &__color,
+  &__size {
+    margin-top: $pds-spacing-fluid-small;
+    h4 {
+      @include pds-heading-small;
+      font-weight: initial;
+      margin: $pds-spacing-fluid-small 0 0;
+      span {
+        font-weight: $pds-font-weight-bold;
+      }
+    }
+  }
+
+  &__color-swatch {
+    margin-top: $pds-spacing-fluid-x-small;
+    @include pds-skeleton('light');
+    height: 40px;
+  }
+
+  &__size {
+    p-segmented-control {
+      margin-top: $pds-spacing-fluid-x-small;
+    }
+    p-button-pure {
+      margin-top: $pds-spacing-fluid-x-small;
+    }
+    p-button {
+      margin-top: $pds-spacing-fluid-medium;
+      width: 100%;
+    }
+  }
+
+  p-flyout {
+    --p-flyout-max-width: 400px;
+  }
 }
 
 // footer will be implemented later
