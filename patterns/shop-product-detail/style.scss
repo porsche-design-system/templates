@@ -7,6 +7,7 @@
 
   &__part {
     display: flex;
+    gap: $pds-spacing-fluid-small;
 
     &--start {
       grid-column: $pds-grid-wide-column-start / span 2;
@@ -43,7 +44,7 @@
 
   &__button,
   &__link {
-    padding: $pds-spacing-static-x-small $pds-spacing-static-small;
+    // padding: $pds-spacing-static-x-small $pds-spacing-static-small;
 
     &--favorites {
       @include pds-media-query-max('xs') {
@@ -81,7 +82,7 @@
 
   &__gallery {
     @include pds-skeleton('light');
-    height: 600px;
+    aspect-ratio: 3 / 4;
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
     @include pds-media-query-min('s') {
       grid-column: $pds-grid-extended-column-start / span 8;
@@ -180,7 +181,7 @@
 .cart-flyout {
   &__thumbnail {
     width: 134px;
-    height: 134px;
+    aspect-ratio: 1 / 1 ;
     margin-top: $pds-spacing-fluid-medium;
     @include pds-skeleton('light');
   }

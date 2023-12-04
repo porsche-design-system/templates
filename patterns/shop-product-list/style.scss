@@ -7,6 +7,7 @@
 
   &__part {
     display: flex;
+    gap: $pds-spacing-fluid-small;
 
     &--start {
       grid-column: $pds-grid-wide-column-start / span 2;
@@ -43,7 +44,7 @@
 
   &__button,
   &__link {
-    padding: $pds-spacing-static-x-small $pds-spacing-static-small;
+    // padding: $pds-spacing-static-x-small $pds-spacing-static-small;
 
     &--favorites {
       @include pds-media-query-max('xs') {
@@ -53,13 +54,8 @@
   }
 
   &__categories {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-    column-gap: $pds-spacing-fluid-medium;
-    row-gap: $pds-spacing-fluid-small;
-    white-space: nowrap;
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    justify-self: center;
 
     @include pds-media-query-max('s') {
       display: none;
@@ -97,15 +93,9 @@
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     grid-row: 1 / 3;
 
-    &::before {
-      content: "";
-      display: block;
-      padding-top: 133.33%;
-    }
+    aspect-ratio: 3 / 4;
     @include pds-media-query-min('s') {
-      &::before {
-        padding-top: 56.25%;
-      }
+      aspect-ratio: 16 / 9;
     }
     picture {
       position: absolute;
@@ -177,7 +167,7 @@
 
   &__item {
     @include pds-skeleton('light');
-    height: 400px; // Just for visual presentation
+    aspect-ratio: 3 / 4; // Just for visual presentation
     &:nth-of-type(2n + 1) {
       grid-column: $pds-grid-basic-column-start / span 3;
     }
@@ -185,7 +175,6 @@
       grid-column: 5 / span 3;
     }
     @include pds-media-query-min('s') {
-      height: 600px; // Just for visual presentation
       &:nth-of-type(3n + 1) {
         grid-column: $pds-grid-basic-column-start / span 4;
       }
@@ -215,7 +204,7 @@
 .whishlist {
   &__thumbnail {
     width: 134px;
-    height: 134px;
+    aspect-ratio: 1 / 1 ;
     margin-top: $pds-spacing-fluid-medium;
     @include pds-skeleton('light');
   }

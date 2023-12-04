@@ -13,8 +13,8 @@
       </p-button-pure>
       <p-button-pure class="header__button" icon="search" hide-label="true" type="button">Search</p-button-pure>
     </div>
-    <p-wordmark class="header__wordmark" href="/"></p-wordmark>
-    <p-crest class="header__crest" href="/"></p-crest>
+    <p-wordmark class="header__wordmark" href="../shop-landing-page/"></p-wordmark>
+    <p-crest class="header__crest" href="../shop-landing-page/"></p-crest>
     <div class="header__part header__part--end">
       <p-link-pure href="/" class="header__link" icon="user" hide-label="true">Account</p-link-pure>
       <p-link-pure href="/" class="header__link header__link--favorites" icon="heart" hide-label="true">
@@ -24,24 +24,26 @@
       </p-link-pure>
     </div>
     <nav class="header__categories" aria-label="Category Navigation">
-      <p-link-pure href="#" icon="none" active="true" aria="{ 'aria-current': 'page' }">Women</p-link-pure>
-      <p-link-pure href="#" icon="none">Men</p-link-pure>
-      <p-link-pure href="#" icon="none">Accessories</p-link-pure>
-      <p-link-pure href="#" icon="none">Model Cars</p-link-pure>
-      <p-link-pure href="#" icon="none">Porsche Originals</p-link-pure>
-      <p-link-pure href="#" icon="none">Porsche Design</p-link-pure>
+      <p-tabs-bar active-tab-index="0">
+        <a href="#" aria-current="page">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">Model Cars</a>
+        <a href="#">Porsche Originals</a>
+        <a href="#">Porsche Design</a>
+      </p-tabs-bar>
     </nav>
   </header>
   <main>
-<!--    <section class="content-navigation">-->
-<!--      <nav class="breadcrumb" aria-label="Breadcrumb navigation">-->
-<!--        <ol>-->
-<!--          <li><p-link-pure href="/" size="x-small" underline="true" icon="none">Home</p-link-pure></li>-->
-<!--          <li class="breadcrumb__divider" aria-hidden="true">/</li>-->
-<!--          <li><p-link-pure href="./" size="x-small" icon="none" aria="{ 'aria-current': 'page' }" class="breadcrumb&#45;&#45;current">Woman</p-link-pure></li>-->
-<!--        </ol>-->
-<!--      </nav>-->
-<!--    </section>-->
+<!--    <nav class="breadcrumb" aria-label="Breadcrumb navigation">-->
+<!--      <ol>-->
+<!--        <li><p-link-pure href="../shop-landing-page/" size="x-small" underline="true" icon="none">Home</p-link-pure></li>-->
+<!--        <li class="breadcrumb__divider" role="presentation" aria-hidden="true">/</li>-->
+<!--        <li><p-link-pure href="../shop-product-list/" size="x-small" underline="true" icon="none">Woman</p-link-pure></li>-->
+<!--        <li class="breadcrumb__divider" role="presentation" aria-hidden="true">/</li>-->
+<!--        <li><p-link-pure href="./" size="x-small" icon="none" aria="{ 'aria-current': 'page' }" class="breadcrumb&#45;&#45;current">Shoes</p-link-pure></li>-->
+<!--      </ol>-->
+<!--    </nav>-->
     <section class="teaser">
       <div class="teaser__media">
         <picture>
@@ -50,7 +52,7 @@
         </picture>
       </div>
       <div class="teaser__header">
-        <p-display theme="dark" align="center" size="small" tag="h1">Woman</p-display>
+        <p-display theme="dark" align="center" size="small" tag="h1">Women</p-display>
         <p-link-pure href="/" theme="dark" icon="none" underline="true" variant="secondary">See Products</p-link-pure>
       </div>
     </section>
