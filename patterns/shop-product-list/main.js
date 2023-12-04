@@ -3,18 +3,18 @@ import './style.scss';
 /**
  * Handle Filter flyout
  */
-const filterFlyout = document.getElementById('filter-flyout');
+const filterFlyout = document.getElementById('filterFlyout');
 filterFlyout.addEventListener('dismiss', () => {
   filterFlyout.open = false;
 });
-document.getElementById('filter-button').addEventListener('click', () => {
+document.getElementById('filterButton').addEventListener('click', () => {
   filterFlyout.open = true;
 });
 
 /**
  * Handle Whishlist flyout
  */
-const whishlistFlyout = document.getElementById('whishlist-flyout');
+const whishlistFlyout = document.getElementById('whishlistFlyout');
 const whishlistItems = document.querySelectorAll('.product-list__item');
 whishlistFlyout.addEventListener('dismiss', () => {
   whishlistFlyout.open = false;

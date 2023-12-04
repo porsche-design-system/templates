@@ -66,8 +66,8 @@
       </div>
       <div class="product-list__filter">
         <p-button-pure icon="none" type="button">Remove All</p-button-pure>
-        <p-button variant="secondary" type="button" icon="filter" hide-label="{base: true, s: false }" aria="{ 'aria-haspopup': 'dialog' }" id="filter-button">Filter (3)</p-button>
-        <p-flyout id="filter-flyout">
+        <p-button variant="secondary" type="button" icon="filter" hide-label="{base: true, s: false }" aria="{ 'aria-haspopup': 'dialog' }" id="filterButton">Filter (3)</p-button>
+        <p-flyout id="filterFlyout">
           <div slot="header">
             <p-heading tag="h2" size="large">Product Filter</p-heading>
           </div>
@@ -182,21 +182,21 @@
         <p-text>Viewing 1 - 50 of 400</p-text>
         <p-button icon="none" type="button">Show 50 more results</p-button>
       </div>
-      <p-flyout id="whishlist-flyout">
+      <p-flyout id="whishlistFlyout" class="whishlist">
         <div slot="header">
           <p-heading tag="h2" size="large">Add to Whishlist</p-heading>
         </div>
-        <div class="product-list__thumbnail"></div>
-        <p-heading tag="h3" size="large" class="product-list__heading">EviKnit® Trainers II</p-heading>
+        <div class="whishlist__thumbnail"></div>
+        <p-heading tag="h3" size="large" class="whishlist__heading">EviKnit® Trainers II</p-heading>
         <p-text weight="semi-bold">SGD 680</p-text>
-        <p-text class="product-list__description">
+        <p-text class="whishlist__description">
           Tongueless sports shoe in a modern sock-shoe style. Exclusive design using PUMA EvoKNIT® knit with a NITRO FOAM® sole for dynamism, cushioning and stability.
         </p-text>
-        <div class="product-list__color">
+        <div class="whishlist__color">
           <h4>Color: <span>Black</span></h4>
-          <div class="product-list__color-swatch"></div>
+          <div class="whishlist__color-swatch"></div>
         </div>
-        <div class="product-list__size">
+        <div class="whishlist__size">
           <h4>Size: <span>-</span></h4>
           <p-segmented-control columns="2" aria-label="Choose a product size">
             <p-segmented-control-item value="xs">XS</p-segmented-control-item>

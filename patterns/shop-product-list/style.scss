@@ -207,6 +207,12 @@
     margin-top: $pds-spacing-fluid-large;
   }
 
+  p-flyout {
+    --p-flyout-max-width: 400px;
+  }
+}
+
+.whishlist {
   &__thumbnail {
     width: 134px;
     height: 134px;
@@ -252,10 +258,6 @@
       margin-top: $pds-spacing-fluid-medium;
       width: 100%;
     }
-  }
-
-  p-flyout {
-    --p-flyout-max-width: 400px;
   }
 }
 
