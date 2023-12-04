@@ -214,11 +214,119 @@
             <p-segmented-control-item value="eu45">EU 45</p-segmented-control-item>
             <p-segmented-control-item value="eu46">EU 46</p-segmented-control-item>
           </p-segmented-control>
-          <p-button-pure icon="information">View size chart</p-button-pure>
-          <p-button>Add to whishlist</p-button>
+          <p-button-pure type="button" icon="information" id="sizeChartButton">View size chart</p-button-pure>
+          <p-button type="button">Add to whishlist</p-button>
         </div>
       </p-flyout>
     </section>
+    <p-modal heading="Size Chart" id="sizeChartModal">
+      <p-table caption="Size Chart for men" class="size-chart">
+        <p-table-head>
+          <p-table-head-row>
+            <p-table-head-cell>Men</p-table-head-cell>
+            <p-table-head-cell>XS</p-table-head-cell>
+            <p-table-head-cell>S</p-table-head-cell>
+            <p-table-head-cell>M</p-table-head-cell>
+            <p-table-head-cell>L</p-table-head-cell>
+            <p-table-head-cell>XL</p-table-head-cell>
+            <p-table-head-cell>XXL</p-table-head-cell>
+            <p-table-head-cell>3XL</p-table-head-cell>
+          </p-table-head-row>
+        </p-table-head>
+        <p-table-body>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">Germany / France / Italy</p-table-head-cell>
+            <p-table-cell>40-42</p-table-cell>
+            <p-table-cell>44-46</p-table-cell>
+            <p-table-cell>48-50</p-table-cell>
+            <p-table-cell>52-54</p-table-cell>
+            <p-table-cell>56-58</p-table-cell>
+            <p-table-cell>60-62</p-table-cell>
+            <p-table-cell>64-66</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">United Kingdom</p-table-head-cell>
+            <p-table-cell>32-34</p-table-cell>
+            <p-table-cell>36-38</p-table-cell>
+            <p-table-cell>40-42</p-table-cell>
+            <p-table-cell>44-46</p-table-cell>
+            <p-table-cell>48-50</p-table-cell>
+            <p-table-cell>52-54</p-table-cell>
+            <p-table-cell>56-58</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">USA</p-table-head-cell>
+            <p-table-cell>34</p-table-cell>
+            <p-table-cell>36</p-table-cell>
+            <p-table-cell>38-40</p-table-cell>
+            <p-table-cell>42-44</p-table-cell>
+            <p-table-cell>46-48</p-table-cell>
+            <p-table-cell>50</p-table-cell>
+            <p-table-cell>52</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">China - upper clothing <br>[height/chest]</p-table-head-cell>
+            <p-table-cell>175/80A-<br>175/84A</p-table-cell>
+            <p-table-cell>175/88A-<br>180/92A</p-table-cell>
+            <p-table-cell>180/96A-<br>180/100A</p-table-cell>
+            <p-table-cell>180/104B-<br>180/108B</p-table-cell>
+            <p-table-cell>185/112B-<br>185/116B</p-table-cell>
+            <p-table-cell>185/120B-<br>185/124B</p-table-cell>
+            <p-table-cell>185/128B-<br>190/132B</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">China - lower clothing <br>[height/waist]</p-table-head-cell>
+            <p-table-cell>175/66A-<br>175/70A</p-table-cell>
+            <p-table-cell>175/74A-<br>180/78A</p-table-cell>
+            <p-table-cell>180/84A-<br>180/88A</p-table-cell>
+            <p-table-cell>180/94B-<br>180/98B</p-table-cell>
+            <p-table-cell>185/102B-<br>185/108B</p-table-cell>
+            <p-table-cell>185/112B-<br>185/116B</p-table-cell>
+            <p-table-cell>185/120B-<br>190/124B</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">Chest size</p-table-head-cell>
+            <p-table-cell>84.0cm<br>33"</p-table-cell>
+            <p-table-cell>88.0-92.0cm<br>34 1/2-36 1/4"</p-table-cell>
+            <p-table-cell>96.0-100.0cm<br>37 3/4-39 1/2"</p-table-cell>
+            <p-table-cell>104.0-108.0cm<br>41-42 1/2"</p-table-cell>
+            <p-table-cell>112.0-116.0cm<br>44-45 3/4"</p-table-cell>
+            <p-table-cell>120.0-124.0cm<br>47 1/4-48 3/4"</p-table-cell>
+            <p-table-cell>128.0-132.0cm<br>50 1/2-52"</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">Waist size</p-table-head-cell>
+            <p-table-cell>70.0cm<br>27 1/2"</p-table-cell>
+            <p-table-cell>74.0-78.0cm<br>29-30 3/4"</p-table-cell>
+            <p-table-cell>83.0-88.0cm<br>32 3/4-34 1/2"</p-table-cell>
+            <p-table-cell>93.0-98.0cm<br>36 1/2-38 1/2"</p-table-cell>
+            <p-table-cell>102.0-107.0cm<br>40 1/4-42"</p-table-cell>
+            <p-table-cell>111.0-116.0cm<br>43 3/4-45 3/4"</p-table-cell>
+            <p-table-cell>120.0-124.0cm<br>47 1/4-48 3/4"</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">Hip Size</p-table-head-cell>
+            <p-table-cell>90.0cm<br>35 1/2"</p-table-cell>
+            <p-table-cell>93.0-96.0cm<br>36 1/2-37 3/4"</p-table-cell>
+            <p-table-cell>99.0-102.0cm<br>39-40 1/4"</p-table-cell>
+            <p-table-cell>105.0-108.0cm<br>41 1/4-42 1/2"</p-table-cell>
+            <p-table-cell>111.0-114.0cm<br>43 3/4-45"</p-table-cell>
+            <p-table-cell>117.0-120.0cm<br>46-47 1/4"</p-table-cell>
+            <p-table-cell>123.0-126.0cm<br>48 1/2-49 1/2"</p-table-cell>
+          </p-table-row>
+          <p-table-row>
+            <p-table-head-cell scope="row" role="rowheader">Inside leg length</p-table-head-cell>
+            <p-table-cell>81.0cm<br>32"</p-table-cell>
+            <p-table-cell>81.5-82.0cm<br>32-32 1/4"</p-table-cell>
+            <p-table-cell>82.5-83.0cm<br>32 1/2-32 3/4"</p-table-cell>
+            <p-table-cell>83.5-84.0cm<br>33"</p-table-cell>
+            <p-table-cell>84.5-85.0cm<br>33 1/4-33 1/2"</p-table-cell>
+            <p-table-cell>85.5-86.0cm<br>33 3/4-34"</p-table-cell>
+            <p-table-cell>86.5-87.0cm<br>34-34 1/4"</p-table-cell>
+          </p-table-row>
+        </p-table-body>
+      </p-table>
+    </p-modal>
   </main>
   <footer class="footer"></footer>
 </div>
