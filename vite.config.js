@@ -14,7 +14,7 @@ const transformIndexHtmlPlugin = () => {
       ].join('; ');
 
       const headPartials = [
-        // `<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`,
+        `<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`,
         getInitialStyles(),
         getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
         getFontFaceStylesheet(),

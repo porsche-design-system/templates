@@ -360,17 +360,5 @@
   </p-flyout-navigation-item>
 </p-flyout-navigation>
 <script type="module" src="main.js"></script>
-<script>
-  const menu = document.getElementById('menu');
-  document.getElementById('button-open-menu').addEventListener('click', () => {
-    menu.open = true;
-  });
-  menu.addEventListener('dismiss', () => {
-    menu.open = false;
-  });
-  menu.addEventListener('update', (e) => {
-    menu.activeIdentifier = e.detail.activeIdentifier;
-  });
-</script>
 </body>
 </html>
