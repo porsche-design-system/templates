@@ -157,25 +157,20 @@
 }
 
 .flyout-filter {
-  --p-flyout-max-width: 25rem;
+  --p-flyout-width: 25rem;
+  --p-flyout-max-width: 100%;
 
   &__settings {
     margin-top: $pds-spacing-fluid-small;
     display: flex;
     flex-direction: column;
-
-    &--gap-small {
-      row-gap: $pds-spacing-fluid-x-small;
-    }
-
-    &--gap-medium {
-      row-gap: $pds-spacing-fluid-small;
-    }
+    row-gap: $pds-spacing-fluid-small;
   }
 }
 
 .flyout-wishlist {
-  --p-flyout-max-width: 25rem;
+  --p-flyout-width: 25rem;
+  --p-flyout-max-width: 100%;
 
   &__thumbnail {
     width: 10rem;
