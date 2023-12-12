@@ -193,6 +193,28 @@
   }
 }
 
+.flyout-search {
+  &__results {
+    margin-top: $pds-spacing-fluid-medium;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pds-spacing-fluid-small;
+  }
+
+  &__result {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr) auto;
+    gap: $pds-spacing-fluid-small;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
