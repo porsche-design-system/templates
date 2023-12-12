@@ -1,50 +1,35 @@
 import './style.scss';
 
 /**
- * Handle Filter flyout
+ * Handle Flyout: Filter
  */
-const filterFlyout = document.getElementById('filterFlyout');
-filterFlyout.addEventListener('dismiss', () => {
-  filterFlyout.open = false;
-});
-document.getElementById('filterButton').addEventListener('click', () => {
-  filterFlyout.open = true;
-});
+const flyoutFilter = document.getElementById('flyout-filter');
+const buttonFilter = document.getElementById('button-filter');
+flyoutFilter.addEventListener('dismiss', () => flyoutFilter.open = false);
+buttonFilter.addEventListener('click', () => flyoutFilter.open = true);
 
 /**
- * Handle Whishlist flyout
+ * Handle Flyout: Wishlist
  */
-const whishlistFlyout = document.getElementById('whishlistFlyout');
-const whishlistItems = document.querySelectorAll('.product-list__item');
-whishlistFlyout.addEventListener('dismiss', () => {
-  whishlistFlyout.open = false;
-});
-
-whishlistItems.forEach((item) =>
-  item.addEventListener('click', () => {
-    whishlistFlyout.open = true;
-  })
+const flyoutWishlist = document.getElementById('flyout-wishlist');
+const products = document.querySelectorAll('p-link-tile-product');
+flyoutWishlist.addEventListener('dismiss', () => flyoutWishlist.open = false);
+products.forEach((product) =>
+  product.addEventListener('like', () => flyoutWishlist.open = true)
 );
 
-
-
 /**
- * Handle Accordion components
+ * Handle Accordion
  */
 const accordions = document.querySelectorAll('p-accordion');
 accordions.forEach((accordion) =>
-  accordion.addEventListener('update', (e) => {
-    e.target.open = e.detail.open;
-  })
+  accordion.addEventListener('update', (e) => e.target.open = e.detail.open)
 );
 
 /**
- * Handle View Size Chart modal
+ * Handle Modal: Size Chart
  */
-const sizeChartModal = document.getElementById('sizeChartModal');
-sizeChartModal.addEventListener('dismiss', () => {
-  sizeChartModal.open = false;
-});
-document.getElementById('sizeChartButton').addEventListener('click', () => {
-  sizeChartModal.open = true;
-});
+const modalSizeChart = document.getElementById('modal-size-chart');
+const buttonSizeChart = document.getElementById('button-size-chart');
+modalSizeChart.addEventListener('dismiss', () => modalSizeChart.open = false);
+buttonSizeChart.addEventListener('click', () => modalSizeChart.open = true);

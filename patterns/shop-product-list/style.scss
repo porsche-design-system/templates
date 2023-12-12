@@ -85,55 +85,41 @@
 
 .teaser {
   @include pds-grid;
-  align-items: center;
-  row-gap: $pds-spacing-fluid-x-large;
   margin-top: $pds-spacing-fluid-medium;
-  &__media {
-    position: relative;
-    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
-    grid-row: 1 / 3;
 
-    aspect-ratio: 3 / 4;
+  &__media {
+    grid-area: 1 / $pds-grid-basic-column-start / 1 / $pds-grid-basic-column-end;
+    aspect-ratio: 1 / 1;
+
+    @include pds-media-query-min('xs') {
+      aspect-ratio: 4 / 3;
+    }
+
     @include pds-media-query-min('s') {
       aspect-ratio: 16 / 9;
     }
-    picture {
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+
     img {
-      position: absolute;
       display: block;
       width: 100%;
+      height: 100%;
       border-radius: $pds-border-radius-large;
       object-fit: cover;
-      height: 100%;
-      @include pds-media-query-min('s') {
-        object-fit: initial;
-        height: auto;
-      }
     }
   }
 
   &__header {
-    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
-    grid-row: 1/3;
+    grid-area: 1 / $pds-grid-narrow-column-start / 1 / $pds-grid-narrow-column-end;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     row-gap: $pds-spacing-fluid-small;
-    z-index: 1;
   }
 }
 
-.product-list {
+.products {
   @include pds-grid;
-  display: grid;
   margin: $pds-spacing-fluid-medium 0;
 
   &__sort {
@@ -149,41 +135,14 @@
     justify-content: flex-end;
   }
 
-  &__filter-items {
-    display: flex;
-    flex-direction: column;
-    row-gap: $pds-spacing-fluid-medium;
-  }
+  &__list {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    display: grid;
+    gap: $pds-grid-gap;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  &__filter-settings {
-    padding-top: $pds-spacing-fluid-small;
-    p-text-field-wrapper + p-text-field-wrapper {
-      margin-top: $pds-spacing-fluid-small;
-    }
-    p-checkbox-wrapper + p-checkbox-wrapper {
-      margin-top: $pds-spacing-fluid-x-small;
-    }
-  }
-
-  &__item {
-    @include pds-skeleton('light');
-    aspect-ratio: 3 / 4; // Just for visual presentation
-    &:nth-of-type(2n + 1) {
-      grid-column: $pds-grid-basic-column-start / span 3;
-    }
-    &:nth-of-type(2n + 2) {
-      grid-column: 5 / span 3;
-    }
-    @include pds-media-query-min('s') {
-      &:nth-of-type(3n + 1) {
-        grid-column: $pds-grid-basic-column-start / span 4;
-      }
-      &:nth-of-type(3n + 2) {
-        grid-column: 8 / span 4;
-      }
-      &:nth-of-type(3n + 3) {
-        grid-column: 12 / span 4;
-      }
+    @include pds-media-query-min('m') {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
@@ -195,16 +154,32 @@
     align-items: center;
     margin-top: $pds-spacing-fluid-large;
   }
+}
 
-  p-flyout {
-    --p-flyout-max-width: 400px;
+.flyout-filter {
+  --p-flyout-max-width: 25rem;
+
+  &__settings {
+    margin-top: $pds-spacing-fluid-small;
+    display: flex;
+    flex-direction: column;
+
+    &--gap-small {
+      row-gap: $pds-spacing-fluid-x-small;
+    }
+
+    &--gap-medium {
+      row-gap: $pds-spacing-fluid-small;
+    }
   }
 }
 
-.whishlist {
+.flyout-wishlist {
+  --p-flyout-max-width: 25rem;
+
   &__thumbnail {
-    width: 134px;
-    aspect-ratio: 1 / 1 ;
+    width: 10rem;
+    aspect-ratio: 1 / 1;
     margin-top: $pds-spacing-fluid-medium;
     @include pds-skeleton('light');
   }
@@ -220,10 +195,12 @@
   &__color,
   &__size {
     margin-top: $pds-spacing-fluid-small;
+
     h4 {
       @include pds-heading-small;
-      font-weight: initial;
+      font-weight: $pds-font-weight-regular;
       margin: $pds-spacing-fluid-small 0 0;
+
       span {
         font-weight: $pds-font-weight-bold;
       }
@@ -240,9 +217,11 @@
     p-segmented-control {
       margin-top: $pds-spacing-fluid-x-small;
     }
+
     p-button-pure {
       margin-top: $pds-spacing-fluid-x-small;
     }
+
     p-button {
       margin-top: $pds-spacing-fluid-medium;
       width: 100%;
@@ -250,17 +229,15 @@
   }
 }
 
-.size-chart {
+.table-size-chart {
   margin-top: $pds-spacing-fluid-medium;
-  p-table-head {
-    p-table-head-cell:first-child {
-      @include pds-heading-medium;
-    }
+
+  p-table-head p-table-head-cell:first-child {
+    font-size: $pds-font-size-heading-medium;
   }
-  p-table-body {
-    p-table-head-cell {
-      @include pds-heading-small;
-    }
+
+  p-table-body p-table-cell[role="rowheader"] {
+    font-weight: $pds-font-weight-semi-bold;
   }
 }
 
