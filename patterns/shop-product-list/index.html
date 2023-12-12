@@ -9,7 +9,7 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" type="button"
+      <p-button-pure id="button-menu" class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" type="button"
                      aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
       <p-button-pure class="header__button" icon="search" hide-label="true" type="button">Search</p-button-pure>
@@ -296,6 +296,199 @@
     <p-button type="button">Add to wishlist</p-button>
   </div>
 </p-flyout>
+
+<p-flyout-navigation id="flyout-menu">
+  <p-flyout-navigation-item identifier="women" label="Women">
+    <p-link-tile
+      href="#"
+      label="Martini Racing® Collection"
+      description="Martini Racing® Collection"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/women@2x.webp 2x"
+           src="/assets/women.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Apparel</h3>
+    <a href="#">Jacket</a>
+    <a href="#">Polo & Shirts</a>
+    <a href="#">Sweaters</a>
+    <a href="#">T-Shirt</a>
+    <a href="#">Socks</a>
+    <a href="#">View all</a>
+    <h3>Accessories</h3>
+    <a href="#">Caps</a>
+    <a href="#">Belts</a>
+    <a href="#">Beanies, Scarves & Gloves</a>
+    <a href="#">Timepieces</a>
+    <a href="#">View all</a>
+    <h3>Collection</h3>
+    <a href="#">Transformers</a>
+    <a href="#">MARTINI RACING®</a>
+    <a href="#">Dakar</a>
+    <a href="#">Penske Motorsport</a>
+    <a href="#">Porsche x FIN</a>
+    <a href="#">Essential</a>
+    <a href="#">Motorsport</a>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="men" label="Men">
+    <p-link-tile
+      href="#"
+      label="Martini Racing® Collection"
+      description="Martini Racing® Collection"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/men@2x.webp 2x"
+           src="/assets/men.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Apparel</h3>
+    <a href="#">Jacket</a>
+    <a href="#">Pants</a>
+    <a href="#">Polo & Shirts</a>
+    <a href="#">Sweaters</a>
+    <a href="#">T-Shirt</a>
+    <a href="#">Socks</a>
+    <a href="#">View all</a>
+    <h3>Accessories</h3>
+    <a href="#">Caps</a>
+    <a href="#">Belts</a>
+    <a href="#">Beanies, Scarves & Gloves</a>
+    <a href="#">Timepieces</a>
+    <a href="#">View all</a>
+    <h3>Footwear</h3>
+    <a href="#">View all</a>
+    <h3>Collection</h3>
+    <a href="#">Transformers</a>
+    <a href="#">MARTINI RACING®</a>
+    <a href="#">Dakar</a>
+    <a href="#">Penske Motorsport</a>
+    <a href="#">Porsche x FIN</a>
+    <a href="#">Essential</a>
+    <a href="#">Motorsport</a>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="kids" label="Kids">
+    <p-link-tile
+      href="#"
+      label="Playmobil® 911 Carrera RS 2.7"
+      description="Playmobil® 911 Carrera RS 2.7"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/kids@2x.webp 2x"
+           src="/assets/kids.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Kids</h3>
+    <a href="#">Apparel</a>
+    <a href="#">View all</a>
+    <h3>Accessories</h3>
+    <a href="#">Toys</a>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="accessories" label="Accessories">
+    <p-link-tile
+      href="#"
+      label="Umbrella Martini Racing®"
+      description="Umbrella Martini Racing®"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/accessories@2x.webp 2x"
+           src="/assets/accessories.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Accessories</h3>
+    <a href="#">Bags & Luggage</a>
+    <a href="#">Eyewear</a>
+    <a href="#">Calendar & Books</a>
+    <a href="#">Golf</a>
+    <a href="#">Home & Office</a>
+    <a href="#">Key Rings & Others</a>
+    <a href="#">Timepieces</a>
+    <a href="#">View all</a>
+    <h3>Collection</h3>
+    <a href="#">75 Years</a>
+    <a href="#">MARTINI RACING®</a>
+    <a href="#">Porsche x FIN</a>
+    <a href="#">Heritage 2.0</a>
+    <a href="#">Sports</a>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="model-cars" label="Model Cars">
+    <p-link-tile
+      href="#"
+      label="911 Targa S 2.4 (1972)"
+      description="911 Targa S 2.4 (1972)"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/model-cars@2x.webp 2x"
+           src="/assets/model-cars.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Model Cars</h3>
+    <a href="#">718</a>
+    <a href="#">911</a>
+    <a href="#">Taycan</a>
+    <a href="#">Macan</a>
+    <a href="#">Others</a>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="porsche-design" label="Porsche Design">
+    <p-link-tile
+      href="#"
+      label="Sunglasses P´8508"
+      description="Sunglasses P´8508"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/porsche-design@2x.webp 2x"
+           src="/assets/porsche-design.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Apparel</h3>
+    <a href="#">Bottoms</a>
+    <a href="#">Sweaters</a>
+    <a href="#">T-Shirts</a>
+    <a href="#">View all</a>
+    <h3>Accessories</h3>
+    <a href="#">Bags & Luggage</a>
+    <a href="#">Fragrances</a>
+    <a href="#">Sunglasses</a>
+    <a href="#">View all</a>
+    <h3>Footwear</h3>
+    <a href="#">View all</a>
+  </p-flyout-navigation-item>
+  <p-flyout-navigation-item identifier="christmas" label="Christmas">
+    <p-link-tile
+      href="#"
+      label="911 Dakar 992 Xmas Ltd. Edition"
+      description="911 Dakar 992 Xmas Ltd. Edition"
+      weight="semi-bold"
+      compact="true"
+      aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
+    >
+      <img srcset="/assets/christmas@2x.webp 2x"
+           src="/assets/christmas.webp" width="308" height="308"
+           alt="Some alternative text for screen readers describing the image"/>
+    </p-link-tile>
+    <h3>Gifts</h3>
+    <a href="#">For Him</a>
+    <a href="#">For Her</a>
+    <a href="#">For Kids</a>
+  </p-flyout-navigation-item>
+</p-flyout-navigation>
 
 <p-modal heading="Size Chart" id="modal-size-chart">
   <!-- Use only one modal for size-chart and replace its content dynamically -->

@@ -10,7 +10,7 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure id="button-open-menu" class="header__button" theme="dark" icon="menu-lines"
+      <p-button-pure id="button-menu" class="header__button" theme="dark" icon="menu-lines"
                      hide-label="{base: true, xs: false}"
                      type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
@@ -111,8 +111,8 @@
         </div>
         <p-link-tile href="/" label="Timeless Enthusiast" description="Timeless Enthusiast" compact="true"
                      aspect-ratio="{base: '1:1', xs: '3:4'}" weight="regular">
-          <img srcset="assets/timless-enthusiastt-teaser@2x.webp 2x"
-               src="assets/timless-enthusiastt-teaser.webp" width="636" height="848"
+          <img srcset="assets/timeless-enthusiastt-teaser@2x.webp 2x"
+               src="assets/timeless-enthusiastt-teaser.webp" width="636" height="848"
                alt="Some alternative text for screen readers describing the image"/>
         </p-link-tile>
         <p-link-tile href="/" label="The Loyalist" description="The Loyalist" compact="true"
@@ -183,7 +183,8 @@
   </main>
   <footer class="footer"></footer>
 </div>
-<p-flyout-navigation id="menu">
+
+<p-flyout-navigation id="flyout-menu">
   <p-flyout-navigation-item identifier="women" label="Women">
     <p-link-tile
       href="#"
@@ -193,8 +194,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/women@2x.webp 2x"
-           src="assets/women.webp" width="308" height="308"
+      <img srcset="/assets/women@2x.webp 2x"
+           src="/assets/women.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Apparel</h3>
@@ -229,8 +230,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/men@2x.webp 2x"
-           src="assets/men.webp" width="308" height="308"
+      <img srcset="/assets/men@2x.webp 2x"
+           src="/assets/men.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Apparel</h3>
@@ -268,8 +269,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/kids@2x.webp 2x"
-           src="assets/kids.webp" width="308" height="308"
+      <img srcset="/assets/kids@2x.webp 2x"
+           src="/assets/kids.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Kids</h3>
@@ -288,8 +289,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/accessories@2x.webp 2x"
-           src="assets/accessories.webp" width="308" height="308"
+      <img srcset="/assets/accessories@2x.webp 2x"
+           src="/assets/accessories.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Accessories</h3>
@@ -318,8 +319,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/model-cars@2x.webp 2x"
-           src="assets/model-cars.webp" width="308" height="308"
+      <img srcset="/assets/model-cars@2x.webp 2x"
+           src="/assets/model-cars.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Model Cars</h3>
@@ -339,8 +340,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/porsche-design@2x.webp 2x"
-           src="assets/porsche-design.webp" width="308" height="308"
+      <img srcset="/assets/porsche-design@2x.webp 2x"
+           src="/assets/porsche-design.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Apparel</h3>
@@ -365,8 +366,8 @@
       compact="true"
       aspect-ratio="{base: '4:3', xs: '16:9', s: '1:1'}"
     >
-      <img srcset="assets/christmas@2x.webp 2x"
-           src="assets/christmas.webp" width="308" height="308"
+      <img srcset="/assets/christmas@2x.webp 2x"
+           src="/assets/christmas.webp" width="308" height="308"
            alt="Some alternative text for screen readers describing the image"/>
     </p-link-tile>
     <h3>Gifts</h3>
@@ -375,6 +376,7 @@
     <a href="#">For Kids</a>
   </p-flyout-navigation-item>
 </p-flyout-navigation>
+
 <script type="module" src="main.js"></script>
 </body>
 </html>
