@@ -12,6 +12,8 @@
     "@porsche-design-system/components-js": "^3.10.0-rc.3"
   },
   "devDependencies": {
+    "@porsche-design-system/prettier-config": "^1.0.0",
+    "prettier": "^3.1.0",
     "sass": "^1.69.5",
     "vite": "^5.0.0"
   },
