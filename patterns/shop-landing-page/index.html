@@ -10,7 +10,8 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure id="button-open-menu" class="header__button" theme="dark" icon="menu-lines" hide-label="{base: true, xs: false}"
+      <p-button-pure id="button-open-menu" class="header__button" theme="dark" icon="menu-lines"
+                     hide-label="{base: true, xs: false}"
                      type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
       <p-button-pure class="header__button" theme="dark" icon="search" hide-label="true" type="button">Search
@@ -75,15 +76,30 @@
       </div>
     </section>
     <section class="trending-products">
-      <div class="trending-products__header">
-        <p-display size="small" align="center" tag="h2">Trending Products</p-display>
-        <p-link-pure href="/">Discover all trending products</p-link-pure>
-      </div>
-      <div class="trending-products__content">
-        <div class="link-tile-product"></div>
-        <div class="link-tile-product"></div>
-        <div class="link-tile-product"></div>
-      </div>
+      <p-carousel slides-per-page="{ base: 2, s: 3 }" align-header="center" width="basic">
+        <div slot="heading" class="trending-products__header">
+          <p-display size="small" align="center" tag="h2">Trending Products</p-display>
+          <p-link-pure href="/">Discover all trending products</p-link-pure>
+        </div>
+        <p-link-tile-product aspect-ratio="{ base: '9:16', xs: '3:4' }" heading="Weekender" price="911,00 €"
+                             like-button="false" href="#">
+          <img srcset="https://porsche-design-system.github.io/porsche-design-system/weekender@2x.webp 2x"
+               src="https://porsche-design-system.github.io/porsche-design-system/weekender.webp" width="960"
+               height="1080" alt="Some alternative text for screen readers describing the image"/>
+        </p-link-tile-product>
+        <p-link-tile-product aspect-ratio="{ base: '9:16', xs: '3:4' }" heading="Backpack" price="911,00 €"
+                             like-button="false" href="#">
+          <img srcset="https://porsche-design-system.github.io/porsche-design-system/backpack@2x.webp 2x"
+               src="https://porsche-design-system.github.io/porsche-design-system/backpack.webp" width="960"
+               height="1080" alt="Some alternative text for screen readers describing the image"/>
+        </p-link-tile-product>
+        <p-link-tile-product aspect-ratio="{ base: '9:16', xs: '3:4' }" heading="Sneaker" price="911,00 €"
+                             like-button="false" href="#">
+          <img srcset="https://porsche-design-system.github.io/porsche-design-system/sneaker@2x.webp 2x"
+               src="https://porsche-design-system.github.io/porsche-design-system/sneaker.webp" width="960"
+               height="1080" alt="Some alternative text for screen readers describing the image"/>
+        </p-link-tile-product>
+      </p-carousel>
     </section>
     <section class="shop-the-look">
       <p-carousel slides-per-page="{ base: 1, xs: 2 }" align-header="center" width="basic">

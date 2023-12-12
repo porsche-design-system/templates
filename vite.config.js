@@ -10,7 +10,7 @@ const transformIndexHtmlPlugin = () => {
         `default-src 'self' https://cdn.ui.porsche.com`,
         `style-src 'self' https://cdn.ui.porsche.com 'unsafe-inline'`,
         `script-src 'self' https://cdn.ui.porsche.com ${getLoaderScript({ format: 'sha256' })}`,
-        `img-src 'self' https://cdn.ui.porsche.com data:` // data: is needed for inline background images, e.g. used in checkbox-wrapper and radio-button-wrapper
+        `img-src 'self' https://cdn.ui.porsche.com https://porsche-design-system.github.io data:` // data: is needed for inline background images, e.g. used in checkbox-wrapper and radio-button-wrapper
       ].join('; ');
 
       const headPartials = [
