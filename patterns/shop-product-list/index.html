@@ -9,10 +9,13 @@
 <div id="app">
   <header class="header">
     <div class="header__part header__part--start">
-      <p-button-pure id="button-menu" class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}" type="button"
+      <p-button-pure id="button-menu" class="header__button" icon="menu-lines" hide-label="{base: true, xs: false}"
+                     type="button"
                      aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
-      <p-button-pure class="header__button" icon="search" hide-label="true" type="button">Search</p-button-pure>
+      <p-button-pure id="button-search" class="header__button" icon="search" hide-label="true"
+                     type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Search' }">Search
+      </p-button-pure>
     </div>
     <p-wordmark class="header__wordmark" href="#"></p-wordmark>
     <p-crest class="header__crest" href="#"></p-crest>
@@ -295,6 +298,15 @@
     <p-button-pure type="button" icon="information" id="button-size-chart">View size chart</p-button-pure>
     <p-button type="button">Add to wishlist</p-button>
   </div>
+</p-flyout>
+
+<p-flyout id="flyout-search">
+  <div slot="header">
+    <p-heading tag="h2" size="large">Search products</p-heading>
+  </div>
+  <p-text-field-wrapper label="Search for products" hide-label="true">
+    <input type="search" name="search" placeholder="e.g. Sneaker, T-Shirt,…"/>
+  </p-text-field-wrapper>
 </p-flyout>
 
 <p-flyout-navigation id="flyout-menu" active-identifier="women">

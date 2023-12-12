@@ -14,7 +14,8 @@
                      hide-label="{base: true, xs: false}"
                      type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Main navigation menu' }">Menu
       </p-button-pure>
-      <p-button-pure class="header__button" theme="dark" icon="search" hide-label="true" type="button">Search
+      <p-button-pure id="button-search" class="header__button" theme="dark" icon="search" hide-label="true"
+                     type="button" aria="{ 'aria-haspopup': 'dialog', 'aria-label': 'Search' }">Search
       </p-button-pure>
     </div>
     <p-wordmark class="header__wordmark" href="#" theme="dark"></p-wordmark>
@@ -183,6 +184,15 @@
   </main>
   <footer class="footer"></footer>
 </div>
+
+<p-flyout id="flyout-search">
+  <div slot="header">
+    <p-heading tag="h2" size="large">Search products</p-heading>
+  </div>
+  <p-text-field-wrapper label="Search for products" hide-label="true">
+    <input type="search" name="search" placeholder="e.g. Sneaker, T-Shirt,…"/>
+  </p-text-field-wrapper>
+</p-flyout>
 
 <p-flyout-navigation id="flyout-menu">
   <p-flyout-navigation-item identifier="women" label="Women">
