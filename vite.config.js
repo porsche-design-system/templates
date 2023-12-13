@@ -39,6 +39,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        'shop-checkout': resolve(__dirname, 'patterns/shop-checkout/index.html'),
         'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
         'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
         'shop-product-detail': resolve(__dirname, 'patterns/shop-product-detail/index.html'),
