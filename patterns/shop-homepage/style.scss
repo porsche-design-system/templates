@@ -209,7 +209,7 @@
       grid-template-columns: 4rem minmax(0, 1fr) auto;
       gap: $pds-spacing-fluid-small;
       align-items: center;
-      margin: 0 calc($pds-spacing-fluid-small * -1) !important;
+      margin: 0 calc(#{$pds-spacing-fluid-small} * -1) !important;
       padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small !important;
       text-decoration: none !important;
 
