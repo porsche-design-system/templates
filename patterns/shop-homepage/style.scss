@@ -19,11 +19,13 @@
     display: flex;
     gap: $pds-spacing-fluid-small;
 
-    :first-of-type {
+    &:first-of-type {
+      margin-inline-start: calc(#{$pds-spacing-static-x-small} * -1);
       justify-content: flex-start;
     }
 
     &:last-of-type {
+      margin-inline-end: calc(#{$pds-spacing-static-x-small} * -1);
       justify-content: flex-end;
     }
   }
@@ -219,5 +221,6 @@
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
+  margin-top: $pds-spacing-fluid-x-large;
   height: 500px;
 }

@@ -3,21 +3,15 @@ import './style.scss';
 /**
  * Handle Added to Cart flyout
  */
-const filterFlyout = document.getElementById('addedToCartFlyout');
-filterFlyout.addEventListener('dismiss', () => {
-  filterFlyout.open = false;
-});
-document.getElementById('addedToCartButton').addEventListener('click', () => {
-  filterFlyout.open = true;
-});
+const flyoutAddToCart = document.getElementById('flyout-add-to-cart');
+const buttonAddToCart = document.getElementById('button-add-to-cart');
+flyoutAddToCart.addEventListener('dismiss', () => flyoutAddToCart.open = false);
+buttonAddToCart.addEventListener('click', () => flyoutAddToCart.open = true);
 
 /**
- * Handle View Size Chart modal
+ * Handle Modal: Size Chart
  */
-const sizeChartModal = document.getElementById('sizeChartModal');
-sizeChartModal.addEventListener('dismiss', () => {
-  sizeChartModal.open = false;
-});
-document.getElementById('sizeChartButton').addEventListener('click', () => {
-  sizeChartModal.open = true;
-});
+const modalSizeChart = document.getElementById('modal-size-chart');
+const buttonSizeChart = document.getElementById('button-size-chart');
+modalSizeChart.addEventListener('dismiss', () => modalSizeChart.open = false);
+buttonSizeChart.addEventListener('click', () => modalSizeChart.open = true);

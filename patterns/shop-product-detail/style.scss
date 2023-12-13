@@ -2,192 +2,188 @@
 
 .header {
   @include pds-grid;
-  align-items: center;
   margin-top: $pds-spacing-fluid-medium;
+
+  &__nav {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: $pds-spacing-fluid-small;
+    align-items: center;
+  }
 
   &__part {
     display: flex;
     gap: $pds-spacing-fluid-small;
 
-    &--start {
-      grid-column: $pds-grid-wide-column-start / span 2;
+    &:first-of-type {
+      margin-inline-start: calc(#{$pds-spacing-static-x-small} * -1);
       justify-content: flex-start;
-      @include pds-media-query-min('s') {
-        grid-column: $pds-grid-wide-column-start / span 4;
-      }
     }
 
-    &--end {
-      grid-column: 6 / $pds-grid-wide-column-end;
+    &:last-of-type {
+      margin-inline-end: calc(#{$pds-spacing-static-x-small} * -1);
       justify-content: flex-end;
-      @include pds-media-query-min('s') {
-        grid-column: 14 / $pds-grid-wide-column-end;
-      }
     }
   }
 
-  &__wordmark {
-    grid-column: 6 / span 8;
-    justify-self: center;
+  p-wordmark {
     @include pds-media-query-max('s') {
       display: none;
     }
   }
 
-  &__crest {
-    grid-column: 4 / span 2;
-    justify-self: center;
+  p-crest {
     @include pds-media-query-min('s') {
       display: none;
     }
   }
 
-  &__button,
-  &__link {
-    // padding: $pds-spacing-static-x-small $pds-spacing-static-small;
+  p-button-pure,
+  p-link-pure {
+    padding: $pds-spacing-static-x-small;
+  }
 
-    &--favorites {
-      @include pds-media-query-max('xs') {
-        display: none;
-      }
+  &__categories {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    justify-self: center;
+
+    @include pds-media-query-max('s') {
+      display: none;
     }
   }
 }
 
 .breadcrumb {
   @include pds-grid;
+  margin: $pds-spacing-fluid-medium 0 0;
 
   ol {
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
     list-style: "";
     display: flex;
-    margin: $pds-spacing-fluid-medium 0 0;
+    flex-wrap: wrap;
+    margin: 0;
     padding: 0;
 
-  }
-
-  &__divider {
-    padding: 0 $pds-spacing-fluid-x-small;
-    color: $pds-theme-light-contrast-high;
-  }
-
-  &--current {
-    color: $pds-theme-light-contrast-medium;
+    li[role="presentation"] {
+      padding: 0 $pds-spacing-fluid-x-small;
+    }
   }
 }
 
 .product-detail {
   @include pds-grid;
+  row-gap: $pds-spacing-fluid-x-large;
   margin-top: $pds-spacing-fluid-medium;
 
   &__gallery {
     @include pds-skeleton('light');
-    aspect-ratio: 3 / 4;
-    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
+    aspect-ratio: 4 / 3;
+
     @include pds-media-query-min('s') {
       grid-column: $pds-grid-extended-column-start / span 8;
+      aspect-ratio: 3 / 4;
     }
   }
 
   &__article {
-    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
+
     @include pds-media-query-min('s') {
-      grid-column: 12 / $pds-grid-extended-column-end;
+      grid-column: span 6 / $pds-grid-extended-column-end;
+    }
+
+    @include pds-media-query-min('m') {
+      grid-column: span 5 / $pds-grid-extended-column-end;
     }
   }
 
-  &__description {
-    margin-top: $pds-spacing-fluid-small;
+  &__header {
+    :last-child {
+      margin-top: $pds-spacing-fluid-small;
+    }
   }
 
   &__color,
-  &__size {
-    margin-top: $pds-spacing-fluid-small;
+  &__size,
+  &__footer,
+  &__about {
+    margin-top: $pds-spacing-fluid-medium;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pds-spacing-fluid-x-small;
+
     h2 {
       @include pds-heading-small;
-      font-weight: initial;
-      margin: $pds-spacing-fluid-medium 0 0;
+      font-weight: $pds-font-weight-regular;
+      margin: 0; // ua-style reset
+
       span {
-        font-weight: $pds-font-weight-bold;
+        font-weight: $pds-font-weight-semi-bold;
       }
     }
   }
 
   &__color-swatch {
-    margin-top: $pds-spacing-fluid-x-small;
     @include pds-skeleton('light');
     height: 40px;
   }
 
   &__size {
-    > p-segmented-control {
-      margin-top: $pds-spacing-fluid-x-small;
-    }
-    > p-button-pure {
-      margin-top: $pds-spacing-fluid-x-small;
-    }
-    > p-button {
-      margin-top: $pds-spacing-fluid-medium;
-      width: 100%;
+    p-button-pure {
+      align-self: flex-start;
     }
   }
 
   &__actions {
     margin-top: $pds-spacing-fluid-small;
     display: flex;
-    justify-content: space-between;
-    > * {
-      padding: $pds-spacing-static-x-small;
-      @include pds-media-query-min('l') {
-        padding: $pds-spacing-static-medium;
-      }
-    }
+    gap: $pds-spacing-fluid-small;
   }
 
   &__benefits {
     list-style: "";
     margin: $pds-spacing-fluid-medium 0 0;
     padding: 0;
+
     li {
+      @include pds-text-small;
       display: flex;
       column-gap: $pds-spacing-fluid-x-small;
+
       + li {
         margin-top: $pds-spacing-fluid-x-small;
       }
     }
   }
 
-  &__about {
-    margin-top: $pds-spacing-fluid-medium;
-
-    p-heading + p-text {
-      margin-top: $pds-spacing-fluid-x-small;
-    }
-    p-text + p-text {
-      margin-top: $pds-spacing-fluid-medium;
-    }
-  }
-
   &__reviews {
     margin-top: $pds-spacing-fluid-large;
+    display: flex;
+    flex-direction: column;
+    row-gap: $pds-spacing-fluid-x-small;
+
     > div {
       @include pds-skeleton('light');
       height: 40px;
-      margin-top: $pds-spacing-fluid-x-small;
     }
   }
 }
 
-.cart-flyout {
-  &__thumbnail {
-    width: 134px;
-    aspect-ratio: 1 / 1 ;
-    margin-top: $pds-spacing-fluid-medium;
-    @include pds-skeleton('light');
+.flyout-add-to-cart {
+  --p-flyout-width: 25rem;
+  --p-flyout-max-width: 100%;
+
+  img:first-of-type {
+    display: block;
+    width: 10rem;
+    height: auto;
   }
 
-  &__heading {
-    margin-top: $pds-spacing-fluid-medium;
+  &__header {
+    margin-top: $pds-spacing-fluid-small;
   }
 
   &__specs {
@@ -199,22 +195,21 @@
   }
 }
 
-.size-chart {
+.table-size-chart {
   margin-top: $pds-spacing-fluid-medium;
-  p-table-head {
-    p-table-head-cell:first-child {
-      @include pds-heading-medium;
-    }
+
+  p-table-head p-table-head-cell:first-child {
+    font-size: $pds-font-size-heading-medium;
   }
-  p-table-body {
-    p-table-head-cell {
-      @include pds-heading-small;
-    }
+
+  p-table-body p-table-cell[role="rowheader"] {
+    font-weight: $pds-font-weight-semi-bold;
   }
 }
 
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
+  margin-top: $pds-spacing-fluid-x-large;
   height: 500px;
 }
