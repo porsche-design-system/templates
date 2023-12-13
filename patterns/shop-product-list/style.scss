@@ -2,55 +2,44 @@
 
 .header {
   @include pds-grid;
-  align-items: center;
   margin-top: $pds-spacing-fluid-medium;
+
+  &__nav {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: $pds-spacing-fluid-small;
+    align-items: center;
+  }
 
   &__part {
     display: flex;
     gap: $pds-spacing-fluid-small;
 
-    &--start {
-      grid-column: $pds-grid-wide-column-start / span 2;
+    :first-of-type {
       justify-content: flex-start;
-      @include pds-media-query-min('s') {
-        grid-column: $pds-grid-wide-column-start / span 4;
-      }
     }
 
-    &--end {
-      grid-column: 6 / $pds-grid-wide-column-end;
+    &:last-of-type {
       justify-content: flex-end;
-      @include pds-media-query-min('s') {
-        grid-column: 14 / $pds-grid-wide-column-end;
-      }
     }
   }
 
-  &__wordmark {
-    grid-column: 6 / span 8;
-    justify-self: center;
+  p-wordmark {
     @include pds-media-query-max('s') {
       display: none;
     }
   }
 
-  &__crest {
-    grid-column: 4 / span 2;
-    justify-self: center;
+  p-crest {
     @include pds-media-query-min('s') {
       display: none;
     }
   }
 
-  &__button,
-  &__link {
-    // padding: $pds-spacing-static-x-small $pds-spacing-static-small;
-
-    &--favorites {
-      @include pds-media-query-max('xs') {
-        display: none;
-      }
-    }
+  p-button-pure,
+  p-link-pure {
+    padding: $pds-spacing-static-x-small;
   }
 
   &__categories {
