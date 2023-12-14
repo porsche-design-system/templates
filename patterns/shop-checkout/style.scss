@@ -144,6 +144,8 @@ h1 {
 
       a {
         @include pds-text-small;
+        @include pds-hover;
+        color: currentcolor;
         display: grid;
         grid-template-columns: 4rem minmax(0, 1fr) auto;
         gap: $pds-spacing-fluid-small;
