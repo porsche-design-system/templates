@@ -7,74 +7,73 @@
   <title>Porsche Shop (Pattern)</title>
 </head>
 <body>
-<div id="app">
-
-  <header>
-    <nav>
-      <p-link-pure href="#" icon="arrow-left">Back</p-link-pure>
-    </nav>
+<div id="app" class="layout">
+  <header class="layout__header">
+    <p-link-pure href="#" icon="arrow-left">Back</p-link-pure>
     <p-wordmark href="#"></p-wordmark>
     <p-crest href="#"></p-crest>
   </header>
-
-  <main>
-    <h1 class="heading-xx-large">Checkout</h1>
+  <main class="layout__main">
+    <p-heading tag="h1" size="xx-large" align="center">Checkout</p-heading>
     <div class="login">
-      <h2 class="heading-large">Please Login with Prosche ID or use the guest checkout</h2>
+      <p-heading tag="h2" size="large">Please Login with Prosche ID or use the guest checkout</p-heading>
       <div class="login__inputs">
         <p-text-field-wrapper label="Email">
-          <input type="text" name="foo" required/>
+          <input type="text" name="email" required/>
         </p-text-field-wrapper>
         <p-text-field-wrapper label="Password" show-password-toggle="false">
-          <input type="password" name="foo" required />
+          <input type="password" name="password" required/>
         </p-text-field-wrapper>
         <div class="login__inputs__actions">
           <p-checkbox-wrapper label="Remember me">
-            <input type="checkbox" name="foo"/>
+            <input type="checkbox" name="remember-me"/>
           </p-checkbox-wrapper>
           <p-link-pure underline="true" href="/">Forgot password?</p-link-pure>
         </div>
       </div>
-      <p-button>Log In</p-button>
-      <div class="login__divider">
-        <p-divider></p-divider>
-        <p>or</p>
-        <p-divider></p-divider>
-      </div>
-      <p-button variant="secondary">Guest Checkout</p-button>
-    </div>
-
-    <div class="checkout">
-      <section>
-        <div class="checkout__heading">
-          <h2 class="heading-large">1. Personal Details</h2>
+      <div class="login__footer">
+        <p-button>Log In</p-button>
+        <div class="login__divider">
+          <p-divider></p-divider>
+          <span>or</span>
+          <p-divider></p-divider>
         </div>
-        <p-radio-button-wrapper label="Pick up your items at the next store">
-          <input type="radio" name="foo"/>
-        </p-radio-button-wrapper>
-        <p-radio-button-wrapper label="Home Delivery">
-          <input type="radio" name="foo" checked />
-        </p-radio-button-wrapper>
+        <p-button variant="secondary">Guest Checkout</p-button>
+      </div>
+    </div>
+    <div class="checkout">
+      <section class="checkout__section">
+        <div class="checkout__heading">
+          <h2>1. Personal Details</h2>
+        </div>
+        <div class="checkout__radio-buttons">
+          <p-radio-button-wrapper label="Pick up your items at the next store">
+            <input type="radio" name="delivery"/>
+          </p-radio-button-wrapper>
+          <p-radio-button-wrapper label="Home Delivery">
+            <input type="radio" name="delivery" checked/>
+          </p-radio-button-wrapper>
+        </div>
         <div class="checkout__inputs">
           <p-text-field-wrapper label="Address Name (e.g.) Home, Office, etc.">
-            <input type="text" name="foo"/>
+            <input type="text" name="address"/>
           </p-text-field-wrapper>
-          <div class="checkout__inputs__name">
-            <p-text-field-wrapper label="First Name">
-              <input type="text" name="foo" required/>
+          <div class="checkout__group">
+            <p-text-field-wrapper label="Firstname">
+              <input type="text" name="firstname" required/>
             </p-text-field-wrapper>
-            <p-text-field-wrapper label="Last Name">
-              <input type="text" name="foo" required/>
+            <p-text-field-wrapper label="Lastname">
+              <input type="text" name="lastname" required/>
             </p-text-field-wrapper>
           </div>
           <p-text-field-wrapper label="Address 1">
-            <input type="text" name="foo" required/>
+            <input type="text" name="address-1" required/>
           </p-text-field-wrapper>
           <p-text-field-wrapper label="Address 2">
-            <input type="text" name="foo"/>
+            <input type="text" name="address-2"/>
           </p-text-field-wrapper>
           <p-select-wrapper filter="true" label="Some label">
-            <select name="some-name">
+            <select name="country">
               <option>Select country</option>
               <option value="AF">Afghanistan</option>
               <option value="AX">Åland Islands</option>
@@ -95,96 +94,105 @@
             </select>
           </p-select-wrapper>
           <p-text-field-wrapper label="Zip / postal code">
-            <input type="text" name="foo" required/>
+            <input type="text" name="zip" required/>
           </p-text-field-wrapper>
           <p-text-field-wrapper label="Phone" unit="+49" unit-position="prefix">
-            <input type="number" name="foo" required/>
+            <input type="number" name="phone" required/>
           </p-text-field-wrapper>
         </div>
-        <p-checkbox-wrapper label="Bill to this address">
-          <input type="checkbox" name="foo" checked/>
-        </p-checkbox-wrapper>
-        <p-checkbox-wrapper label="Ship to this address">
-          <input type="checkbox" name="foo" checked/>
-        </p-checkbox-wrapper>
-        <p-button-pure icon="plus">Add shipping address</p-button-pure>
-        <div>
+        <div class="checkout__checkboxes">
+          <p-checkbox-wrapper label="Bill to this address">
+            <input type="checkbox" name="bill-to-this-address" checked/>
+          </p-checkbox-wrapper>
+          <p-checkbox-wrapper label="Ship to this address">
+            <input type="checkbox" name="ship-to-this-address" checked/>
+          </p-checkbox-wrapper>
+          <p-button-pure icon="plus">Add shipping address</p-button-pure>
+        </div>
+        <div class="checkout__footer">
           <p-button>Continue to shipping</p-button>
         </div>
       </section>
-      <section>
-        <div class="checkout__heading">
-          <h2 class="heading-large color--disabled">2. Shipping</h2>
+      <section class="checkout__section">
+        <div class="checkout__heading checkout__heading--disabled">
+          <h2>2. Shipping</h2>
           <p-icon name="lock" color="state-disabled" aria="{ 'aria-label': 'Lock icon' }"></p-icon>
         </div>
       </section>
-      <section>
-        <div class="checkout__heading">
-          <h2 class="heading-large color--disabled">3. Payment</h2>
+      <section class="checkout__section">
+        <div class="checkout__heading checkout__heading--disabled">
+          <h2>3. Payment</h2>
           <p-icon name="lock" color="state-disabled" aria="{ 'aria-label': 'Lock icon' }"></p-icon>
         </div>
       </section>
-      <section>
-        <div class="checkout__heading">
-          <h2 class="heading-large color--disabled">4. Summary</h2>
+      <section class="checkout__section">
+        <div class="checkout__heading checkout__heading--disabled">
+          <h2>4. Summary</h2>
           <p-icon name="lock" color="state-disabled" aria="{ 'aria-label': 'Lock icon' }"></p-icon>
         </div>
       </section>
     </div>
   </main>
-
-  <aside>
+  <aside class="layout__aside">
     <div class="shopping-cart">
       <div class="shopping-cart__products">
         <a href="#">
           <img srcset="https://porsche-design-system.github.io/porsche-design-system/weekender@2x.webp 2x"
                src="https://porsche-design-system.github.io/porsche-design-system/weekender.webp" width="960"
                height="1080" alt=""/>
-          <div><b class="text-x-small">Porsche Bracelet</b>
-            <p class="text-xx-small">Black, One Size</p></div>
-          <p class="text-small">911,00 €</p>
+          <span>
+            <b>Porsche Bracelet</b>
+            <span>Black, One Size</span>
+          </span>
+          <span>911,00 €</span>
         </a>
         <a href="#">
           <img srcset="https://porsche-design-system.github.io/porsche-design-system/sneaker@2x.webp 2x"
                src="https://porsche-design-system.github.io/porsche-design-system/sneaker.webp" width="960"
                height="1080" alt=""/>
-          <div><b class="text-x-small">Porsche Bracelet</b>
-            <p class="text-xx-small">Black, One Size</p></div>
-          <p class="text-small">911,00 €</p>
+          <span>
+            <b>Porsche Bracelet</b>
+            <span>Black, One Size</span>
+          </span>
+          <span>911,00 €</span>
         </a>
         <a href="#">
           <img srcset="https://porsche-design-system.github.io/porsche-design-system/sneaker@2x.webp 2x"
                src="https://porsche-design-system.github.io/porsche-design-system/sneaker.webp" width="960"
                height="1080" alt=""/>
-          <div><b class="text-x-small">Porsche Bracelet</b>
-            <p class="text-xx-small">Black, One Size</p></div>
-          <p class="text-small">911,00 €</p>
+          <span>
+            <b>Porsche Bracelet</b>
+            <span>Black, One Size</span>
+          </span>
+          <span>911,00 €</span>
         </a>
         <a href="#">
           <img srcset="https://porsche-design-system.github.io/porsche-design-system/backpack@2x.webp 2x"
                src="https://porsche-design-system.github.io/porsche-design-system/backpack.webp" width="960"
                height="1080" alt=""/>
-          <div><b class="text-x-small">EvoKNIT® Trainers II</b>
-            <p class="text-xx-small">Black, One Size</p></div>
-          <p class="text-small">911,00 €</p>
+          <span>
+            <b>EvoKNIT® Trainers II</b>
+            <span>Black, One Size</span>
+          </span>
+          <span>911,00 €</span>
         </a>
       </div>
       <div class="shopping-cart__summary">
         <div>
-          <p>Subtotal</p>
-          <p>SGD 340.00</p>
+          <p-text>Subtotal</p-text>
+          <p-text>SGD 340.00</p-text>
         </div>
         <div>
-          <p>*GST Inclusive</p>
-          <p>SGD 25.19</p>
+          <p-text>*GST Inclusive</p-text>
+          <p-text>SGD 25.19</p-text>
         </div>
         <div>
-          <p>Shipping</p>
-          <p>SDG 0.00</p>
+          <p-text>Shipping</p-text>
+          <p-text>SDG 0.00</p-text>
         </div>
         <div>
-          <p>Grand Total</p>
-          <p>SDG 340.00</p>
+          <p-text weight="semi-bold">Grand Total</p-text>
+          <p-text weight="semi-bold">SDG 340.00</p-text>
         </div>
       </div>
     </div>
