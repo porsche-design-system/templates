@@ -43,6 +43,7 @@ export default defineConfig({
         'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
         'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
         'shop-product-detail': resolve(__dirname, 'patterns/shop-product-detail/index.html'),
+        'shop-shopping-cart': resolve(__dirname, 'patterns/shop-shopping-cart/index.html'),
       },
     },
   },

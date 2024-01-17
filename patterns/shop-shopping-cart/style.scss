@@ -80,95 +80,48 @@
   }
 }
 
-.login {
+.shopping-cart-list {
   display: flex;
   flex-direction: column;
   gap: $pds-spacing-fluid-medium;
 
-  &__inputs {
-    display: flex;
-    flex-direction: column;
-    gap: $pds-spacing-fluid-small;
-
-    &__actions {
-      display: flex;
-      flex-direction: column;
-      gap: $pds-spacing-fluid-small;
-      margin-top: $pds-spacing-fluid-small;
-
-      @include pds-media-query-min('xs') {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-  }
-
-  &__footer {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: $pds-spacing-fluid-medium;
   }
 
-  &__divider {
+  li {
     display: grid;
-    grid-template-columns: minmax(0px, 1fr) auto minmax(0px, 1fr);
-    align-items: center;
-
-    span {
-      @include pds-text-x-small;
-      text-transform: uppercase;
-      padding: 0 $pds-spacing-fluid-medium;
-    }
-  }
-}
-
-.checkout {
-  display: flex;
-  flex-direction: column;
-  gap: $pds-spacing-fluid-large;
-
-  &__section {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 40% minmax(0, 1fr);
     gap: $pds-spacing-fluid-medium;
-  }
-
-  &__heading {
-    display: flex;
-    gap: $pds-spacing-fluid-small;
-    justify-content: space-between;
     align-items: center;
+  }
 
-    &--disabled {
-      color: $pds-theme-light-state-disabled;
-    }
+  &__image {
+    aspect-ratio: 1/1;
+    background: $pds-theme-light-background-surface;
+    border-radius: $pds-border-radius-large;
 
-    h2 {
-      @include pds-heading-large;
-      margin: 0; // ua-style reset
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
-  &__checkboxes,
-  &__radio-buttons,
-  &__inputs {
+  &__amount {
     display: flex;
-    flex-direction: column;
     gap: $pds-spacing-fluid-small;
+    margin-bottom: $pds-spacing-fluid-small;
   }
 
-  &__group {
-    display: flex;
-    flex-direction: column;
-    gap: $pds-spacing-fluid-small;
-
-    @include pds-media-query-min('xs') {
-      flex-direction: row;
-
-      p-text-field-wrapper {
-        flex-grow: 1;
-      }
-    }
+  &__variant {
+    margin: $pds-spacing-fluid-x-small 0;
   }
 }
 
@@ -177,46 +130,6 @@
   flex-direction: column;
   gap: $pds-spacing-fluid-medium;
   width: min(30rem, 100%);
-
-  &__products {
-    display: flex;
-    flex-direction: column;
-    gap: $pds-spacing-fluid-small;
-
-    a {
-      @include pds-text-small;
-      @include pds-hover;
-      @include pds-focus;
-      color: $pds-theme-light-primary;
-      display: grid;
-      grid-template-columns: 4rem minmax(0, 1fr) auto;
-      gap: $pds-spacing-fluid-small;
-      align-items: center;
-      margin: 0 calc(#{$pds-spacing-fluid-small} * -1);
-      padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small;
-      text-decoration: none;
-
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      span:first-of-type {
-        display: flex;
-        flex-direction: column;
-        @include pds-text-x-small;
-
-        b {
-          font-weight: $pds-font-weight-semi-bold;
-        }
-
-        span {
-          @include pds-text-xx-small;
-        }
-      }
-    }
-  }
 
   &__summary {
     display: flex;
@@ -231,6 +144,50 @@
       &:last-child {
         margin-top: $pds-spacing-fluid-small;
       }
+    }
+  }
+
+  &__checkout {
+    display: flex;
+    flex-direction: column;
+    gap: $pds-spacing-fluid-small;
+  }
+}
+
+.promo-gift {
+  margin-top: $pds-spacing-fluid-medium;
+  display: flex;
+  flex-direction: column;
+  gap: $pds-spacing-fluid-medium;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $pds-spacing-fluid-small;
+  }
+
+  &__code {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: $pds-spacing-fluid-small;
+    align-items: flex-end;
+  }
+
+  &__status {
+    border: $pds-border-width-thin solid $pds-theme-light-contrast-low;
+    border-radius: $pds-border-radius-small;
+    padding: $pds-spacing-fluid-small;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: $pds-spacing-fluid-small;
+
+    :nth-child(2) {
+      grid-row: 2;
+    }
+
+    :nth-child(3) {
+      grid-row: 1 / 3;
+      align-self: center;
     }
   }
 }
