@@ -13,7 +13,7 @@
     align-items: center;
     margin-top: $pds-spacing-fluid-medium;
 
-    @include pds-media-query-min('s') {
+    @include pds-media-query-min('m') {
       grid-column-end: span 11;
     }
 
@@ -37,45 +37,42 @@
   }
 
   &__main {
-    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
     display: flex;
     flex-direction: column;
     gap: $pds-spacing-fluid-large;
     margin: $pds-spacing-fluid-medium 0 $pds-spacing-fluid-x-large;
 
-    @include pds-media-query-min('s') {
+    @include pds-media-query-min('m') {
       grid-area: 2 / $pds-grid-basic-column-start / auto / span 7;
     }
   }
 
   &__aside {
-    grid-area: 2 / $pds-grid-wide-column-start / auto / $pds-grid-wide-column-end;
+    grid-area: 2 / $pds-grid-basic-column-start / auto / $pds-grid-basic-column-end;
     display: flex;
     justify-content: center;
     background: $pds-theme-light-background-surface;
-    margin: 0 calc(#{$pds-grid-wide-offset-base} * -1);
-    padding: $pds-spacing-fluid-large $pds-grid-wide-offset-base;
+    margin: 0 calc(#{$pds-grid-basic-offset-base} * -1);
+    padding: $pds-spacing-fluid-large $pds-grid-basic-offset-base;
 
     @include pds-media-query-min('s') {
-      grid-area: 2 / span 7 / 3 / $pds-grid-full-column-end;
-      margin: 0;
-      padding: $pds-spacing-fluid-medium $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
+      margin: 0 calc(#{$pds-grid-basic-offset-s} * -1);
+      padding: $pds-spacing-fluid-large $pds-grid-basic-offset-s;
     }
 
     @include pds-media-query-min('m') {
-      grid-column: span 6 / $pds-grid-full-column-end;
+      grid-area: 2 / span 6 / 3 / $pds-grid-full-column-end;
+      margin: 0;
+      padding: $pds-spacing-fluid-medium $pds-spacing-fluid-medium $pds-spacing-fluid-x-large;
     }
   }
 
   &::before {
-    @include pds-media-query-min('s') {
-      content: "";
-      grid-area: 1 / span 7 / 3 / $pds-grid-full-column-end;
-      background: $pds-theme-light-background-surface;
-    }
-
     @include pds-media-query-min('m') {
-      grid-column: span 6 / $pds-grid-full-column-end;
+      content: "";
+      grid-area: 1 / span 6 / 3 / $pds-grid-full-column-end;
+      background: $pds-theme-light-background-surface;
     }
   }
 }
