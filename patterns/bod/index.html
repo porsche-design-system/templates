@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Porsche Shop – Made by Dreamers, for Dreamers."/>
+  <title>Porsche Shop (Pattern)</title>
+</head>
+<body>
+<div id="app">
+  <header class="teaser">
+    <div class="teaser__header">
+      <p-wordmark href="#" theme="dark"></p-wordmark>
+      <p-crest href="#"></p-crest>
+    </div>
+    <div class="teaser__content">
+      <p-heading theme="dark" align="center" size="xx-large" tag="h1">Find the right operating instructions</p-heading>
+      <form action="#">
+        <p-text-field-wrapper theme="dark" label="Please enter your VIN" submit-button="true">
+          <input type="search" name="vin" placeholder="E.g. W0L000051T2123456"/>
+        </p-text-field-wrapper>
+      </form>
+    </div>
+  </header>
+  <main>
+    <section class="chooser">
+      <div class="chooser__header">
+        <p-heading align="center" size="x-large" tag="h2">
+          All operating instructions
+        </p-heading>
+      </div>
+      <div class="chooser__content">
+        <button>
+          <img src="https://porsche-design-system.github.io/porsche-design-system/718.png" width="80" height="45" alt="">
+          718
+        </button>
+        <button>
+          <img src="https://porsche-design-system.github.io/porsche-design-system/panamera.png" width="80" height="45" alt="">
+          Panamera
+        </button>
+        <button>
+          <img src="https://porsche-design-system.github.io/porsche-design-system/911.png" width="80" height="45" alt="">
+          911
+        </button>
+        <button>
+          <img src="https://porsche-design-system.github.io/porsche-design-system/macan.png" width="80" height="45" alt="">
+          Macan
+        </button>
+        <button>
+          <img src="https://porsche-design-system.github.io/porsche-design-system/taycan.png" width="80" height="45" alt="">
+          Taycan
+        </button>
+      </div>
+    </section>
+    <section class="tile">
+      <div class="tile__content">
+        <p-select-wrapper label="Please select one of the following years">
+          <select name="some-name">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+          </select>
+        </p-select-wrapper>
+        <p-radio-button-wrapper class="mt-medium" label="Taycan | June 2021 - Today | Software update">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-radio-button-wrapper class="mt-x-small" label="Taycan | June 2021 - Today | Software update">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-radio-button-wrapper class="mt-x-small" label="Taycan | April 2021 - June 2021">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-button class="mt-large">Next</p-button>
+      </div>
+      <div class="tile__model">
+        <p-model-signature model="taycan" safe-zone="false"></p-model-signature>
+      </div>
+    </section>
+    <section class="tile">
+      <div class="tile__content">
+        <p-heading size="large" tag="h3">Charging equipment</p-heading>
+        <p-text>Please select one of the following manuals</p-text>
+        <p-radio-button-wrapper class="mt-medium" label="Taycan | June 2021 - Today | Software update">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-radio-button-wrapper class="mt-x-small" label="Taycan | June 2021 - Today | Software update">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-radio-button-wrapper class="mt-x-small" label="Taycan | April 2021 - June 2021">
+          <input type="radio" name="some-name-1" />
+        </p-radio-button-wrapper>
+        <p-button class="mt-large">Next</p-button>
+      </div>
+      <div class="tile__model">
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>

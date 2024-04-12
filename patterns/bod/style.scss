@@ -1,0 +1,123 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+.m {
+  &t {
+    &-x-small { margin-top: $pds-spacing-fluid-x-small; }
+    &-small { margin-top: $pds-spacing-fluid-small; }
+    &-medium { margin-top: $pds-spacing-fluid-medium; }
+    &-large { margin-top: $pds-spacing-fluid-large; }
+    &-x-large { margin-top: $pds-spacing-fluid-x-large; }
+    &-xx-large { margin-top: $pds-spacing-fluid-xx-large; }
+  }
+  &b {
+    &-x-small { margin-top: $pds-spacing-fluid-x-small; }
+    &-small { margin-top: $pds-spacing-fluid-small; }
+    &-medium { margin-top: $pds-spacing-fluid-medium; }
+    &-large { margin-top: $pds-spacing-fluid-large; }
+    &-x-large { margin-top: $pds-spacing-fluid-x-large; }
+    &-xx-large { margin-top: $pds-spacing-fluid-xx-large; }
+  }
+}
+
+#app {
+  @include pds-grid;
+
+  & > main {
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: $pds-spacing-fluid-large;
+    grid-column: 1 / -1;
+  }
+}
+
+
+.teaser {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: $pds-spacing-fluid-xx-large;
+  background: url("assets/911-head-panorama.jpg") center / cover $pds-theme-dark-background-base;
+
+  &__header {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    margin-top: $pds-spacing-fluid-large;
+    display: flex;
+    place-content: center;
+
+    p-wordmark {
+      @include pds-media-query-max('s') {
+        display: none;
+      }
+    }
+
+    p-crest {
+      @include pds-media-query-min('s') {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    margin-bottom: $pds-spacing-fluid-x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: $pds-spacing-fluid-medium;
+  }
+}
+
+.chooser {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+
+  &__header {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+
+  &__content {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+}
+
+.tile {
+  padding-top: $pds-spacing-fluid-x-large;
+  padding-bottom: $pds-spacing-fluid-x-large;
+  grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: $pds-spacing-fluid-large;
+  background: $pds-theme-light-background-surface;
+
+  @include pds-media-query-min('s') {
+    grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
+    border-radius: $pds-border-radius-large;
+  }
+
+  &__content {
+    grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
+
+    @include pds-media-query-min('s') {
+      grid-column: $pds-grid-extended-column-start / $pds-grid-extended-span-one-half;
+    }
+  }
+
+  &__model {
+    grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
+
+    @include pds-media-query-min('s') {
+      grid-column: $pds-grid-extended-span-one-half / $pds-grid-extended-column-end;
+    }
+  }
+}
+
+// footer will be implemented later
+.footer {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  @include pds-skeleton('light');
+  margin-top: $pds-spacing-fluid-x-large;
+  height: 500px;
+}

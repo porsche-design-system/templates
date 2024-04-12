@@ -117,10 +117,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.20.2.tgz#9c907b21e30a52db959ba4f80bb01a0cc403d5cc"
   integrity sha512-N49X4lJX27+l9jbLKSqZ6bKNjzQvHaT8IIFUy+YIqmXQdjYCToGWwOItDrfby14c78aDd5NHQl29xingXfCdLQ==
 
-"@porsche-design-system/components-js@^3.14.0":
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.14.0.tgz#3aae90da1d9ff3f323d06911cf5e6d9c2abc1820"
-  integrity sha512-aheloua+Zo20XmoVAHWZ16Vzp7w5KBcKqNAHazglksJG1KR/PFUAOwwaJ11cyw9TiXhcklRX+b+yagPoVWqZdQ==
+"@porsche-design-system/components-js@^3.15.0-rc.0":
+  version "3.15.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.15.0-rc.0.tgz#4c64c1de5a27e2e6ddc0d8f15563d6fe9c814bf4"
+  integrity sha512-urPT97UKERnFIPcPPlBq82qaZ6FsPXH9DkiEtmLKqaCSmrlZSWm8uaWpjlMjWPpAgXA6qHU3pbr7e0hkTHQSxw==
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
