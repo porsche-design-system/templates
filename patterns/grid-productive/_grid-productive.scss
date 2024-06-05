@@ -1,0 +1,70 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+$pds-grid-productive-span-full: var(--pds-grid-span-full);
+$pds-grid-productive-span-one-half: var(--pds-grid-span-one-half);
+$pds-grid-productive-span-one-third: var(--pds-grid-span-one-third);
+$pds-grid-productive-span-two-thirds: var(--pds-grid-span-two-thirds);
+$pds-grid-productive-min-width: 320px;
+$pds-grid-productive-max-width: 2560px;
+$pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
+
+@mixin pds-grid-productive {
+  display: grid;
+  column-gap: $pds-grid-productive-gap;
+  grid-template-areas:
+    "header"
+    "left-sidebar"
+    "main"
+    "right-sidebar"
+    "footer";
+  min-width: $pds-grid-productive-min-width;
+  max-width: $pds-grid-productive-max-width;
+  min-height: 100dvh;
+
+  & > header {
+    grid-area: header;
+  }
+
+  & > aside:first-of-type {
+    grid-area: left-sidebar;
+  }
+
+  & > aside:last-of-type {
+    grid-area: right-sidebar;
+  }
+
+  & > main {
+    --pds-grid-span-full: span 6;
+    --pds-grid-span-one-half: span 3;
+    --pds-grid-span-one-third: span 2;
+    --pds-grid-span-two-thirds: span 4;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: $pds-grid-productive-gap;
+
+    @include pds-media-query-min('s') {
+      --pds-grid-span-full: span 12;
+      --pds-grid-span-one-half: span 6;
+      --pds-grid-span-one-third: span 4;
+      --pds-grid-span-two-thirds: span 8;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+
+  & > footer {
+    grid-area: footer;
+
+    @include pds-media-query-min('s') {
+      margin-inline: calc($pds-grid-productive-gap * -1);
+    }
+  }
+
+  @include pds-media-query-min('s') {
+    grid-template: auto minmax(0, 1fr) auto / auto minmax(0, 1fr) auto;
+    grid-template-areas:
+    "header header header"
+    "left-sidebar main right-sidebar"
+    "left-sidebar footer right-sidebar";
+  }
+}

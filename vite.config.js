@@ -44,6 +44,7 @@ export default defineConfig({
         'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
         'shop-product-detail': resolve(__dirname, 'patterns/shop-product-detail/index.html'),
         'shop-shopping-cart': resolve(__dirname, 'patterns/shop-shopping-cart/index.html'),
+        'grid-productive': resolve(__dirname, 'patterns/grid-productive/index.html'),
       },
     },
   },
