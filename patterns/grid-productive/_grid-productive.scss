@@ -23,6 +23,8 @@ $pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
 
   & > header {
     grid-area: header;
+    position: sticky;
+    top: 0;
   }
 
   & > aside:first-of-type {
