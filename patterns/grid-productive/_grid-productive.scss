@@ -41,6 +41,15 @@ $pds-grid-productive-sidebar-width: clamp(240px, 187px + 6.8966vw, 320px);
 
   & > aside {
     transition: margin $pds-motion-duration-moderate $pds-motion-easing-base;
+
+    @include pds-media-query-max('s') {
+      position: fixed;
+      inset: 0;
+
+      &:not([data-open]) {
+        display: none;
+      }
+    }
   }
 
   & > aside:first-of-type {
