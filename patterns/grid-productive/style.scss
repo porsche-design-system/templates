@@ -7,10 +7,18 @@
   // The following styles are needed for visualization purposes only
   & > header {
     background: #D1FBC6;
+
+    &::before {
+      content: "Header";
+    }
   }
 
   & > aside {
     background: #FFBEBE;
+
+    &::before {
+      content: "Sidebar";
+    }
   }
 
   & > main {
@@ -19,10 +27,13 @@
 
   & > footer {
     background: #F7C6FB;
+
+    &::before {
+      content: "Footer";
+    }
   }
 
-  & > [data-label]::before {
-    content: attr(data-label);
+  & > ::before {
     display: inline-block;
     background: rgba(255,255,255,.5);
     padding: $pds-spacing-static-x-small $pds-spacing-static-small;
