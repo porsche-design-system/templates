@@ -10,7 +10,6 @@ $pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
 
 @mixin pds-grid-productive {
   display: grid;
-  column-gap: $pds-grid-productive-gap;
   grid-template-areas:
     "header"
     "left-sidebar"
@@ -21,10 +20,20 @@ $pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
   max-width: $pds-grid-productive-max-width;
   min-height: 100dvh;
 
+  @include pds-media-query-min('s') {
+    grid-template: auto minmax(0, 1fr) auto / auto minmax(0, 1fr) auto;
+    grid-template-areas:
+    "header header header"
+    "left-sidebar main right-sidebar"
+    "left-sidebar footer right-sidebar";
+  }
+
+  & > :is(header, aside, main, footer) {
+    padding: $pds-grid-productive-gap;
+  }
+
   & > header {
     grid-area: header;
-    position: sticky;
-    top: 0;
   }
 
   & > aside:first-of-type {
@@ -36,14 +45,15 @@ $pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
   }
 
   & > main {
+    grid-area: main;
     --pds-grid-span-full: span 6;
     --pds-grid-span-one-half: span 3;
     --pds-grid-span-one-third: span 2;
     --pds-grid-span-two-thirds: span 4;
-    grid-area: main;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: $pds-grid-productive-gap;
+    align-content: flex-start;
 
     @include pds-media-query-min('s') {
       --pds-grid-span-full: span 12;
@@ -56,17 +66,5 @@ $pds-grid-productive-gap: clamp(16px, 1.25vw + 12px, 24px);
 
   & > footer {
     grid-area: footer;
-
-    @include pds-media-query-min('s') {
-      margin-inline: calc($pds-grid-productive-gap * -1);
-    }
-  }
-
-  @include pds-media-query-min('s') {
-    grid-template: auto minmax(0, 1fr) auto / auto minmax(0, 1fr) auto;
-    grid-template-areas:
-    "header header header"
-    "left-sidebar main right-sidebar"
-    "left-sidebar footer right-sidebar";
   }
 }

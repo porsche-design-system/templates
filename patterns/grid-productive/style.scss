@@ -7,12 +7,10 @@
   // The following styles are needed for visualization purposes only
   & > header {
     background: #D1FBC6;
-    padding: $pds-spacing-fluid-medium;
   }
 
   & > aside {
     background: #FFBEBE;
-    padding: $pds-spacing-fluid-medium;
   }
 
   & > main {
@@ -21,23 +19,29 @@
 
   & > footer {
     background: #F7C6FB;
-    padding: $pds-spacing-fluid-medium;
   }
 
   & > [data-label]::before {
     content: attr(data-label);
+    display: inline-block;
     background: rgba(255,255,255,.5);
     padding: $pds-spacing-static-x-small $pds-spacing-static-small;
     border-radius: $pds-border-radius-small;
   }
 }
 
+.module {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
 .tile {
-  background: rgba(255, 255, 255, .5);
-  padding: $pds-spacing-fluid-medium;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: $pds-spacing-fluid-medium;
+  background: #FFF;
 
   &--full {
     grid-column: $pds-grid-productive-span-full;
