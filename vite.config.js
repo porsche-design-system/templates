@@ -39,6 +39,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        'admin-panel': resolve(__dirname, 'patterns/admin-panel/index.html'),
         'shop-checkout': resolve(__dirname, 'patterns/shop-checkout/index.html'),
         'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
         'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
