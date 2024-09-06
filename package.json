@@ -1,5 +1,5 @@
 {
-  "name": "@porsche-design-system/patterns",
+  "name": "@porsche-design-system/templates",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.15.2"
+    "@porsche-design-system/components-js": "^3.19-0-rc.1"
   },
   "devDependencies": {
     "@porsche-design-system/prettier-config": "^1.0.0",
