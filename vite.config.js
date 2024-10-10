@@ -14,7 +14,7 @@ const transformIndexHtmlPlugin = () => {
       ].join('; ');
 
       const headPartials = [
-        `<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`,
+        //`<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`, // disabled due to loading of H&N
         getInitialStyles(),
         getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
         getFontFaceStylesheet(),
@@ -39,6 +39,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        'drive-homepage': resolve(__dirname, 'patterns/drive-homepage/index.html'),
         'admin-panel': resolve(__dirname, 'patterns/admin-panel/index.html'),
         'shop-checkout': resolve(__dirname, 'patterns/shop-checkout/index.html'),
         'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
