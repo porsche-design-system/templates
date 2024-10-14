@@ -109,6 +109,24 @@
   }
 }
 
+.rent {
+  @include pds-grid;
+  margin-top: $pds-spacing-fluid-xx-large;
+
+  &__cta {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    text-align: center;
+    p-text {
+      margin-bottom: $pds-spacing-static-large;
+    }
+
+    @include pds-media-query-min('m') {
+      width: 50%;
+      margin: auto;
+    }
+  }
+}
+
 // model-chooser
 .model-chooser {
   margin-top: $pds-spacing-fluid-xx-large;
