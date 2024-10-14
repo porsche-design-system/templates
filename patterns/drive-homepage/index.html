@@ -12,7 +12,8 @@
 <div id="app">
   <phn-header locale="de-DE" page-name="home" mode="hero" theme="dark"></phn-header>
   <main>
-    <section class="hero">
+    <!-- hero -->
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__media">
         <picture>
           <source media="(max-width:480px)" srcset="assets/hero-mobile@2x.webp 2x, assets/hero-mobile.webp 1x"/>
@@ -20,8 +21,45 @@
                alt="Some alternative text for screen readers describing the image"/>
         </picture>
       </div>
-      <div class="hero__hero">
-        <p-display theme="dark" align="center" size="small" tag="h1">Ungebunden Porsche fahren auf Abruf</p-display>
+      <div class="hero__header">
+        <p-display theme="dark" align="center" size="small" tag="h1" id="hero-heading">Ungebunden Porsche fahren auf Abruf</p-display>
+      </div>
+    </section>
+
+    <!-- model chooser -->
+    <section class="model-chooser" aria-label="Wählen Sie Ihr Porsche Modell">
+      <p-carousel width="extended" slides-per-page="2" focus-on-center-slide="true" trim-space="false" gradient-color="background-base" align-header="center" heading="Welcher darf es heute sein?" description="Unsere Porsche Standorte bieten Ihnen eine vielfältige Modellauswahl und erfüllen gerne Ihre individuellen Wünsche.">
+        <div class="sideshot">
+          <p-model-signature model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
+          <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
+        </div>
+        <div class="sideshot">
+          <p-model-signature model="718" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
+          <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
+        </div>
+        <div class="sideshot">
+          <p-model-signature model="taycan" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
+          <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
+        </div>
+        <div class="sideshot">
+          <p-model-signature model="panamera" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
+          <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
+        </div>
+      </p-carousel>
+    </section>
+
+    <!-- partner -->
+    <section class="partner" aria-label="Porsche & Europcar am Flughafen">
+      <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="16 / 9" label="Mehr erfahren" description="Porsche und Europcar bieten Ihnen maximale Flexibilität am Airport – mit dem unverwechselbaren Porsche Flair.">
+        <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+      </p-link-tile>
+    </section>
+
+    <!-- benefits -->
+    <section class="benefits" aria-labelledby="benefits">
+      <p-heading size="large" tag="h2" id="benefits">Warum Porsche Drive?</p-heading>
+      <div class="mood -p-mt-m-fluid">
+        <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
       </div>
     </section>
   </main>

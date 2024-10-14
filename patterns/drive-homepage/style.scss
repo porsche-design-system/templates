@@ -1,11 +1,108 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
-.header {
+/**
+ * components
+ */
 
+// sideshot
+.sideshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  p-model-signature {
+    display: block;
+    height: 10vw;
+  }
+
+  img {
+    display: block;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+  }
 }
 
-.teaser {
+// mood
+.mood {
+  grid-column: basic-start / var(--pds-grid-basic-span-one-half);
+  aspect-ratio: 3 / 4;
 
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $pds-border-radius-large;
+    object-fit: cover;
+  }
+}
+
+/**
+ * sections
+ */
+
+// hero
+.hero {
+  @include pds-grid;
+
+  &__media {
+    grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
+    grid-row: 1 / 3;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__header {
+    margin-top: max(105vw, 336px); // limit margin <=320px
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    row-gap: $pds-spacing-fluid-medium;
+
+    @include pds-media-query-min('xs') {
+      margin-top: min(40vw, 1024px); // limit margin >=2560px
+    }
+  }
+}
+
+// model-chooser
+.model-chooser {
+  margin-top: $pds-spacing-fluid-xx-large;
+
+  p-carousel {
+    --p-gradient-color-width: 50%;
+  }
+}
+
+
+// partner
+.partner {
+  @include pds-grid;
+  margin-top: $pds-spacing-fluid-xx-large;
+
+  p-link-tile {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+}
+
+// benefits
+.benefits {
+  @include pds-grid;
+  margin-top: $pds-spacing-fluid-xx-large;
+  padding: $pds-spacing-fluid-xx-large 0;
+  background-color: $pds-theme-light-background-surface;
+  border-radius: $pds-border-radius-large $pds-border-radius-large;
+
+  p-heading:first-child {
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    justify-self: center;
+  }
 }
 
 // footer will be implemented later
