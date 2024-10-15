@@ -12,6 +12,7 @@ main {
 
 .hero {
   @include pds-grid;
+  grid-row-gap: 0;
 
   &__media {
     grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
@@ -72,6 +73,75 @@ main {
           background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><circle fill=\"%23FBFCFF\" stroke-width=\"1px\" cx=\"12\" cy=\"12\" r=\"9\"/><path fill=\"%23010205\" d=\"m8.87 13.6 3.54-5.99h1.43v5.89h1.25v.86h-1.25v2.02h-.99v-2.02h-3.98zm3.98-.1v-4.98l-2.91 4.98z\"/></svg>");
         }
       }
+    }
+  }
+}
+
+.reserve {
+  @include pds-grid;
+  grid-column: 1 / -1;
+  row-gap: $pds-spacing-static-medium;
+  margin-top: -$pds-spacing-static-x-large;
+
+  &__container {
+    background-color: $pds-theme-light-background-base;
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    padding: $pds-spacing-static-large;
+    border-radius: $pds-border-radius-large;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.24);
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: $pds-spacing-static-large;
+  }
+  &__heading {
+    grid-column: span 2;
+  }
+  &__form {
+    grid-column: span 8;
+    form {
+      display: flex;
+      gap: $pds-spacing-static-small;
+      p-text-field-wrapper:first-child {
+        flex: 1;
+      }
+    }
+  }
+  &__results {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: $pds-spacing-static-medium;
+    aspect-ratio: 4 / 5;
+    overflow: scroll;
+  }
+  &__img {
+    grid-column: span 4;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    aspect-ratio: 4 / 5;
+    border-radius: $pds-border-radius-large;
+    overflow: hidden;
+    padding: $pds-spacing-static-large;
+    box-sizing: border-box;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(26, 27, 29, 0) 0%, rgba(26, 27, 29, 0.0086472) 6.67%, rgba(26, 27, 29, 0.03551) 13.33%, rgba(26, 27, 29, 0.0816599) 20%, rgba(26, 27, 29, 0.147411) 26.67%, rgba(26, 27, 29, 0.231775) 33.33%, rgba(26, 27, 29, 0.331884) 40%, rgba(26, 27, 29, 0.442691) 46.67%, rgba(26, 27, 29, 0.557309) 53.33%, rgba(26, 27, 29, 0.668116) 60%, rgba(26, 27, 29, 0.768225) 66.67%, rgba(26, 27, 29, 0.852589) 73.33%, rgba(26, 27, 29, 0.91834) 80%, rgba(26, 27, 29, 0.96449) 86.67%, rgba(26, 27, 29, 0.991353) 93.33%, #1A1B1D 100%);
+    }
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    p-text {
+      position: relative;
+      z-index: 2;
     }
   }
 }
