@@ -12,7 +12,6 @@
 <div id="app">
   <phn-header locale="de-DE" page-name="home" mode="hero" theme="dark"></phn-header>
   <main>
-    <!-- hero -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__media">
         <picture>
@@ -40,82 +39,132 @@
       </div>
     </section>
 
-    <section class="rent">
+    <section class="rent" aria-labelledby="rent">
       <div class="rent__cta">
         <p-text size="medium" color="contrast-high" align="center">Flexible Mietoptionen ermöglichen eine große Auswahl an Modellen und unbegrenzte Freikilometer. Genießen Sie erstklassigen Service, umfassenden Versicherungsschutz und maximale Freiheit ohne langfristige Bindungen.</p-text>
-        <p-button>Jetzt Fahrzeug reservieren</p-button>
+        <p-button id="rent">Jetzt Fahrzeug reservieren</p-button>
       </div>
     </section>
 
-    <!-- model chooser -->
     <section class="model-chooser" aria-label="Wählen Sie Ihr Porsche Modell">
       <p-carousel width="extended" slides-per-page="2" focus-on-center-slide="true" trim-space="false" gradient-color="background-base" align-header="center" heading="Welcher darf es heute sein?" description="Unsere Porsche Standorte bieten Ihnen eine vielfältige Modellauswahl und erfüllen gerne Ihre individuellen Wünsche.">
-        <div class="sideshot">
+        <div class="model-chooser__sideshot">
           <p-model-signature model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
           <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
         </div>
-        <div class="sideshot">
+        <div class="model-chooser__sideshot">
           <p-model-signature model="718" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
           <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
         </div>
-        <div class="sideshot">
+        <div class="model-chooser__sideshot">
           <p-model-signature model="taycan" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
           <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
         </div>
-        <div class="sideshot">
+        <div class="model-chooser__sideshot">
           <p-model-signature model="panamera" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
           <img src="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2560&amp;h=697&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format" width="2560" height="697" srcset="https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=600&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 600w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1200&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1200w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=1800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 1800w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2400&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2400w,https://images-porsche.imgix.net/-/media/646ED7CDD4DF4060A4823F3A9DB8DA22_97CB2E119D8749C19004EC939CD09E96_CZ25W01IX0010911-carrera-side?w=2800&amp;q=45&amp;crop=faces%2Centropy%2Cedges&amp;auto=format 2800w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche 911 Carrera in Luganoblau im Profil / Seitenansicht." loading="eager" fetchpriority="high" style="aspect-ratio: 2560 / 697;">
         </div>
       </p-carousel>
     </section>
 
-    <!-- partner -->
     <section class="partner" aria-label="Porsche & Europcar am Flughafen">
-      <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="16 / 9" label="Mehr erfahren" description="Porsche und Europcar bieten Ihnen maximale Flexibilität am Airport – mit dem unverwechselbaren Porsche Flair.">
+      <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="{ base: '9/16', xs: '4/3', s: '16/9' }" label="Mehr erfahren" description="Porsche und Europcar bieten Ihnen maximale Flexibilität am Airport – mit dem unverwechselbaren Porsche Flair.">
         <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
       </p-link-tile>
     </section>
 
-    <!-- benefits -->
-    <section class="benefits" aria-labelledby="benefits">
-      <p-heading size="large" tag="h2" id="benefits">Warum Porsche Drive?</p-heading>
-      <div class="benefits__item">
-        <div class="mood">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+    <div class="bg-surface">
+      <section class="benefits" aria-labelledby="benefits">
+        <p-heading size="large" tag="h2" id="benefits">Warum Porsche Drive?</p-heading>
+        <div class="benefits__item">
+          <div class="mood">
+            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          </div>
+          <div class="text">
+            <p-heading size="large">Experience</p-heading>
+            <p-text size="medium" color="contrast-high">Goosebumps, adrenaline: Experience the fascination of sports cars - with all different facets and according to your wishes.</p-text>
+          </div>
         </div>
-        <div class="text">
-          <p-heading size="large">Experience</p-heading>
-          <p-text size="medium" color="contrast-high">Goosebumps, adrenaline: Experience the fascination of sports cars - with all different facets and according to your wishes.</p-text>
+        <div class="benefits__item">
+          <div class="mood">
+            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          </div>
+          <div class="text">
+            <p-heading size="large">Models</p-heading>
+            <p-text size="medium" color="contrast-high">911? 718? Macan? Choose the performance that suits you best from the latest Porsche models.</p-text>
+          </div>
         </div>
-      </div>
-      <div class="benefits__item">
-        <div class="mood">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+        <div class="benefits__item">
+          <div class="mood">
+            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          </div>
+          <div class="text">
+            <p-heading size="large">Benefits</p-heading>
+            <p-text size="medium" color="contrast-high">All inclusive: second driver, insurance and plenty of free kilometres. So you can fully concentrate on the essential: driving.</p-text>
+          </div>
         </div>
-        <div class="text">
-          <p-heading size="large">Models</p-heading>
-          <p-text size="medium" color="contrast-high">911? 718? Macan? Choose the performance that suits you best from the latest Porsche models.</p-text>
+        <div class="benefits__item">
+          <div class="mood">
+            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          </div>
+          <div class="text">
+            <p-heading size="large">Service</p-heading>
+            <p-text size="medium" color="contrast-high">Top performance - far beyond the vehicle. Porsche Drive Rental offers you a personal handover and a comprehensive instruction.</p-text>
+          </div>
         </div>
-      </div>
-      <div class="benefits__item">
-        <div class="mood">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+      </section>
+
+      <section class="drive-steps" aria-labelledby="drive-steps">
+        <p-heading size="large" tag="h2" id="drive-steps" align="center">So funktioniert Porsche Drive</p-heading>
+        <div class="drive-steps__container">
+          <div class="drive-steps__step">
+            <p-icon name="pin" aria="{ 'aria-label': 'Pin icon' }"></p-icon>
+            <p-text align="center">Mietstation wählen</p-text>
+          </div>
+          <div class="drive-steps__step">
+            <p-icon name="car" aria="{ 'aria-label': 'Car icon' }"></p-icon>
+            <p-text align="center">Porsche auswählen</p-text>
+          </div>
+          <div class="drive-steps__step">
+            <p-icon name="calendar" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
+            <p-text align="center">Zeitraum wählen</p-text>
+          </div>
+          <div class="drive-steps__step">
+            <p-icon name="steering-wheel" aria="{ 'aria-label': 'Steering wheel icon' }"></p-icon>
+            <p-text align="center">Fahrzeug abholen</p-text>
+          </div>
         </div>
-        <div class="text">
-          <p-heading size="large">Benefits</p-heading>
-          <p-text size="medium" color="contrast-high">All inclusive: second driver, insurance and plenty of free kilometres. So you can fully concentrate on the essential: driving.</p-text>
+      </section>
+    </div>
+
+    <section class="voucher" aria-label="Gutschein kaufen">
+      <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="{ base: '9/16', xs: '9/16', s: '16/9' }" label="Gutschein kaufen" description="Das schönste Geschenk? Fahrfreude. Verschenken Sie einen Gutschein und machen Sie den Traum vom Porsche fahren wahr.">
+        <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+      </p-link-tile>
+    </section>
+
+    <section class="requirements" aria-labelledby="requirements">
+      <p-heading size="large" tag="h2" id="requirements" align="center">Anforderungen</p-heading>
+      <div class="requirements__container">
+        <div class="requirements__box">
+          <p-icon name="user" aria="{ 'aria-label': 'User icon' }"></p-icon>
+          <p-text align="center">Mindestalter: 25 Jahre (35 Jahre für Turbo-, GT - oder Klassik-Modelle).</p-text>
         </div>
-      </div>
-      <div class="benefits__item">
-        <div class="mood">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+        <div class="requirements__box">
+          <p-icon name="calendar" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
+          <p-text align="center">Ein gültiger Führerschein ist seit mindestens fünf Jahren erforderlich.</p-text>
         </div>
-        <div class="text">
-          <p-heading size="large">Service</p-heading>
-          <p-text size="medium" color="contrast-high">Top performance - far beyond the vehicle. Porsche Drive Rental offers you a personal handover and a comprehensive instruction.</p-text>
+        <div class="requirements__box">
+          <p-icon name="card" aria="{ 'aria-label': 'Card icon' }"></p-icon>
+          <p-text align="center">Eine Kaution von 2.500 € (5.000 € für Turbo-, GT- oder Klassik-Modelle) ist erforderlich.</p-text>
+        </div>
+        <div class="requirements__box">
+          <p-icon name="purchase" aria="{ 'aria-label': 'Purchase icon' }"></p-icon>
+          <p-text align="center">Zahlung nur mit Kreditkarte, Mindestgültigkeit von 3 Monaten.</p-text>
         </div>
       </div>
     </section>
+
   </main>
   <footer class="footer">
     # Global footer should be used here

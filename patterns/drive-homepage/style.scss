@@ -1,34 +1,15 @@
 @use '@porsche-design-system/components-js/styles' as *;
 
-/**
- * components
- */
-
-// sideshot
-.sideshot {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-
-  p-model-signature {
-    display: block;
-    height: 10vw;
-  }
-
-  img {
-    display: block;
-    z-index: 0;
-    width: 100%;
-    height: auto;
-  }
+.bg-surface {
+  background-color: $pds-theme-light-background-surface;
 }
 
-/**
- * sections
- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: $pds-spacing-fluid-xx-large;
+}
 
-// hero
 .hero {
   @include pds-grid;
 
@@ -97,7 +78,6 @@
 
 .rent {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-xx-large;
 
   &__cta {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
@@ -113,35 +93,40 @@
   }
 }
 
-// model-chooser
 .model-chooser {
-  margin-top: $pds-spacing-fluid-xx-large;
+  &__sideshot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  p-carousel {
-    --p-gradient-color-width: 50%;
+
+    p-model-signature {
+      display: block;
+      height: 10vw;
+    }
+
+    img {
+      display: block;
+      z-index: 0;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
-
-// partner
 .partner {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-xx-large;
 
   p-link-tile {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
   }
 }
 
-// benefits
 .benefits {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-xx-large;
-  padding: $pds-spacing-fluid-xx-large 0;
-  background-color: $pds-theme-light-background-surface;
-  border-radius: $pds-border-radius-large $pds-border-radius-large;
 
-  p-heading:first-child {
+  #benefits {
+    padding: $pds-spacing-fluid-xx-large 0 $pds-spacing-fluid-x-large 0;
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
     justify-self: center;
   }
@@ -202,6 +187,64 @@
           grid-column: 5 / span 4;
         }
       }
+    }
+  }
+}
+
+.drive-steps {
+  padding: $pds-spacing-fluid-xx-large 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: $pds-spacing-fluid-x-large;
+    margin-top: $pds-spacing-fluid-x-large;
+    @include pds-media-query-max('s') {
+      flex-direction: column;
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $pds-spacing-static-large;
+  }
+}
+
+.voucher {
+  @include pds-grid;
+  p-link-tile {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+}
+
+.requirements {
+  @include pds-grid;
+
+  p-heading:first-child {
+    grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
+    justify-self: center;
+  }
+  &__container {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    margin-top: $pds-spacing-static-medium;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-row-gap: $pds-spacing-static-large;
+  }
+  &__box {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+    padding: $pds-spacing-static-large;
+    background-color: $pds-theme-light-background-surface;
+    border-radius: $pds-border-radius-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $pds-spacing-static-medium;
+
+    @include pds-media-query-min('m') {
+      grid-column: span 3; // TODO: Isn't there something like --pds-grid-basic-span-one-quarter
     }
   }
 }
