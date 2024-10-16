@@ -12,13 +12,10 @@
 <div id="app">
   <phn-header locale="de-DE" page-name="home" mode="hero" theme="dark"></phn-header>
   <main>
+    <span>
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__media">
-        <picture>
-          <source media="(max-width:480px)" srcset="assets/hero-mobile@2x.webp 2x, assets/hero-mobile.webp 1x"/>
-          <img srcset="assets/hero@2x.webp 2x" src="assets/hero.webp" width="1920" height="1200"
-               alt="Some alternative text for screen readers describing the image"/>
-        </picture>
+          <img src="assets/hero.webp" alt="Porsche Taycan seen from above"/>
       </div>
       <div class="hero__header">
         <p-display theme="dark" align="center" size="small" tag="h1" id="hero-heading">Ungebunden Porsche fahren auf Abruf.</p-display>
@@ -37,44 +34,102 @@
           </div>
         </div>
       </div>
-      <div class="reserve">
+    </section>
+
+    <section class="reserve" aria-labelledby="reserve">
+      <div class="reserve mobile">
         <div class="reserve__container">
           <div class="reserve__heading">
-            <p-heading size="medium">Jetzt Porsche reservieren</p-heading>
+            <p-heading id="reserve" size="medium">Jetzt Porsche reservieren</p-heading>
             <p-link-pure icon="none" underline="true" href="#requirements">Mehr Informationen</p-link-pure>
           </div>
-          <div class="reserve__form">
-            <form action="#" onsubmit="alert('submit'); return false;">
+          <p-text-field-wrapper id="station-input" label="Mietstation auswählen" action-icon="locate" hide-label="true">
+            <input type="search" name="some-name" placeholder="Mietstation auswählen" />
+          </p-text-field-wrapper>
+          <p-button><span style="white-space: nowrap">Jetzt reservieren</span></p-button>
+        </div>
+        <p-modal id="reserve-station-modal" fullscreen="true" aria="{ 'aria-label': 'Jetzt Porsche reservieren' }">
+          <div class="modal">
+            <p-heading size="medium">Wähle deine Mietstation</p-heading>
+            <div class="modal__inputs">
               <p-text-field-wrapper label="Some label" action-icon="locate" hide-label="true">
                 <input type="search" name="some-name" placeholder="Mietstation auswählen" />
               </p-text-field-wrapper>
               <p-text-field-wrapper label="Some label" hide-label="true">
                 <input type="text" name="some-name" placeholder="Abholung → Rückgabe" />
               </p-text-field-wrapper>
-              <p-button>Jetzt reservieren</p-button>
-            </form>
+            </div>
+            <p-text size="x-small" weight="semi-bold">Suchergebnisse</p-text>
+            <div class="modal__stations">
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+            </div>
+            <p-text size="x-small" weight="semi-bold">Beliebte Stationen</p-text>
+            <div class="modal__stations">
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+              <p-button-pure icon="pin" size="medium">
+                <p-text size="medium">Driven by Dreams Stuttgart</p-text>
+                <p-text color="contrast-medium">Dorotheen Quartier Marktstraße 1-3, 70173 Stuttgart</p-text>
+              </p-button-pure>
+            </div>
           </div>
-        </div>
-        <div class="reserve__container rental-station-popover">
+        </p-modal>
+      </div>
+
+      <div class="reserve desktop">
+        <div class="reserve__container reserve__form">
           <div class="reserve__heading">
+            <p-heading id="reserve" size="medium">Jetzt Porsche reservieren</p-heading>
+            <p-link-pure icon="none" underline="true" href="#requirements">Mehr Informationen</p-link-pure>
+          </div>
+          <p-text-field-wrapper id="station-input" label="Mietstation auswählen" action-icon="locate" hide-label="true">
+            <input type="search" name="some-name" placeholder="Mietstation auswählen" />
+          </p-text-field-wrapper>
+          <p-text-field-wrapper label="Some label" hide-label="true">
+            <input type="text" name="some-name" placeholder="Abholung → Rückgabe" />
+          </p-text-field-wrapper>
+          <p-button><span style="white-space: nowrap">Jetzt reservieren</span></p-button>
+        </div>
+
+        <div class="reserve__container dropdown">
+          <div class="dropdown__heading">
             <p-heading size="medium">Wähle deine Mietstation</p-heading>
           </div>
-          <div class="reserve__results">
-            <p-text size="x-small">Suchergebnisse</p-text>
-            <p-button-pure icon="pin" size="medium">Driven by Dreams Stuttgart</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Museum Stuttgart</p-button-pure>
-            <p-text size="x-small">Beliebte Stationen</p-text>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Osnabrück</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Leipzig</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Osnabrück</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Leipzig</p-button-pure>
-            <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
+          <div class="dropdown__results">
+            <div class="scroll-container">
+              <p-text size="x-small">Suchergebnisse</p-text>
+              <p-button-pure icon="pin" size="medium">Driven by Dreams Stuttgart</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Museum Stuttgart</p-button-pure>
+              <p-text size="x-small">Beliebte Stationen</p-text>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Osnabrück</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Leipzig</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Osnabrück</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Leipzig</p-button-pure>
+              <p-button-pure icon="pin" size="medium">Porsche Zentrum Hamburg</p-button-pure>
+            </div>
           </div>
-          <div class="reserve__img">
-            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          <div class="dropdown__img">
+            <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
             <p-text theme="dark" size="large">Driven by Dreams Stuttgart</p-text>
             <p-text theme="dark">
               Dorotheen Quartier Marktstraße 1-3<br />
@@ -84,6 +139,7 @@
         </div>
       </div>
     </section>
+      </span>
 
     <section class="rent" aria-labelledby="rent">
       <div class="rent__cta">
@@ -147,7 +203,7 @@
 
     <section class="partner" aria-label="Porsche & Europcar am Flughafen">
       <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="{ base: '9/16', xs: '4/3', s: '16/9' }" label="Mehr erfahren" description="Porsche und Europcar bieten Ihnen maximale Flexibilität am Airport – mit dem unverwechselbaren Porsche Flair.">
-        <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+        <img src="assets/eurocar.webp" alt="Porsche 911 from the side driving on the street">
       </p-link-tile>
     </section>
 
@@ -196,19 +252,19 @@
         <p-heading size="large" tag="h2" id="drive-steps" align="center">So funktioniert Porsche Drive</p-heading>
         <div class="drive-steps__container">
           <div class="drive-steps__step">
-            <p-icon name="pin" aria="{ 'aria-label': 'Pin icon' }"></p-icon>
+            <p-icon name="pin" size="large" aria="{ 'aria-label': 'Pin icon' }"></p-icon>
             <p-text align="center">Mietstation wählen</p-text>
           </div>
           <div class="drive-steps__step">
-            <p-icon name="car" aria="{ 'aria-label': 'Car icon' }"></p-icon>
+            <p-icon name="car" size="large" aria="{ 'aria-label': 'Car icon' }"></p-icon>
             <p-text align="center">Porsche auswählen</p-text>
           </div>
           <div class="drive-steps__step">
-            <p-icon name="calendar" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
+            <p-icon name="calendar" size="large" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
             <p-text align="center">Zeitraum wählen</p-text>
           </div>
           <div class="drive-steps__step">
-            <p-icon name="steering-wheel" aria="{ 'aria-label': 'Steering wheel icon' }"></p-icon>
+            <p-icon name="steering-wheel" size="large" aria="{ 'aria-label': 'Steering wheel icon' }"></p-icon>
             <p-text align="center">Fahrzeug abholen</p-text>
           </div>
         </div>
@@ -217,7 +273,7 @@
 
     <section class="voucher" aria-label="Gutschein kaufen">
       <p-link-tile href="https://porsche.com" weight="regular" aspect-ratio="{ base: '9/16', xs: '9/16', s: '16/9' }" label="Gutschein kaufen" description="Das schönste Geschenk? Fahrfreude. Verschenken Sie einen Gutschein und machen Sie den Traum vom Porsche fahren wahr.">
-        <img srcset="assets/partner-teaser@2x.webp 2x" src="assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+        <img src="assets/voucher.webp" alt="Two people opening an envelope with a voucher inside">
       </p-link-tile>
     </section>
 
@@ -225,19 +281,19 @@
       <p-heading size="large" tag="h2" id="requirement" align="center">Anforderungen</p-heading>
       <div class="requirements__container">
         <div class="requirements__box">
-          <p-icon name="user" aria="{ 'aria-label': 'User icon' }"></p-icon>
+          <p-icon name="user" size="large" aria="{ 'aria-label': 'User icon' }"></p-icon>
           <p-text align="center">Mindestalter: 25 Jahre (35 Jahre für Turbo-, GT - oder Klassik-Modelle).</p-text>
         </div>
         <div class="requirements__box">
-          <p-icon name="calendar" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
+          <p-icon name="calendar" size="large" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
           <p-text align="center">Ein gültiger Führerschein ist seit mindestens fünf Jahren erforderlich.</p-text>
         </div>
         <div class="requirements__box">
-          <p-icon name="card" aria="{ 'aria-label': 'Card icon' }"></p-icon>
+          <p-icon name="card" size="large" aria="{ 'aria-label': 'Card icon' }"></p-icon>
           <p-text align="center">Eine Kaution von 2.500 € (5.000 € für Turbo-, GT- oder Klassik-Modelle) ist erforderlich.</p-text>
         </div>
         <div class="requirements__box">
-          <p-icon name="purchase" aria="{ 'aria-label': 'Purchase icon' }"></p-icon>
+          <p-icon name="purchase" size="large" aria="{ 'aria-label': 'Purchase icon' }"></p-icon>
           <p-text align="center">Zahlung nur mit Kreditkarte, Mindestgültigkeit von 3 Monaten.</p-text>
         </div>
       </div>
