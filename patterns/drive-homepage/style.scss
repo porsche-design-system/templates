@@ -113,6 +113,7 @@ main {
     gap: $pds-spacing-static-medium;
     aspect-ratio: 4 / 5;
     overflow: scroll;
+    justify-self: end;
   }
   &__img {
     grid-column: span 4;
@@ -125,6 +126,7 @@ main {
     overflow: hidden;
     padding: $pds-spacing-static-large;
     box-sizing: border-box;
+    justify-self: end;
     &::before {
       content: "";
       position: absolute;
@@ -165,21 +167,29 @@ main {
 
 .model-chooser {
   &__sideshot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    aspect-ratio: 2 / 1;
 
+    div {
+      display: flex;
+      height: 100%;
+      position: relative;
+    }
 
     p-model-signature {
       display: block;
-      height: 10vw;
+      height: 40%;
+      width: auto;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      transform: translateY(40%);
     }
 
     img {
-      display: block;
-      z-index: 0;
       width: 100%;
-      height: auto;
+      margin-top: auto;
     }
   }
 }
