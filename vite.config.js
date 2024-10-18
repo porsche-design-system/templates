@@ -40,6 +40,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         'drive-homepage': resolve(__dirname, 'patterns/drive-homepage/index.html'),
+        'co-driver': resolve(__dirname, 'patterns/co-driver/index.html'),
         'admin-panel': resolve(__dirname, 'patterns/admin-panel/index.html'),
         'shop-checkout': resolve(__dirname, 'patterns/shop-checkout/index.html'),
         'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
