@@ -23,6 +23,7 @@ reserveResults.forEach(result => {
 
 const modelChooserCarousel = document.querySelector('p-carousel');
 modelChooserCarousel.addEventListener('update', (e) => {
-  const { activeIndex = 0 } = e.detail || {};
-  modelChooserCarousel.children[activeIndex].querySelector('p-model-signature').style.display = 'block';
+  const { activeIndex = 0, previousIndex } = e.detail || {};
+  modelChooserCarousel.children[previousIndex].querySelector('p-model-signature').classList.remove('show');
+  modelChooserCarousel.children[activeIndex].querySelector('p-model-signature').classList.add('show');
 });
