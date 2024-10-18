@@ -20,3 +20,9 @@ reserveResults.forEach(result => {
     reserveAddress.innerHTML = e.target.dataset.address;
   })
 })
+
+const modelChooserCarousel = document.querySelector('p-carousel');
+modelChooserCarousel.addEventListener('update', (e) => {
+  const { activeIndex = 0 } = e.detail || {};
+  modelChooserCarousel.children[activeIndex].querySelector('p-model-signature').style.display = 'block';
+});

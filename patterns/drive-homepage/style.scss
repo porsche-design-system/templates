@@ -30,6 +30,10 @@
     align-items: center;
     row-gap: $pds-spacing-fluid-large;
 
+    p-display {
+      animation: fadeInUp $pds-motion-duration-long $pds-motion-easing-out forwards;
+    }
+
     .steps {
       display: flex;
       gap: $pds-spacing-fluid-medium;
@@ -39,6 +43,15 @@
       }
 
       &__item {
+        animation: fadeInUp $pds-motion-duration-long $pds-motion-easing-out forwards;
+        opacity: 0;
+        transform: translateY(100px);
+        @for $i from 2 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: ($i - 1) * $pds-motion-duration-short;
+          }
+        }
+
         display: flex;
         align-items: center;
         gap: $pds-spacing-static-x-small;
@@ -240,10 +253,10 @@
 .model-chooser {
   &__sideshot {
     aspect-ratio: 2 / 1;
+    display: flex;
+    align-items: flex-end;
 
     div {
-      display: flex;
-      height: 100%;
       position: relative;
     }
 
@@ -252,7 +265,7 @@
     }
 
     p-model-signature {
-      display: block;
+      display: none;
       height: 40%;
       width: auto;
       position: absolute;
@@ -260,12 +273,11 @@
       left: 0;
       right: 0;
       margin-inline: auto;
-      transform: translateY(40%);
+      transform: translateY(-50%);
     }
 
     img {
       width: 100%;
-      margin-top: auto;
     }
   }
 }
@@ -410,4 +422,15 @@
 // footer will be implemented later
 .footer {
 
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
