@@ -1,7 +1,12 @@
 import './style.scss';
 
-document.querySelectorAll('p-flyout').forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
-document.querySelectorAll('p-modal').forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
+document
+  .querySelectorAll('p-flyout')
+  .forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
+
+document
+  .querySelectorAll('p-modal')
+  .forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
 
 const updateBackgroundOpacity = (opacity) => {
   document.querySelector('p-canvas > [slot="background"]').style.opacity = opacity;

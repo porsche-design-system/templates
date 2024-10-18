@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Porsche Admin Panel – Made by Dreamers, for Dreamers."/>
+  <meta name="description" content="Porsche Admin Panel (Template)"/>
   <title>Porsche Admin Panel (Template)</title>
 </head>
 <body>
@@ -14,28 +14,28 @@
   <div slot="header-start"></div>
 
   <div slot="header-end">
-    <p-button id="button-search" icon="search" variant="ghost" compact="true" hide-label="true"
+    <p-button icon="search" variant="ghost" compact="true" hide-label="true" onclick="document.querySelector('p-flyout#search').open = true;"
     >Open search
     </p-button>
   </div>
 
-  <div class="p-module p-flex p-gap--medium p-align-items--center">
+  <div class="-col-span-full-1 -flex -items-center -gap-static-medium">
     <p-heading size="x-large" tag="h1">Porsche Models</p-heading>
     <p-button type="button" compact="true">Add model</p-button>
   </div>
 
-  <div class="p-module">
+  <div class="-col-span-full-1 -mt-fluid-large">
     <p-tabs-bar active-tab-index="0">
       <button type="button">Overview</button>
       <button type="button">Drafts</button>
     </p-tabs-bar>
   </div>
 
-  <div class="p-module p-module--more-space-above-medium">
+  <div class="-col-span-full-1 -mt-fluid-medium">
     <p-button variant="ghost" type="button" compact="true" icon="filter">Filter</p-button>
   </div>
 
-  <div class="p-module p-module--less-space-above-medium">
+  <div class="-col-span-full-1 -mt-fluid-small">
     <p-table>
       <p-table-head>
         <p-table-head-row>
@@ -69,7 +69,7 @@
           <p-table-cell multiline="true" style="min-width: 10rem">-</p-table-cell>
           <p-table-cell>0000824402 <p-popover description="Some additional content."></p-popover></p-table-cell>
           <p-table-cell>
-            <div class="button-group">
+            <div class="-flex -gap-static-medium">
               <p-button-pure icon="edit">Edit</p-button-pure>
               <p-button-pure icon="delete">Delete</p-button-pure>
             </div>
@@ -94,7 +94,7 @@
           <p-table-cell multiline="true" style="min-width: 10rem">-</p-table-cell>
           <p-table-cell>0000824408 <p-popover description="Some additional content."></p-popover></p-table-cell>
           <p-table-cell>
-            <div class="button-group">
+            <div class="-flex -gap-static-medium">
               <p-button-pure icon="edit">Edit</p-button-pure>
               <p-button-pure icon="delete">Delete</p-button-pure>
             </div>
@@ -104,8 +104,8 @@
     </p-table>
   </div>
 
-  <div class="p-module p-module--subgrid p-module--more-space-above-large">
-    <div class="list">
+  <div class="list -col-span-full-1 -mt-fluid-large">
+    <div class="list__item">
       <p-heading size="medium" tag="h4">Your Favorites</p-heading>
       <div class="list__anchors">
         <p-link-pure href="#">New Relic</p-link-pure>
@@ -115,7 +115,7 @@
         <p-link-pure href="#">Cloud Documentation</p-link-pure>
       </div>
     </div>
-    <div class="list">
+    <div class="list__item">
       <p-heading size="medium" tag="h4">Most Suggested</p-heading>
       <div class="list__anchors">
         <p-link-pure href="#">Grafana</p-link-pure>
@@ -125,7 +125,7 @@
         <p-link-pure href="#">Prisma Cloud</p-link-pure>
       </div>
     </div>
-    <div class="list">
+    <div class="list__item">
       <p-heading size="medium" tag="h4">Quick Links</p-heading>
       <div class="list__anchors">
         <p-link-pure href="#">Tools & Services</p-link-pure>
@@ -137,55 +137,54 @@
     </div>
   </div>
 
-  <div slot="footer">
-    <p-text color="contrast-medium" size="x-small">© 2024 Dr. Ing. h.c. F. Porsche AG</p-text>
+  <div slot="footer" class="-col-span-full-1">
+    <p-text color="contrast-medium" size="xx-small">© 2024 Dr. Ing. h.c. F. Porsche AG</p-text>
   </div>
 
   <div slot="sidebar-start">
     <p-accordion heading="Some category" heading-tag="h2" compact="true">
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
     </p-accordion>
     <p-accordion heading="Some category" heading-tag="h2" compact="true">
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
     </p-accordion>
     <p-accordion heading="Some category" heading-tag="h2" compact="true">
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-      <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+      <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
     </p-accordion>
     <p-divider></p-divider>
-    <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-    <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
-    <p-link-pure href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+    <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+    <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
+    <p-link-pure class="-mt-fluid-x-small" href="#" icon="none" stretch="true">Some anchor</p-link-pure>
   </div>
 
-  <div slot="sidebar-end">
-    <p-link-pure href="#" icon="none">Profil</p-link-pure>
-    <p-link-pure href="#" icon="none">Abmelden</p-link-pure>
-    <p-divider> </p-divider>
+  <div slot="sidebar-end" class="-flex -flex-col">
+    <p-link-pure href="#" icon="none">Profile</p-link-pure>
+    <p-link-pure class="-mt-fluid-x-small" href="#" icon="none">Logout</p-link-pure>
+    <p-divider></p-divider>
     <p-link-pure href="#" icon="configurate">Settings</p-link-pure>
-    <p-switch id="theme-switch" align-label="start" stretch="true">
+    <p-switch class="-mt-fluid-x-small" id="theme-switch" align-label="start" stretch="true">
       <p-icon name="moon"> </p-icon> Dark Mode</p-switch
     >
   </div>
 </p-canvas>
 
 <p-flyout
-  id="flyout-search"
+  id="search"
   open="false"
   aria="{ 'aria-label': 'Some Heading' }"
-  style="--p-flyout-max-width: 480px"
 >
-  <p-display slot="header" size="small" tag="h2">What are you looking for?</p-display>
-  <p-text-field-wrapper label="Search" hide-label="true">
+  <p-display size="small" tag="h2">What are you looking for?</p-display>
+  <p-text-field-wrapper class="-mt-fluid-medium" label="Search" hide-label="true">
     <input type="search" name="some-name" placeholder="Some placeholder" />
   </p-text-field-wrapper>
 </p-flyout>
