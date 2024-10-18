@@ -30,10 +30,6 @@
     align-items: center;
     row-gap: $pds-spacing-fluid-large;
 
-    p-display {
-      animation: fadeInUp $pds-motion-duration-long $pds-motion-easing-out forwards;
-    }
-
     .steps {
       display: flex;
       gap: $pds-spacing-fluid-medium;
@@ -46,7 +42,7 @@
         animation: fadeInUp $pds-motion-duration-long $pds-motion-easing-out forwards;
         opacity: 0;
         transform: translateY(100px);
-        @for $i from 2 through 4 {
+        @for $i from 1 through 4 {
           &:nth-child(#{$i}) {
             animation-delay: ($i - 1) * $pds-motion-duration-short;
           }
@@ -273,7 +269,7 @@
       left: 0;
       right: 0;
       margin-inline: auto;
-      animation: modelSignatureFadeInUp $pds-motion-duration-long $pds-motion-easing-out forwards;
+      animation: model-signature-fade-in-up $pds-motion-duration-long $pds-motion-easing-out forwards;
       opacity: 0;
       transform: translateY(-50%);
       &.show {
@@ -384,6 +380,11 @@
     flex-direction: column;
     align-items: center;
     gap: $pds-spacing-static-large;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * $pds-motion-duration-short !important;
+      }
+    }
   }
 }
 
@@ -421,6 +422,12 @@
     @include pds-media-query-min('m') {
       grid-column: span 3; // TODO: Isn't there something like --pds-grid-basic-span-one-quarter
     }
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * $pds-motion-duration-short !important;
+      }
+    }
   }
 }
 
@@ -429,7 +436,7 @@
 
 }
 
-@keyframes fadeInUp {
+@keyframes fade-in-up {
   0% {
     opacity: 0;
     transform: translateY(100px);
@@ -440,7 +447,35 @@
   }
 }
 
-@keyframes modelSignatureFadeInUp {
+[data-animation="fade-in-up"] {
+  opacity: 0;
+  transform: translateY(100px);
+}
+[data-animation="fade-in-up"].animation-play {
+  animation: fade-in-up $pds-motion-duration-long $pds-motion-easing-out forwards;
+}
+
+@keyframes tile-fade-in-up {
+  0% {
+    opacity: 0.3;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animation="tile-fade-in-up"] {
+  opacity: 0.3;
+  transform: translateY(20px);
+}
+[data-animation="tile-fade-in-up"].animation-play {
+  animation: tile-fade-in-up $pds-motion-duration-long $pds-motion-easing-out forwards;
+  animation-delay: $pds-motion-duration-short;
+}
+
+@keyframes model-signature-fade-in-up {
   0% {
     opacity: 0;
     transform: translateY(50%);
