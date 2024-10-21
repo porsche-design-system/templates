@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.19-0-rc.3"
+    "@porsche-design-system/components-js": "^3.20-0-rc.0"
   },
   "devDependencies": {
     "@porsche-design-system/prettier-config": "^1.0.0",

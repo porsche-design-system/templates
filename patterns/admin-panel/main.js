@@ -12,10 +12,6 @@ document
   .querySelectorAll('p-flyout')
   .forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
 
-document
-  .getElementById('button-search')
-  .addEventListener('click', () => (document.getElementById('flyout-search').open = true));
-
 document.getElementById('theme-switch').addEventListener('update', (e) => {
   e.target.checked = e.detail.checked;
 
