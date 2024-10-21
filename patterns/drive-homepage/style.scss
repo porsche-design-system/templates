@@ -18,6 +18,9 @@
       width: 100%;
       height: 95vh;
       object-fit: cover;
+      @include pds-media-query-max('s') {
+        height: 90vh;
+      }
     }
   }
 
