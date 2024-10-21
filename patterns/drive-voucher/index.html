@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Porsche Drive – Made by Dreamers, for Dreamers."/>
+  <title>Porsche Drive Voucher (Pattern)</title>
+  <script type="module" src="//nav.porsche.com/00BC524/porsche-navigation.esm.js"></script>
+  <link rel="stylesheet" href="https://nav.porsche.com/00BC524/porsche-navigation.css"/>
+</head>
+<body>
+<div id="app">
+  <phn-header locale="de-DE" page-name="home" mode="hero" theme="dark"></phn-header>
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__media">
+          <img src="../../public/assets/hero.webp" alt="Porsche Taycan seen from above"/>
+      </div>
+      <div class="hero__header">
+        <p-display data-animation="fade-in-up" theme="dark" align="center" size="small" tag="h1" id="hero-heading">Drive Gutschein</p-display>
+        <p-text data-animation="fade-in-up" theme="dark" align="center" size="x-large" color="contrast-high">Verschenken Sie pures Adrenalin</p-text>
+      </div>
+    </section>
+
+    <section class="order">
+      <div class="order__heading">
+        <p-heading size="large" theme="dark">Gutscheinbetrag</p-heading>
+        <p-text size="small" color="contrast-medium" theme="dark">Der Betrag wird dem Porsche Geschenkgutschein hinzugefügt.</p-text>
+      </div>
+        <div class="voucher box">
+          <div class="voucher__selects">
+            <p-select theme="dark" name="voucher-car" label="Model" value="718_boxster" required>
+              <p-select-option value="718_boxster">
+                <img src="/assets/718_boxster.webp" />
+                718 Boxter
+              </p-select-option>
+              <p-select-option value="911_cabrio">
+                <img src="/assets/911_cabrio.webp" />
+                911 Cabrio
+              </p-select-option>
+              <p-select-option value="911_coupe">
+                <img src="/assets/911_coupe.webp" />
+                911 Coupe
+              </p-select-option>
+              <p-select-option value="911_gt3">
+                <img src="/assets/911_gt3.webp" />
+                911 GT3
+              </p-select-option>
+              <p-select-option value="911_targa">
+                <img src="/assets/911_targa.webp" />
+                911 Targa
+              </p-select-option>
+              <p-select-option value="taycan">
+                <img src="/assets/taycan.webp" />
+                Taycan
+              </p-select-option>
+              <p-select-option value="macan">
+                <img src="/assets/macan.webp" />
+                Macan
+              </p-select-option>
+              <p-select-option value="cayenne">
+                <img src="/assets/cayenne.webp" />
+                Cayenne
+              </p-select-option>
+            </p-select>
+            <p-select theme="dark" name="voucher-rate" label="Tarif (Stand 10/2024)" value="1" required>
+              <p-select-option value="1">1 Tag / 349 €</p-select-option>
+              <p-select-option value="2">2 Tage / 642 €</p-select-option>
+              <p-select-option value="3">3 Tage / 864 €</p-select-option>
+              <p-select-option value="4">4 Tage / 1012 €</p-select-option>
+              <p-select-option value="5">5 Tage / 1.265 €</p-select-option>
+              <p-select-option value="6">6 Tage / 1.518 €</p-select-option>
+            </p-select>
+          </div>
+          <div class="voucher__amount">
+            <p-text color="contrast-medium" align="center" theme="dark">Wählen Sie einen Gutscheinbetrag</p-text>
+            <div class="input">
+              <input type="number" placeholder="000" />
+              <p-display size="small" theme="dark">.00 €</p-display>
+            </div>
+            <p-text size="x-small" align="center" color="contrast-low" theme="dark">Mindestbetrag 30.00€</p-text>
+          </div>
+      </div>
+    </section>
+
+
+
+  </main>
+  <footer class="footer">
+    # Global footer should be used here
+  </footer>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
