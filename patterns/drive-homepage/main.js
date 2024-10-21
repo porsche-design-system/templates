@@ -1,6 +1,7 @@
 import '../global.scss';
 import './style.scss';
 
+/* Example code for demonstration purposes only. Do not use in production. **/
 const reserveModal = document.querySelector('#reserve-station-modal');
 document.querySelector('#station-input').addEventListener('click', () => {
   reserveModal.open = true;
@@ -20,6 +21,7 @@ reserveResults.forEach(result => {
     reserveAddress.innerHTML = e.target.dataset.address;
   })
 })
+/* Example code end **/
 
 // Model Chooser Carousel Animation
 const modelChooserCarousel = document.querySelector('p-carousel');

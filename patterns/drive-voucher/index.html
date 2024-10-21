@@ -75,12 +75,11 @@
               <p-select-option value="1518">6 Tage / 1.518 €</p-select-option>
             </p-select>
           </div>
-          <div class="voucher__amount">
+          <div class="voucher__input">
             <p-text color="contrast-medium" align="center" theme="dark">Wählen Sie einen Gutscheinbetrag</p-text>
-            <div class="input">
-              <input type="number" placeholder="000" />
-              <p-display size="small" theme="dark">.00 €</p-display>
-            </div>
+            <label for="voucher-amount" class="sr-only">Amount: </label>
+            <input type="number" name="voucher-amount" id="voucher-amount" placeholder="000" />
+            <p-display size="small" theme="dark">.00 €</p-display>
             <p-text size="x-small" align="center" color="contrast-low" theme="dark">Mindestbetrag 30.00€</p-text>
           </div>
         </div>
@@ -98,16 +97,16 @@
         </div>
       </div>
       <div class="order__section">
-        <div class="condition">
+        <div class="condition" data-animation="fade-in-up">
           <p-icon name="check" aria="{ 'aria-label': 'Check icon' }" theme="dark"></p-icon><p-text theme="dark">Der Gutschein wird direkt nach dem Kauf per E-Mail als PDF versendet.</p-text>
         </div>
-        <div class="condition">
+        <div class="condition" data-animation="fade-in-up">
           <p-icon name="check" aria="{ 'aria-label': 'Check icon' }" theme="dark"></p-icon><p-text theme="dark">Der Fahrer muss die Mindestanforderungen erfüllen.</p-text>
         </div>
-        <div class="condition">
+        <div class="condition" data-animation="fade-in-up">
           <p-icon name="check" aria="{ 'aria-label': 'Check icon' }" theme="dark"></p-icon><p-text theme="dark">Gutscheine sind an allen Porsche Drive Rental Standorten in Deutschland einlösbar.</p-text>
         </div>
-        <div class="condition">
+        <div class="condition" data-animation="fade-in-up">
           <p-icon name="check" aria="{ 'aria-label': 'Check icon' }" theme="dark"></p-icon><p-text theme="dark">Der Gutschein ist drei Jahre ab Ende des Kalenderjahres gültig.</p-text>
         </div>
       </div>

@@ -1,8 +1,7 @@
 import '../global.scss';
 import './style.scss';
 
-// Example code for demonstration purposes only. Do not use in production.
-
+/* Example code for demonstration purposes only. Do not use in production. **/
 const voucherCarSelect = document.querySelector('p-select[name="voucher-car"]');
 const voucherRateSelect = document.querySelector('p-select[name="voucher-rate"]');
 const voucherRate = voucherRateSelect.querySelectorAll('p-select-option');
@@ -23,3 +22,20 @@ voucherCarSelect.addEventListener('update', (e) => {
 voucherRateSelect.addEventListener('update', (e) => {
   voucherInput.value = e.target.value;
 })
+/* Example code end **/
+
+// Scroll Animations on appear
+const inViewport = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animation-play");
+      observer.unobserve(entry.target); // Animation is only played once on first viewport intersection
+    }
+  });
+};
+
+const Obs = new IntersectionObserver(inViewport);
+// Attach observer to every [data-inviewport] element:
+document.querySelectorAll('[data-animation]').forEach(el => {
+  Obs.observe(el, {});
+});
