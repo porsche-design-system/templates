@@ -14,7 +14,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__media">
-          <img src="../../public/assets/hero.webp" alt="Porsche Taycan seen from above"/>
+          <img src="/assets/hero.webp" alt="Porsche Taycan seen from above"/>
       </div>
       <div class="hero__header">
         <p-display data-animation="fade-in-up" theme="dark" align="center" size="small" tag="h1" id="hero-heading">Ungebunden Porsche fahren auf Abruf.</p-display>
@@ -38,7 +38,7 @@
     <section class="reserve mobile">
       <div class="reserve-box">
         <div class="reserve-box__heading">
-          <p-heading id="reserve" size="medium">Jetzt Porsche reservieren</p-heading>
+          <p-heading id="reserve" size="medium" tag="h2">Jetzt Porsche reservieren</p-heading>
           <p-link-pure icon="none" underline="true" href="#requirements">Mehr Informationen</p-link-pure>
         </div>
         <p-text-field-wrapper id="station-input" label="Mietstation auswählen" action-icon="locate" hide-label="true">
@@ -48,7 +48,7 @@
       </div>
       <p-modal id="reserve-station-modal" fullscreen="true" aria="{ 'aria-label': 'Jetzt Porsche reservieren' }">
         <div class="modal">
-          <p-heading size="medium">Wähle deine Mietstation</p-heading>
+          <p-heading size="medium" tag="h3">Wähle deine Mietstation</p-heading>
           <div class="modal__inputs">
             <p-text-field-wrapper label="Some label" action-icon="locate" hide-label="true">
               <input type="search" name="some-name" placeholder="Mietstation auswählen" />
@@ -94,7 +94,7 @@
     <section class="reserve desktop">
       <div class="reserve-box">
         <div class="reserve-box__heading">
-          <p-heading id="reserve" size="medium">Jetzt Porsche reservieren</p-heading>
+          <p-heading id="reserve" size="medium" tag="h2">Jetzt Porsche reservieren</p-heading>
           <p-link-pure icon="none" underline="true" href="#requirements">Mehr Informationen</p-link-pure>
         </div>
         <p-text-field-wrapper id="station-input" label="Mietstation auswählen" action-icon="locate" hide-label="true">
@@ -108,7 +108,7 @@
 
       <div class="reserve-box dropdown">
         <div class="dropdown__heading">
-          <p-heading size="medium">Wähle deine Mietstation</p-heading>
+          <p-heading size="medium" tag="h3">Wähle deine Mietstation</p-heading>
         </div>
         <div class="dropdown__results">
           <div class="scroll-container">
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="dropdown__img">
-          <img src="../../public/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
+          <img src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
           <p-text theme="dark" size="large">Driven by Dreams Stuttgart</p-text>
           <p-text theme="dark">
             Dorotheen Quartier Marktstraße 1-3<br />
@@ -199,7 +199,7 @@
 
     <section class="partner -p-mt-xxl-fluid" aria-label="Porsche & Europcar am Flughafen">
       <p-link-tile data-animation="tile-fade-in-up" href="https://porsche.com" weight="regular" aspect-ratio="{ base: '3/4', xs: '4/3', s: '16/9' }" label="Mehr erfahren" description="Porsche und Europcar bieten Ihnen maximale Flexibilität am Airport – mit dem unverwechselbaren Porsche Flair.">
-        <img src="../../public/assets/eurocar.webp" alt="Porsche 911 from the side driving on the street">
+        <img src="/assets/eurocar.webp" alt="Porsche 911 from the side driving on the street">
       </p-link-tile>
     </section>
 
@@ -207,37 +207,37 @@
       <p-heading size="large" tag="h2" id="benefits">Warum Porsche Drive?</p-heading>
       <div class="benefits__item">
         <div class="mood" data-animation="fade-in-up">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="../../public/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
-          <p-heading size="large">Experience</p-heading>
+          <p-heading size="large" tag="h3">Experience</p-heading>
           <p-text size="medium" color="contrast-high">Goosebumps, adrenaline: Experience the fascination of sports cars - with all different facets and according to your wishes.</p-text>
         </div>
       </div>
       <div class="benefits__item">
         <div class="mood" data-animation="fade-in-up">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="../../public/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
-          <p-heading size="large">Models</p-heading>
+          <p-heading size="large" tag="h3">Models</p-heading>
           <p-text size="medium" color="contrast-high">911? 718? Macan? Choose the performance that suits you best from the latest Porsche models.</p-text>
         </div>
       </div>
       <div class="benefits__item">
         <div class="mood" data-animation="fade-in-up">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="../../public/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
-          <p-heading size="large">Benefits</p-heading>
+          <p-heading size="large" tag="h3">Benefits</p-heading>
           <p-text size="medium" color="contrast-high">All inclusive: second driver, insurance and plenty of free kilometres. So you can fully concentrate on the essential: driving.</p-text>
         </div>
       </div>
       <div class="benefits__item">
         <div class="mood" data-animation="fade-in-up">
-          <img srcset="assets/partner-teaser@2x.webp 2x" src="../../public/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
+          <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
-          <p-heading size="large">Service</p-heading>
+          <p-heading size="large" tag="h3">Service</p-heading>
           <p-text size="medium" color="contrast-high">Top performance - far beyond the vehicle. Porsche Drive Rental offers you a personal handover and a comprehensive instruction.</p-text>
         </div>
       </div>
@@ -267,7 +267,7 @@
 
     <section class="voucher -p-mt-xxl-fluid" aria-label="Gutschein kaufen">
       <p-link-tile data-animation="tile-fade-in-up" href="https://porsche.com" weight="regular" aspect-ratio="{ base: '3/4', xs: '3/4', s: '16/9' }" label="Gutschein kaufen" description="Das schönste Geschenk? Fahrfreude. Verschenken Sie einen Gutschein und machen Sie den Traum vom Porsche fahren wahr.">
-        <img src="../../public/assets/voucher.webp" alt="Two people opening an envelope with a voucher inside">
+        <img src="/assets/voucher.webp" alt="Two people opening an envelope with a voucher inside">
       </p-link-tile>
     </section>
 
