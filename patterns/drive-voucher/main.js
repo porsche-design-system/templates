@@ -5,7 +5,7 @@ import './style.scss';
 const voucherCarSelect = document.querySelector('p-select[name="voucher-car"]');
 const voucherRateSelect = document.querySelector('p-select[name="voucher-rate"]');
 const voucherRate = voucherRateSelect.querySelectorAll('p-select-option');
-const voucherInput = document.querySelector('.input input');
+const voucherInput = document.querySelector('.voucher__input input');
 
 voucherCarSelect.addEventListener('update', (e) => {
   const { value } = e.detail;

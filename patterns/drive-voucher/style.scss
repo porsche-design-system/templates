@@ -89,6 +89,7 @@
     }
 
     &__input {
+      $inputPadding: calc($pds-spacing-fluid-x-large + $pds-spacing-static-medium);
       display: flex;
       align-items: center;
       background-color: $pds-theme-dark-background-base;
@@ -99,21 +100,23 @@
         pointer-events: none;
       }
       p-text:first-child {
+        padding: 0 $pds-spacing-static-small;
         top: $pds-spacing-fluid-medium;
       }
       p-text:last-child {
         font-size: $pds-font-size-display-small;
-        top: calc($pds-spacing-fluid-x-large + $pds-font-line-height);
+        top: calc($inputPadding + $pds-font-line-height);
       }
       input {
         all: unset;
-        padding: $pds-spacing-fluid-x-large 50% $pds-spacing-fluid-x-large 0;
+        padding: $inputPadding 50% $inputPadding 0;
         border: 2px solid $pds-theme-dark-contrast-medium;
         border-radius: $pds-border-radius-medium;
         text-align: right;
         width: 100%;
         color: $pds-theme-dark-primary;
         font-size: $pds-font-size-display-small;
+        font-weight: $pds-font-weight-regular;
         line-height: $pds-font-line-height;
         transition: border-color $pds-motion-duration-short $pds-motion-easing-base;
         &:focus, &:hover {
@@ -132,7 +135,7 @@
         padding: 2px 0;
         white-space: nowrap;
         position: absolute;
-        top: $pds-spacing-fluid-x-large;
+        top: $inputPadding;
         left: 50%;
         pointer-events: none;
       }
