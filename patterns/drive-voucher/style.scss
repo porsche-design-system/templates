@@ -43,7 +43,13 @@
 .order {
   @include pds-grid;
   background-color: $pds-theme-dark-background-base;
-  & > * {
+  row-gap: $pds-spacing-fluid-x-large;
+  padding-bottom: $pds-spacing-fluid-x-large;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: $pds-spacing-static-medium;
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
   }
 
@@ -51,13 +57,12 @@
     background-color: $pds-theme-dark-background-surface;
     border-radius: $pds-border-radius-large;
     padding: $pds-spacing-static-large;
-  }
-
-  .voucher {
     display: flex;
     flex-direction: column;
     gap: $pds-spacing-static-large;
+  }
 
+  .voucher {
     &__selects {
       display: flex;
       gap: $pds-spacing-fluid-small;
@@ -107,6 +112,61 @@
         }
       }
     }
+  }
+
+  .condition {
+    display: flex;
+    gap: $pds-spacing-static-small;
+  }
+
+  .submit {
+    align-items: center;
+    p-button {
+      width: 100%;
+    }
+    a {
+      color: $pds-theme-dark-contrast-medium;
+      text-decoration: underline;
+      @include pds-text-small();
+      @include pds-hover();
+      @include pds-focus();
+    }
+  }
+}
+
+.redeem {
+  margin: $pds-spacing-fluid-xx-large 0;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: $pds-spacing-fluid-x-large;
+    margin-top: $pds-spacing-fluid-x-large;
+    @include pds-media-query-max('s') {
+      flex-direction: column;
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $pds-spacing-static-large;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: ($i - 1) * $pds-motion-duration-short !important;
+      }
+    }
+  }
+}
+
+.fuel {
+  @include pds-grid();
+  p-heading {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
+  }
+  p-text {
+    grid-column: $pds-grid-basic-column-start / $pds-grid-basic-column-end;
   }
 }
 
