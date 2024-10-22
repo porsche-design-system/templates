@@ -12,28 +12,30 @@
 <div id="app">
   <phn-header locale="de-DE" page-name="home" mode="hero" theme="dark"></phn-header>
   <main>
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero__media">
-          <img src="/assets/hero.webp" alt="Porsche Taycan seen from above"/>
-      </div>
-      <div class="hero__header">
-        <p-display data-animation="fade-in-up" theme="dark" align="center" size="small" tag="h1" id="hero-heading">Ungebunden Porsche fahren auf Abruf.</p-display>
-        <div class="steps">
-          <div class="steps__item" data-animation="fade-in-up">
-            <span>Mietstation auswählen</span>
-          </div>
-          <div class="steps__item" data-animation="fade-in-up">
-            <span>Porsche auswählen</span>
-          </div>
-          <div class="steps__item" data-animation="fade-in-up">
-            <span>Zeitraum auswählen</span>
-          </div>
-          <div class="steps__item" data-animation="fade-in-up">
-            <span>Abholen und losfahren</span>
-          </div>
+    <div class="reserve-header-height"></div>
+
+    <div class="hero-media">
+        <img src="/assets/hero.webp" alt="Porsche Taycan seen from above"/>
+    </div>
+
+    <div class="hero-header">
+      <p-display data-animation="fade-in-up" theme="dark" align="center" size="small" tag="h1" id="hero-heading">Ungebunden Porsche fahren auf Abruf.</p-display>
+      <div class="steps">
+        <div class="steps__item" data-animation="fade-in-up">
+          <span>Mietstation auswählen</span>
+        </div>
+        <div class="steps__item" data-animation="fade-in-up">
+          <span>Porsche auswählen</span>
+        </div>
+        <div class="steps__item" data-animation="fade-in-up">
+          <span>Zeitraum auswählen</span>
+        </div>
+        <div class="steps__item" data-animation="fade-in-up">
+          <span>Abholen und losfahren</span>
         </div>
       </div>
-    </section>
+      <p-text size="xx-small" color="contrast-medium" align="center" theme="dark">Kraftstoffverbrauch kombiniert: 13,8 - 13,7 1/100 km, CO2-Emissionen kominiert: 312 - 310 g/km, CO2-Klasse: G</p-text>
+    </div>
 
     <section class="reserve mobile">
       <div class="reserve-box">
@@ -138,7 +140,7 @@
     </section>
 
     <section class="rent -p-mt-xxl-fluid" aria-labelledby="rent">
-      <div class="rent__cta" data-animation="fade-in-up">
+      <div class="rent__cta">
         <p-text size="medium" color="contrast-high" align="center">Flexible Mietoptionen ermöglichen eine große Auswahl an Modellen und unbegrenzte Freikilometer. Genießen Sie erstklassigen Service, umfassenden Versicherungsschutz und maximale Freiheit ohne langfristige Bindungen.</p-text>
         <p-button id="rent">Jetzt Fahrzeug reservieren</p-button>
       </div>
@@ -151,48 +153,64 @@
             <p-model-signature class="show" model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/911_coupe.webp" alt="Porsche 911 Coupe / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/911_cabrio.webp" alt="Porsche 911 Cabrio / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="718" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/718_boxster.webp" alt="Porsche 718 Boxter / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/911_targa.webp" alt="Porsche 911 Targa / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="911" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/911_gt3.webp" alt="Porsche 911 GT3 / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="macan" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/macan.webp" alt="Porsche Macan / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="taycan" safe-zone="false" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/taycan.webp" alt="Porsche Taycan / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
         <div class="model-chooser__sideshot">
           <div>
             <p-model-signature model="cayenne" safe-zone="true" size="inherit" color="contrast-low"></p-model-signature>
             <img src="/assets/cayenne.webp" alt="Porsche Cayenne / Seitenansicht.">
           </div>
+          <p-text siez="small" color="contrast-medium" align="center">Tagesmiete</p-text>
+          <p-text size="medium" align="center">Ab 469 €</p-text>
         </div>
       </p-carousel>
     </section>
@@ -205,8 +223,8 @@
 
     <section class="benefits -p-mt-xxl-fluid" aria-labelledby="benefits">
       <p-heading size="large" tag="h2" id="benefits">Warum Porsche Drive?</p-heading>
-      <div class="benefits__item">
-        <div class="mood" data-animation="fade-in-up">
+      <div class="benefits__item" data-animation="fade-in-up">
+        <div class="mood">
           <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
@@ -214,8 +232,8 @@
           <p-text size="medium" color="contrast-high">Goosebumps, adrenaline: Experience the fascination of sports cars - with all different facets and according to your wishes.</p-text>
         </div>
       </div>
-      <div class="benefits__item">
-        <div class="mood" data-animation="fade-in-up">
+      <div class="benefits__item" data-animation="fade-in-up">
+        <div class="mood">
           <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
@@ -223,8 +241,8 @@
           <p-text size="medium" color="contrast-high">911? 718? Macan? Choose the performance that suits you best from the latest Porsche models.</p-text>
         </div>
       </div>
-      <div class="benefits__item">
-        <div class="mood" data-animation="fade-in-up">
+      <div class="benefits__item" data-animation="fade-in-up">
+        <div class="mood">
           <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
@@ -232,8 +250,8 @@
           <p-text size="medium" color="contrast-high">All inclusive: second driver, insurance and plenty of free kilometres. So you can fully concentrate on the essential: driving.</p-text>
         </div>
       </div>
-      <div class="benefits__item">
-        <div class="mood" data-animation="fade-in-up">
+      <div class="benefits__item" data-animation="fade-in-up">
+        <div class="mood">
           <img srcset="/assets/partner-teaser@2x.webp 2x" src="/assets/partner-teaser.webp" width="1308" height="736" alt="Some alternative text for screen readers describing the image">
         </div>
         <div class="text">
@@ -246,19 +264,19 @@
     <section class="drive-steps" aria-labelledby="drive-steps">
       <p-heading size="large" tag="h2" id="drive-steps" align="center">So funktioniert Porsche Drive</p-heading>
       <div class="drive-steps__container">
-        <div class="drive-steps__step" data-animation="fade-in-up">
+        <div class="drive-steps__step">
           <p-icon name="pin" size="large" aria="{ 'aria-label': 'Pin icon' }"></p-icon>
           <p-text align="center">Mietstation wählen</p-text>
         </div>
-        <div class="drive-steps__step" data-animation="fade-in-up">
+        <div class="drive-steps__step">
           <p-icon name="car" size="large" aria="{ 'aria-label': 'Car icon' }"></p-icon>
           <p-text align="center">Porsche auswählen</p-text>
         </div>
-        <div class="drive-steps__step" data-animation="fade-in-up">
+        <div class="drive-steps__step">
           <p-icon name="calendar" size="large" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
           <p-text align="center">Zeitraum wählen</p-text>
         </div>
-        <div class="drive-steps__step" data-animation="fade-in-up">
+        <div class="drive-steps__step">
           <p-icon name="steering-wheel" size="large" aria="{ 'aria-label': 'Steering wheel icon' }"></p-icon>
           <p-text align="center">Fahrzeug abholen</p-text>
         </div>
@@ -274,19 +292,19 @@
     <section class="requirements -p-mt-xxl-fluid" id="requirements" aria-labelledby="requirement">
       <p-heading size="large" tag="h2" id="requirement" align="center">Anforderungen</p-heading>
       <div class="requirements__container">
-        <div class="requirements__box" data-animation="fade-in-up">
+        <div class="requirements__box">
           <p-icon name="user" size="large" aria="{ 'aria-label': 'User icon' }"></p-icon>
           <p-text align="center">Mindestalter: 25 Jahre (35 Jahre für Turbo-, GT - oder Klassik-Modelle).</p-text>
         </div>
-        <div class="requirements__box" data-animation="fade-in-up">
+        <div class="requirements__box">
           <p-icon name="calendar" size="large" aria="{ 'aria-label': 'Calendar icon' }"></p-icon>
           <p-text align="center">Ein gültiger Führerschein ist seit mindestens fünf Jahren erforderlich.</p-text>
         </div>
-        <div class="requirements__box" data-animation="fade-in-up">
+        <div class="requirements__box">
           <p-icon name="card" size="large" aria="{ 'aria-label': 'Card icon' }"></p-icon>
           <p-text align="center">Eine Kaution von 2.500 € (5.000 € für Turbo-, GT- oder Klassik-Modelle) ist erforderlich.</p-text>
         </div>
-        <div class="requirements__box" data-animation="fade-in-up">
+        <div class="requirements__box">
           <p-icon name="purchase" size="large" aria="{ 'aria-label': 'Purchase icon' }"></p-icon>
           <p-text align="center">Zahlung nur mit Kreditkarte, Mindestgültigkeit von 3 Monaten.</p-text>
         </div>
