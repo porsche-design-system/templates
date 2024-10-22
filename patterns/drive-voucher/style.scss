@@ -94,6 +94,12 @@
       align-items: center;
       background-color: $pds-theme-dark-background-base;
       position: relative;
+      border: 2px solid $pds-theme-dark-contrast-medium;
+      border-radius: $pds-border-radius-medium;
+      transition: border-color $pds-motion-duration-short $pds-motion-easing-base;
+      &:focus-within, &:hover {
+        border-color: $pds-theme-dark-primary;
+      }
       p-text:first-child, p-text:last-child {
         position: absolute;
         width: 100%;
@@ -110,8 +116,6 @@
       input {
         all: unset;
         padding: $inputPadding 50% $inputPadding 0;
-        border: 2px solid $pds-theme-dark-contrast-medium;
-        border-radius: $pds-border-radius-medium;
         text-align: right;
         width: 100%;
         height: $pds-font-line-height;
@@ -119,10 +123,6 @@
         font-size: $pds-font-size-display-small;
         font-weight: $pds-font-weight-regular;
         line-height: $pds-font-line-height;
-        transition: border-color $pds-motion-duration-short $pds-motion-easing-base;
-        &:focus, &:hover {
-          border-color: $pds-theme-dark-primary;
-        }
         &::-webkit-inner-spin-button {
           appearance: none;
         }
@@ -133,7 +133,7 @@
       p-display {
         font-size: $pds-font-size-display-small;
         line-height: $pds-font-line-height;
-        padding: 2px 0;
+        height: $pds-font-line-height;
         white-space: nowrap;
         position: absolute;
         top: $inputPadding;
