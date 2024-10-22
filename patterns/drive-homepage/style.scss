@@ -56,7 +56,6 @@ main {
   align-items: center;
   row-gap: $pds-spacing-fluid-large;
   z-index: 1;
-  margin-bottom: $pds-spacing-fluid-medium;
 
   .steps {
     display: flex;
@@ -110,7 +109,7 @@ main {
   @include pds-grid;
   grid-column: 1 / -1;
   row-gap: $pds-spacing-static-medium;
-  margin-bottom: $pds-spacing-fluid-medium;
+  margin: $pds-spacing-fluid-medium 0;
   z-index: 9;
   &.mobile {
     @include pds-media-query-min('s') {
