@@ -117,6 +117,10 @@ p-modal#rules {
   &__image {
     width: clamp(48px, 7cqw, 72px);
     height: clamp(48px, 7cqw, 72px);
+
+    @container (max-width: #{$pds-breakpoint-s - 1}px) {
+      display: none;
+    }
   }
 
   &__text {
