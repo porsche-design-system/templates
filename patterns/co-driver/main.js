@@ -26,6 +26,13 @@ const updateTemplate = (id) => {
   document.querySelector('p-canvas').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
 };
 
+const closeSidebarOnRouteChangeOnMobile = () => {
+  if (!window.matchMedia(`(min-width: ${breakpointS}px)`).matches) {
+    document.querySelector('p-canvas').sidebarStartOpen = false;
+    document.querySelector('p-canvas').sidebarEndOpen = false;
+  }
+}
+
 const scrollToBottom = () => {
   setTimeout(() => {
     window.scrollTo({
@@ -40,11 +47,13 @@ const updateLayout = (hash) => {
     case '#template-chat':
       updateBackgroundOpacity(0);
       updateTemplate('#template-chat');
+      closeSidebarOnRouteChangeOnMobile();
       scrollToBottom();
       break;
     default:
       updateBackgroundOpacity(1);
       updateTemplate('#template-intro');
+      closeSidebarOnRouteChangeOnMobile();
       break;
   }
 };
