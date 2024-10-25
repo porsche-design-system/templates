@@ -1,4 +1,13 @@
 import './style.scss';
+import {breakpointS} from "@porsche-design-system/components-js/styles";
+
+document.querySelector('p-canvas').addEventListener('sidebarStartUpdate', (e) => {
+  e.target.sidebarStartOpen = e.detail.open;
+});
+
+document.querySelector('p-canvas').addEventListener('sidebarEndDismiss', (e) => {
+  e.target.sidebarEndOpen = false;
+});
 
 document
   .querySelectorAll('p-accordion')
@@ -20,3 +29,8 @@ document.getElementById('theme-switch').addEventListener('update', (e) => {
     .filter((el) => el.tagName.startsWith('P-'))
     .forEach((el) => (el.theme = e.detail.checked ? 'dark' : 'light'));
 });
+
+// initially, p-canvas sidebar-start should be closed on mobile and opened on desktop
+if (window.matchMedia(`(min-width: ${breakpointS}px)`).matches) {
+  document.querySelector('p-canvas').sidebarStartOpen = true;
+}
