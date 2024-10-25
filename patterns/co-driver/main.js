@@ -1,4 +1,13 @@
 import './style.scss';
+import {breakpointS} from "@porsche-design-system/components-js/styles";
+
+document.querySelector('p-canvas').addEventListener('sidebarStartUpdate', (e) => {
+  e.target.sidebarStartOpen = e.detail.open;
+});
+
+document.querySelector('p-canvas').addEventListener('sidebarEndDismiss', (e) => {
+  e.target.sidebarEndOpen = false;
+});
 
 document
   .querySelectorAll('p-flyout')
@@ -29,7 +38,7 @@ const scrollToBottom = () => {
 const updateLayout = (hash) => {
   switch (hash) {
     case '#template-chat':
-      updateBackgroundOpacity(0.3);
+      updateBackgroundOpacity(0);
       updateTemplate('#template-chat');
       scrollToBottom();
       break;
@@ -42,3 +51,8 @@ const updateLayout = (hash) => {
 
 window.addEventListener('hashchange', () => updateLayout(window.location.hash));
 updateLayout(window.location.hash);
+
+// initially, p-canvas sidebar-start should be closed on mobile and opened on desktop
+if (window.matchMedia(`(min-width: ${breakpointS}px)`).matches) {
+  document.querySelector('p-canvas').sidebarStartOpen = true;
+}

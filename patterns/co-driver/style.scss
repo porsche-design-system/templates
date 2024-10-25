@@ -14,8 +14,8 @@ body {
 
 // pds component customization
 
-p-canvas {
-  --p-canvas-grid-max-width: 50rem;
+p-canvas > .-p-canvas-grid {
+  max-width: 50rem;
 }
 
 p-flyout#explore-plugins {
@@ -136,7 +136,7 @@ p-modal#rules {
   grid-auto-rows: 1fr auto;
   gap: $pds-spacing-static-medium;
 
-  @container (min-width: #{$pds-breakpoint-m}px) {
+  @container (min-width: 640px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
