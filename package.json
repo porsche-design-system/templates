@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.20-0-rc.0"
+    "@porsche-design-system/components-js": "^3.20.0"
   },
   "devDependencies": {
     "@porsche-design-system/prettier-config": "^1.0.0",
-    "prettier": "^3.3.0",
-    "sass": "^1.77.4",
-    "vite": "^5.2.12"
+    "prettier": "^3.3.3",
+    "sass": "^1.80.4",
+    "vite": "^5.4.10"
   },
   "volta": {
     "node": "18.18.1",
