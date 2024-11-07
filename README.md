@@ -8,7 +8,7 @@
 
 - [Admin Panel](https://porsche-design-system.github.io/templates/admin-panel/)
 
-## Shop
+## Shop Singapur
 
 - [Shop Homepage](https://porsche-design-system.github.io/templates/shop-homepage/)
 - [Shop Product List](https://porsche-design-system.github.io/templates/shop-product-list/)
