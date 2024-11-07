@@ -1,11 +1,22 @@
 # Templates – Porsche Design System
 
-- [Admin Panel](https://porsche-design-system.github.io/templates/patterns/admin-panel/)
+## Co Driver
 
----
+- [Co Driver](https://porsche-design-system.github.io/templates/co-driver/)
 
-- [Shop Homepage](https://porsche-design-system.github.io/templates/patterns/shop-homepage/)
-- [Shop Product List](https://porsche-design-system.github.io/templates/patterns/shop-product-list/)
-- [Shop Product Detail](https://porsche-design-system.github.io/templates/patterns/shop-product-detail/)
-- [Shop Shopping Cart](https://porsche-design-system.github.io/templates/patterns/shop-shopping-cart/)
-- [Shop Checkout](https://porsche-design-system.github.io/templates/patterns/shop-checkout/)
+## Admin Panel
+
+- [Admin Panel](https://porsche-design-system.github.io/templates/admin-panel/)
+
+## Shop
+
+- [Shop Homepage](https://porsche-design-system.github.io/templates/shop-homepage/)
+- [Shop Product List](https://porsche-design-system.github.io/templates/shop-product-list/)
+- [Shop Product Detail](https://porsche-design-system.github.io/templates/shop-product-detail/)
+- [Shop Shopping Cart](https://porsche-design-system.github.io/templates/shop-shopping-cart/)
+- [Shop Checkout](https://porsche-design-system.github.io/templates/shop-checkout/)
+
+## Drive Rental
+
+- [Drive Homepage](https://porsche-design-system.github.io/templates/drive-homepage/)
+- [Drive Voucher](https://porsche-design-system.github.io/templates/drive-voucher/)
