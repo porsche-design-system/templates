@@ -20,7 +20,7 @@ const transformIndexHtmlPlugin = () => {
         getFontFaceStylesheet(),
         getFontLinks(),
         getIconLinks(),
-        getMetaTagsAndIconLinks({ appTitle: 'Patterns (Porsche Design System)' }),
+        getMetaTagsAndIconLinks({ appTitle: 'Templates by Porsche Design System' }),
       ].join('');
 
       const bodyPartials = [
@@ -39,16 +39,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        'drive-homepage': resolve(__dirname, 'patterns/drive-homepage/index.html'),
-        'drive-voucher': resolve(__dirname, 'patterns/drive-voucher/index.html'),
-        'co-driver': resolve(__dirname, 'patterns/co-driver/index.html'),
-        'admin-panel': resolve(__dirname, 'patterns/admin-panel/index.html'),
-        'shop-checkout': resolve(__dirname, 'patterns/shop-checkout/index.html'),
-        'shop-homepage': resolve(__dirname, 'patterns/shop-homepage/index.html'),
-        'shop-product-list': resolve(__dirname, 'patterns/shop-product-list/index.html'),
-        'shop-product-detail': resolve(__dirname, 'patterns/shop-product-detail/index.html'),
-        'shop-shopping-cart': resolve(__dirname, 'patterns/shop-shopping-cart/index.html'),
-        'grid-productive': resolve(__dirname, 'patterns/grid-productive/index.html'),
+        'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
+        'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),
+        'co-driver': resolve(__dirname, 'src/co-driver/index.html'),
+        'admin-panel': resolve(__dirname, 'src/admin-panel/index.html'),
+        'shop-checkout': resolve(__dirname, 'src/shop-checkout/index.html'),
+        'shop-homepage': resolve(__dirname, 'src/shop-homepage/index.html'),
+        'shop-product-list': resolve(__dirname, 'src/shop-product-list/index.html'),
+        'shop-product-detail': resolve(__dirname, 'src/shop-product-detail/index.html'),
+        'shop-shopping-cart': resolve(__dirname, 'src/shop-shopping-cart/index.html'),
+        'grid-productive': resolve(__dirname, 'src/grid-productive/index.html'),
       },
     },
   },
