@@ -1,0 +1,27 @@
+@use '@porsche-design-system/components-js/styles' as *;
+
+// global style reset
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Tailwind like utility classes
+
+.-self-center {
+  align-self: center;
+}
+
+.-mt-fluid-small {
+  margin-top: $pds-spacing-fluid-small;
+}
+
+.-mt-fluid-medium {
+  margin-top: $pds-spacing-fluid-medium;
+}
+
+.-my-fluid-medium {
+  margin-block: $pds-spacing-fluid-medium;
+}
