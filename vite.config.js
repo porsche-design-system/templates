@@ -42,7 +42,6 @@ export default defineConfig({
         'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
         'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),
         'co-driver': resolve(__dirname, 'src/co-driver/index.html'),
-        'header': resolve(__dirname, 'src/header/index.html'),
         'admin-panel': resolve(__dirname, 'src/admin-panel/index.html'),
         'shop-checkout': resolve(__dirname, 'src/shop-checkout/index.html'),
         'shop-homepage': resolve(__dirname, 'src/shop-homepage/index.html'),
