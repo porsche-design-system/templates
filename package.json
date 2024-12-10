@@ -6,19 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp -r ./dist/src/. ./dist && rm -rf ./dist/src",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "biome format",
+    "lint": "biome lint"
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.22.1"
   },
   "devDependencies": {
-    "@porsche-design-system/prettier-config": "^1.0.0",
-    "prettier": "^3.4.2",
+    "@biomejs/biome": "^1.9.4",
     "sass": "^1.82.0",
     "vite": "^6.0.3"
   },
   "volta": {
-    "node": "18.18.1",
-    "yarn": "1.22.19"
+    "node": "22.12.0",
+    "yarn": "1.22.22"
   }
 }

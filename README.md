@@ -1,7 +1,7 @@
 # Templates
 
 Designed & developed by [Porsche Design System](https://designsystem.porsche.com/) team
-using [Porsche CI](https://brand.porsche.com/) and [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/)
+using [Porsche Corporate Identity](https://brand.porsche.com/) and [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/)
 compliant [components](https://designsystem.porsche.com/v3/components/introduction), [styles](https://designsystem.porsche.com/v3/styles/introduction)
 and [partials](https://designsystem.porsche.com/v3/partials/introduction).
 
