@@ -1,5 +1,5 @@
 import './style.scss';
-import {breakpointS} from "@porsche-design-system/components-js/styles";
+import { breakpointS } from '@porsche-design-system/components-js/styles';
 
 document.querySelector('p-canvas').addEventListener('sidebarStartUpdate', (e) => {
   e.target.sidebarStartOpen = e.detail.open;
@@ -9,20 +9,26 @@ document.querySelector('p-canvas').addEventListener('sidebarEndDismiss', (e) => 
   e.target.sidebarEndOpen = false;
 });
 
-document
-  .querySelectorAll('p-flyout')
-  .forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
+for (const flyout of document.querySelectorAll('p-flyout')) {
+  flyout.addEventListener('dismiss', (e) => {
+    e.target.open = false;
+  });
+}
 
-document
-  .querySelectorAll('p-modal')
-  .forEach((el) => el.addEventListener('dismiss', (e) => (e.target.open = false)));
+for (const modal of document.querySelectorAll('p-modal')) {
+  modal.addEventListener('dismiss', (e) => {
+    e.target.open = false;
+  });
+}
 
 const updateBackgroundOpacity = (opacity) => {
   document.querySelector('p-canvas > [slot="background"]').style.opacity = opacity;
 };
 
 const updateTemplate = (id) => {
-  document.querySelectorAll('p-canvas > :not(template):not([slot])').forEach((el) => el.remove());
+  for (const template of document.querySelectorAll('p-canvas > :not(template):not([slot])')) {
+    template.remove();
+  }
   document.querySelector('p-canvas').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
 };
 
@@ -31,7 +37,7 @@ const closeSidebarOnRouteChangeOnMobile = () => {
     document.querySelector('p-canvas').sidebarStartOpen = false;
     document.querySelector('p-canvas').sidebarEndOpen = false;
   }
-}
+};
 
 const scrollToBottom = () => {
   setTimeout(() => {
@@ -44,17 +50,19 @@ const scrollToBottom = () => {
 
 const updateLayout = (hash) => {
   switch (hash) {
-    case '#template-chat':
+    case '#template-chat': {
       updateBackgroundOpacity(0);
       updateTemplate('#template-chat');
       closeSidebarOnRouteChangeOnMobile();
       scrollToBottom();
       break;
-    default:
+    }
+    default: {
       updateBackgroundOpacity(1);
       updateTemplate('#template-intro');
       closeSidebarOnRouteChangeOnMobile();
       break;
+    }
   }
 };
 

@@ -15,27 +15,27 @@ voucherCarSelect.addEventListener('update', (e) => {
     voucherInput.value = voucherRate[1].value;
   } else {
     voucherRateSelect.disabled = true;
-    voucherRateSelect.value = "";
+    voucherRateSelect.value = '';
   }
-})
+});
 
 voucherRateSelect.addEventListener('update', (e) => {
   voucherInput.value = e.target.value;
-})
+});
 /* Example code end **/
 
 // Scroll Animations on appear
 const inViewport = (entries, observer) => {
-  entries.forEach(entry => {
+  for (const entry of entries) {
     if (entry.isIntersecting) {
-      entry.target.classList.add("animation-play");
+      entry.target.classList.add('animation-play');
       observer.unobserve(entry.target); // Animation is only played once on first viewport intersection
     }
-  });
+  }
 };
 
 const Obs = new IntersectionObserver(inViewport);
 // Attach observer to every [data-inviewport] element:
-document.querySelectorAll('[data-animation]').forEach(el => {
+for (const el of document.querySelectorAll('[data-animation]')) {
   Obs.observe(el, {});
-});
+}

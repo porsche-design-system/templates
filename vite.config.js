@@ -17,6 +17,7 @@ const transformIndexHtmlPlugin = () => {
   return {
     name: 'html-transform',
     transformIndexHtml(html) {
+      // biome-ignore lint/correctness/noUnusedVariables: can be re-enabled when config is extended to support home & nav
       const cspContent = [
         `default-src 'self' https://cdn.ui.porsche.com`,
         `style-src 'self' https://cdn.ui.porsche.com 'unsafe-inline'`,
@@ -55,7 +56,6 @@ export default defineConfig({
         'shop-product-list': resolve(__dirname, 'src/shop-product-list/index.html'),
         'shop-product-detail': resolve(__dirname, 'src/shop-product-detail/index.html'),
         'shop-shopping-cart': resolve(__dirname, 'src/shop-shopping-cart/index.html'),
-        'grid-productive': resolve(__dirname, 'src/grid-productive/index.html'),
       },
     },
   },
