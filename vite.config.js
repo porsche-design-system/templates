@@ -1,6 +1,17 @@
+import { resolve } from 'node:path';
+import {
+  getComponentChunkLinks,
+  getFontFaceStylesheet,
+  getFontLinks,
+  getIconLinks,
+  getInitialStyles,
+  getLoaderScript,
+  getMetaTagsAndIconLinks,
+} from '@porsche-design-system/components-js/partials';
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import { getInitialStyles, getMetaTagsAndIconLinks, getComponentChunkLinks, getFontFaceStylesheet, getFontLinks, getIconLinks, getLoaderScript } from '@porsche-design-system/components-js/partials';
+
+const REGEX_HEAD = /<\/head>/;
+const REGEX_BODY = /<\/body>/;
 
 const transformIndexHtmlPlugin = () => {
   return {
@@ -10,7 +21,7 @@ const transformIndexHtmlPlugin = () => {
         `default-src 'self' https://cdn.ui.porsche.com`,
         `style-src 'self' https://cdn.ui.porsche.com 'unsafe-inline'`,
         `script-src 'self' https://cdn.ui.porsche.com ${getLoaderScript({ format: 'sha256' })}`,
-        `img-src 'self' https://cdn.ui.porsche.com https://porsche-design-system.github.io data:` // data: is needed for inline background images, e.g. used in checkbox-wrapper and radio-button-wrapper
+        `img-src 'self' https://cdn.ui.porsche.com https://porsche-design-system.github.io data:`, // data: is needed for inline background images, e.g. used in checkbox-wrapper and radio-button-wrapper
       ].join('; ');
 
       const headPartials = [
@@ -23,16 +34,12 @@ const transformIndexHtmlPlugin = () => {
         getMetaTagsAndIconLinks({ appTitle: 'Templates by Porsche Design System' }),
       ].join('');
 
-      const bodyPartials = [
-        getLoaderScript(),
-      ].join('');
+      const bodyPartials = [getLoaderScript()].join('');
 
-      return html
-        .replace(/<\/head>/, `${headPartials}$&`)
-        .replace(/<\/body>/, `${bodyPartials}$&`);
+      return html.replace(REGEX_HEAD, `${headPartials}$&`).replace(REGEX_BODY, `${bodyPartials}$&`);
     },
-  }
-}
+  };
+};
 
 export default defineConfig({
   base: '/templates/',
@@ -53,4 +60,4 @@ export default defineConfig({
     },
   },
   plugins: [transformIndexHtmlPlugin()],
-})
+});
