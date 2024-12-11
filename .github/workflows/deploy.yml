@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: 'Build & Deploy'
+    name: 'Build, Test & Deploy'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,6 +31,10 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
+      - name: 'Setup Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
       - name: 'Cache node_modules'
         uses: actions/cache@v4
         id: cache-node_modules
@@ -44,6 +48,10 @@ jobs:
         run: yarn lint
       - name: 'Build'
         run: yarn build
+      - name: 'Install Playwright Browsers'
+        run: yarn playwright install --with-deps
+      - name: 'E2E'
+        run: yarn test:e2e
       - name: 'Setup Pages'
         uses: actions/configure-pages@v5
       - name: 'Upload artifact'
