@@ -34,3 +34,22 @@ jobs:
       - name: 'E2E'
         run: yarn test:e2e
         shell: bash
+  a11y:
+    name: 'A11y'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Download build artifact'
+        uses: actions/download-artifact@v4
+        with:
+          name: templates
+          path: ./dist
+      - name: 'Install Playwright browsers'
+        run: yarn playwright install --with-deps
+        shell: bash
+      - name: 'A11y'
+        run: yarn test:a11y
+        shell: bash
