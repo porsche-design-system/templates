@@ -4,10 +4,10 @@ export default defineConfig({
   testDir: '../specs',
   testMatch: '**.a11y.ts',
   // Maximum time one test can run for.
-  timeout: 20000,
+  timeout: 10000,
   expect: {
     // Maximum time expect() should wait for the condition to be met.
-    timeout: 10000,
+    timeout: 5000,
   },
   snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{ext}',
   use: {
