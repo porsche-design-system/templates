@@ -1,0 +1,22 @@
+name: 'Build'
+
+on:
+  workflow_call:
+
+jobs:
+  templates:
+    name: 'Templates'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Build'
+        run: yarn build
+        shell: bash
+      - name: 'Upload build artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: templates
+          path: ./dist

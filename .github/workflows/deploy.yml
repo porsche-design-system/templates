@@ -1,13 +1,7 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Build & Deploy
+name: 'Deploy'
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_call:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -23,7 +17,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: 'Build, Test & Deploy'
+    name: 'Templates'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,30 +25,14 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup Node'
-        uses: actions/setup-node@v4
+      - name: 'Download build artifact'
+        uses: actions/download-artifact@v4
         with:
-          node-version: lts/*
-      - name: 'Cache node_modules'
-        uses: actions/cache@v4
-        id: cache-node_modules
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: 'Install node_modules'
-        if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-      - name: 'Lint'
-        run: yarn lint
-      - name: 'Build'
-        run: yarn build
-      - name: 'Install Playwright Browsers'
-        run: yarn playwright install --with-deps
-      - name: 'E2E'
-        run: yarn test:e2e
-      - name: 'Setup Pages'
+          name: templates
+          path: ./dist
+      - name: 'Setup GitHub Pages'
         uses: actions/configure-pages@v5
-      - name: 'Upload artifact'
+      - name: 'Upload GitHub Pages build artifact'
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'

@@ -1,0 +1,36 @@
+name: 'Test'
+
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    name: 'Lint'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Lint'
+        run: yarn lint
+        shell: bash
+  e2e:
+    name: 'E2E'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Download build artifact'
+        uses: actions/download-artifact@v4
+        with:
+          name: templates
+          path: ./dist
+      - name: 'Install Playwright browsers'
+        run: yarn playwright install --with-deps
+        shell: bash
+      - name: 'E2E'
+        run: yarn test:e2e
+        shell: bash
