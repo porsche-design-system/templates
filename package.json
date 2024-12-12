@@ -10,7 +10,9 @@
     "format": "biome format",
     "lint": "biome lint",
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
-    "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts"
+    "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
+    "test:vrt": "playwright test --config=tests/vrt/config/playwright.config.ts",
+    "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.22.1"
