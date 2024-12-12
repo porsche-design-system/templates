@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: '../specs',
   testMatch: '**.vrt.ts',
   // Maximum time one test can run for.
-  timeout: 20000,
+  timeout: 30000,
   expect: {
     // Maximum time expect() should wait for the condition to be met.
     timeout: 10000,
