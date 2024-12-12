@@ -5,7 +5,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
     await page.goto('/templates/co-driver/');
   });
 
-  test.fixme('when page is loaded initially', async ({ makeAxeBuilder }) => {
+  test('when page is loaded initially', async ({ makeAxeBuilder }) => {
     const a11y = await makeAxeBuilder().analyze();
     expect(a11y.violations).toEqual([]);
   });
