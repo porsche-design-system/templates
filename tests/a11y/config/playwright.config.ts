@@ -9,7 +9,6 @@ export default defineConfig({
     // Maximum time expect() should wait for the condition to be met.
     timeout: 5000,
   },
-  snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{ext}',
   use: {
     // Maximum time each action such as `click()` can take. Defaults to 0 (no limit).
     actionTimeout: 0,

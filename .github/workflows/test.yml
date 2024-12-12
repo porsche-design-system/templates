@@ -7,6 +7,9 @@ jobs:
   lint:
     name: 'Lint'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
@@ -18,6 +21,9 @@ jobs:
   e2e:
     name: 'E2E'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
@@ -28,15 +34,15 @@ jobs:
         with:
           name: templates
           path: ./dist
-      - name: 'Install Playwright browsers'
-        run: yarn playwright install --with-deps
-        shell: bash
       - name: 'E2E'
         run: yarn test:e2e
         shell: bash
   a11y:
     name: 'A11y'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
@@ -47,9 +53,36 @@ jobs:
         with:
           name: templates
           path: ./dist
-      - name: 'Install Playwright browsers'
-        run: yarn playwright install --with-deps
-        shell: bash
       - name: 'A11y'
         run: yarn test:a11y
         shell: bash
+  vrt:
+    name: 'VRT'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [ 1, 2, 3 ]
+        shardTotal: [ 3 ]
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Download build artifact'
+        uses: actions/download-artifact@v4
+        with:
+          name: templates
+          path: ./dist
+      - name: 'VRT'
+        run: yarn test:vrt --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        shell: bash
+      - name: 'VRT Regression'
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vrt-regression-${{ matrix.shardIndex }}
+          path: ./tests/vrt/test-results

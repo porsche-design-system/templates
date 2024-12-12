@@ -7,6 +7,9 @@ jobs:
   templates:
     name: 'Templates'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
