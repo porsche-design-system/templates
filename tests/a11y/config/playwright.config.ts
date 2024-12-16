@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: '../specs',
   testMatch: '**.a11y.ts',
   // Maximum time one test can run for.
-  timeout: 20000,
+  timeout: 10000,
   expect: {
     // Maximum time expect() should wait for the condition to be met.
     timeout: 5000,
@@ -36,8 +36,8 @@ export default defineConfig({
       use: devices['Desktop Chrome'],
     },
     {
-      name: 'Mobile Safari',
-      use: devices['iPhone 15 Pro'],
+      name: 'Mobile Chrome',
+      use: devices['Pixel 7'],
     },
   ],
   webServer: {
