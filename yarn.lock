@@ -273,10 +273,10 @@
   dependencies:
     playwright "1.49.1"
 
-"@porsche-design-system/components-js@^3.22.1":
-  version "3.22.1"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.22.1.tgz#1d14ef7a9b40f1b401ddea6f9b88c756f43c945f"
-  integrity sha512-HX33PKCQAcJCODvq8IwxTnknlc5rqJqFxAfIwOnrCSpCkDsjMB32tmW5+o8bhd5WwDH/+B9rcy97EI06nNBKow==
+"@porsche-design-system/components-js@^3.23.0":
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.23.0.tgz#1cb296b6239d349785b02778348a01b60852bd7d"
+  integrity sha512-D5+TZk2mFPDCTJUtOyZawtCSM/VICZU5OBa0cp5TrSlff29KVSSOiLuBc8ikNFJs0gbRSeBSBVvjROczU9lZTg==
 
 "@rollup/rollup-android-arm-eabi@4.28.1":
   version "4.28.1"
