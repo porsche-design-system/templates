@@ -25,7 +25,7 @@
                  height="1080" alt="Some alternative text for screen readers describing the image"/>
           </div>
           <div class="shopping-cart-list__meta">
-            <p-heading size="medium" tag="h3">EvoKNIT® Trainers II</p-heading>
+            <p-heading size="medium" tag="h2">EvoKNIT® Trainers II</p-heading>
             <p-text size="x-small" weight="semi-bold">SDG 329</p-text>
             <div class="shopping-cart-list__variant">
               <p-text size="x-small">Color <b>Black</b></p-text>
@@ -132,9 +132,9 @@
       </div>
       <div class="shopping-cart__checkout">
         <p-checkbox-wrapper>
-          <span slot="label">I have read the general <a href="#">terms and conditions</a> and <a
+          <span slot="label" id="terms-conditions">I have read the general <a href="#">terms and conditions</a> and <a
             href="#">privacy policy</a> I accept them.</span>
-          <input type="checkbox" name="terms-and-condition-privacy-policy"/>
+          <input type="checkbox" name="terms-and-condition-privacy-policy" aria-labelledby="terms-conditions" />
         </p-checkbox-wrapper>
         <p-button>Go to checkout</p-button>
         <p-text>

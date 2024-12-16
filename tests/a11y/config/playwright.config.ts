@@ -36,8 +36,8 @@ export default defineConfig({
       use: devices['Desktop Chrome'],
     },
     {
-      name: 'Mobile Safari',
-      use: devices['iPhone 15'],
+      name: 'Mobile Chrome',
+      use: devices['Pixel 7'],
     },
   ],
   webServer: {
