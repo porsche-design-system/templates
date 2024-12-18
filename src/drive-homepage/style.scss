@@ -50,8 +50,10 @@
 
 main {
   @include pds-grid();
-  grid-template-rows: 1fr;
-  row-gap: 0;
+  & {
+    grid-template-rows: 1fr;
+    row-gap: 0;
+  }
   & > * {
     grid-column: 1 / -1;
   }
@@ -148,12 +150,14 @@ main {
 }
 
 .reserve {
-  grid-row: 2 / 4;
   @include pds-grid;
-  grid-column: 1 / -1;
-  row-gap: $pds-spacing-static-medium;
-  margin: $pds-spacing-fluid-medium 0;
-  z-index: 9;
+  & {
+    grid-row: 2 / 4;
+    grid-column: 1 / -1;
+    row-gap: $pds-spacing-static-medium;
+    margin: $pds-spacing-fluid-medium 0;
+    z-index: 9;
+  }
   &.mobile {
     @include pds-media-query-min('s') {
       display: none !important;
@@ -190,8 +194,10 @@ main {
     @include pds-media-query-max('s') {
       display: none !important;
     }
-    position: sticky;
-    top: $pds-spacing-static-medium;
+    & {
+      position: sticky;
+      top: $pds-spacing-static-medium;
+    }
     .reserve-box {
       grid-template-columns: 1fr 1fr;
       &:focus-within + .dropdown {
@@ -364,7 +370,9 @@ main {
 
 .benefits {
   @include pds-grid;
-  background-color: $pds-theme-light-background-surface;
+  & {
+    background-color: $pds-theme-light-background-surface;
+  }
 
   #benefits {
     padding: $pds-spacing-fluid-xx-large 0 $pds-spacing-fluid-x-large 0;

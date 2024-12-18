@@ -2,7 +2,9 @@
 
 .header {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-medium;
+  & {
+    margin-top: $pds-spacing-fluid-medium;
+  }
 
   &__nav {
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
@@ -56,7 +58,9 @@
 
 .breadcrumb {
   @include pds-grid;
-  margin: $pds-spacing-fluid-medium 0 0;
+  & {
+    margin: $pds-spacing-fluid-medium 0 0;
+  }
 
   ol {
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
@@ -74,13 +78,17 @@
 
 .product-detail {
   @include pds-grid;
-  row-gap: $pds-spacing-fluid-x-large;
-  margin-top: $pds-spacing-fluid-medium;
+  & {
+    row-gap: $pds-spacing-fluid-x-large;
+    margin-top: $pds-spacing-fluid-medium;
+  }
 
   &__gallery {
     @include pds-skeleton('light');
-    grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
-    aspect-ratio: 4 / 3;
+    & {
+      grid-column: $pds-grid-extended-column-start / $pds-grid-extended-column-end;
+      aspect-ratio: 4 / 3;
+    }
 
     @include pds-media-query-min('s') {
       grid-column: $pds-grid-extended-column-start / span 8;
@@ -114,21 +122,26 @@
     display: flex;
     flex-direction: column;
     row-gap: $pds-spacing-fluid-x-small;
+    & {
+      h2 {
+        @include pds-heading-small;
+        & {
+          font-weight: $pds-font-weight-regular;
+          margin: 0; // ua-style reset
+        }
 
-    h2 {
-      @include pds-heading-small;
-      font-weight: $pds-font-weight-regular;
-      margin: 0; // ua-style reset
-
-      span {
-        font-weight: $pds-font-weight-semi-bold;
+        span {
+          font-weight: $pds-font-weight-semi-bold;
+        }
       }
     }
   }
 
   &__color-swatch {
     @include pds-skeleton('light');
-    height: 40px;
+    & {
+      height: 40px;
+    }
   }
 
   &__size {
@@ -167,7 +180,9 @@
 
     > div {
       @include pds-skeleton('light');
-      height: 40px;
+      & {
+        height: 40px;
+      }
     }
   }
 }
@@ -210,6 +225,8 @@
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
-  margin-top: $pds-spacing-fluid-x-large;
-  height: 500px;
+  & {
+    margin-top: $pds-spacing-fluid-x-large;
+    height: 500px;
+  }
 }
