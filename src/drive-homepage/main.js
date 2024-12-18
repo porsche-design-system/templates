@@ -1,4 +1,3 @@
-import '../global.scss';
 import './style.scss';
 
 /* Example code for demonstration purposes only. Do not use in production. **/

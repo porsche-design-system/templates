@@ -55,7 +55,7 @@
       }
     },
     {
-      "include": ["vite.config.js"],
+      "include": ["vite.config.js", "playwright.config.ts"],
       "linter": {
         "rules": {
           "correctness": {
