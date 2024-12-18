@@ -2,8 +2,10 @@
 
 .layout {
   @include pds-grid;
-  min-height: 100vh;
-  grid-template-rows: auto minmax(0, 1fr);
+  & {
+    min-height: 100vh;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
 
   &__header {
     grid-area: 1 / $pds-grid-wide-column-start / auto / $pds-grid-wide-column-end;
@@ -113,8 +115,10 @@
 
     span {
       @include pds-text-x-small;
-      text-transform: uppercase;
-      padding: 0 $pds-spacing-fluid-medium;
+      & {
+        text-transform: uppercase;
+        padding: 0 $pds-spacing-fluid-medium;
+      }
     }
   }
 }
@@ -142,7 +146,9 @@
 
     h2 {
       @include pds-heading-large;
-      margin: 0; // ua-style reset
+      & {
+        margin: 0; // ua-style reset
+      }
     }
   }
 
@@ -184,14 +190,16 @@
       @include pds-text-small;
       @include pds-hover;
       @include pds-focus;
-      color: $pds-theme-light-primary;
-      display: grid;
-      grid-template-columns: 4rem minmax(0, 1fr) auto;
-      gap: $pds-spacing-fluid-small;
-      align-items: center;
-      margin: 0 calc(#{$pds-spacing-fluid-small} * -1);
-      padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small;
-      text-decoration: none;
+      & {
+        color: $pds-theme-light-primary;
+        display: grid;
+        grid-template-columns: 4rem minmax(0, 1fr) auto;
+        gap: $pds-spacing-fluid-small;
+        align-items: center;
+        margin: 0 calc(#{$pds-spacing-fluid-small} * -1);
+        padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small;
+        text-decoration: none;
+      }
 
       img {
         width: 100%;

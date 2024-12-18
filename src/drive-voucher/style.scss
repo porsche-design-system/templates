@@ -61,7 +61,9 @@
 
 .hero {
   @include pds-grid;
-  grid-row-gap: 0;
+  & {
+    grid-row-gap: 0;
+  }
 
   &__media {
     position: relative;
@@ -96,9 +98,11 @@
 
 .order {
   @include pds-grid;
-  background-color: $pds-theme-dark-background-base;
-  row-gap: $pds-spacing-fluid-x-large;
-  padding-bottom: $pds-spacing-fluid-x-large;
+  & {
+    background-color: $pds-theme-dark-background-base;
+    row-gap: $pds-spacing-fluid-x-large;
+    padding-bottom: $pds-spacing-fluid-x-large;
+  }
 
   &__section {
     display: flex;

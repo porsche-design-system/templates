@@ -2,7 +2,9 @@
 
 .header {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-medium;
+  & {
+    margin-top: $pds-spacing-fluid-medium;
+  }
 
   &__nav {
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
@@ -76,7 +78,9 @@
 
 .teaser {
   @include pds-grid;
-  margin-top: $pds-spacing-fluid-medium;
+  & {
+    margin-top: $pds-spacing-fluid-medium;
+  }
 
   &__media {
     grid-area: 1 / $pds-grid-basic-column-start / 1 / $pds-grid-basic-column-end;
@@ -111,7 +115,9 @@
 
 .products {
   @include pds-grid;
-  margin: $pds-spacing-fluid-medium 0;
+  & {
+    margin: $pds-spacing-fluid-medium 0;
+  }
 
   &__sort {
     grid-column: $pds-grid-basic-column-start / $pds-grid-basic-span-one-half;
@@ -198,7 +204,9 @@
 
   &__color-swatch {
     @include pds-skeleton('light');
-    height: 40px;
+    & {
+      height: 40px;
+    }
   }
 
   &__size {
@@ -220,13 +228,15 @@
 
     a {
       @include pds-text-small;
-      display: grid;
-      grid-template-columns: 4rem minmax(0, 1fr) auto;
-      gap: $pds-spacing-fluid-small;
-      align-items: center;
-      margin: 0 calc(#{$pds-spacing-fluid-small} * -1) !important;
-      padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small !important;
-      text-decoration: none !important;
+      & {
+        display: grid;
+        grid-template-columns: 4rem minmax(0, 1fr) auto;
+        gap: $pds-spacing-fluid-small;
+        align-items: center;
+        margin: 0 calc(#{$pds-spacing-fluid-small} * -1) !important;
+        padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small !important;
+        text-decoration: none !important;
+      }
 
       b {
         font-weight: $pds-font-weight-semi-bold;
@@ -256,6 +266,8 @@
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
-  margin-top: $pds-spacing-fluid-x-large;
-  height: 500px;
+  & {
+    margin-top: $pds-spacing-fluid-x-large;
+    height: 500px;
+  }
 }

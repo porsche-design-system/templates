@@ -2,8 +2,10 @@
 
 .layout {
   @include pds-grid;
-  min-height: 100vh;
-  grid-template-rows: auto minmax(0, 1fr);
+  & {
+    min-height: 100vh;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
 
   &__header {
     grid-area: 1 / $pds-grid-wide-column-start / auto / $pds-grid-wide-column-end;

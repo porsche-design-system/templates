@@ -2,10 +2,12 @@
 
 .header {
   @include pds-grid;
-  position: absolute;
-  top: $pds-spacing-fluid-medium;
-  left: 0;
-  right: 0;
+  & {
+    position: absolute;
+    top: $pds-spacing-fluid-medium;
+    left: 0;
+    right: 0;
+  }
 
   &__nav {
     grid-column: $pds-grid-wide-column-start / $pds-grid-wide-column-end;
@@ -59,9 +61,11 @@
 
 .teaser {
   @include pds-grid;
-  display: grid;
-  row-gap: $pds-spacing-fluid-x-large;
-  background: $pds-theme-dark-background-base;
+  & {
+    display: grid;
+    row-gap: $pds-spacing-fluid-x-large;
+    background: $pds-theme-dark-background-base;
+  }
 
   &__media {
     grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
@@ -124,8 +128,10 @@
 
 .collection {
   @include pds-grid;
-  background: $pds-theme-dark-background-base;
-  row-gap: $pds-spacing-fluid-x-large;
+  & {
+    background: $pds-theme-dark-background-base;
+    row-gap: $pds-spacing-fluid-x-large;
+  }
 
   &__media {
     grid-column: $pds-grid-full-column-start / $pds-grid-full-column-end;
@@ -164,7 +170,9 @@
 
 .stories {
   @include pds-grid;
-  margin: $pds-spacing-fluid-xx-large 0;
+  & {
+    margin: $pds-spacing-fluid-xx-large 0;
+  }
 
   &__header {
     grid-column: $pds-grid-narrow-column-start / $pds-grid-narrow-column-end;
@@ -197,13 +205,15 @@
 
     a {
       @include pds-text-small;
-      display: grid;
-      grid-template-columns: 4rem minmax(0, 1fr) auto;
-      gap: $pds-spacing-fluid-small;
-      align-items: center;
-      margin: 0 calc(#{$pds-spacing-fluid-small} * -1) !important;
-      padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small !important;
-      text-decoration: none !important;
+      & {
+        display: grid;
+        grid-template-columns: 4rem minmax(0, 1fr) auto;
+        gap: $pds-spacing-fluid-small;
+        align-items: center;
+        margin: 0 calc(#{$pds-spacing-fluid-small} * -1) !important;
+        padding: $pds-spacing-fluid-x-small $pds-spacing-fluid-small !important;
+        text-decoration: none !important;
+      }
 
       b {
         font-weight: $pds-font-weight-semi-bold;
@@ -221,6 +231,8 @@
 // footer will be implemented later
 .footer {
   @include pds-skeleton('light');
-  margin-top: $pds-spacing-fluid-x-large;
-  height: 500px;
+  & {
+    margin-top: $pds-spacing-fluid-x-large;
+    height: 500px;
+  }
 }
