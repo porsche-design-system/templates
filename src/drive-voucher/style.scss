@@ -212,12 +212,8 @@
     }
     a {
       @include pds-text-small;
-      & {
-        @include pds-hover;
-      }
-      & {
-        @include pds-focus;
-      }
+      @include pds-focus;
+      @include pds-hover;
       & {
         color: $pds-theme-dark-contrast-medium;
         text-decoration: underline;
