@@ -211,11 +211,17 @@
       width: 100%;
     }
     a {
-      color: $pds-theme-dark-contrast-medium;
-      text-decoration: underline;
-      @include pds-text-small();
-      @include pds-hover();
-      @include pds-focus();
+      @include pds-text-small;
+      & {
+        @include pds-hover;
+      }
+      & {
+        @include pds-focus;
+      }
+      & {
+        color: $pds-theme-dark-contrast-medium;
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -188,8 +188,12 @@
 
     a {
       @include pds-text-small;
-      @include pds-hover;
-      @include pds-focus;
+      & {
+        @include pds-hover;
+      }
+      & {
+        @include pds-focus;
+      }
       & {
         color: $pds-theme-light-primary;
         display: grid;
