@@ -3,21 +3,18 @@ import { type Browser, chromium, expect as playwrightExpect, test as playwrightT
 import getPort from 'get-port';
 import lighthouse from 'lighthouse';
 
+type LighthouseAuditResults = {
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+};
+
 export const test = playwrightTest.extend<{
   port: number;
   browser: Browser;
-  lighthouseDesktopAudit: () => Promise<{
-    performance: number;
-    accessibility: number;
-    bestPractices: number;
-    seo: number;
-  }>;
-  lighthouseMobileAudit: () => Promise<{
-    performance: number;
-    accessibility: number;
-    bestPractices: number;
-    seo: number;
-  }>;
+  lighthouseAuditDesktop: () => Promise<LighthouseAuditResults>;
+  lighthouseAuditMobile: () => Promise<LighthouseAuditResults>;
 }>({
   port: [
     async ({}, use) => {
@@ -36,7 +33,7 @@ export const test = playwrightTest.extend<{
     },
     { scope: 'worker' },
   ],
-  lighthouseMobileAudit: async ({ page, port }, use, testInfo) => {
+  lighthouseAuditMobile: async ({ page, port }, use, testInfo) => {
     const audit = async () => {
       const {
         report,
@@ -76,7 +73,7 @@ export const test = playwrightTest.extend<{
 
     await use(audit);
   },
-  lighthouseDesktopAudit: async ({ page, port }, use, testInfo) => {
+  lighthouseAuditDesktop: async ({ page, port }, use, testInfo) => {
     const audit = async () => {
       const {
         report,

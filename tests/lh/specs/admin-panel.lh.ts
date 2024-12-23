@@ -5,8 +5,8 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('has sufficient lighthouse score', () => {
-  test('on mobile', async ({ lighthouseMobileAudit }) => {
-    const { performance, accessibility, bestPractices, seo } = await lighthouseMobileAudit();
+  test('on mobile', async ({ lighthouseAuditMobile }) => {
+    const { performance, accessibility, bestPractices, seo } = await lighthouseAuditMobile();
 
     expect(performance, 'Performance').toBeGreaterThanOrEqual(70);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
@@ -14,8 +14,8 @@ test.describe('has sufficient lighthouse score', () => {
     expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
   });
 
-  test('on desktop', async ({ lighthouseDesktopAudit }) => {
-    const { performance, accessibility, bestPractices, seo } = await lighthouseDesktopAudit();
+  test('on desktop', async ({ lighthouseAuditDesktop }) => {
+    const { performance, accessibility, bestPractices, seo } = await lighthouseAuditDesktop();
 
     expect(performance, 'Performance').toBeGreaterThanOrEqual(90);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
