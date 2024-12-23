@@ -86,3 +86,33 @@ jobs:
         with:
           name: vrt-regression-${{ matrix.shardIndex }}
           path: ./tests/vrt/test-results
+  lh:
+    name: 'LH'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1
+      options: --user 1001
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [ 1, 2, 3, 4 ]
+        shardTotal: [ 4 ]
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Setup and install'
+        uses: ./.github/actions/setup-and-install
+      - name: 'Download build artifact'
+        uses: actions/download-artifact@v4
+        with:
+          name: templates
+          path: ./dist
+      - name: 'LH'
+        run: yarn test:lh --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        shell: bash
+      - name: 'LH Regression'
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lh-regression-${{ matrix.shardIndex }}
+          path: ./tests/lh/test-results

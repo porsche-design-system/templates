@@ -1,7 +1,7 @@
 import { resolve } from 'node:path';
 import {
   getComponentChunkLinks,
-  getFontFaceStylesheet,
+  getFontFaceStyles,
   getFontLinks,
   getIconLinks,
   getInitialStyles,
@@ -29,7 +29,7 @@ const transformIndexHtmlPlugin = () => {
         //`<meta http-equiv="Content-Security-Policy" content="${cspContent}"/>`, // disabled due to loading of H&N
         getInitialStyles(),
         getComponentChunkLinks({ components: ['display', 'text', 'carousel', 'link-tile', 'link-pure', 'link'] }),
-        getFontFaceStylesheet(),
+        getFontFaceStyles(),
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({ appTitle: 'Templates by Porsche Design System' }),
