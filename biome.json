@@ -55,6 +55,20 @@
       }
     },
     {
+      "include": ["**/tests/*"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noEmptyBlockStatements": "off"
+          },
+          "correctness": {
+            "noNodejsModules": "off",
+            "noEmptyPattern": "off"
+          }
+        }
+      }
+    },
+    {
       "include": ["vite.config.js", "playwright.config.ts"],
       "linter": {
         "rules": {
