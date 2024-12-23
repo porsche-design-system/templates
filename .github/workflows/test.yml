@@ -92,6 +92,11 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.49.1
       options: --user 1001
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [ 1, 2, 3 ]
+        shardTotal: [ 3 ]
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
@@ -103,11 +108,11 @@ jobs:
           name: templates
           path: ./dist
       - name: 'LH'
-        run: yarn test:lh
+        run: yarn test:lh --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
         shell: bash
       - name: 'LH Regression'
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: lh-regression
+          name: lh-regression-${{ matrix.shardIndex }}
           path: ./tests/lh/test-results
