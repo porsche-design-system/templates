@@ -22,7 +22,7 @@
     "@axe-core/playwright": "^4.10.1",
     "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^1.49.1",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.5",
     "get-port": "^7.1.0",
     "lighthouse": "^12.3.0",
     "sass": "^1.83.0",
