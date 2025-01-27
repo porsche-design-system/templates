@@ -16,7 +16,7 @@
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.24.0"
+    "@porsche-design-system/components-js": "^3.25.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
