@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AI Assistant widget (Template)"/>
+  <title>AI Assistant widget (Template)</title>
+</head>
+<body>
+
+<button type="button" popovertarget="ai-assistant">Open / Close AI Assistant</button>
+
+<div id="ai-assistant" popover="auto">
+
+  <template id="template-login">
+    <div class="grid justify-items-center my-xl mx-md">
+      <img class="w-14 h-14" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+      <p-heading class="mt-md" size="medium" align="center" tag="h2">Welcome to Ask Porsche</p-heading>
+      <p-text class="mt-sm" size="medium" align="center">Please sign in with your Porsche ID.</p-text>
+      <p-link class="mt-lg" href="#template-intro" variant="secondary">Sign in</p-link>
+    </div>
+  </template>
+
+  <template id="template-intro">
+    <div class="grid mt-lg">
+      <img class="w-14 h-14 justify-self-center" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+      <p-heading class="mt-md" size="medium" align="center" tag="h2">I'm the AI Assistant of Porsche.</p-heading>
+      <p-text class="mt-sm" size="medium" align="center">How can I help you?</p-text>
+      <a class="mt-xl flex gap-static-md items-center border-thin border-contrast-low rounded-md p-sm transition font-porsche-next font-regular text-sm text-primary hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#template-chat">
+        <p-icon name="chat"></p-icon>
+        How can I use Plug & Charge for my Macan Electric?
+      </a>
+      <a class="mt-sm flex gap-static-md items-center border-thin border-contrast-low rounded-md p-sm transition font-porsche-next font-regular text-sm text-primary hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#template-chat">
+        <p-icon name="chat"></p-icon>
+        What is the Porsche Data Pass?
+      </a>
+      <div class="sticky-footer mt-md">
+        <form action="#template-chat">
+          <p-button-pure icon="attachment" hide-label="true">Upload attachment</p-button-pure>
+          <div class="grow-wrap">
+            <textarea class="question" name="question" rows="1" placeholder="Message AI Assistant" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+          </div>
+          <p-button-pure icon="microphone" hide-label="true">Use microphone</p-button-pure>
+          <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
+        </form>
+        <div class="mt-sm flex gap-sm justify-center">
+          <p-link-pure href="#template-my-inquiries" icon="none" size="x-small">My inquiries</p-link-pure>
+          <p-link-pure href="#template-contact" icon="none" size="x-small">Contact</p-link-pure>
+          <p-link-pure href="#template-terms-of-use" icon="none" size="x-small">Terms of Use</p-link-pure>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="template-chat">
+    <div class="sticky top-0 flex gap-xs">
+      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+    </div>
+    <div class="mt-lg">
+
+      <div class="grid gap-md">
+        <div class="justify-self-end p-sm bg-background-surface rounded-lg rounded-ee-none">
+          <p-text>What is the Porsche Data Pass?</p-text>
+        </div>
+
+        <div class="justify-self-start grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-8 h-8" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <p-text>The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</p-text>
+            <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
+            <div class="mt-xs flex gap-sm">
+              <p-button-pure icon="copy" type="button" hide-label="true">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
+            </div>
+            <a class="mt-md grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+              <span class="col-start-1 font-semibold">What is the Porsche Data Pass?</span>
+              <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
+              <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
+            </a>
+            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+              <span class="col-start-1 font-semibold">Frequently asked questions</span>
+              <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
+              <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
+            </a>
+            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+              <span class="col-start-1 font-semibold">Relevant models</span>
+              <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
+              <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
+            </a>
+          </div>
+        </div>
+
+        <div class="justify-self-end p-sm bg-background-surface rounded-lg rounded-ee-none">
+          <p-text>How do I contact customer service?</p-text>
+        </div>
+
+        <div class="justify-self-start grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-8 h-8" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <p-heading size="large" tag="h4">Porsche customer service</p-heading>
+            <p-link-pure class="mt-sm" href="tel:+4971191132900" icon="none">+49 (0)711 911 32900</p-link-pure>
+            <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
+            <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
+            <div class="mt-xs flex gap-sm">
+              <p-button-pure icon="copy" type="button" hide-label="true">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sticky-footer mt-md">
+        <form action="#">
+          <p-button-pure icon="attachment" hide-label="true">Upload attachment</p-button-pure>
+          <div class="grow-wrap">
+            <textarea class="question" name="question" rows="1" placeholder="Message AI Assistant" onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+          </div>
+          <p-button-pure icon="microphone" hide-label="true">Use microphone</p-button-pure>
+          <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
+        </form>
+        <div class="mt-sm flex gap-sm justify-center">
+          <p-link-pure href="#template-my-inquiries" icon="none" size="x-small">My inquiries</p-link-pure>
+          <p-link-pure href="#template-contact" icon="none" size="x-small">Contact</p-link-pure>
+          <p-link-pure href="#template-terms-of-use" icon="none" size="x-small">Terms of Use</p-link-pure>
+        </div>
+      </div>
+
+    </div>
+  </template>
+
+  <template id="template-my-inquiries">
+    <div class="sticky top-0 flex gap-xs">
+      <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
+      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+    </div>
+    <div class="my-lg">
+      <p-heading class="mt-lg" size="medium" tag="h2">My inquiries</p-heading>
+      <div class="mt-md grid gap-sm justify-items-start">
+        <p-link-pure href="#template-chat" icon="chat">What current Porsche models are there?</p-link-pure>
+        <p-link-pure href="#template-chat" icon="chat">What are the differences between the Taycan and 911?</p-link-pure>
+        <p-link-pure href="#template-chat" icon="chat">What customization options do I have for the 718 Cayman?</p-link-pure>
+        <p-link-pure href="#template-chat" icon="chat">Is it possible to save my vehicle configurations and edit them later?</p-link-pure>
+      </div>
+    </div>
+  </template>
+
+  <template id="template-contact">
+    <div class="sticky top-0 flex gap-xs">
+      <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
+      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+    </div>
+    <div class="my-lg">
+      <p-heading size="medium" tag="h2">Porsche Experience Center<br />Hockenheimring</p-heading>
+      <p-text class="mt-md">Am Motodrom 9-11<br />68766 Hockenheim</p-text>
+      <p-link-pure class="mt-md" href="tel:+4971191132900" icon="phone">+49 (0)711 911 32900</p-link-pure>
+      <p-link-pure class="mt-xs" href="mailto:info@porsche-experiencecenter-hockenheim.de" icon="email">info@porsche-experiencecenter-hockenheim.de</p-link-pure>
+      <p-heading class="mt-md" size="small" tag="h3">Opening hours:</p-heading>
+      <p-text>November – March:<br />
+        Monday to Sunday: 8:30 a.m. – 6:00 p.m<br />
+        <br />
+        April – October:<br />
+        Monday to Sunday: 8:30 a.m. – 7:30 p.m</p-text>
+    </div>
+  </template>
+
+  <template id="template-terms-of-use">
+    <div class="sticky top-0 flex gap-xs">
+      <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
+      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+    </div>
+    <div class="my-lg">
+      <p-heading class="mt-lg" size="medium" tag="h2">AI Assistant Disclaimer</p-heading>
+      <p-heading class="mt-md" size="small" tag="h3">General Information:</p-heading>
+      <p-text>The AI chatbot is an automated system powered by OpenAI. It is designed to provide information and assistance based on the public Tamr documentation. While we strive to provide accurate information through the AI chatbot, we cannot guarantee the accuracy, completeness, or up-to-date nature of the information provided. We recommend that you use responses as a starting point and verify the information in the linked public documentation sources.</p-text>
+      <p-heading class="mt-md" size="small" tag="h3">User Responsibility:</p-heading>
+      <p-text>Users of the AI chatbot bear sole responsibility for their interactions and reliance on the information provided. It is important to exercise caution and use your discretion while interpreting and acting upon the chatbot's responses. We cannot be held liable for any actions, losses, or damages resulting from the use of the chatbot.</p-text>
+      <p-heading class="mt-md" size="small" tag="h3">Data Privacy and Security:</p-heading>
+      <p-text>…</p-text>
+    </div>
+  </template>
+
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
