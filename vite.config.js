@@ -52,6 +52,7 @@ export default defineConfig({
       input: {
         'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
         'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),
+        'ai-assistant-widget': resolve(__dirname, 'src/ai-assistant-widget/index.html'),
         'co-driver': resolve(__dirname, 'src/co-driver/index.html'),
         'admin-panel': resolve(__dirname, 'src/admin-panel/index.html'),
         'shop-checkout': resolve(__dirname, 'src/shop-checkout/index.html'),
