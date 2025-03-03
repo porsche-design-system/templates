@@ -27,7 +27,7 @@
     "@tailwindcss/vite": "^4.0.8",
     "@types/node": "^22.13.5",
     "get-port": "^7.1.0",
-    "lighthouse": "^12.3.0",
+    "lighthouse": "^12.4.0",
     "postcss": "^8.5.3",
     "sass": "^1.85.1",
     "vite": "^6.2.0"
