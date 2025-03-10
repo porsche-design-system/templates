@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<button type="button" popovertarget="ai-assistant">Open / Close AI Assistant</button>
+<button class="ai-assistant" type="button" onclick="document.getElementById('ai-assistant').togglePopover()">Open / Close AI Assistant</button>
 
-<div id="ai-assistant" popover="auto">
+<div id="ai-assistant" class="ai-assistant" popover="manual">
 
   <template id="template-login">
     <div class="grid justify-items-center my-xl mx-md">
@@ -59,33 +59,74 @@
     <div class="mt-lg">
 
       <div class="grid gap-md">
-        <div class="justify-self-end p-sm bg-background-surface rounded-lg rounded-ee-none">
-          <p-text>What is the Porsche Data Pass?</p-text>
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <p-text>Can you show me a sample table?</p-text>
         </div>
 
-        <div class="justify-self-start grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
-          <img class="w-8 h-8" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
           <div>
             <p-heading size="small" tag="h3">Porsche AI</p-heading>
-            <p-text>The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</p-text>
+            <p-text>Sure! Here’s a simple sample table:</p-text>
+            <p-table class="mt-xs" caption="Some caption" compact="true">
+              <p-table-head>
+                <p-table-head-row>
+                  <p-table-head-cell>Category</p-table-head-cell>
+                  <p-table-head-cell>Details</p-table-head-cell>
+                </p-table-head-row>
+              </p-table-head>
+              <p-table-body>
+                <p-table-row>
+                  <p-table-cell>Name</p-table-cell>
+                  <p-table-cell>John Doe</p-table-cell>
+                </p-table-row>
+                <p-table-row>
+                  <p-table-cell>Role</p-table-cell>
+                  <p-table-cell>Software Engineer</p-table-cell>
+                </p-table-row>
+                <p-table-row>
+                  <p-table-cell>Department</p-table-cell>
+                  <p-table-cell>Product Development</p-table-cell>
+                </p-table-row>
+              </p-table-body>
+            </p-table>
             <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="mt-xs flex gap-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
               <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
               <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
             </div>
-            <a class="mt-md grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+          </div>
+        </div>
+
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <p-text>Can you show me some sample read further links?</p-text>
+        </div>
+
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <p-text>Sure! Here are some external links:</p-text>
+            <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
+            <div class="mt-xs flex gap-sm">
+              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
+            </div>
+            <a class="mt-md grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#" target="_blank">
               <span class="col-start-1 font-semibold">What is the Porsche Data Pass?</span>
               <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
               <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
             </a>
-            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#" target="_blank">
               <span class="col-start-1 font-semibold">Frequently asked questions</span>
               <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
               <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
             </a>
-            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#">
+            <a class="mt-sm grid grid-cols-[minmax(0,1fr)_auto] gap-x-sm bg-background-surface rounded-md p-sm font-porsche-next font-regular text-sm text-primary transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2" href="#" target="_blank">
               <span class="col-start-1 font-semibold">Relevant models</span>
               <span class="col-start-1 truncate">The Porsche Data Pass gives you access to the App Center, Connected Media and the Internet via a Wi-Fi hotspot for your mobile devices.</span>
               <p-icon class="col-start-2 row-span-full mx-sm" name="external"></p-icon>
@@ -93,24 +134,97 @@
           </div>
         </div>
 
-        <div class="justify-self-end p-sm bg-background-surface rounded-lg rounded-ee-none">
-          <p-text>How do I contact customer service?</p-text>
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <p-text>Can you show me a sample address?</p-text>
         </div>
 
-        <div class="justify-self-start grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
-          <img class="w-8 h-8" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
           <div>
             <p-heading size="small" tag="h3">Porsche AI</p-heading>
-            <p-heading size="large" tag="h4">Porsche customer service</p-heading>
-            <p-link-pure class="mt-sm" href="tel:+4971191132900" icon="none">+49 (0)711 911 32900</p-link-pure>
+            <p-text>Sure! Here's a sample address:</p-text>
+            <p-heading class="my-sm" size="large" tag="h4">Porsche customer service</p-heading>
+            <p-link-pure href="tel:+4971191132900" icon="none">+49 (0)711 911 32900</p-link-pure>
             <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
             <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="mt-xs flex gap-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
               <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
               <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
             </div>
+          </div>
+        </div>
+
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <p-text>Can you show me some sample images?</p-text>
+        </div>
+
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <p-text>Sure! Here are some sample images:</p-text>
+            <img class="mt-xs w-full h-auto rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="mt-xs w-full h-auto rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image"/>
+            <img class="mt-xs w-full h-auto rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image"/>
+            <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
+            <div class="mt-xs flex gap-sm">
+              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
+            </div>
+          </div>
+        </div>
+
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <div class="grid grid-cols-3 gap-xs">
+            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/women.webp" alt="Some alternative text for screen readers describing the image">
+          </div>
+          <p-text>Attached you'll find some images that I've shared with you to be analyzed. Can you summarize your analysis in a sample list?</p-text>
+        </div>
+
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <p-text>Sure! Here's a sample list:</p-text>
+            <p-text-list class="mt-xs">
+              <p-text-list-item>Porsche</p-text-list-item>
+              <p-text-list-item>Martini Racing
+                <p-text-list>
+                  <p-text-list-item>Watch</p-text-list-item>
+                  <p-text-list-item>Hoodie</p-text-list-item>
+                  <p-text-list-item>Umbrella</p-text-list-item>
+                </p-text-list>
+              </p-text-list-item>
+              <p-text-list-item>911</p-text-list-item>
+            </p-text-list>
+            <p-text class="mt-xs" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
+            <div class="mt-xs flex gap-sm">
+              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike';">Dislike</p-button-pure>
+            </div>
+          </div>
+        </div>
+
+        <div class="justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-xs">
+          <p-text>How does your loading indicator look like while computing answers?</p-text>
+        </div>
+
+        <div class="grid gap-x-sm grid-cols-[auto_minmax(0,1fr)]">
+          <img class="w-9 h-9" src="https://porsche-design-system.github.io/dummyasset/co-driver.webp" width="384" height="384" alt="AI Assistant logo">
+          <div>
+            <p-heading size="small" tag="h3">Porsche AI</p-heading>
+            <span class="skeleton mt-xs w-4/5 h-md rounded-sm"></span>
+            <span class="skeleton mt-xs w-4/5 h-md rounded-sm"></span>
+            <span class="skeleton mt-xs w-3/5 h-md rounded-sm"></span>
           </div>
         </div>
       </div>
