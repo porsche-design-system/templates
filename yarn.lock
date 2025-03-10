@@ -337,10 +337,10 @@
   dependencies:
     playwright "1.50.1"
 
-"@porsche-design-system/components-js@^3.26.0":
-  version "3.26.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.26.0.tgz#dde4198cd4b9875a9cdea7b03052371c8d956009"
-  integrity sha512-BCUwQzae/eYLQIt1Z4V5ltciQTtKpUrbAzJ4axHbw0iCEYI+48BhFFx3hxPw4q5lZ7xXEeZ+BLFUh7lnKMF23w==
+"@porsche-design-system/components-js@^3.27.1":
+  version "3.27.1"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.27.1.tgz#60d416f7d7a908efc9019e8eb9e22925e845d5d0"
+  integrity sha512-97cdeOw9D2phhK2VWRmkVQr0fMn1/KIQCbreJYYafxaF0uzvnv0W8VO+ewHjYWal16raEEbb2IFNO88OxKNjRg==
 
 "@puppeteer/browsers@2.6.1":
   version "2.6.1"
