@@ -105,23 +105,16 @@
   }
 }
 
-button.ai-assistant {
-  background: deeppink;
-  position: fixed;
-  inset-inline-end: $pds-spacing-fluid-medium;
-  inset-block-end: $pds-spacing-fluid-medium;
-}
-
 [popover].ai-assistant {
   all: unset;
   display: block;
   position: fixed;
   inset-inline-end: $pds-spacing-fluid-medium;
-  inset-block-end: calc(#{$pds-spacing-fluid-medium} + 54px);
-  width: 435px;
-  height: auto;
-  max-width: min(calc(100vw - 2 * #{$pds-spacing-fluid-medium}), 435px);
-  max-height: min(calc(100vh - 2 * #{$pds-spacing-fluid-medium} - 54px), 850px);
+  inset-block-end: calc(#{$pds-spacing-fluid-medium} * 2 + 54px);
+  width: min(25rem, 480px);
+  height: min(75vh, 720px);
+  max-width: calc(100vw - 2 * #{$pds-spacing-fluid-medium});
+  max-height: calc(100vh - 3 * #{$pds-spacing-fluid-medium} - 54px);
   padding: $pds-spacing-fluid-small;
   box-sizing: border-box;
   overflow: hidden auto;

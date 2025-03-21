@@ -1,6 +1,11 @@
 import './style.scss';
 
 // Example code for demonstration purposes only. Do not use in production.
+const modal = document.querySelector('p-modal');
+modal.addEventListener('dismiss', () => {
+  modal.open = false;
+});
+
 const updateTemplate = (id) => {
   for (const template of document.querySelectorAll('#ai-assistant[popover] > :not(template)')) {
     template.remove();
