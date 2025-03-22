@@ -7,12 +7,10 @@ modal.addEventListener('dismiss', () => {
 });
 
 const updateTemplate = (id) => {
-  for (const template of document.querySelectorAll('#ai-assistant[popover] > :not(template)')) {
+  for (const template of document.querySelectorAll('[popover] > :not(template)')) {
     template.remove();
   }
-  document
-    .querySelector('#ai-assistant[popover]')
-    .appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
+  document.querySelector('[popover]').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
 };
 
 window.addEventListener('hashchange', () => updateTemplate(window.location.hash));
