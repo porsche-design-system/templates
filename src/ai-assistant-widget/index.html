@@ -8,12 +8,16 @@
 </head>
 <body>
 
+<main>
+  <p-display tag="h1">AI Assistant Widget</p-display>
+</main>
+
 <button class="ai-button" type="button" aria-label="open / close ai assistant" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden});">
   <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
   <p-icon name="close" hidden></p-icon>
 </button>
 
-<div class="ai-popover" popover="manual">
+<aside class="ai-popover" popover="manual">
 
   <template id="template-login">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
@@ -29,14 +33,12 @@
   </template>
 
   <template id="template-intro">
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] min-h-full">
-
-      <div class="grid gap-sm content-center my-xl">
-        <p-icon class="justify-self-center" source="/templates/assets/ai.svg" size="x-large"></p-icon>
+    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
+      <div class="grid gap-sm content-center justify-items-center mx-static-lg my-md">
+        <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-heading size="large" align="center" tag="h2">I'm the AI Assistant of Porsche.</p-heading>
         <p-text size="medium" align="center">How can I help you?</p-text>
       </div>
-
       <div class="grid gap-sm">
         <a class="ai-card" href="#template-chat">
           <p-icon name="chat"></p-icon>
@@ -47,7 +49,6 @@
           <p-text tag="span">What is the Porsche Data Pass?</p-text>
         </a>
       </div>
-
       <div class="ai-footer">
         <form class="ai-form" action="#template-chat">
           <p-button-pure icon="attachment" hide-label="true">Upload attachment</p-button-pure>
@@ -77,7 +78,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
@@ -124,7 +125,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
@@ -161,7 +162,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
             <p-text size="large">Porsche customer service</p-text>
@@ -199,7 +200,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
@@ -225,7 +226,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
@@ -256,7 +257,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
@@ -289,7 +290,7 @@
 
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h3">Porsche AI</p-heading>
+          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="my-md grid col-start-2 gap-sm">
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
@@ -366,7 +367,7 @@
     </div>
   </template>
 
-</div>
+</aside>
 
 <p-modal aria="{ 'aria-label': 'Porsche Models' }">
   <div class="stretch-to-full-modal-width">
