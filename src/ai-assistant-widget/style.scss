@@ -132,11 +132,15 @@
   }
 
   .ai-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-static-md items-center p-static-xs ps-static-md bg-background-surface rounded-md;
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-sm items-center p-static-xs overflow-hidden bg-background-surface rounded-md;
   }
 
   .ai-input {
-    @apply [field-sizing:content] py-[15px] [max-block-size:4.5rlh] [grid-area:1/2] [font:inherit] outline-none resize-none;
+    @apply [field-sizing:content] py-[15px] [max-block-size:4.5rlh] [font:inherit] outline-none resize-none;
+  }
+
+  .ai-upload {
+    @apply ms-static-sm p-[2px] cursor-pointer rounded-sm transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-[-2px];
   }
 
   .ai-icon {
