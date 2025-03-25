@@ -121,11 +121,14 @@
   }
 
   .ai-header {
-    @apply sticky top-0 inline-flex gap-xs z-1;
+    @apply sticky top-0 inline-flex gap-static-sm z-1;
   }
 
   .ai-footer {
-    @apply sticky -bottom-sm -m-sm p-sm mt-0 pt-0 grid before:absolute before:inset-[-140px_0_-.1px] before:-z-1 before:pointer-events-none before:bg-linear-(--ai-gradient);
+    @apply sticky -bottom-sm -m-sm p-sm mt-0 pt-0 z-2 grid gap-sm;
+    &::before {
+      @apply content-[''] absolute inset-[-140px_0_-.1px] -z-1 pointer-events-none bg-linear-(--ai-gradient);
+    }
   }
 
   .ai-form {
@@ -145,7 +148,7 @@
   }
 
   .ai-answer {
-    @apply grid gap-x-sm grid-cols-[auto_minmax(0,1fr)];
+    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)];
   }
 
   .ai-cta {
