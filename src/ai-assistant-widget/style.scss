@@ -117,7 +117,7 @@
     @apply fixed inset-auto end-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto font-porsche-next text-base text-primary rounded-lg bg-background-base shadow-(--ai-shadow) animate-fade-in;
     bottom: calc(#{$pds-spacing-static-medium} + #{$pds-spacing-fluid-medium} + 15px * 2 + 1.5rem);
     max-width: calc(100vw - 2 * #{$pds-spacing-fluid-medium});
-    max-height: calc(100vh - 3 * #{$pds-spacing-fluid-medium} - 54px);
+    max-height: calc(100vh - 2 * #{$pds-spacing-fluid-medium} - #{$pds-spacing-static-medium} - 15px * 2 - 1.5rem);
   }
 
   .ai-header {

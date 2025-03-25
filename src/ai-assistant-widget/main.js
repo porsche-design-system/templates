@@ -14,6 +14,9 @@ const updateTemplate = (id) => {
   // add template
   document.querySelector('[popover]').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
 
+  // autofocus on textarea
+  document.querySelector('textarea').focus();
+
   // simulate computing ai answers
   clearTimeout(t);
   t = setTimeout(() => {
@@ -26,6 +29,7 @@ const updateTemplate = (id) => {
 // update template based on hash url
 window.addEventListener('hashchange', () => updateTemplate(window.location.hash));
 
-// on init: update template and show widget
+// on init: update template, show widget and focus textarea
 updateTemplate(window.location.hash);
 document.querySelector('button.ai-button').click();
+document.querySelector('textarea').focus();
