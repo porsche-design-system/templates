@@ -335,10 +335,10 @@
               </p-tag>
             </div>
           </p-scroller>
-          <button type="button" class="ai-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
+          <label class="ai-upload" tabindex="0" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
+            <input type="file" name="media" accept="image/png, image/jpeg" hidden />
             <p-icon name="attachment"></p-icon>
-          </button>
-          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
+          </label>
           <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant"></textarea>
           <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
