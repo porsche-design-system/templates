@@ -51,9 +51,28 @@
       </div>
       <div class="ai-footer">
         <form class="ai-form" action="#template-chat">
-          <p-button-pure icon="attachment" hide-label="true">Upload attachment</p-button-pure>
+          <p-scroller class="col-span-full" gradient-color="background-surface" hidden>
+            <div class="flex gap-static-sm">
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">911-datasheet.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">718-color.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">taycan-specs.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">macan-specs.jpg</button>
+              </p-tag>
+            </div>
+          </p-scroller>
+          <label class="ai-upload" tabindex="0" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
+            <input type="file" name="media" accept="image/png, image/jpeg" hidden />
+            <p-icon name="attachment"></p-icon>
+          </label>
           <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant"></textarea>
-          <p-button-pure icon="microphone" hide-label="true">Use microphone</p-button-pure>
+          <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
         <div class="flex gap-static-md justify-center">
@@ -299,9 +318,28 @@
       </div>
       <div class="ai-footer">
         <form class="ai-form" action="#template-chat">
-          <p-button-pure icon="attachment" hide-label="true">Upload attachment</p-button-pure>
+          <p-scroller class="col-span-full" gradient-color="background-surface" hidden>
+            <div class="flex gap-static-sm">
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">911-datasheet.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">718-color.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">taycan-specs.jpg</button>
+              </p-tag>
+              <p-tag icon="close" color="background-frosted">
+                <button type="button">macan-specs.jpg</button>
+              </p-tag>
+            </div>
+          </p-scroller>
+          <label class="ai-upload" tabindex="0" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
+            <input type="file" name="media" accept="image/png, image/jpeg" hidden />
+            <p-icon name="attachment"></p-icon>
+          </label>
           <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant"></textarea>
-          <p-button-pure icon="microphone" hide-label="true">Use microphone</p-button-pure>
+          <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
         <div class="flex gap-static-md justify-center">
