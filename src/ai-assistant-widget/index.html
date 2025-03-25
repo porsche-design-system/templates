@@ -12,12 +12,12 @@
   <p-display tag="h1">AI Assistant Widget</p-display>
 </main>
 
-<button class="ai-button" type="button" aria-label="open / close ai assistant" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden});">
+<button class="ai-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
   <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
   <p-icon name="close" hidden></p-icon>
 </button>
 
-<aside class="ai-popover" popover="manual">
+<aside class="ai-popover" id="ai-popover" popover="manual" aria-label="AI Assistant">
 
   <template id="template-login">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
@@ -89,7 +89,7 @@
       <div class="ai-header">
         <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
       </div>
-      <div class="grid gap-static-lg z-0">
+      <div class="grid gap-static-lg z-0" role="log">
         <div class="ai-question">
           <p-text>How does your loading indicator look like while computing answers?</p-text>
         </div>
