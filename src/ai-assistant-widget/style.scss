@@ -114,8 +114,8 @@
   }
 
   .ai-popover {
-    @apply fixed inset-auto end-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-sm box-border overflow-y-auto rounded-lg bg-background-base shadow-(--ai-shadow) animate-fade-in;
-    bottom: calc(#{$pds-spacing-fluid-medium} * 2 + 54px);
+    @apply fixed inset-auto end-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto font-porsche-next text-base text-primary rounded-lg bg-background-base shadow-(--ai-shadow) animate-fade-in;
+    bottom: calc(#{$pds-spacing-static-medium} + #{$pds-spacing-fluid-medium} + 54px);
     max-width: calc(100vw - 2 * #{$pds-spacing-fluid-medium});
     max-height: calc(100vh - 3 * #{$pds-spacing-fluid-medium} - 54px);
   }
@@ -125,7 +125,7 @@
   }
 
   .ai-footer {
-    @apply sticky -bottom-sm -m-sm p-sm mt-0 pt-0 z-2 grid gap-sm;
+    @apply sticky -bottom-static-md -m-static-md p-static-md mt-0 pt-0 z-2 grid gap-sm;
     &::before {
       @apply content-[''] absolute inset-[-140px_0_-.1px] -z-1 pointer-events-none bg-linear-(--ai-gradient);
     }

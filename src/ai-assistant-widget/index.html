@@ -21,7 +21,7 @@
 
   <template id="template-login">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
-      <div class="grid gap-sm content-center justify-items-center mx-static-lg my-md z-0">
+      <div class="grid gap-sm content-center justify-items-center mx-static-lg my-static-xl z-0">
         <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-heading size="large" align="center" tag="h2">Welcome to Ask Porsche</p-heading>
       </div>
@@ -34,7 +34,7 @@
 
   <template id="template-intro">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
-      <div class="grid gap-sm content-center justify-items-center mx-static-lg my-md z-0">
+      <div class="grid gap-sm content-center justify-items-center mx-static-lg my-static-xl z-0">
         <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-heading size="large" align="center" tag="h2">I'm the AI Assistant of Porsche.</p-heading>
         <p-text size="medium" align="center">How can I help you?</p-text>
@@ -66,11 +66,11 @@
   </template>
 
   <template id="template-chat">
-    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-md min-h-full items-end">
+    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-md min-h-full items-start">
       <div class="ai-header">
         <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
       </div>
-      <div class="grid gap-lg z-0">
+      <div class="grid gap-static-lg z-0">
         <div class="ai-question">
           <p-text>How does your loading indicator look like while computing answers?</p-text>
         </div>
@@ -78,7 +78,7 @@
         <div class="ai-answer">
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="my-md grid col-start-2 gap-sm">
+          <div class="my-md grid col-start-2 gap-static-sm">
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
             <span class="ai-skeleton w-3/5 h-sm rounded-sm"></span>
@@ -95,7 +95,7 @@
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <p-table class="my-md" caption="Some caption" compact="true">
+            <p-table class="my-static-md" caption="Some caption" compact="true">
               <p-table-head>
                 <p-table-head-row>
                   <p-table-head-cell>Category</p-table-head-cell>
@@ -142,7 +142,7 @@
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-md me-static-xl grid gap-sm">
+            <div class="my-static-md me-static-xl grid gap-sm">
               <a class="ai-cta" href="/templates/assets/porsche-models.pdf" target="_blank">
                 <p-icon class="bg-background-frosted rounded-md p-static-sm" name="document"></p-icon>
                 <span>
@@ -182,7 +182,7 @@
             <p-text>Postfach 41 42<br />73744 Ostfildern</p-text>
             <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
 
-            <div class="my-md me-static-xl grid gap-sm">
+            <div class="my-static-md me-static-xl grid gap-sm">
               <a class="ai-cta" href="tel:+4971191132900">
                 <p-icon class="bg-background-frosted rounded-md p-static-sm" name="phone"></p-icon>
                 <p-text>+49 711 91132900</p-text>
@@ -217,7 +217,7 @@
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-md me-static-xl grid gap-sm">
+            <div class="my-static-md me-static-xl grid gap-sm">
               <img class="w-full h-auto rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
               <img class="w-full h-auto rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image"/>
               <img class="w-full h-auto rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image"/>
@@ -243,7 +243,7 @@
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-md me-static-xl grid gap-sm">
+            <div class="my-static-md me-static-xl grid gap-sm">
               <audio class="w-full" src="/assets/gt3-sound.wav" controls></audio>
               <video class="w-full rounded-md" src="/assets/ocean.mp4" controls></video>
             </div>
@@ -274,7 +274,7 @@
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <p-text-list class="my-md">
+            <p-text-list class="my-static-md">
               <p-text-list-item>Porsche</p-text-list-item>
               <p-text-list-item>Martini Racing
                 <p-text-list>
@@ -318,9 +318,9 @@
       <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-lg mx-static-lg grid gap-md z-0">
+    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
       <p-heading size="medium" tag="h2">My inquiries</p-heading>
-      <div class="grid gap-md">
+      <div class="my-static-md grid gap-static-md">
         <p-link-pure href="#template-chat" icon="chat">What current Porsche models are there?</p-link-pure>
         <p-link-pure href="#template-chat" icon="chat">What are the differences between the Taycan and 911?</p-link-pure>
         <p-link-pure href="#template-chat" icon="chat">What customization options do I have for the 718 Cayman?</p-link-pure>
@@ -334,10 +334,10 @@
       <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-lg mx-static-lg grid gap-md z-0">
+    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
       <p-heading size="medium" tag="h2">Porsche Experience Center<br />Hockenheimring</p-heading>
       <p-text>Am Motodrom 9-11<br />68766 Hockenheim</p-text>
-      <div class="grid gap-sm justify-items-start my-md">
+      <div class="my-static-md grid gap-sm justify-items-start">
         <p-link-pure href="tel:+4971191132900" icon="phone">+49 (0)711 911 32900</p-link-pure>
         <p-link-pure href="mailto:info@porsche.de" icon="email">info@porsche.de</p-link-pure>
       </div>
@@ -355,7 +355,7 @@
       <p-link href="#template-intro" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-lg mx-static-lg grid gap-md z-0">
+    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
       <p-heading size="medium" tag="h2">AI Assistant Disclaimer</p-heading>
       <p-heading size="small" tag="h3">General Information:</p-heading>
       <p-text>The AI chatbot is an automated system powered by OpenAI. It is designed to provide information and assistance based on the public Tamr documentation. While we strive to provide accurate information through the AI chatbot, we cannot guarantee the accuracy, completeness, or up-to-date nature of the information provided. We recommend that you use responses as a starting point and verify the information in the linked public documentation sources.</p-text>
