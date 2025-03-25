@@ -89,7 +89,7 @@
       <div class="ai-header">
         <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
       </div>
-      <div class="grid gap-static-lg z-0" role="log">
+      <div class="grid gap-static-lg z-0" role="log" aria-label="AI chat log">
         <div class="ai-question">
           <p-text>How does your loading indicator look like while computing answers?</p-text>
         </div>
@@ -98,6 +98,7 @@
           <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="my-md grid col-start-2 gap-static-sm">
+            <span class="sr-only">Loading AI answer</span>
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
             <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
             <span class="ai-skeleton w-3/5 h-sm rounded-sm"></span>
@@ -143,10 +144,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like-filled" type="button" hide-label="true" aria="{ 'aria-pressed': 'true'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -162,14 +163,14 @@
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
             <div class="my-static-md me-static-xl grid gap-sm">
-              <a class="ai-cta" href="/templates/assets/porsche-models.pdf" target="_blank">
+              <a class="ai-cta" href="/templates/assets/porsche-models.pdf" target="_blank" aria-label="Download Porsche Models PDF">
                 <p-icon class="bg-background-frosted rounded-md p-static-sm" name="document"></p-icon>
                 <span>
                   <p-text>porsche-models.pdf</p-text>
                   <p-text size="xx-small" color="contrast-medium" ellipsis>PDF file</p-text>
                 </span>
               </a>
-              <a class="ai-cta" href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/" target="_blank">
+              <a class="ai-cta" href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/" target="_blank" aria-label="Porsche 911 technical data" aria-describedby="external-link">
                 <p-icon class="bg-background-frosted rounded-md p-static-sm" name="external"></p-icon>
                 <span>
                   <p-text>Porsche 911 technical data</p-text>
@@ -180,10 +181,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -218,10 +219,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -244,10 +245,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -269,10 +270,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -308,10 +309,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -334,10 +335,10 @@
               </p-tag>
             </div>
           </p-scroller>
-          <label class="ai-upload" tabindex="0" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
-            <input type="file" name="media" accept="image/png, image/jpeg" hidden />
+          <button type="button" class="ai-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden');">
             <p-icon name="attachment"></p-icon>
-          </label>
+          </button>
+          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
           <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant"></textarea>
           <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
@@ -349,11 +350,12 @@
         </div>
       </div>
     </div>
+    <span id="external-link" hidden aria-hidden="true">Opens in new window</span>
   </template>
 
   <template id="template-my-inquiries">
     <div class="ai-header">
-      <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back</p-link>
+      <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
     <div class="my-static-xl mx-static-lg grid gap-sm z-0">
