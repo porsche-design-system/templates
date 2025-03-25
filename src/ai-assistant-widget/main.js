@@ -3,6 +3,8 @@ import './style.scss';
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
 
+let t;
+
 const updateTemplate = (id) => {
   // remove template
   for (const template of document.querySelectorAll('[popover] > :not(template)')) {
@@ -13,7 +15,8 @@ const updateTemplate = (id) => {
   document.querySelector('[popover]').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
 
   // simulate computing ai answers
-  setTimeout(() => {
+  clearTimeout(t);
+  t = setTimeout(() => {
     for (const el of Array.from(document.querySelectorAll('.ai-answer[hidden],.ai-question[hidden]'))) {
       el.removeAttribute('hidden');
     }

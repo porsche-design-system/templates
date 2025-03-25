@@ -9,9 +9,19 @@ and [partials](https://designsystem.porsche.com/v3/partials/introduction).
 
 - [Co Driver](https://porsche-design-system.github.io/templates/co-driver/)
 
-## Admin Panel
+## AI Assistant Widget
 
+- [AI Assistant Widget](https://porsche-design-system.github.io/templates/ai-assistant-widget/)
+  - [Login](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-login)
+  - [Intro](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-intro)
+  - [Chat](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-chat)
+  - [My Inquiries](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-my-inquiries)
+  - [Contact](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-contact)
+  - [Terms of Use](https://porsche-design-system.github.io/templates/ai-assistant-widget/#template-terms-of-use)
+
+## Admin Panel
 - [Admin Panel](https://porsche-design-system.github.io/templates/admin-panel/)
+
 
 ## Shop Singapur
 

@@ -144,11 +144,11 @@
   }
 
   .ai-question {
-    @apply justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-sm;
+    @apply justify-self-end max-w-4/5 p-sm bg-background-surface rounded-lg rounded-ee-none grid gap-sm animate-fade-in;
   }
 
   .ai-answer {
-    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)];
+    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)] animate-fade-in;
   }
 
   .ai-cta {
