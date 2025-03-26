@@ -6,30 +6,42 @@ import './style.scss';
 let t;
 
 const updateTemplate = (id) => {
-  // remove template
+  removeTemplate();
+  addTemplate(id);
+  autoFocusTextarea();
+  simulateAiChatRequest();
+};
+
+const removeTemplate = () => {
   for (const template of document.querySelectorAll('[popover] > :not(template)')) {
     template.remove();
   }
+};
 
-  // add template
-  document.querySelector('[popover]').appendChild(document.querySelector(`template${id}`).content.cloneNode(true));
+const addTemplate = (id) => {
+  document.querySelector('[popover]')?.appendChild(document.querySelector(`template${id}`)?.content.cloneNode(true));
+};
 
-  // autofocus on textarea
-  document.querySelector('textarea').focus();
+const autoFocusTextarea = () => {
+  document.querySelector('textarea')?.focus();
+};
 
-  // simulate computing ai answers
+const simulateAiChatRequest = () => {
   clearTimeout(t);
   t = setTimeout(() => {
-    for (const el of Array.from(document.querySelectorAll('.ai-answer[hidden],.ai-question[hidden]'))) {
+    for (const el of document.querySelectorAll('.ai-answer[hidden],.ai-question[hidden]')) {
       el.removeAttribute('hidden');
     }
   }, 2000);
 };
 
-// update template based on hash url
+const toggleAiWidget = () => {
+  document.querySelector('button.ai-button')?.click();
+};
+
+// update template based on hash url change
 window.addEventListener('hashchange', () => updateTemplate(window.location.hash));
 
-// on init: update template, show widget and focus textarea
+// on init
+toggleAiWidget();
 updateTemplate(window.location.hash);
-document.querySelector('button.ai-button').click();
-document.querySelector('textarea').focus();
