@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<main>
+<main class="m-md">
+  <p-wordmark></p-wordmark>
   <p-display tag="h1">AI Assistant Widget</p-display>
 </main>
 
@@ -71,7 +72,7 @@
             <input type="file" name="media" accept="image/png, image/jpeg" hidden />
             <p-icon name="attachment"></p-icon>
           </label>
-          <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant"></textarea>
+          <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
           <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
@@ -198,7 +199,7 @@
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-            <p-text size="large">Porsche customer service</p-text>
+            <p-heading size="medium">Porsche customer service</p-heading>
             <p-text>Postfach 41 42<br />73744 Ostfildern</p-text>
             <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
 
@@ -265,7 +266,7 @@
 
             <div class="my-static-md me-static-xl grid gap-sm">
               <audio class="w-full" src="/assets/gt3-sound.wav" controls></audio>
-              <video class="w-full rounded-md" src="/assets/ocean.mp4" controls></video>
+              <video class="w-full rounded-md" src="/assets/ocean.mp4" poster="/assets/ocean.jpg" controls></video>
             </div>
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
@@ -280,10 +281,10 @@
 
         <div class="ai-question" hidden>
           <div class="grid grid-cols-3 gap-xs">
-            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full h-full object-cover object-center rounded-md" src="/assets/women.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image">
+            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/women.webp" alt="Some alternative text for screen readers describing the image">
           </div>
           <p-text>Attached you'll find some images that I've shared with you to be analyzed. Can you summarize your analysis in a sample list?</p-text>
         </div>
