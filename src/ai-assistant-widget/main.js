@@ -45,3 +45,11 @@ window.addEventListener('hashchange', () => updateTemplate(window.location.hash)
 // on init
 toggleAiWidget();
 updateTemplate(window.location.hash);
+
+// close ai-popover on ESC
+document.getElementById('ai-popover').onkeydown = (e) => {
+  if (e.key === 'Escape') {
+    toggleAiWidget();
+    document.querySelector('button.ai-button').focus();
+  }
+}
