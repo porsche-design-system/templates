@@ -8,35 +8,39 @@ let t;
 const updateTemplate = (id) => {
   removeTemplate();
   addTemplate(id);
-  autoFocusTextarea();
+  focusInput();
   simulateAiChatRequest();
 };
 
 const removeTemplate = () => {
-  for (const template of document.querySelectorAll('[popover] > :not(template)')) {
+  for (const template of document.querySelectorAll('.ai-popover > :not(template)')) {
     template.remove();
   }
 };
 
 const addTemplate = (id) => {
-  document.querySelector('[popover]')?.appendChild(document.querySelector(`template${id}`)?.content.cloneNode(true));
+  document.querySelector('.ai-popover').appendChild(document.querySelector(`template${id}`)?.content.cloneNode(true));
 };
 
-const autoFocusTextarea = () => {
-  document.querySelector('textarea')?.focus();
+const focusInput = () => {
+  document.querySelector('.ai-input')?.focus();
+};
+
+const focusButton = () => {
+  document.querySelector('.ai-button').focus();
 };
 
 const simulateAiChatRequest = () => {
   clearTimeout(t);
   t = setTimeout(() => {
-    for (const el of document.querySelectorAll('.ai-answer[hidden],.ai-question[hidden]')) {
+    for (const el of document.querySelectorAll('.ai-answer,.ai-question')) {
       el.removeAttribute('hidden');
     }
   }, 2000);
 };
 
 const toggleAiWidget = () => {
-  document.querySelector('button.ai-button')?.click();
+  document.querySelector('.ai-button').click();
 };
 
 // update template based on hash url change
@@ -47,9 +51,9 @@ toggleAiWidget();
 updateTemplate(window.location.hash);
 
 // close ai-popover on ESC
-document.getElementById('ai-popover').onkeydown = (e) => {
+document.querySelector('.ai-popover').onkeydown = (e) => {
   if (e.key === 'Escape') {
     toggleAiWidget();
-    document.querySelector('button.ai-button').focus();
+    focusButton();
   }
-}
+};

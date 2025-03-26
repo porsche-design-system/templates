@@ -18,7 +18,7 @@
   <p-icon name="close" hidden></p-icon>
 </button>
 
-<aside class="ai-popover" id="ai-popover" popover="manual" aria-label="AI Assistant">
+<aside id="ai-popover" class="ai-popover" popover="manual" aria-label="AI Assistant">
 
   <template id="template-login">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
@@ -145,10 +145,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like-filled" type="button" hide-label="true" aria="{ 'aria-pressed': 'true'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -182,10 +182,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -220,10 +220,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -246,10 +246,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -271,10 +271,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
@@ -310,10 +310,10 @@
 
             <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
             <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = 'check'; setTimeout(() => this.icon = 'copy', 2000);">Copy to clipboard</p-button-pure>
+              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
               <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'like' ? 'like-filled' : 'like'; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
+              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
             </div>
           </div>
         </div>
