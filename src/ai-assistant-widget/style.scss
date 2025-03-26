@@ -132,7 +132,7 @@
   }
 
   .ai-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-sm items-center p-static-sm bg-background-surface rounded-md;
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-sm items-center p-static-sm bg-background-surface rounded-md focus-within:outline outline-contrast-medium;
   }
 
   .ai-input {
@@ -156,7 +156,7 @@
   }
 
   .ai-cta {
-    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-static-md items-center cursor-pointer text-start rounded-lg -m-xs p-xs transition hover:bg-state-hover focus-visible:outline outline-state-focus;
+    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-static-md items-center cursor-pointer text-start rounded-lg -m-static-xs p-static-xs transition hover:bg-background-frosted focus-visible:outline outline-state-focus;
   }
 
   .ai-card {
