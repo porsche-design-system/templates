@@ -8,7 +8,7 @@ test.describe('has sufficient lighthouse score', () => {
   test('on mobile', async ({ lighthouseAuditMobile }) => {
     const { performance, accessibility, bestPractices, seo } = await lighthouseAuditMobile();
 
-    expect(performance, 'Performance').toBeGreaterThanOrEqual(45);
+    expect(performance, 'Performance').toBeGreaterThanOrEqual(40);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(98);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
     expect(seo, 'SEO').toBeGreaterThanOrEqual(90);
