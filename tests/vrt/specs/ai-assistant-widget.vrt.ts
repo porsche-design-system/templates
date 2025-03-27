@@ -1,39 +1,49 @@
 import { expect, test } from '@playwright/test';
+import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils';
+
+const templates = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
 
 test.describe('has no visual regression', () => {
-  test('for "login"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-login');
+  for (const template of templates) {
+    test.describe(`for "${template}"`, () => {
+      test.beforeEach(async ({ page }) => {
+        await page.goto(`/templates/ai-assistant-widget/#template-${template}`);
 
-    await expect(page).toHaveScreenshot('ai-assistant-widget-login.png', { fullPage: true });
-  });
+        if (template === 'chat') {
+          // wait until simulated AI request has finished
+          await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
 
-  test('for "intro"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-intro');
+          // stretch popover to fully show its content
+          await page.locator('.ai-popover').evaluate((popover) => {
+            popover.style.height = 'auto';
+            popover.style.maxHeight = 'none';
+          });
+          await page.setViewportSize({ width: page.viewportSize().width, height: 5000 });
+        }
+      });
 
-    await expect(page).toHaveScreenshot('ai-assistant-widget-intro.png', { fullPage: true });
-  });
+      test('default', async ({ page }) => {
+        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
+      });
 
-  test('for "chat"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-chat');
+      test.describe(() => {
+        test.skip(({ browserName, viewport }) => browserName !== 'chromium' || viewport.width !== 1280);
 
-    await expect(page).toHaveScreenshot('ai-assistant-widget-chat.png', { fullPage: true });
-  });
+        test('right to left', async ({ page }) => {
+          await enableRightToLeft(page);
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, { fullPage: true });
+        });
 
-  test('for "my-inquiries"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-my-inquiries');
+        test('text zoom', async ({ page }) => {
+          await enableTextZoom(page);
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, { fullPage: true });
+        });
 
-    await expect(page).toHaveScreenshot('ai-assistant-widget-my-inquiries.png', { fullPage: true });
-  });
-
-  test('for "contact"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-contact');
-
-    await expect(page).toHaveScreenshot('ai-assistant-widget-contact.png', { fullPage: true });
-  });
-
-  test('for "terms-of-use"', async ({ page }) => {
-    await page.goto('/templates/ai-assistant-widget/#template-terms-of-use');
-
-    await expect(page).toHaveScreenshot('ai-assistant-widget-terms-of-use.png', { fullPage: true });
-  });
+        test('high contrast', async ({ page }) => {
+          await enableForcedColors(page);
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, { fullPage: true });
+        });
+      });
+    });
+  }
 });
