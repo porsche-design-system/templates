@@ -19,7 +19,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test('for "chat"', async ({ page, makeAxeBuilder }) => {
     await page.goto('/templates/ai-assistant-widget/#template-chat');
-    await expect(page.getByText('How does your loading indicator look like while computing answers?')).toBeVisible();
+    await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
 
     const a11y = await makeAxeBuilder().analyze();
     expect(a11y.violations).toEqual([]);

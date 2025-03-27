@@ -54,7 +54,7 @@ test.describe('has sufficient lighthouse score', () => {
   test.describe('for "chat"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-chat');
-      await expect(page.getByText('How does your loading indicator look like while computing answers?')).toBeVisible();
+      await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
     });
 
     test('on mobile', async ({ lighthouseAuditMobile }) => {
