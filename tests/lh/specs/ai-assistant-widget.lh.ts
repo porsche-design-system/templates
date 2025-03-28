@@ -54,6 +54,7 @@ test.describe('has sufficient lighthouse score', () => {
   test.describe('for "chat"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-chat');
+      // wait until simulated AI request has finished
       await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
     });
 
