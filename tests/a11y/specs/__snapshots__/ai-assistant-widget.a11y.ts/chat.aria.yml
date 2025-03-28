@@ -1,0 +1,143 @@
+- main:
+  - img "Porsche"
+  - heading "AI Assistant Widget" [level=1]
+- button "open / close ai assistant" [expanded]
+- complementary "AI Assistant":
+  - link "Start new chat"
+  - log "AI chat log":
+    - paragraph: How does your loading indicator look like while computing answers?
+    - heading "Porsche AI" [level=2]
+    - text: Loading AI answer
+    - paragraph: Can you show me a sample table?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - table "Some caption":
+      - rowgroup:
+        - row "Category Details":
+          - columnheader "Category"
+          - columnheader "Details"
+      - rowgroup:
+        - row "Name John Doe":
+          - cell "Name"
+          - cell "John Doe"
+        - row "Role Software Engineer":
+          - cell "Role"
+          - cell "Software Engineer"
+        - row "Department Product Development":
+          - cell "Department"
+          - cell "Product Development"
+        - row "Info Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.":
+          - cell "Info"
+          - cell "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+    - button "next"
+    - status
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+    - paragraph: Can you show me some sample PDF files and external links?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - link "Download Porsche Models PDF":
+      - paragraph: porsche-models.pdf
+      - paragraph: PDF file
+    - link /Porsche \d+ technical data/:
+      - paragraph: /Porsche \d+ technical data/
+      - paragraph: /https:\/\/www\.porsche\.com\/germany\/models\/\d+\/carrera-models\/\d+-carrera\//
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+    - paragraph: Can you show me a sample address?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - heading "Porsche customer service" [level=3]
+    - paragraph: /Postfach \d+ \d+ \d+ Ostfildern/
+    - paragraph: "/Mon - Sun: 7:\\d+ a[\\d,.]+[bkmBKM]+\\. - 9:\\d+ p[\\d,.]+[bkmBKM]+/"
+    - link /\+\d+ \d+ \d+/:
+      - paragraph: /\+\d+ \d+ \d+/
+    - link "Launch WhatsApp Messenger":
+      - paragraph: Launch WhatsApp Messenger
+    - link "Send request":
+      - paragraph: Send request
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+    - paragraph: Can you show me some sample images?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - img "Some alternative text for screen readers describing the image"
+    - img "Some alternative text for screen readers describing the image"
+    - img "Some alternative text for screen readers describing the image"
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+    - paragraph: Can you show me a sample audio and video file?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+    - img "Some alternative text for screen readers describing the image"
+    - img "Some alternative text for screen readers describing the image"
+    - img "Some alternative text for screen readers describing the image"
+    - img "Some alternative text for screen readers describing the image"
+    - paragraph: Attached you'll find some images that I've shared with you to be analyzed. Can you summarize your analysis in a sample list?
+    - heading "Porsche AI" [level=2]
+    - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    - list:
+      - listitem: • Porsche
+      - listitem:
+        - text: • Martini Racing
+        - list:
+          - listitem: – Watch
+          - listitem: – Hoodie
+          - listitem: – Umbrella
+      - listitem: • Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      - listitem: /• \d+/
+    - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
+    - button "Copy to clipboard"
+    - status
+    - button "Mail"
+    - status
+    - button "Like"
+    - status
+    - button "Dislike"
+    - status
+  - button "Upload media"
+  - textbox "Message AI Assistant"
+  - button "Use microphone"
+  - status
+  - button "Ask AI Assistant"
+  - status
+  - link "My inquiries"
+  - link "Contact"
+  - link "Terms of Use"

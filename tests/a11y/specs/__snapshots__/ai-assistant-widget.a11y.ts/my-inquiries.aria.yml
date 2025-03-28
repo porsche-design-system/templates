@@ -1,0 +1,12 @@
+- main:
+  - img "Porsche"
+  - heading "AI Assistant Widget" [level=1]
+- button "open / close ai assistant" [expanded]
+- complementary "AI Assistant":
+  - link "Back to chat"
+  - link "Start new chat"
+  - heading "My inquiries" [level=2]
+  - link "What current Porsche models are there?"
+  - link /What are the differences between the Taycan and \d+\?/
+  - link /What customization options do I have for the \d+ Cayman\?/
+  - link "Is it possible to save my vehicle configurations and edit them later?"

@@ -8,6 +8,9 @@ export default defineConfig({
   expect: {
     // Maximum time expect() should wait for the condition to be met.
     timeout: 5000,
+    toMatchAriaSnapshot: {
+      pathTemplate: '{testDir}/__snapshots__/{testFilePath}/{arg}{ext}',
+    },
   },
   use: {
     // Maximum time each action such as `click()` can take. Defaults to 0 (no limit).
