@@ -1,4 +1,10 @@
 import { expect, test } from '../utils';
+import type { Page } from '@playwright/test';
+
+const getAiButton = (page: Page) => page.getByRole('button', { name: 'open / close ai assistant' });
+const getLikeButton = (page: Page) => page.getByRole('button', { name: 'Like' }).first();
+const getDislikeButton = (page: Page) => page.getByRole('button', { name: 'Dislike' }).first();
+const getCopyToClipboardButton = (page: Page) => page.getByRole('button', { name: 'Copy to clipboard' }).first();
 
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "login"', () => {
@@ -13,6 +19,16 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
     test('with axe', async ({ makeAxeBuilder }) => {
       expect((await makeAxeBuilder().analyze()).violations).toEqual([]);
+    });
+
+    test('ai button exposes "aria-expanded"', async ({ page }) => {
+      await expect(getAiButton(page)).toMatchAriaSnapshot('- button "open / close ai assistant" [expanded]');
+
+      await getAiButton(page).click();
+      await expect(getAiButton(page)).toMatchAriaSnapshot('- button "open / close ai assistant"');
+
+      await getAiButton(page).click();
+      await expect(getAiButton(page)).toMatchAriaSnapshot('- button "open / close ai assistant" [expanded]');
     });
   });
 
@@ -44,6 +60,34 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
     test('with axe', async ({ makeAxeBuilder }) => {
       expect((await makeAxeBuilder().analyze()).violations).toEqual([]);
+    });
+
+    test('like + dislike button exposes "aria-pressed"', async ({ page }) => {
+      await expect(getDislikeButton(page)).toMatchAriaSnapshot('- button "Dislike"');
+      await expect(getLikeButton(page)).toMatchAriaSnapshot('- button "Like"');
+
+      await getLikeButton(page).click();
+      await expect(getDislikeButton(page)).toMatchAriaSnapshot('- button "Dislike"');
+      await expect(getLikeButton(page)).toMatchAriaSnapshot('- button "Like" [pressed]');
+
+      await getDislikeButton(page).click();
+      await expect(getDislikeButton(page)).toMatchAriaSnapshot('- button "Dislike" [pressed]');
+      await expect(getLikeButton(page)).toMatchAriaSnapshot('- button "Like"');
+
+      await getLikeButton(page).click();
+      await expect(getDislikeButton(page)).toMatchAriaSnapshot('- button "Dislike"');
+      await expect(getLikeButton(page)).toMatchAriaSnapshot('- button "Like" [pressed]');
+    });
+
+    test('copy to clipboard button exposes "aria-pressed"', async ({ page }) => {
+      await expect(getCopyToClipboardButton(page)).toMatchAriaSnapshot('- button "Copy to clipboard"');
+
+      await getCopyToClipboardButton(page).click();
+      await expect(getCopyToClipboardButton(page)).toMatchAriaSnapshot('- button "Copy to clipboard" [pressed]');
+
+      await page.waitForTimeout(2000);
+
+      await expect(getCopyToClipboardButton(page)).toMatchAriaSnapshot('- button "Copy to clipboard"');
     });
   });
 
