@@ -12,6 +12,8 @@
     "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
     "test:a11y": "playwright test --config=tests/a11y/config/playwright.config.ts",
     "test:vrt": "playwright test --config=tests/vrt/config/playwright.config.ts",
+    "test:vrt:rename-snapshots": "tsx tests/vrt/scripts/renameSnapshots.ts",
+    "test:vrt:write-snapshots": "tsx tests/vrt/scripts/writeSnapshots.ts",
     "test:lh": "playwright test --config=tests/lh/config/playwright.config.ts",
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
@@ -30,6 +32,7 @@
     "lighthouse": "^12.3.0",
     "postcss": "^8.5.3",
     "sass": "^1.85.1",
+    "tsx": "^4.19.3",
     "vite": "^6.2.0"
   },
   "volta": {
