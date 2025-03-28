@@ -91,7 +91,7 @@
 
   --animate-fade-in: #{$pds-motion-duration-short} fade-in #{$pds-motion-easing-base} forwards;
 
-  --ai-gradient: to bottom, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.013) 8.1%, hsla(0, 0%, 100%, 0.049) 15.5%, hsla(0, 0%, 100%, 0.104) 22.5%, hsla(0, 0%, 100%, 0.175) 29%, hsla(0, 0%, 100%, 0.259) 35.3%, hsla(0, 0%, 100%, 0.352) 41.2%, hsla(0, 0%, 100%, 0.45) 47.1%, hsla(0, 0%, 100%, 0.55) 52.9%, hsla(0, 0%, 100%, 0.648) 58.8%, hsla(0, 0%, 100%, 0.741) 64.7%, hsla(0, 0%, 100%, 0.825) 71%, hsla(0, 0%, 100%, 0.896) 77.5%, hsla(0, 0%, 100%, 0.951) 84.5%, hsla(0, 0%, 100%, 0.987) 91.9%, hsl(0, 0%, 100%) 100%;
+  --ai-gradient: to bottom, #fff0 0%, #ffffff03 4%, #ffffff0c 8%, #ffffff1b 12%, #ffffff2d 16%, #ffffff42 20%, #ffffff5a 24%, #ffffff73 28%, #ffffff8c 32%, #ffffffa5 36%, #ffffffbd 40%, #ffffffd2 44%, #ffffffe4 48%, #fffffff3 52%, #fffffffc 56%, #ffffff 60%, #ffffff 64%, #ffffff 68%, #ffffff 72%, #ffffff 76%, #ffffff 80%, #ffffff 82%, #ffffff 100%;
   --ai-shadow: 0 0 24px 0 rgba(0, 0, 0, .24);
 
   @keyframes fade-in {
@@ -106,15 +106,16 @@
 
 @layer components {
   .ai-skeleton {
+    @apply forced-color-adjust-none;
     @include pds-skeleton('light');
   }
 
   .ai-button {
-    @apply fixed end-md bottom-md cursor-pointer shadow-(--ai-shadow) p-[15px] rounded-[50%] bg-background-base transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2;
+    @apply fixed end-md bottom-md cursor-pointer shadow-(--ai-shadow) p-[15px] rounded-[50%] bg-background-base transition hover:bg-state-hover focus-visible:outline outline-state-focus outline-offset-2 forced-colors:border;
   }
 
   .ai-popover {
-    @apply fixed inset-auto end-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto font-porsche-next text-base text-primary rounded-lg bg-background-base shadow-(--ai-shadow) animate-fade-in;
+    @apply fixed inset-auto end-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto font-porsche-next text-base text-primary rounded-lg bg-background-base shadow-(--ai-shadow) animate-fade-in forced-colors:border;
     bottom: calc(#{$pds-spacing-static-medium} + #{$pds-spacing-fluid-medium} + 15px * 2 + 1.5rem);
     max-width: calc(100vw - 2 * #{$pds-spacing-fluid-medium});
     max-height: calc(100vh - 2 * #{$pds-spacing-fluid-medium} - #{$pds-spacing-static-medium} - 15px * 2 - 1.5rem);
@@ -125,9 +126,9 @@
   }
 
   .ai-footer {
-    @apply sticky -bottom-static-md -m-static-md p-static-md mt-0 pt-0 z-2 grid gap-sm;
+    @apply sticky -bottom-static-md -m-static-md p-static-md mt-0 pt-0 z-2 grid gap-sm forced-colors:bg-background-base forced-colors:border-t forced-colors:pt-static-md;
     &::before {
-      @apply content-[''] absolute inset-[-140px_0_-.1px] -z-1 pointer-events-none bg-linear-(--ai-gradient);
+      @apply content-[''] absolute inset-[-60px_0_-.1px] -z-1 pointer-events-none bg-linear-(--ai-gradient);
     }
   }
 
