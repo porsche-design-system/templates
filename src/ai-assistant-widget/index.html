@@ -8,50 +8,50 @@
 </head>
 <body>
 
-<main class="m-md">
+<main class="m-fluid-md">
   <p-wordmark></p-wordmark>
   <p-display tag="h1">AI Assistant Widget</p-display>
 </main>
 
-<button class="ai-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
+<button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="c-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
   <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
   <p-icon name="close" hidden></p-icon>
 </button>
 
-<aside id="ai-popover" class="ai-popover" popover="manual" aria-label="AI Assistant">
+<aside id="c-popover" class="c-popover" popover="manual" aria-label="AI Assistant">
 
   <template id="template-login">
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
-      <div class="grid gap-sm content-center justify-items-center m-static-lg z-0">
+    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
+      <div class="grid gap-fluid-sm content-center justify-items-center m-static-lg z-0">
         <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-heading size="large" align="center" tag="h2">Welcome to Ask Porsche</p-heading>
       </div>
       <p-text class="mx-static-2xl z-0" size="medium" align="center">Please sign in with your Porsche ID.</p-text>
-      <div class="ai-footer">
+      <div class="c-footer">
         <p-link class="mx-static-lg mb-static-lg" href="#template-intro">Sign in</p-link>
       </div>
     </div>
   </template>
 
   <template id="template-intro">
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-md min-h-full">
-      <div class="grid gap-sm content-center justify-items-center m-static-lg z-0">
+    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
+      <div class="grid gap-fluid-sm content-center justify-items-center m-static-lg z-0">
         <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-heading size="large" align="center" tag="h2">I'm the AI Assistant of Porsche.</p-heading>
         <p-text size="medium" align="center">How can I help you?</p-text>
       </div>
-      <div class="grid gap-sm z-0">
-        <a class="ai-card" href="#template-chat">
+      <div class="grid gap-fluid-sm z-0">
+        <a class="c-card" href="#template-chat">
           <p-icon name="chat"></p-icon>
           <p-text tag="span">How can I use Plug & Charge for my Macan Electric?</p-text>
         </a>
-        <a class="ai-card" href="#template-chat">
+        <a class="c-card" href="#template-chat">
           <p-icon name="chat"></p-icon>
           <p-text tag="span">What is the Porsche Data Pass?</p-text>
         </a>
       </div>
-      <div class="ai-footer">
-        <form class="ai-form" action="#template-chat">
+      <div class="c-footer">
+        <form class="c-form" action="#template-chat">
           <p-scroller class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
             <div class="flex gap-static-sm">
               <p-tag icon="close" color="background-frosted">
@@ -68,11 +68,11 @@
               </p-tag>
             </div>
           </p-scroller>
-          <button type="button" class="ai-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
+          <button type="button" class="c-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
             <p-icon name="attachment"></p-icon>
           </button>
           <input type="file" name="media" accept="image/png, image/jpeg" hidden />
-          <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
+          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
           <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
@@ -86,34 +86,34 @@
   </template>
 
   <template id="template-chat">
-    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-md min-h-full items-start">
-      <div class="ai-header">
+    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-fluid-md min-h-full items-start">
+      <div class="c-header">
         <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
       </div>
       <div class="grid gap-static-lg z-0" role="log" aria-label="AI chat log">
-        <div class="ai-question">
+        <div class="c-question">
           <p-text>How does your loading indicator look like while computing answers?</p-text>
         </div>
 
-        <div class="ai-answer">
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer">
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="my-static-md grid col-start-2 gap-static-sm">
             <span class="sr-only">Loading AI answer</span>
-            <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
-            <span class="ai-skeleton w-4/5 h-sm rounded-sm"></span>
-            <span class="ai-skeleton w-3/5 h-sm rounded-sm"></span>
+            <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
+            <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
+            <span class="skeleton w-3/5 h-fluid-sm rounded-sm"></span>
           </div>
         </div>
 
-        <div class="ai-question" hidden>
+        <div class="c-question" hidden>
           <p-text>Can you show me a sample table?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
             <p-table class="my-static-md" caption="Some caption" compact="true">
@@ -153,26 +153,26 @@
           </div>
         </div>
 
-        <div class="ai-question" hidden>
+        <div class="c-question" hidden>
           <p-text>Can you show me some sample PDF files and external links?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-static-md me-static-xl grid gap-sm">
-              <a class="ai-cta" href="/templates/assets/porsche-models.pdf" target="_blank" aria-label="Download Porsche Models PDF" aria-describedby="external-link">
-                <p-icon class="bg-background-frosted backdrop-blur-[32px] rounded-md p-[10px]" name="document"></p-icon>
+            <div class="my-static-md me-static-xl grid gap-fluid-sm">
+              <a class="c-cta" href="/templates/assets/porsche-models.pdf" target="_blank" aria-label="Download Porsche Models PDF" aria-describedby="external-link">
+                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="document"></p-icon>
                 <span>
                   <p-text>porsche-models.pdf</p-text>
                   <p-text size="xx-small" color="contrast-medium" ellipsis>PDF file</p-text>
                 </span>
               </a>
-              <a class="ai-cta" href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/" target="_blank" aria-label="Porsche 911 technical data" aria-describedby="external-link">
-                <p-icon class="bg-background-frosted backdrop-blur-[32px] rounded-md p-[10px]" name="external"></p-icon>
+              <a class="c-cta" href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/" target="_blank" aria-label="Porsche 911 technical data" aria-describedby="external-link">
+                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="external"></p-icon>
                 <span>
                   <p-text>Porsche 911 technical data</p-text>
                   <p-text size="xx-small" color="contrast-medium" ellipsis>https://www.porsche.com/germany/models/911/carrera-models/911-carrera/</p-text>
@@ -190,30 +190,30 @@
           </div>
         </div>
 
-        <div class="ai-question" hidden>
+        <div class="c-question" hidden>
           <p-text>Can you show me a sample address?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
             <p-heading size="medium" tag="h3">Porsche customer service</p-heading>
             <p-text>Postfach 41 42<br />73744 Ostfildern</p-text>
             <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
 
-            <div class="my-static-md me-static-xl grid gap-sm">
-              <a class="ai-cta" href="tel:+4971191132900">
-                <p-icon class="bg-background-frosted backdrop-blur-[32px] rounded-md p-[10px]" name="phone"></p-icon>
+            <div class="my-static-md me-static-xl grid gap-fluid-sm">
+              <a class="c-cta" href="tel:+4971191132900">
+                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="phone"></p-icon>
                 <p-text>+49 711 91132900</p-text>
               </a>
-              <a class="ai-cta" href="https://wa.me/1XXXXXXXXXX">
-                <p-icon class="bg-background-frosted backdrop-blur-[32px] rounded-md p-[10px]" name="logo-whatsapp"></p-icon>
+              <a class="c-cta" href="https://wa.me/1XXXXXXXXXX">
+                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="logo-whatsapp"></p-icon>
                 <p-text>Launch WhatsApp Messenger</p-text>
               </a>
-              <a class="ai-cta" href="mailto:name@email.com">
-                <p-icon class="bg-background-frosted backdrop-blur-[32px] rounded-md p-[10px]" name="email"></p-icon>
+              <a class="c-cta" href="mailto:name@email.com">
+                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="email"></p-icon>
                 <p-text>Send request</p-text>
               </a>
             </div>
@@ -228,17 +228,17 @@
           </div>
         </div>
 
-        <div class="ai-question" hidden>
+        <div class="c-question" hidden>
           <p-text>Can you show me some sample images?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-static-md me-static-xl grid gap-sm">
+            <div class="my-static-md me-static-xl grid gap-fluid-sm">
               <img class="w-full h-auto rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
               <img class="w-full h-auto rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image"/>
               <img class="w-full h-auto rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image"/>
@@ -254,17 +254,17 @@
           </div>
         </div>
 
-        <div class="ai-question" hidden>
+        <div class="c-question" hidden>
           <p-text>Can you show me a sample audio and video file?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
-            <div class="my-static-md me-static-xl flex flex-col gap-sm">
+            <div class="my-static-md me-static-xl flex flex-col gap-fluid-sm">
               <audio class="w-full" src="/assets/gt3-sound.wav" controls></audio>
               <video class="w-full aspect-video rounded-md" src="/assets/ocean.mp4" poster="/assets/ocean.jpg" controls></video>
             </div>
@@ -279,8 +279,8 @@
           </div>
         </div>
 
-        <div class="ai-question" hidden>
-          <div class="grid grid-cols-3 gap-xs">
+        <div class="c-question" hidden>
+          <div class="grid grid-cols-3 gap-fluid-xs">
             <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
             <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image">
             <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image">
@@ -289,10 +289,10 @@
           <p-text>Attached you'll find some images that I've shared with you to be analyzed. Can you summarize your analysis in a sample list?</p-text>
         </div>
 
-        <div class="ai-answer" hidden>
-          <p-icon class="ai-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
+        <div class="c-answer" hidden>
+          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
           <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-sm">
+          <div class="grid col-start-2 gap-fluid-sm">
             <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
 
             <p-text-list class="my-static-md">
@@ -318,8 +318,8 @@
           </div>
         </div>
       </div>
-      <div class="ai-footer">
-        <form class="ai-form" action="#template-chat">
+      <div class="c-footer">
+        <form class="c-form" action="#template-chat">
           <p-scroller class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
             <div class="flex gap-static-sm">
               <p-tag icon="close" color="background-frosted">
@@ -336,11 +336,11 @@
               </p-tag>
             </div>
           </p-scroller>
-          <button type="button" class="ai-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
+          <button type="button" class="c-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
             <p-icon name="attachment"></p-icon>
           </button>
           <input type="file" name="media" accept="image/png, image/jpeg" hidden />
-          <textarea class="ai-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
+          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
           <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
@@ -355,11 +355,11 @@
   </template>
 
   <template id="template-my-inquiries">
-    <div class="ai-header">
+    <div class="c-header">
       <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
+    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
       <p-heading size="medium" tag="h2">My inquiries</p-heading>
       <div class="my-static-md grid gap-static-md">
         <p-link-pure href="#template-chat" icon="chat">What current Porsche models are there?</p-link-pure>
@@ -371,14 +371,14 @@
   </template>
 
   <template id="template-contact">
-    <div class="ai-header">
+    <div class="c-header">
       <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
+    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
       <p-heading size="medium" tag="h2">Porsche Experience Center<br />Hockenheimring</p-heading>
       <p-text>Am Motodrom 9-11<br />68766 Hockenheim</p-text>
-      <div class="my-static-md grid gap-sm justify-items-start">
+      <div class="my-static-md grid gap-fluid-sm justify-items-start">
         <p-link-pure href="tel:+4971191132900" icon="phone">+49 (0)711 911 32900</p-link-pure>
         <p-link-pure href="mailto:info@porsche.de" icon="email">info@porsche.de</p-link-pure>
       </div>
@@ -392,11 +392,11 @@
   </template>
 
   <template id="template-terms-of-use">
-    <div class="ai-header">
+    <div class="c-header">
       <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
       <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
     </div>
-    <div class="my-static-xl mx-static-lg grid gap-sm z-0">
+    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
       <p-heading size="medium" tag="h2">AI Assistant Disclaimer</p-heading>
       <p-heading size="small" tag="h3">General Information:</p-heading>
       <p-text>The AI chatbot is an automated system powered by OpenAI. It is designed to provide information and assistance based on the public Tamr documentation. While we strive to provide accurate information through the AI chatbot, we cannot guarantee the accuracy, completeness, or up-to-date nature of the information provided. We recommend that you use responses as a starting point and verify the information in the linked public documentation sources.</p-text>
