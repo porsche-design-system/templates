@@ -9,6 +9,7 @@ import {
   getMetaTagsAndIconLinks,
 } from '@porsche-design-system/components-js/partials';
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 const REGEX_HEAD = /<\/head>/;
 const REGEX_BODY = /<\/body>/;
@@ -63,5 +64,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [transformIndexHtmlPlugin()],
+  plugins: [transformIndexHtmlPlugin(), tailwindcss()],
 });

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "@porsche-design-system/components-js/tailwindcss";
+
+@theme {
+  --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer components {
+  .c-button {
+    @apply fixed end-fluid-md bottom-fluid-md cursor-pointer shadow-medium p-[15px] rounded-[50%] bg-base transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2 forced-colors:border;
+  }
+
+  .c-popover {
+    @apply fixed inset-auto max-w-[calc(100vw-2*var(--spacing-fluid-md))] max-h-[calc(100vh-2*var(--spacing-fluid-md)-var(--spacing-static-md)-15px*2-1.5rem)] bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)] end-fluid-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto prose-text-sm rounded-lg bg-base shadow-medium animate-fade-in forced-colors:border;
+  }
+
+  .c-header {
+    @apply sticky top-0 inline-flex gap-static-sm z-1;
+  }
+
+  .c-footer {
+    @apply sticky -bottom-static-md -m-static-md p-static-md mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
+    &::before {
+      @apply content-[''] absolute inset-[-60px_0_-.1px] -z-1 pointer-events-none bg-linear-[to_bottom,#fff0_0%,#ffffff03_4%,#ffffff0c_8%,#ffffff1b_12%,#ffffff2d_16%,#ffffff42_20%,#ffffff5a_24%,#ffffff73_28%,#ffffff8c_32%,#ffffffa5_36%,#ffffffbd_40%,#ffffffd2_44%,#ffffffe4_48%,#fffffff3_52%,#fffffffc_56%,#ffffff_60%,#ffffff_64%,#ffffff_68%,#ffffff_72%,#ffffff_76%,#ffffff_80%,#ffffff_82%,#ffffff_100%];
+    }
+  }
+
+  .c-form {
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-sm items-center p-static-sm bg-surface rounded-md focus-within:outline outline-contrast-medium;
+  }
+
+  .c-input {
+    @apply [field-sizing:content] py-[15px] [max-block-size:4.5rlh] [font:inherit] outline-none resize-none;
+  }
+
+  .c-upload {
+    @apply ms-static-xs p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
+  }
+
+  .c-icon {
+    @apply p-[6px] bg-primary rounded-md;
+  }
+
+  .c-question {
+    @apply justify-self-end max-w-4/5 p-fluid-sm bg-surface rounded-lg rounded-ee-none grid gap-fluid-sm animate-fade-in;
+  }
+
+  .c-answer {
+    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)] animate-fade-in;
+  }
+
+  .c-cta {
+    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-static-md items-center cursor-pointer text-start rounded-lg -m-static-xs p-static-xs transition hover:bg-frosted focus-visible:outline outline-focus;
+  }
+
+  .c-card {
+    @apply flex gap-static-md items-center border-thin border-contrast-low rounded-md p-fluid-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2;
+  }
+}
