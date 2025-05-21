@@ -14,7 +14,7 @@ test.describe('has no visual regression', () => {
           await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
 
           // stretch popover to fully show its content
-          await page.locator('.ai-popover').evaluate((popover) => {
+          await page.locator('#ai-popover').evaluate((popover) => {
             popover.style.height = 'auto';
             popover.style.maxHeight = 'none';
           });

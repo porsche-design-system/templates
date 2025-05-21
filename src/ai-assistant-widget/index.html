@@ -13,12 +13,12 @@
   <p-display tag="h1">AI Assistant Widget</p-display>
 </main>
 
-<button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="c-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
+<button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
   <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
   <p-icon name="close" hidden></p-icon>
 </button>
 
-<aside id="c-popover" class="c-popover" popover="manual" aria-label="AI Assistant">
+<aside id="ai-popover" class="c-popover" popover="manual" aria-label="AI Assistant">
 
   <template id="template-login">
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
