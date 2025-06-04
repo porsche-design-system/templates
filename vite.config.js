@@ -51,6 +51,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
         'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
         'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),
         'ai-assistant-widget': resolve(__dirname, 'src/ai-assistant-widget/index.html'),
