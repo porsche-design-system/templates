@@ -1,0 +1,213 @@
+@import "tailwindcss";
+@import "@porsche-design-system/components-js/tailwindcss";
+
+@theme {
+  /* Default */
+  --color-primary: rgb(1, 2, 5);
+  --color-base: #fff;
+
+  --color-frosted: hsl(240 4% 85% / 35%);
+
+  --color-contrast-100: rgba(1, 2, 5, 0.08);
+  --color-contrast-200: rgba(1, 2, 5, 0.24);
+  --color-contrast-300: rgba(1, 2, 5, 0.48);
+  --color-contrast-500: rgba(1, 2, 5, 0.56);
+  --color-contrast-800: rgba(1, 2, 5, 0.68);
+
+  --color-cosmic-echo: #92c0ff;
+  --color-cosmic-echo-soft: #1b2632;
+  --color-glade-green: #86ffb2;
+  --color-glade-green-soft: #122115;
+  --color-peak-neon: #f1076f;
+  --color-peak-neon-soft: #370027;
+
+  --color-success: #197e10;
+  --color-success-soft: #e4ffec;
+  --color-warning: #f3be00;
+  --color-warning-soft: #fff4d2;
+  --color-error: #cc1922;
+  --color-error-soft: #ffe2e4;
+  --color-info: #2762ec;
+  --color-info-soft: #d3e1ff;
+
+  --color-focus: #1a44ea;
+
+  /* Light */
+  --color-primary-light: rgb(1, 2, 5);
+  --color-base-light: #fff;
+
+  --color-frosted-light: hsl(240 4% 85% / 35%);
+
+  --color-contrast-100-light: rgba(1, 2, 5, 0.08);
+  --color-contrast-200-light: rgba(1, 2, 5, 0.24);
+  --color-contrast-300-light: rgba(1, 2, 5, 0.48);
+  --color-contrast-500-light: rgba(1, 2, 5, 0.56);
+  --color-contrast-800-light: rgba(1, 2, 5, 0.68);
+
+  --color-cosmic-echo-light: #92c0ff;
+  --color-cosmic-echo-soft-light: #1b2632;
+  --color-glade-green-light: #86ffb2;
+  --color-glade-green-soft-light: #122115;
+  --color-peak-neon-light: #f1076f;
+  --color-peak-neon-soft-light: #370027;
+
+  --color-success-light: #197e10;
+  --color-success-soft-light: #e4ffec;
+  --color-warning-light: #f3be00;
+  --color-warning-soft-light: #fff4d2;
+  --color-error-light: #cc1922;
+  --color-error-soft-light: #ffe2e4;
+  --color-info-light: #2762ec;
+  --color-info-soft-light: #d3e1ff;
+
+  --color-focus-light: #1a44ea;
+
+  /* Dark */
+  --color-primary-dark: rgb(251, 252, 255);
+  --color-base-dark: #0e0e12;
+
+  --color-frosted-dark: hsl(240 3% 26% / 35%);
+
+  --color-contrast-100-dark: rgba(251, 252, 255, 0.08);
+  --color-contrast-200-dark: rgba(251, 252, 255, 0.24);
+  --color-contrast-300-dark: rgba(251, 252, 255, 0.48);
+  --color-contrast-500-dark: rgba(251, 252, 255, 0.56);
+  --color-contrast-800-dark: rgba(251, 252, 255, 0.68);
+
+  --color-cosmic-echo-dark: #92c0ff;
+  --color-cosmic-echo-soft-dark: #1b2632;
+  --color-glade-green-dark: #86ffb2;
+  --color-glade-green-soft-dark: #122115;
+  --color-peak-neon-dark: #f1076f;
+  --color-peak-neon-soft-dark: #370027;
+
+  --color-success-dark: #09d087;
+  --color-success-soft-dark: #003320;
+  --color-warning-dark: #f7cb47;
+  --color-warning-soft-dark: #362b0a;
+  --color-error-dark: #fc4040;
+  --color-error-soft-dark: #3a0f0f;
+  --color-info-dark: #178bff;
+  --color-info-soft-dark: #04294e;
+
+  --color-focus-dark: #1a44ea;
+}
+
+@layer theme {
+  .light {
+    --color-primary: rgb(1, 2, 5);
+    --color-base: #fff;
+
+    --color-frosted: hsl(240 4% 85% / 35%);
+
+    --color-contrast-100: rgba(1, 2, 5, 0.08);
+    --color-contrast-200: rgba(1, 2, 5, 0.24);
+    --color-contrast-300: rgba(1, 2, 5, 0.48);
+    --color-contrast-500: rgba(1, 2, 5, 0.56);
+    --color-contrast-800: rgba(1, 2, 5, 0.68);
+
+    --color-cosmic-echo: #92c0ff;
+    --color-cosmic-echo-soft: #1b2632;
+    --color-glade-green: #86ffb2;
+    --color-glade-green-soft: #122115;
+    --color-peak-neon: #f1076f;
+    --color-peak-neon-soft: #370027;
+
+    --color-success: #197e10;
+    --color-success-soft: #e4ffec;
+    --color-warning: #f3be00;
+    --color-warning-soft: #fff4d2;
+    --color-error: #cc1922;
+    --color-error-soft: #ffe2e4;
+    --color-info: #2762ec;
+    --color-info-soft: #d3e1ff;
+
+    --color-focus: #1a44ea;
+  }
+
+  .dark {
+    --color-primary: rgb(251, 252, 255);
+    --color-base: #0e0e12;
+
+    --color-frosted: hsl(240 3% 26% / 35%);
+
+    --color-contrast-100: rgba(251, 252, 255, 0.08);
+    --color-contrast-200: rgba(251, 252, 255, 0.24);
+    --color-contrast-300: rgba(251, 252, 255, 0.48);
+    --color-contrast-500: rgba(251, 252, 255, 0.56);
+    --color-contrast-800: rgba(251, 252, 255, 0.68);
+
+    --color-cosmic-echo: #92c0ff;
+    --color-cosmic-echo-soft: #1b2632;
+    --color-glade-green: #86ffb2;
+    --color-glade-green-soft: #122115;
+    --color-peak-neon: #f1076f;
+    --color-peak-neon-soft: #370027;
+
+    --color-success: #09d087;
+    --color-success-soft: #003320;
+    --color-warning: #f7cb47;
+    --color-warning-soft: #362b0a;
+    --color-error: #fc4040;
+    --color-error-soft: #3a0f0f;
+    --color-info: #178bff;
+    --color-info-soft: #04294e;
+
+    --color-focus: #1a44ea;
+  }
+
+  .auto {
+    @media (prefers-color-scheme: dark) {
+      --color-primary: rgb(251, 252, 255);
+      --color-base: #0e0e12;
+
+      --color-frosted: hsl(240 3% 26% / 35%);
+
+      --color-contrast-100: rgba(251, 252, 255, 0.08);
+      --color-contrast-200: rgba(251, 252, 255, 0.24);
+      --color-contrast-300: rgba(251, 252, 255, 0.48);
+      --color-contrast-500: rgba(251, 252, 255, 0.56);
+      --color-contrast-800: rgba(251, 252, 255, 0.68);
+
+      --color-cosmic-echo: #92c0ff;
+      --color-cosmic-echo-soft: #1b2632;
+      --color-glade-green: #86ffb2;
+      --color-glade-green-soft: #122115;
+      --color-peak-neon: #f1076f;
+      --color-peak-neon-soft: #370027;
+
+      --color-success: #09d087;
+      --color-success-soft: #003320;
+      --color-warning: #f7cb47;
+      --color-warning-soft: #362b0a;
+      --color-error: #fc4040;
+      --color-error-soft: #3a0f0f;
+      --color-info: #178bff;
+      --color-info-soft: #04294e;
+
+      --color-focus: #1a44ea;
+    }
+  }
+}
+
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: unset;
+}
+
+@utility bg-contrast-100-accent {
+  background-color: color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%);
+}
+
+@utility bg-contrast-200-accent {
+  background-color: color-mix(in oklab, var(--color-contrast-200), var(--accent, var(--color-contrast-200)) 4%);
+}
+
+@utility bg-contrast-300-accent {
+  background-color: color-mix(in oklab, var(--color-contrast-300), var(--accent, var(--color-contrast-300)) 4%);
+}
+
+@utility bg-frosted-accent {
+  background-color: color-mix(in oklab, var(--color-frosted), var(--accent, var(--color-frosted)) 4%);
+}
