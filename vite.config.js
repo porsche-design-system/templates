@@ -53,7 +53,6 @@ export default defineConfig({
       input: {
         'sdx26-1': resolve(__dirname, 'src/sdx26/1/index.html'),
         'sdx26-2': resolve(__dirname, 'src/sdx26/2/index.html'),
-        'sdx26-3': resolve(__dirname, 'src/sdx26/3/index.html'),
         'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
         'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
         'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),

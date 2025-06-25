@@ -3,22 +3,7 @@ import './style.css';
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
 
-/*const navDrilldown = document.getElementById('nav-drilldown');
-const navButton = document.getElementById('nav-button');
-
-navButton.addEventListener('click', () => {
-  navDrilldown.open = true;
-});
-
-navDrilldown.addEventListener('dismiss', (e) => {
-  e.target.open = false;
-});
-
-navDrilldown.addEventListener('update', (e) => {
-  e.target.activeIdentifier = e.detail.activeIdentifier;
-});*/
-
-document.querySelector('select[name="theme"]').addEventListener('change', (e) => {
+document.querySelector('p-select[name="theme"]').addEventListener('update', (e) => {
   document.documentElement.classList.remove('light', 'dark', 'auto');
   document.documentElement.classList.add(e.target.value);
 
@@ -28,6 +13,29 @@ document.querySelector('select[name="theme"]').addEventListener('change', (e) =>
   }
 });
 
-document.querySelector('input[name="accent"]').addEventListener('input', (e) => {
+const vehicleMap = {
+  green: 'aventuringruenmetallic.png',
+  blue: 'enzianblaumetallic.png',
+  aqua: 'frozenbluemeta_lic.png',
+  red: 'kupferrubinmetallic.png',
+  limegreen: 'oakgruenmetallic_neo.png',
+};
+
+document.querySelector('p-select[name="accent"]').addEventListener('update', (e) => {
   document.documentElement.style.setProperty('--accent', e.target.value);
+  document.querySelector('img#vehicle').src = `/templates/assets/${vehicleMap[e.target.value]}`;
+});
+
+document.querySelector('p-select[name="frosted-color"]').addEventListener('update', (e) => {
+  if (e.target.value === 'bg-frosted-accent') {
+    for (const el of Array.from(document.querySelectorAll('.bg-contrast-100-accent'))) {
+      el.classList.remove('bg-contrast-100-accent');
+      el.classList.add('bg-frosted-accent');
+    }
+  } else if (e.target.value === 'bg-contrast-100-accent') {
+    for (const el of Array.from(document.querySelectorAll('.bg-frosted-accent'))) {
+      el.classList.remove('bg-frosted-accent');
+      el.classList.add('bg-contrast-100-accent');
+    }
+  }
 });
