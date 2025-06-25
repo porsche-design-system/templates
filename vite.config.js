@@ -51,6 +51,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        'sdx26-1': resolve(__dirname, 'src/sdx26/1/index.html'),
         'landing-page-1': resolve(__dirname, 'src/landing-page/1/index.html'),
         'drive-homepage': resolve(__dirname, 'src/drive-homepage/index.html'),
         'drive-voucher': resolve(__dirname, 'src/drive-voucher/index.html'),
