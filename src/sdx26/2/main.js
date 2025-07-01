@@ -22,8 +22,12 @@ const vehicleMap = {
 };
 
 document.querySelector('p-select[name="accent"]').addEventListener('update', (e) => {
-  document.documentElement.style.setProperty('--accent', e.target.value);
-  document.querySelector('img#vehicle').src = `/templates/assets/${vehicleMap[e.target.value]}`;
+  if (e.target.value === 'neutral') {
+    document.documentElement.style.removeProperty('--accent');
+  } else {
+    document.documentElement.style.setProperty('--accent', e.target.value);
+    document.querySelector('img#vehicle').src = `/templates/assets/${vehicleMap[e.target.value]}`;
+  }
 });
 
 document.querySelector('p-select[name="frosted-color"]').addEventListener('update', (e) => {
