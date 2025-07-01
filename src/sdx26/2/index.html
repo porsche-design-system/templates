@@ -74,7 +74,7 @@
     </div>
     <div class="-mt-fluid-xl col-span-full grid gap-fluid-xl place-items-center bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-2xl">
       <img src="/assets/motor.png" alt="" />
-      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
+      <button class="explore-e-performance bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
     </div>
   </div>
 
@@ -88,7 +88,7 @@
         </div>
         <div class="p-fluid-md grid gap-fluid-md">
           <p class="prose-text-md text-center">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
-          <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
+          <button class="explore-e-performance bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
       <div class="max-w-[480px] grid content-center justify-items-start gap-fluid-md">
         <h4 class="prose-display-md">E-Performance</h4>
         <p class="prose-text-sm">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
-        <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
+        <button class="explore-e-performance bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
       </div>
     </div>
   </div>
@@ -384,6 +384,24 @@
     </ul>
   </div>
 </footer>
+
+<dialog class="[open]:grid place-items-center place-content-center w-full max-w-full h-full max-h-full bg-transparent backdrop:bg-contrast-100-accent backdrop:backdrop-blur-frosted">
+  <div class="bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-lg m-fluid-lg max-w-[60vw]">
+    <h2 class="prose-display-md">Macan Turbo S</h2>
+
+    <div class="mt-fluid-md max-w-[50%] grid gap-fluid-md bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-md">
+      <p class="prose-text-md">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
+      <button id="close-dialog" class="bg-contrast-100-accent prose-text-sm backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Close</button>
+    </div>
+
+    <button popovertarget="my-popover" class="mt-fluid-md prose-text-sm bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Open Popover</button>
+    <div class="left-fluid-md top-fluid-md prose-text-sm bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm max-w-[320px]" popover id="my-popover">
+      <h2 class="prose-heading-md">E-Performance</h2>
+      <p>High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
+    </div>
+
+  </div>
+</dialog>
 
 <script type="module" src="main.js"></script>
 </body>
