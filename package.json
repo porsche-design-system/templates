@@ -26,7 +26,7 @@
     "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^1.52.0",
     "@tailwindcss/postcss": "^4.1.7",
-    "@tailwindcss/vite": "^4.1.7",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^22.15.21",
     "get-port": "^7.1.0",
     "lighthouse": "^12.6.0",
