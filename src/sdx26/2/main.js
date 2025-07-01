@@ -43,3 +43,13 @@ document.querySelector('p-select[name="frosted-color"]').addEventListener('updat
     }
   }
 });
+
+for (const btn of Array.from(document.querySelectorAll('button.explore-e-performance'))) {
+  btn.addEventListener('click', () => {
+    document.querySelector('dialog').showModal();
+  });
+}
+
+document.getElementById('close-dialog').addEventListener('click', () => {
+  document.querySelector('dialog').close();
+});
