@@ -212,4 +212,41 @@
   background-color: color-mix(in oklab, var(--color-frosted), var(--accent, var(--color-frosted)) 4%);
 }
 
+@utility outline-contrast-100-accent {
+  outline-color: color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%);
+}
+
+@utility outline-contrast-200-accent {
+  outline-color: color-mix(in oklab, var(--color-contrast-200), var(--accent, var(--color-contrast-200)) 4%);
+}
+
+@utility outline-contrast-300-accent {
+  outline-color: color-mix(in oklab, var(--color-contrast-300), var(--accent, var(--color-contrast-300)) 4%);
+}
+
+@utility outline-frosted-accent {
+  outline-color: color-mix(in oklab, var(--color-frosted), var(--accent, var(--color-frosted)) 4%);
+}
+
+@utility lighten {
+  @apply brightness-[120%];
+}
+
+@utility darken {
+  @apply brightness-[80%];
+}
+
+@utility bg-lighten {
+  @apply bg-[color-mix(in_oklab,var(--color-blue-500)_80%,white)];
+}
+
+@utility bg-darken {
+  @apply bg-[color-mix(in_oklab,var(--color-blue-500)_80%,black)];
+}
+
+@utility lighten-* {
+  tab-size: --value([*]);
+  background: blue;
+}
+
 @source inline('bg-contrast-100-accent,bg-frosted-accent');
