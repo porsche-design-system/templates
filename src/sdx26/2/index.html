@@ -8,7 +8,7 @@
 </head>
 <body class="bg-base prose-text-sm">
 
-<div class="fixed z-999 bottom-fluid-sm start-fluid-sm bg-frosted-accent backdrop-blur-frosted rounded-lg p-fluid-sm grid gap-fluid-xs">
+<div class="fixed z-999 bottom-fluid-sm start-fluid-sm bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm grid gap-fluid-xs">
   <p-select name="theme" label="Theme" compact="true" value="light">
     <p-select-option value="light">Light</p-select-option>
     <p-select-option value="dark">Dark</p-select-option>
@@ -21,7 +21,7 @@
     <p-select-option value="red">Copper Ruby</p-select-option>
     <p-select-option value="limegreen">Oak Green</p-select-option>
   </p-select>
-  <p-select name="frosted-color" label="Frosted Color" compact="true" value="bg-frosted-accent">
+  <p-select name="frosted-color" label="Frosted Color" compact="true" value="bg-contrast-100-accent">
     <p-select-option value="bg-frosted-accent">bg-frosted-accent</p-select-option>
     <p-select-option value="bg-contrast-100-accent">bg-contrast-100-accent</p-select-option>
   </p-select>
@@ -56,11 +56,11 @@
   </div>
 
   <div class="col-basic grid grid-cols-subgrid">
-    <div class="col-span-one-half p-fluid-xl rounded-[32px] bg-frosted-accent backdrop-blur-frosted grid gap-fluid-xs place-content-center justify-items-center">
+    <div class="col-span-one-half p-fluid-xl rounded-[32px] bg-contrast-100-accent backdrop-blur-frosted grid gap-fluid-xs place-content-center justify-items-center">
       <h3 class="prose-text-xs text-contrast-500">Top Speed</h3>
       <h4 class="prose-display-sm">305<span class="text-lg">km/h</span></h4>
     </div>
-    <div class="col-span-one-half p-fluid-xl rounded-[32px] bg-frosted-accent backdrop-blur-frosted grid gap-fluid-xs place-content-center justify-items-center">
+    <div class="col-span-one-half p-fluid-xl rounded-[32px] bg-contrast-100-accent backdrop-blur-frosted grid gap-fluid-xs place-content-center justify-items-center">
       <h3 class="prose-text-xs text-contrast-500">Acceleration</h3>
       <h4 class="prose-display-sm">5.7<span class="text-lg">s</span></h4>
     </div>
@@ -71,37 +71,92 @@
       <p class="prose-text-md text-center mx-fluid-2xl">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
       <h3 class="prose-display-lg text-[15vw] text-(--accent)">electric</h3>
     </div>
-    <div class="-mt-fluid-xl col-span-full grid gap-fluid-xl place-items-center bg-frosted-accent backdrop-blur-frosted rounded-[32px] p-fluid-2xl">
+    <div class="-mt-fluid-xl col-span-full grid gap-fluid-xl place-items-center bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-2xl">
       <img src="/assets/motor.png" alt="" />
-      <button class="bg-frosted-accent backdrop-blur-frosted rounded-lg p-fluid-sm">Explore E-Performance</button>
+      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
     </div>
   </div>
 
   <div class="col-full grid grid-cols-subgrid">
     <img class="col-span-full row-span-full w-full h-full min-w-full min-h-full object-cover" src="/assets/coast.png" alt="" />
     <div class="col-span-full row-span-full grid justify-end justify-items-end">
-      <div class="bg-frosted-accent backdrop-blur-frosted rounded-[32px] p-fluid-md m-fluid-lg max-w-[30%] grid grid-rows-[minmax(0,1fr)_auto]">
+      <div class="bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-md m-fluid-lg max-w-[30%] grid grid-rows-[minmax(0,1fr)_auto]">
         <div class="grid content-center">
           <h3 class="prose-text-xs text-center text-contrast-500">Range</h3>
           <h4 class="prose-display-md text-center">479<span class="text-lg">km</span></h4>
         </div>
         <div class="p-fluid-md grid gap-fluid-md">
           <p class="prose-text-md text-center">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
-          <button class="bg-frosted-accent backdrop-blur-frosted rounded-lg p-fluid-sm">Explore E-Performance</button>
+          <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="col-wide grid grid-cols-subgrid">
-    <div class="col-span-full bg-frosted-accent backdrop-blur-frosted rounded-[32px] p-fluid-md grid grid-cols-2 gap-fluid-md">
+    <div class="col-span-full bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-md grid grid-cols-2 gap-fluid-md">
       <img class="-mb-fluid-md h-[50vw]" src="/assets/wallbox.png" alt="" />
       <div class="max-w-[480px] grid content-center justify-items-start gap-fluid-md">
         <h4 class="prose-display-md">E-Performance</h4>
         <p class="prose-text-sm">High voltage for a new way of life: Experience the impressive performance of the Macan - on the road and at the charging station.</p>
-        <button class="bg-frosted-accent backdrop-blur-frosted rounded-lg p-fluid-sm">Explore E-Performance</button>
+        <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Explore E-Performance</button>
       </div>
     </div>
+  </div>
+
+  <div class="col-basic grid grid-cols-subgrid">
+    <form class="col-span-one-half bg-contrast-100-accent backdrop-blur-frosted rounded-[32px] p-fluid-md grid gap-fluid-sm">
+      <label class="grid gap-fluid-xs">
+        Firstname
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="firstname" placeholder="Placeholder" />
+      </label>
+      <label class="grid gap-fluid-xs">
+        Lastname
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="lastname" placeholder="Placeholder" />
+      </label>
+      <label class="grid gap-fluid-xs">
+        Zipcode
+        <input class="bg-error-soft backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="zip" placeholder="Placeholder" value="123456" />
+        <span class="text-error">Explanation of error</span>
+      </label>
+      <label class="grid gap-fluid-xs">
+        Zipcode
+        <input class="bg-success-soft backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="zip" placeholder="Placeholder" value="123456" />
+        <span class="text-success">Explanation of success</span>
+      </label>
+      <label class="grid gap-fluid-xs">
+        City
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="city" placeholder="Placeholder" value="Stuttgart" />
+      </label>
+      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Submit</button>
+      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Cancel</button>
+    </form>
+    <form class="col-span-one-half p-fluid-md grid gap-fluid-sm">
+      <label class="grid gap-fluid-xs">
+        Firstname
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="firstname" placeholder="Placeholder" />
+      </label>
+      <label class="grid gap-fluid-xs">
+        Lastname
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="lastname" placeholder="Placeholder" />
+      </label>
+      <label class="grid gap-fluid-xs">
+        Zipcode
+        <input class="bg-error-soft backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="zip" placeholder="Placeholder" value="123456" />
+        <span class="text-error">Explanation of error</span>
+      </label>
+      <label class="grid gap-fluid-xs">
+        Zipcode
+        <input class="bg-success-soft backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="zip" placeholder="Placeholder" value="123456" />
+        <span class="text-success">Explanation of success</span>
+      </label>
+      <label class="grid gap-fluid-xs">
+        City
+        <input class="bg-contrast-100-accent backdrop-blur-frosted rounded-md p-fluid-sm focus:outline focus:outline-contrast-300-accent" name="city" placeholder="Placeholder" value="Stuttgart" />
+      </label>
+      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Submit</button>
+      <button class="bg-contrast-100-accent backdrop-blur-frosted rounded-lg p-fluid-sm cursor-pointer transition hover:bg-contrast-200-accent">Cancel</button>
+    </form>
   </div>
 
 </main>
@@ -111,7 +166,7 @@
     class="col-extended grid xs:grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-fluid-md"
     action="#" onsubmit="return false;">
     <p-select class="[--p-select-background-color:transparent]" name="region" label="Change your delivery country"
-              value="germany">
+              value="germany" filter="true">
       <p-optgroup label="Asia">
         <p-select-option value="china"><img src="/assets/flags/china.svg" alt=""/>China</p-select-option>
         <p-select-option value="japan"><img src="/assets/flags/japan.svg" alt=""/>Japan</p-select-option>

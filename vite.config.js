@@ -45,10 +45,14 @@ const transformIndexHtmlPlugin = () => {
 
 export default defineConfig({
   base: '/templates/',
+  root: 'src',
+  publicDir: '../public',
+  emptyOutDir: true,
   server: {
     host: true,
   },
   build: {
+    outDir: '../dist/',
     rollupOptions: {
       input: {
         'sdx26-1': resolve(__dirname, 'src/sdx26/1/index.html'),

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r ./dist/src/. ./dist && rm -rf ./dist/src",
+    "build": "vite build",
     "preview": "vite preview",
     "format": "biome format",
     "lint": "biome lint",
@@ -18,7 +18,7 @@
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.28.0",
+    "@porsche-design-system/components-js": "^3.29.0-rc.0",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
