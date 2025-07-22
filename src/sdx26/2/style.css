@@ -196,6 +196,34 @@
   initial-value: unset;
 }
 
+@utility bg-masked-fade-to-t {
+  mask: linear-gradient(to top, transparent 0%, black 60px, black 100%) alpha;
+}
+
+@utility bg-masked-fade-to-b {
+  mask: linear-gradient(to bottom, transparent 0%, black 60px, black 100%) alpha;
+}
+
+@utility bg-masked-fade-y {
+  mask: linear-gradient(to bottom, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%) alpha;
+}
+
+@utility bg-masked-fade-to-l {
+  mask: linear-gradient(to left, transparent 0%, black 60px, black 100%) alpha;
+}
+
+@utility bg-masked-fade-to-r {
+  mask: linear-gradient(to right, transparent 0%, black 60px, black 100%) alpha;
+}
+
+@utility bg-masked-fade-x {
+  mask: linear-gradient(to right, transparent 0%, black 60px, black calc(100% - 60px), transparent 100%) alpha;
+}
+
+@utility bg-masked-fade-x-init {
+  mask: linear-gradient(to right, transparent 0%, black 1px, black calc(100% - 1px), transparent 100%) alpha;
+}
+
 @utility bg-fade-contrast-100-accent-to-t {
   background: linear-gradient(
     to top,
