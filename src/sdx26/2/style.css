@@ -196,6 +196,38 @@
   initial-value: unset;
 }
 
+@utility bg-fade-contrast-100-accent-to-t {
+  background: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%) 0%,
+    transparent 100%
+  );
+}
+
+@utility bg-fade-contrast-100-accent-to-b {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%) 0%,
+    transparent 100%
+  );
+}
+
+@utility bg-fade-contrast-100-accent-to-l {
+  background: linear-gradient(
+    to left,
+    color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%) 0%,
+    transparent 100%
+  );
+}
+
+@utility bg-fade-contrast-100-accent-to-r {
+  background: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%) 0%,
+    transparent 100%
+  );
+}
+
 @utility bg-contrast-100-accent {
   background-color: color-mix(in oklab, var(--color-contrast-100), var(--accent, var(--color-contrast-100)) 4%);
 }
