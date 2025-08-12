@@ -12,7 +12,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Setup and install'
         uses: ./.github/actions/setup-and-install
       - name: 'Lint'
@@ -26,7 +26,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Setup and install'
         uses: ./.github/actions/setup-and-install
       - name: 'Download build artifact'
@@ -45,7 +45,7 @@ jobs:
       options: --user 1001
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Setup and install'
         uses: ./.github/actions/setup-and-install
       - name: 'Download build artifact'
@@ -69,7 +69,7 @@ jobs:
         shardTotal: [ 3 ]
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Setup and install'
         uses: ./.github/actions/setup-and-install
       - name: 'Download build artifact'
@@ -99,7 +99,7 @@ jobs:
         shardTotal: [ 4 ]
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Setup and install'
         uses: ./.github/actions/setup-and-install
       - name: 'Download build artifact'
