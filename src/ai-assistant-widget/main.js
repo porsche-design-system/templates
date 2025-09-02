@@ -57,3 +57,12 @@ document.querySelector('.c-popover').onkeydown = (e) => {
     focusButton();
   }
 };
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.js-close-popover')) {
+    toggleAiWidget();
+    focusButton();
+  }
+});
+
+

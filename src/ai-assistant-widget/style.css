@@ -3,6 +3,9 @@
 
 @theme {
   --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
+  --color-ai-blue: #0e0e12; /*#161A2C*/
+  --shadow-ai: 0px -15px 50px -2px rgba(0,0,0,0.52);
+
 
   @keyframes fade-in {
     from {
@@ -20,22 +23,26 @@
   }
 
   .c-popover {
-    @apply fixed inset-auto max-w-[calc(100vw-2*var(--spacing-fluid-md))] max-h-[calc(100vh-2*var(--spacing-fluid-md)-var(--spacing-static-md)-15px*2-1.5rem)] bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)] end-fluid-md w-[min(25rem,480px)] h-[min(75vh,720px)] p-static-md box-border overflow-y-auto prose-text-sm rounded-lg bg-base shadow-medium animate-fade-in forced-colors:border;
+    @apply fixed inset-0 w-full h-full bg-ai-blue box-border overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
+
+    @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
+    sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
+    sm:rounded-3xl sm:shadow-medium;
   }
 
   .c-header {
-    @apply sticky top-0 inline-flex gap-static-sm z-1;
+    @apply sticky top-0 inline-flex gap-static-sm z-1 p-static-md;
   }
 
   .c-footer {
-    @apply sticky -bottom-static-md -m-static-md p-static-md mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
-    &::before {
-      @apply content-[''] absolute inset-[-60px_0_-.1px] -z-1 pointer-events-none bg-linear-[to_bottom,#fff0_0%,#ffffff03_4%,#ffffff0c_8%,#ffffff1b_12%,#ffffff2d_16%,#ffffff42_20%,#ffffff5a_24%,#ffffff73_28%,#ffffff8c_32%,#ffffffa5_36%,#ffffffbd_40%,#ffffffd2_44%,#ffffffe4_48%,#fffffff3_52%,#fffffffc_56%,#ffffff_60%,#ffffff_64%,#ffffff_68%,#ffffff_72%,#ffffff_76%,#ffffff_80%,#ffffff_82%,#ffffff_100%];
-    }
+    @apply shadow-ai sticky -bottom-[9px] -m-[7px] p-static-sm pb-static-md pt-static-sm mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
+   /* &::before {
+      @apply content-[''] absolute inset-[-60px_0_-.1px] -z-1 pointer-events-none bg-linear-[to_bottom,#00000000_0%,#00000003_4%,#0000000c_8%,#0000001b_12%,#0000002d_16%,#00000042_20%,#0000005a_24%,#00000073_28%,#0000008c_32%,#000000a5_36%,#000000bd_40%,#000000d2_44%,#000000e4_48%,#000000f3_52%,#000000fc_56%,#000000_60%,#000000_64%,#000000_68%,#000000_72%,#000000_76%,#000000_80%,#000000_82%,#000000_100%];
+    }*/
   }
 
   .c-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-sm items-center p-static-sm bg-surface rounded-md focus-within:outline outline-contrast-medium;
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-sm gap-y-static-sm items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-contrast-medium;
   }
 
   .c-input {
@@ -43,7 +50,7 @@
   }
 
   .c-upload {
-    @apply ms-static-xs p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
+    @apply  p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
   }
 
   .c-icon {
@@ -51,7 +58,7 @@
   }
 
   .c-question {
-    @apply justify-self-end max-w-4/5 p-fluid-sm bg-surface rounded-lg rounded-ee-none grid gap-fluid-sm animate-fade-in;
+    @apply justify-self-end max-w-4/5 p-static-md bg-surface rounded-2xl rounded-ee-none grid gap-fluid-sm animate-fade-in;
   }
 
   .c-answer {
