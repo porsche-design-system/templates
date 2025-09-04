@@ -83,6 +83,8 @@
     opacity: 0.7;
     will-change: filter, background;
     transform: translateZ(0);
+    box-shadow: 0 0 0 transparent;
+    -webkit-backface-visibility: hidden;
   }
 
   .c-header {
