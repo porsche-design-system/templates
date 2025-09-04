@@ -23,41 +23,32 @@
 
 <aside id="ai-popover" class="c-popover" popover="manual" aria-label="AI Assistant" >
 
-  <template id="template-login">
-    <div class="c-header w-full flex justify-end">
+  <template id="template-login" data-animation="true">
+    <div class="c-header w-full flex justify-end absolute">
       <p-button theme="dark" class=" sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-sm min-h-full">
-      <div class="grid content-start m-static-md mt-static-md">
+    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
+      <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
         <p-icon class="mb-static-md" theme="dark" source="/templates/assets/ai.svg" size="x-large"></p-icon>
         <p-text theme="dark" size="x-large">Good to see you. </p-text>
         <p-text theme="dark" size="x-large">How can I assist you?</p-text>
       </div>
       <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
-        <p-link-card href="#your-link-here" class="col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px]">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="medium">My car is not starting</p-text>
-          </div>
-        </p-link-card>
-
-        <p-link-card href="#your-link-here" class="bg-frosted rounded-3xl p-static-md">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="small">I lost my charging card</p-text>
-          </div>
-        </p-link-card>
-
-        <p-link-card href="#your-link-here" class="bg-frosted rounded-3xl p-static-md">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="small">I want to go on a trip to Switzerland</p-text>
-          </div>
-        </p-link-card>
+        <a href="#" class="col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px] opacity-0 translate-y-[20px] animate-slide-up-fade delay-100 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="medium">My car is not starting</p-text>
+        </a>
+        <a href="#" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-300 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="small">I lost my charging card</p-text>
+        </a>
+        <a href="#" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-500 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="small">I want to go on a trip to Switzerland</p-text>
+        </a>
       </div>
-
       <div class="c-footer dark:bg-surface rounded-3xl px-static-md pt-static-md">
         <p-link theme="dark" variant="primary" class="w-full" href="#template-intro">Sign in</p-link>
         <p-text theme="dark" size="x-small" align="center" class="max-w-[32ch] m-auto" color="contrast-medium">I’m an artificial intelligence, not a human, so please use my answers with care.</p-text>
@@ -67,39 +58,31 @@
 
 
 
-  <template id="template-intro">
-    <div class="c-header w-full flex justify-end">
+  <template id="template-intro" data-animation="true">
+    <div class="c-header w-full flex justify-end absolute">
       <p-button theme="dark" class=" sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-sm min-h-full">
-      <div class="grid content-start m-static-md mt-static-md">
+    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
+      <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
         <p-icon class="mb-static-md" theme="dark" source="/templates/assets/ai.svg" size="x-large"></p-icon>
-        <p-text theme="dark" size="x-large" tag="h2">Good to see you. </p-text>
-        <p-text theme="dark" size="x-large" tag="h2">How can I assist you?</p-text>
+        <p-text theme="dark" size="x-large">Good to see you. </p-text>
+        <p-text theme="dark" size="x-large">How can I assist you?</p-text>
       </div>
       <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
-        <p-link-card href="#your-link-here" class="col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px]">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="medium">My car is not starting</p-text>
-          </div>
-        </p-link-card>
-
-        <p-link-card href="#your-link-here" class="bg-frosted rounded-3xl p-static-md">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="small">I lost my charging card</p-text>
-          </div>
-        </p-link-card>
-
-        <p-link-card href="#your-link-here" class="bg-frosted rounded-3xl p-static-md">
-          <div class="flex flex-col h-full justify-between">
-            <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-            <p-text theme="dark" size="small">I want to go on a trip to Switzerland</p-text>
-          </div>
-        </p-link-card>
+        <a href="#" class="col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px] opacity-0 translate-y-[20px] animate-slide-up-fade delay-100 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="medium">My car is not starting</p-text>
+        </a>
+        <a href="#" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-300 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="small">I lost my charging card</p-text>
+        </a>
+        <a href="#" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-500 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
+          <p-text theme="dark" size="small">I want to go on a trip to Switzerland</p-text>
+        </a>
       </div>
 
       <div class="c-footer dark:bg-surface rounded-3xl">

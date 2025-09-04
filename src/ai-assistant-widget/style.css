@@ -3,9 +3,8 @@
 
 @theme {
   --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
-  --color-ai-blue: #0e0e12; /*#161A2C*/
+  --color-ai-blue: #000;
   --shadow-ai: 0px -15px 50px -2px rgba(0,0,0,0.52);
-
 
   @keyframes fade-in {
     from {
@@ -18,6 +17,52 @@
 }
 
 @layer components {
+  @keyframes slide-up-fade {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  .animate-slide-up-fade {
+    animation: slide-up-fade 0.8s ease-out forwards;
+  }
+
+  /* Manuelle Definition der delay-Klassen */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+@layer components {
+
   .c-button {
     @apply fixed end-fluid-md bottom-fluid-md cursor-pointer shadow-medium p-[15px] rounded-[50%] bg-base transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2 forced-colors:border;
   }
@@ -30,15 +75,21 @@
     sm:rounded-3xl sm:shadow-medium;
   }
 
+  .c-popover.is-animated::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none z-0;
+    background: conic-gradient(from var(--gradient-angle, 0deg) at 50% 50%, #6495ed, #000);
+    filter: blur(var(--blur-amount, 90px));
+    opacity: 0.7;
+    will-change: filter, background;
+  }
+
   .c-header {
-    @apply sticky top-0 inline-flex gap-static-sm z-1 p-static-md;
+    @apply sticky left-0 top-0 inline-flex gap-static-sm z-1 p-static-md;
   }
 
   .c-footer {
     @apply shadow-ai sticky -bottom-[9px] -m-[7px] p-static-sm pb-static-md pt-static-sm mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
-   /* &::before {
-      @apply content-[''] absolute inset-[-60px_0_-.1px] -z-1 pointer-events-none bg-linear-[to_bottom,#00000000_0%,#00000003_4%,#0000000c_8%,#0000001b_12%,#0000002d_16%,#00000042_20%,#0000005a_24%,#00000073_28%,#0000008c_32%,#000000a5_36%,#000000bd_40%,#000000d2_44%,#000000e4_48%,#000000f3_52%,#000000fc_56%,#000000_60%,#000000_64%,#000000_68%,#000000_72%,#000000_76%,#000000_80%,#000000_82%,#000000_100%];
-    }*/
   }
 
   .c-form {
