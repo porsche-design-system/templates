@@ -38,6 +38,42 @@ function stopAnimation() {
 
 let t;
 
+const focusButton = () => {
+  document.querySelector('.c-button').focus();
+};
+
+const toggleAiWidget = () => {
+  document.querySelector('.c-button').click();
+};
+
+const setupEventListeners = () => {
+  const loginLink = document.querySelector('p-link[href="#template-intro"]');
+  if (loginLink) {
+    loginLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      history.pushState(null, '', '#template-intro');
+      updateTemplate('#template-intro');
+    });
+  }
+
+  const submitButton = document.querySelector('form[action="#template-chat"] p-button[type="submit"]');
+  if (submitButton) {
+    submitButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      history.pushState(null, '', '#template-chat');
+      updateTemplate('#template-chat');
+    });
+  }
+
+  const closeButton = document.querySelector('.js-close-popover');
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      toggleAiWidget();
+      focusButton();
+    });
+  }
+};
+
 const updateTemplate = (id) => {
   for (const template of document.querySelectorAll('.c-popover > :not(template)')) {
     template.remove();
@@ -67,71 +103,25 @@ const updateTemplate = (id) => {
     stopAnimation();
   }
 
-  // Ruft die Event-Listener-Funktion auf, nachdem die neue Vorlage geladen wurde
   setupEventListeners();
 };
 
-const focusButton = () => {
-  document.querySelector('.c-button').focus();
-};
-
-const toggleAiWidget = () => {
-  document.querySelector('.c-button').click();
-};
-
-// update template based on hash url change
 window.addEventListener('hashchange', () => {
-  // Verhindert, dass leere Hashes das Popover leeren
   if (window.location.hash) {
     updateTemplate(window.location.hash);
   }
 });
 
-// on init
 toggleAiWidget();
-// Stellt sicher, dass immer eine Vorlage geladen wird, auch wenn kein Hash vorhanden ist.
 if (window.location.hash) {
   updateTemplate(window.location.hash);
 } else {
   updateTemplate('#template-login');
 }
 
-// close c-popover on ESC
 document.querySelector('.c-popover').onkeydown = (e) => {
   if (e.key === 'Escape') {
     toggleAiWidget();
     focusButton();
-  }
-};
-
-// Funktion zum Einrichten von Event-Listenern für dynamische Elemente
-const setupEventListeners = () => {
-  // Listener für den "Sign in" Link in #template-login
-  const loginLink = document.querySelector('p-link[href="#template-intro"]');
-  if (loginLink) {
-    loginLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      history.pushState(null, '', '#template-intro');
-      updateTemplate('#template-intro');
-    });
-  }
-
-  // Listener für den "Ask AI Assistant" Button in #template-intro
-  const submitButton = document.querySelector('form[action="#template-chat"] p-button[type="submit"]');
-  if (submitButton) {
-    submitButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      history.pushState(null, '', '#template-chat');
-      updateTemplate('#template-chat');
-    });
-  }
-
-  // Schließt das Popover, wenn auf den Schließen-Button geklickt wird
-  const closeButton = document.querySelector('.js-close-popover');
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      toggleAiWidget();
-      focusButton();
-    });
   }
 };
