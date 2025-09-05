@@ -89,8 +89,11 @@
   background: conic-gradient(at 50% 50%, #6495ed, #000);
   filter: blur(var(--blur-amount, 90px));
   opacity: 0.7;
+
+  --p-animation-duration: 20s;
+
   animation:
-    rotate-gradient 20s linear infinite,
+    rotate-gradient var(--p-animation-duration) linear infinite,
     pulse-blur 10s ease-in-out infinite;
 }
 
@@ -113,7 +116,7 @@
   }
 
   .c-footer {
-    @apply shadow-ai sticky -bottom-[9px] -m-[7px] p-static-sm pb-static-md pt-static-sm mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
+    @apply shadow-ai sticky -bottom-[9px] -m-[7px] p-static-sm pb-static-md mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
   }
 
   .c-form {

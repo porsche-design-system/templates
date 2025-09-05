@@ -4,6 +4,17 @@ import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils'
 const templates = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
 
 test.describe('has no visual regression', () => {
+  // Füge diesen Block hinzu, um die Animationsdauer global zu überschreiben
+  test.beforeEach(async ({ page }) => {
+    await page.addStyleTag({
+      content: `
+        .c-popover.is-animated::before {
+          --p-animation-duration: 0s !important;
+        }
+      `
+    });
+  });
+
   for (const template of templates) {
     test.describe(`for "${template}"`, () => {
       test.beforeEach(async ({ page }) => {
@@ -23,10 +34,8 @@ test.describe('has no visual regression', () => {
       });
 
       test('default', async ({ page }) => {
-        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, {
-          fullPage: true,
-          animations: 'disabled'
-        });
+        // Die animations: 'disabled' Eigenschaft ist nicht mehr nötig
+        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
       });
 
       test.describe(() => {
@@ -34,26 +43,17 @@ test.describe('has no visual regression', () => {
 
         test('right to left', async ({ page }) => {
           await enableRightToLeft(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, {
-            fullPage: true,
-            animations: 'disabled'
-          });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, { fullPage: true });
         });
 
         test('text zoom', async ({ page }) => {
           await enableTextZoom(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, {
-            fullPage: true,
-            animations: 'disabled'
-          });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, { fullPage: true });
         });
 
         test('high contrast', async ({ page }) => {
           await enableForcedColors(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, {
-            fullPage: true,
-            animations: 'disabled'
-          });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, { fullPage: true });
         });
       });
     });
