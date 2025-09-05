@@ -3,6 +3,11 @@
   - heading "AI Assistant Widget" [level=1]
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
-  - heading "Welcome to Ask Porsche" [level=2]
-  - paragraph: Please sign in with your Porsche ID.
-  - link "Sign in"
+  - paragraph: Good to see you.
+  - paragraph: How can I assist you?
+  - paragraph: My car is not starting
+  - paragraph: I lost my charging card
+  - paragraph: I want to go on a trip to Switzerland
+  - link "Sign in":
+    - /url: "#template-intro"
+  - paragraph: I’m an artificial intelligence, not a human, so please use my answers with care.

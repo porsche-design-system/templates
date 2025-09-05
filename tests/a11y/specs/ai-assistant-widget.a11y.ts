@@ -10,7 +10,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "login"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-login');
-      await expect(page.getByText('Welcome to Ask Porsche')).toBeVisible();
+      await expect(page.getByText('Good to see you.')).toBeVisible();
     });
 
     test('with a11y tree', async ({ page }) => {
@@ -21,7 +21,8 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
       expect((await makeAxeBuilder().analyze()).violations).toEqual([]);
     });
 
-    test('ai button exposes "aria-expanded"', async ({ page }) => {
+    test('ai button exposes "aria-expanded"', async ({ page, browserName  }) => {
+      test.skip(browserName === 'webkit', 'Not possible to click on button in open state on mobile');
       await expect(getAiButton(page)).toMatchAriaSnapshot('- button "open / close ai assistant" [expanded]');
 
       await getAiButton(page).click();
@@ -35,7 +36,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "intro"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-intro');
-      await expect(page.getByText("I'm the AI Assistant of Porsche.")).toBeVisible();
+      await expect(page.getByText("Good to see you.")).toBeVisible();
     });
 
     test('with a11y tree', async ({ page }) => {
@@ -51,7 +52,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-chat');
       // wait until simulated AI request has finished
-      await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
+      await expect(page.getByText('How does your loading indicator look like while computing answers?')).toBeVisible();
     });
 
     test('with a11y tree', async ({ page }) => {

@@ -4,6 +4,17 @@ import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils'
 const templates = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
 
 test.describe('has no visual regression', () => {
+  // Füge diesen Block hinzu, um die Animationsdauer global zu überschreiben
+  test.beforeEach(async ({ page }) => {
+    await page.addStyleTag({
+      content: `
+        .c-popover.is-animated::before {
+          --p-animation-duration: 0s !important;
+        }
+      `
+    });
+  });
+
   for (const template of templates) {
     test.describe(`for "${template}"`, () => {
       test.beforeEach(async ({ page }) => {
@@ -23,6 +34,7 @@ test.describe('has no visual regression', () => {
       });
 
       test('default', async ({ page }) => {
+        // Die animations: 'disabled' Eigenschaft ist nicht mehr nötig
         await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
       });
 
