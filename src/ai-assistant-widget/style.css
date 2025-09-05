@@ -61,6 +61,39 @@
   }
 }
 
+/* style.css */
+@keyframes rotate-gradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-blur {
+  0%, 100% { --blur-amount: 90px; }
+  50% { --blur-amount: 95px; }
+}
+
+.c-popover::before {
+  content: '';
+  @apply absolute inset-0 pointer-events-none z-0;
+  background: conic-gradient(at 50% 50%, #6495ed, #000);
+  filter: blur(var(--blur-amount, 90px));
+  opacity: 0.7;
+  will-change: filter, background;
+  transform: translateZ(0);
+  box-shadow: 0 0 0 transparent;
+  -webkit-backface-visibility: hidden;
+}
+
+.c-popover.is-animated::before {
+  animation:
+    rotate-gradient 20s linear infinite,
+    pulse-blur 10s ease-in-out infinite;
+}
+
 @layer components {
 
   .c-button {
@@ -73,18 +106,6 @@
     @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
     sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
     sm:rounded-3xl sm:shadow-medium;
-  }
-
-  .c-popover.is-animated::before {
-    content: '';
-    @apply absolute inset-0 pointer-events-none z-0;
-    background: conic-gradient(from var(--gradient-angle, 0deg) at 50% 50%, #6495ed, #000);
-    filter: blur(var(--blur-amount, 90px));
-    opacity: 0.7;
-    will-change: filter, background;
-    transform: translateZ(0);
-    box-shadow: 0 0 0 transparent;
-    -webkit-backface-visibility: hidden;
   }
 
   .c-header {

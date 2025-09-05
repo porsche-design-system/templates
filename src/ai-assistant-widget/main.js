@@ -3,39 +3,6 @@ import './style.css';
 // DO NOT USE IN PRODUCTION!
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
 
-const popoverElement = document.getElementById('ai-popover');
-let animationFrameId = null;
-let startTime = 0;
-
-function animateAngularGradient(timestamp) {
-  if (!startTime) {
-    startTime = timestamp;
-  }
-  const elapsedTime = timestamp - startTime;
-
-  const angle = ((elapsedTime * 0.05) % 360).toFixed(2);
-  const blurAmount = (Math.sin(elapsedTime * 0.005) * 5 + 95).toFixed(2);
-
-  popoverElement.style.setProperty('--gradient-angle', `${angle}deg`);
-  popoverElement.style.setProperty('--blur-amount', `${blurAmount}px`);
-
-  animationFrameId = requestAnimationFrame(animateAngularGradient);
-}
-
-function startAnimation() {
-  if (animationFrameId === null) {
-    startTime = 0;
-    animationFrameId = requestAnimationFrame(animateAngularGradient);
-  }
-}
-
-function stopAnimation() {
-  if (animationFrameId) {
-    cancelAnimationFrame(animationFrameId);
-    animationFrameId = null;
-  }
-}
-
 let t;
 
 const focusButton = () => {
@@ -97,10 +64,8 @@ const updateTemplate = (id) => {
   const popover = document.getElementById('ai-popover');
   if (popover && template && template.dataset.animation === 'true') {
     popover.classList.add('is-animated');
-    startAnimation();
   } else {
     popover.classList.remove('is-animated');
-    stopAnimation();
   }
 
   setupEventListeners();

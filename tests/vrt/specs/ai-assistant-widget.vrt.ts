@@ -23,7 +23,10 @@ test.describe('has no visual regression', () => {
       });
 
       test('default', async ({ page }) => {
-        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
+        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, {
+          fullPage: true,
+          animations: 'disabled'
+        });
       });
 
       test.describe(() => {
@@ -31,17 +34,26 @@ test.describe('has no visual regression', () => {
 
         test('right to left', async ({ page }) => {
           await enableRightToLeft(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, {
+            fullPage: true,
+            animations: 'disabled'
+          });
         });
 
         test('text zoom', async ({ page }) => {
           await enableTextZoom(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, {
+            fullPage: true,
+            animations: 'disabled'
+          });
         });
 
         test('high contrast', async ({ page }) => {
           await enableForcedColors(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, {
+            fullPage: true,
+            animations: 'disabled'
+          });
         });
       });
     });
