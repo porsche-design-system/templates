@@ -79,9 +79,6 @@
 .c-popover::before {
   content: '';
   @apply absolute inset-0 pointer-events-none z-0;
-  background: conic-gradient(at 50% 50%, #6495ed, #000);
-  filter: blur(var(--blur-amount, 90px));
-  opacity: 0.7;
   will-change: filter, background;
   transform: translateZ(0);
   box-shadow: 0 0 0 transparent;
@@ -89,6 +86,9 @@
 }
 
 .c-popover.is-animated::before {
+  background: conic-gradient(at 50% 50%, #6495ed, #000);
+  filter: blur(var(--blur-amount, 90px));
+  opacity: 0.7;
   animation:
     rotate-gradient 20s linear infinite,
     pulse-blur 10s ease-in-out infinite;
