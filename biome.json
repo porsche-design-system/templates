@@ -26,7 +26,13 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true
+      "all": true,
+      "correctness": {
+        "useImportExtensions": "off"
+      },
+      "style": {
+        "noDefaultExport": "off"
+      }
     }
   },
   "javascript": {
