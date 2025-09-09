@@ -5,9 +5,12 @@
 - complementary "AI Assistant":
   - paragraph: Good to see you.
   - paragraph: How can I assist you?
-  - paragraph: My car is not starting
-  - paragraph: I lost my charging card
-  - paragraph: I want to go on a trip to Switzerland
+  - link "My car is not starting":
+    - /url: "#template-intro"
+  - link "I lost my charging card":
+    - /url: "#template-intro"
+  - link "I want to go on a trip to Switzerland":
+    - /url: "#template-intro"
   - link "Sign in":
     - /url: "#template-intro"
   - paragraph: I’m an artificial intelligence, not a human, so please use my answers with care.
