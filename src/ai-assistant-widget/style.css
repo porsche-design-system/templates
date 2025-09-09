@@ -3,8 +3,8 @@
 
 @theme {
   --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
-  --color-ai-blue: #000;
   --shadow-ai: 0px -15px 50px -2px rgba(0,0,0,0.52);
+  --p-animation-duration: 20s;
 
   @keyframes fade-in {
     from {
@@ -34,18 +34,8 @@
     animation: slide-up-fade 0.8s ease-out forwards;
   }
 
-  /* Manuelle Definition der delay-Klassen */
-  .delay-75 {
-    animation-delay: 75ms;
-  }
   .delay-100 {
     animation-delay: 100ms;
-  }
-  .delay-150 {
-    animation-delay: 150ms;
-  }
-  .delay-200 {
-    animation-delay: 200ms;
   }
   .delay-300 {
     animation-delay: 300ms;
@@ -53,15 +43,8 @@
   .delay-500 {
     animation-delay: 500ms;
   }
-  .delay-700 {
-    animation-delay: 700ms;
-  }
-  .delay-1000 {
-    animation-delay: 1000ms;
-  }
 }
 
-/* style.css */
 @keyframes rotate-gradient {
   from {
     transform: rotate(0deg);
@@ -89,9 +72,6 @@
   background: conic-gradient(at 50% 50%, #6495ed, #000);
   filter: blur(var(--blur-amount, 90px));
   opacity: 0.7;
-
-  --p-animation-duration: 20s;
-
   animation:
     rotate-gradient var(--p-animation-duration) linear infinite,
     pulse-blur 10s ease-in-out infinite;
