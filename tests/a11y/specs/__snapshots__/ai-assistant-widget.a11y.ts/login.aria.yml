@@ -3,7 +3,7 @@
   - heading "AI Assistant Widget" [level=1]
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
-  - heading "Good to see you. How can I assist you?" [level=2]
+  - heading  "Good to see you. How can I assist you?" [level=2]
   - link "My car is not starting":
     - /url: "#template-chat"
   - link "I lost my charging card":
