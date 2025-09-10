@@ -27,5 +27,5 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add -A
           git commit -m "Automated deployment to GitHub Pages (${GITHUB_REF_NAME}): ${GITHUB_SHA}" --allow-empty
-          git push origin main --force
+          git push origin gh-pages --force
         shell: bash
