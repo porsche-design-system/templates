@@ -36,7 +36,6 @@ test('navigates through the ai widget', async ({ page }) => {
   await expect(page.getByText("Good to see you.")).toBeVisible();
   await expect(page.getByRole('textbox', { name: 'Message AI Assistant' })).toBeFocused();
 
-  // Erhöht den Timeout, um auf die Verzögerung des JavaScripts zu warten
   await page.getByRole('button', { name: 'Ask AI Assistant' }).click();
   await expect(page.getByText('How does your loading indicator look like while computing answers?')).toBeVisible({ timeout: 3000 });
 
@@ -55,7 +54,6 @@ test('navigates through the ai widget', async ({ page }) => {
   await expect(page.getByText("Good to see you.")).toBeVisible();
   await expect(page.getByRole('textbox', { name: 'Message AI Assistant' })).toBeFocused();
 
-  // Erhöht den Timeout, um auf die Verzögerung des JavaScripts zu warten
   await page.getByRole('link', { name: 'I lost my charging card' }).click();
   await expect(page.getByText('How does your loading indicator look like while computing answers?')).toBeVisible({ timeout: 3000 });
 });

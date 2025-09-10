@@ -21,7 +21,9 @@
   </span>
 </button>
 
-<aside id="ai-popover" class="c-popover" popover="manual" aria-label="AI Assistant" >
+<aside id="ai-popover" class="c-popover scheme-dark" popover="manual" aria-label="AI Assistant" >
+
+  <div class="c-gradient-layer"></div>
 
   <template id="template-login" data-animation="true">
     <div class="c-header w-full flex justify-end absolute">
@@ -105,8 +107,8 @@
           <button theme="dark" type="button" class="c-upload p-static-xs" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
             <p-icon theme="dark" name="attachment"></p-icon>
           </button>
-          <textarea theme="dark" class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
-          <input theme="dark" type="file" name="media" accept="image/png, image/jpeg" hidden />
+          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
+          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
           <p-button-pure theme="dark" type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button  href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
@@ -377,8 +379,8 @@
           <button theme="dark" type="button" class="c-upload p-static-xs" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
             <p-icon theme="dark" name="attachment"></p-icon>
           </button>
-          <textarea theme="dark" class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
-          <input theme="dark" type="file" name="media" accept="image/png, image/jpeg" hidden />
+          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
+          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
           <p-button-pure theme="dark" type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
           <p-button  href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
         </form>
@@ -460,7 +462,6 @@
       <p-text theme="dark">…</p-text>
     </div>
   </template>
-
 </aside>
 
 <script type="module" src="main.js"></script>

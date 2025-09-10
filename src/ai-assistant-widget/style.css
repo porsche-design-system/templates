@@ -33,7 +33,6 @@
   .animate-slide-up-fade {
     animation: slide-up-fade 0.8s ease-out forwards;
   }
-
   .delay-100 {
     animation-delay: 100ms;
   }
@@ -45,12 +44,38 @@
   }
 }
 
-@keyframes rotate-gradient {
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 90deg;
+}
+
+@property --l {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+
+@property --c1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #6495ed;
+}
+
+@property --c2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000;
+}
+
+@keyframes animate-gradient {
   from {
-    transform: rotate(0deg);
+    --a: 0deg;
+    --l: 0%;
   }
   to {
-    transform: rotate(360deg);
+    --a: 360deg;
+    --l: 100%;
   }
 }
 
@@ -63,17 +88,18 @@
   content: '';
   @apply absolute inset-0 pointer-events-none z-0;
   will-change: filter, background;
-  transform: translateZ(0);
   box-shadow: 0 0 0 transparent;
-  -webkit-backface-visibility: hidden;
+  --a: 0deg;
+  --c1: #6495ed;
+  --c2: #000;
 }
 
 .c-popover.is-animated::before {
-  background: conic-gradient(at 50% 50%, #6495ed, #000);
+  background: conic-gradient(from var(--a) at 50% 50%, var(--c1), var(--c2));
   filter: blur(var(--blur-amount, 90px));
   opacity: 0.7;
   animation:
-    rotate-gradient var(--p-animation-duration) linear infinite,
+    animate-gradient var(--p-animation-duration) linear infinite,
     pulse-blur 10s ease-in-out infinite;
 }
 
@@ -84,11 +110,12 @@
   }
 
   .c-popover {
-    @apply fixed inset-0 w-full h-full bg-ai-blue box-border overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
+    @apply fixed inset-0 w-full h-full bg-base-dark overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
 
     @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
     sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
     sm:rounded-3xl sm:shadow-medium;
+    @apply sm:overflow-x-hidden;
   }
 
   .c-header {
@@ -96,11 +123,11 @@
   }
 
   .c-footer {
-    @apply shadow-ai sticky -bottom-[9px] -m-[7px] p-static-sm pb-static-md mt-0 pt-0 z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
+    @apply shadow-ai sticky -bottom-[8px] -m-[8px] p-static-sm py-static-md mt-0 pt-static-sm z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
   }
 
   .c-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-sm gap-y-static-sm items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-contrast-medium;
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-md items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-contrast-medium;
   }
 
   .c-input {
