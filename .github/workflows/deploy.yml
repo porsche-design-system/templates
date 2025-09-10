@@ -19,7 +19,7 @@ jobs:
       - name: 'Download build artifact'
         uses: actions/download-artifact@v4
         with:
-          name: templates
+          name: templates-prod
           path: "./${{ github.ref_name }}"
       - name: 'Deploy'
         run: |
