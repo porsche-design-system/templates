@@ -14,13 +14,13 @@ jobs:
           ref: 'gh-pages'
       - name: 'Clean up'
         run: |
-          rm -rf "./${{ GITHUB_REF_NAME }}"
+          rm -rf "./${GITHUB_REF_NAME }"
         shell: bash
       - name: 'Download build artifact'
         uses: actions/download-artifact@v4
         with:
           name: templates
-          path: "./${{ GITHUB_REF_NAME }}"
+          path: "./${GITHUB_REF_NAME}"
       - name: 'Deploy'
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
