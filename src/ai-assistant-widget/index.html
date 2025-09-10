@@ -14,8 +14,7 @@
 </main>
 
 <button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
-  <!-- TODO: AI Icon can be used from PDS directly with v3.30.0 as soon as it's released. -->
-  <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
+  <p-icon name="ai-spark"></p-icon>
   <p-icon name="close" hidden></p-icon>
   <span class="dark absolute -top-1 -right-1 bg-base text-primary text-2xs w-5 h-5 rounded-full flex items-center justify-center pointer-events-none select-none">
     2
