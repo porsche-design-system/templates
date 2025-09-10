@@ -17,7 +17,7 @@ jobs:
           rm -rf "./${{ github.ref_name }}"
         shell: bash
       - name: 'Download build artifact'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: templates-prod
           path: "./${{ github.ref_name }}"
