@@ -3,7 +3,7 @@
 
 @theme {
   --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
-  --shadow-ai: 0px -15px 50px -2px rgba(0,0,0,0.52);
+  --shadow-ai: 0px -15px 50px -2px rgba(0, 0, 0, 0.52);
   --p-animation-duration: 20s;
 
   @keyframes fade-in {
@@ -45,25 +45,25 @@
 }
 
 @property --a {
-  syntax: '<angle>';
+  syntax: "<angle>";
   inherits: false;
   initial-value: 90deg;
 }
 
 @property --l {
-  syntax: '<percentage>';
+  syntax: "<percentage>";
   inherits: false;
   initial-value: 10%;
 }
 
 @property --c1 {
-  syntax: '<color>';
+  syntax: "<color>";
   inherits: false;
   initial-value: #6495ed;
 }
 
 @property --c2 {
-  syntax: '<color>';
+  syntax: "<color>";
   inherits: false;
   initial-value: #000;
 }
@@ -80,12 +80,17 @@
 }
 
 @keyframes pulse-blur {
-  0%, 100% { --blur-amount: 90px; }
-  50% { --blur-amount: 95px; }
+  0%,
+  100% {
+    --blur-amount: 90px;
+  }
+  50% {
+    --blur-amount: 95px;
+  }
 }
 
 .c-popover::before {
-  content: '';
+  content: "";
   @apply absolute inset-0 pointer-events-none z-0;
   will-change: filter, background;
   box-shadow: 0 0 0 transparent;
@@ -98,20 +103,16 @@
   background: conic-gradient(from var(--a) at 50% 50%, var(--c1), var(--c2));
   filter: blur(var(--blur-amount, 90px));
   opacity: 0.7;
-  animation:
-    animate-gradient var(--p-animation-duration) linear infinite,
-    pulse-blur 10s ease-in-out infinite;
+  animation: animate-gradient var(--p-animation-duration) linear infinite, pulse-blur 10s ease-in-out infinite;
 }
 
 @layer components {
-
   .c-button {
     @apply fixed end-fluid-md bottom-fluid-md cursor-pointer shadow-medium p-[15px] rounded-[50%] bg-base transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2 forced-colors:border;
   }
 
   .c-popover {
     @apply fixed inset-0 w-full h-full bg-base-dark overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
-
     @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
     sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
     sm:rounded-3xl sm:shadow-medium;
@@ -119,7 +120,7 @@
   }
 
   .c-header {
-    @apply sticky left-0 top-0 inline-flex gap-static-sm z-1 p-static-md;
+    @apply sticky left-0 top-0 flex items-center gap-static-sm z-1 p-static-md;
   }
 
   .c-footer {
@@ -135,7 +136,7 @@
   }
 
   .c-upload {
-    @apply  p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
+    @apply p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
   }
 
   .c-icon {

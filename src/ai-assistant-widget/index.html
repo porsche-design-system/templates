@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,27 +13,28 @@
   <p-display tag="h1">AI Assistant Widget</p-display>
 </main>
 
-<button class="c-button dark:bg-white dark:text-black" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
+<button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
+  <!-- TODO: AI Icon can be used from PDS directly with v3.30.0 as soon as it's released. -->
   <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
   <p-icon name="close" hidden></p-icon>
-  <span class="absolute -top-1 -right-1 dark:bg-black dark:text-white text-2xs w-5 h-5 rounded-full flex items-center justify-center  pointer-events-none select-none">
+  <span class="dark absolute -top-1 -right-1 bg-base text-primary text-2xs w-5 h-5 rounded-full flex items-center justify-center pointer-events-none select-none">
     2
   </span>
 </button>
 
-<aside id="ai-popover" class="c-popover scheme-dark" popover="manual" aria-label="AI Assistant" >
+<aside id="ai-popover" class="dark c-popover scheme-dark" popover="manual" aria-label="AI Assistant">
 
   <div class="c-gradient-layer"></div>
 
   <template id="template-login" data-animation="true">
-    <div class="c-header w-full flex justify-end absolute">
-      <p-button theme="dark" class=" sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+    <div class="c-header sm:hidden">
+      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
       <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
-        <p-icon class="mb-static-md" theme="dark" source="/templates/assets/ai.svg" size="x-large"></p-icon>
+        <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
         <h2 class="prose-heading-xl font-normal" >Good to see you.<br />How can I assist you?</h2>
       </div>
       <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
@@ -60,14 +61,14 @@
 
 
   <template id="template-intro" data-animation="true">
-    <div class="c-header w-full flex justify-end absolute">
-      <p-button theme="dark" class=" sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+    <div class="c-header sm:hidden">
+      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
     <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
       <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
-        <p-icon class="mb-static-md" theme="dark" source="/templates/assets/ai.svg" size="x-large"></p-icon>
+        <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
         <h2 class="prose-heading-xl font-normal" >Good to see you.<br />How can I assist you?</h2>
       </div>
       <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
@@ -123,9 +124,9 @@
 
   <template id="template-chat">
     <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-fluid-md min-h-full items-start">
-      <div class="c-header w-full flex justify-between items-center">
+      <div class="c-header">
         <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-        <p-button theme="dark" class="sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+        <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
           Some label
         </p-button>
       </div>
@@ -135,7 +136,7 @@
         </div>
 
         <div class="c-answer">
-          <p-icon class="c-icon" source="/templates/assets/ai.svg"></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="my-static-md grid col-start-2 gap-static-sm">
             <span class="sr-only">Loading AI answer</span>
@@ -150,7 +151,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" ></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -197,7 +198,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg"></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -234,7 +235,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg"></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -272,7 +273,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg"></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -298,7 +299,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg"></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -329,7 +330,7 @@
         </div>
 
         <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" ></p-icon>
+          <p-icon class="c-icon" name="ai-spark-filled"></p-icon>
           <p-heading theme="dark" class="self-center" size="small" tag="h2">Porsche AI</p-heading>
           <div class="grid col-start-2 gap-fluid-sm">
             <p-text theme="dark">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
@@ -395,12 +396,10 @@
   </template>
 
   <template id="template-my-inquiries">
-    <div class="c-header w-full flex justify-between items-center">
-      <div>
-        <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-        <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-      </div>
-      <p-button theme="dark" class="sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+    <div class="c-header">
+      <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
+      <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
@@ -416,12 +415,10 @@
   </template>
 
   <template id="template-contact">
-    <div class="c-header w-full flex justify-between items-center">
-      <div>
-        <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-        <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-      </div>
-      <p-button theme="dark" class="sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+    <div class="c-header">
+      <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
+      <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
@@ -443,12 +440,10 @@
   </template>
 
   <template id="template-terms-of-use">
-    <div class="c-header w-full flex justify-between items-center">
-      <div>
-        <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-        <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-      </div>
-      <p-button theme="dark" class="sm:hidden js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
+    <div class="c-header">
+      <p-link theme="dark" href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
+      <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
+      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
         Some label
       </p-button>
     </div>
