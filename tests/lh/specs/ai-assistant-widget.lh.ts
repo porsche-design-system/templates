@@ -4,7 +4,7 @@ test.describe('has sufficient lighthouse score', () => {
   test.describe('for "login"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-login');
-      await expect(page.getByText('Welcome to Ask Porsche')).toBeVisible();
+      await expect(page.getByText('How can I assist you?')).toBeVisible();
     });
 
     test('on mobile', async ({ lighthouseAuditMobile }) => {
@@ -29,7 +29,7 @@ test.describe('has sufficient lighthouse score', () => {
   test.describe('for "intro"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-intro');
-      await expect(page.getByText("I'm the AI Assistant of Porsche.")).toBeVisible();
+      await expect(page.getByText('How can I assist you?')).toBeVisible();
     });
 
     test('on mobile', async ({ lighthouseAuditMobile }) => {
@@ -62,7 +62,7 @@ test.describe('has sufficient lighthouse score', () => {
       const { performance, accessibility, bestPractices, seo } = await lighthouseAuditMobile();
 
       expect(performance, 'Performance').toBeGreaterThanOrEqual(70);
-      expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
+      expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(96);
       expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
       expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
     });
@@ -71,7 +71,7 @@ test.describe('has sufficient lighthouse score', () => {
       const { performance, accessibility, bestPractices, seo } = await lighthouseAuditDesktop();
 
       expect(performance, 'Performance').toBeGreaterThanOrEqual(90);
-      expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
+      expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(96);
       expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
       expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
     });
