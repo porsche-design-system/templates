@@ -10,6 +10,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "login"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-login');
+      await page.setViewportSize({ width: 375, height: 812 });
       await expect(page.getByText('Good to see you.')).toBeVisible();
     });
 
@@ -36,6 +37,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "intro"', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/templates/ai-assistant-widget/#template-intro');
+      await page.setViewportSize({ width: 375, height: 812 });
       await expect(page.getByText("Good to see you.")).toBeVisible();
     });
 
