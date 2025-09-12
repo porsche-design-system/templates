@@ -5,24 +5,31 @@
   --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
   --shadow-ai: 0px -15px 50px -2px rgba(0, 0, 0, 0.52);
   --p-animation-duration: 20s;
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 }
 
 @layer components {
+  @keyframes reveal-from-bottom {
+    from { clip-path: inset(100% 0 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+  }
+
+  @keyframes slide-in-content {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes slide-up-fade {
-    0% {
+    from {
       opacity: 0;
       transform: translateY(20px);
     }
-    100% {
+    to {
       opacity: 1;
       transform: translateY(0);
     }
@@ -30,17 +37,18 @@
 }
 
 @layer utilities {
-  .animate-slide-up-fade {
-    animation: slide-up-fade 0.8s ease-out forwards;
+  .animate-slide-up {
+    animation: slide-up-fade 0.7s cubic-bezier(0.25, 1, 0.5, 1) backwards;
   }
-  .delay-100 {
-    animation-delay: 100ms;
+
+  .animate-reveal-from-bottom {
+    animation: reveal-from-bottom 0.8s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+    animation-delay: calc(200ms + var(--i, 0) * 120ms);
   }
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-  .delay-500 {
-    animation-delay: 500ms;
+
+  .animate-reveal-from-bottom > * {
+    animation: slide-in-content 0.7s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+    animation-delay: calc(200ms + var(--i, 0) * 120ms + 100ms);
   }
 }
 
@@ -104,6 +112,7 @@
   filter: blur(var(--blur-amount, 90px));
   opacity: 0.7;
   animation: animate-gradient var(--p-animation-duration) linear infinite, pulse-blur 10s ease-in-out infinite;
+  z-index: 1;
 }
 
 @layer components {
@@ -115,7 +124,7 @@
     @apply fixed inset-0 w-full h-full bg-base-dark overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
     @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
     sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
-    sm:rounded-3xl sm:shadow-medium;
+    sm:rounded-[30px] sm:shadow-medium;
     @apply sm:overflow-x-hidden;
   }
 
@@ -124,11 +133,11 @@
   }
 
   .c-footer {
-    @apply shadow-ai sticky -bottom-[8px] -m-[8px] p-static-sm py-static-md mt-0 pt-static-sm z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md;
+    @apply shadow-ai bg-surface sticky -bottom-[8px] p-static-sm py-static-md mt-0 pt-static-sm z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md rounded-t-3xl sm:rounded-3xl;
   }
 
   .c-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-md items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-contrast-medium;
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-md items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-focus;
   }
 
   .c-input {

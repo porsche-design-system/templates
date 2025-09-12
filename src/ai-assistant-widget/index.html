@@ -23,71 +23,97 @@
 
 <aside id="ai-popover" class="dark c-popover scheme-dark" popover="manual" aria-label="AI Assistant">
 
-  <div class="c-gradient-layer"></div>
-
   <template id="template-login" data-animation="true">
-    <div class="c-header sm:hidden">
-      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
-        Some label
-      </p-button>
-    </div>
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
-      <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
-        <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
-        <h2 class="prose-heading-xl font-normal" >Good to see you.<br />How can I assist you?</h2>
-      </div>
-      <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
-        <a href="#template-chat" class="text-md col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px] opacity-0 translate-y-[20px] animate-slide-up-fade delay-100 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          My car is not starting
-        </a>
-        <a href="#template-chat" class="text-sm bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-300 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          I lost my charging card
-        </a>
-        <a href="#template-chat" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-500 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          I want to go on a trip to Switzerland
-        </a>
-      </div>
-      <div class="c-footer dark:bg-surface rounded-3xl px-static-md pt-static-md">
+    <div class="flex flex-col absolute inset-0 bg-gray-900 text-white">
+
+      <header class="c-header sm:hidden flex-shrink-0 p-4">
+        <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost">
+          Close
+        </p-button>
+      </header>
+
+      <main class="flex flex-col flex-grow min-h-0 overflow-y-auto p-static-sm gap-static-md">
+
+        <div class="grid content-start m-static-md mt-static-md animate-slide-up relative z-10 flex-shrink-0">
+          <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
+          <h2 class="prose-heading-xl font-normal">Good to see you.<br />How can I assist you?</h2>
+        </div>
+
+        <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs relative z-1 flex-grow">
+
+          <a href="#template-chat" style="--i: 0;" class="animate-reveal-from-bottom text-md col-span-1 row-span-2 bg-frosted rounded-3xl p-[24px] min-h-[90px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end"> <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>My car is not starting</span> </a>
+
+          <a href="#template-chat" style="--i: 1;" class="animate-reveal-from-bottom text-sm bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end">
+              <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>I lost my charging card</span>
+          </a>
+
+          <a href="#template-chat" style="--i: 2;" class="animate-reveal-from-bottom bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end">
+              <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>I want to go on a trip to Switzerland</span>
+          </a>
+        </div>
+
+      </main>
+
+      <footer class="c-footer px-static-md pt-static-md flex-shrink-0 pb-4">
         <p-link theme="dark" variant="primary" class="w-full" href="#template-intro">Sign in</p-link>
         <p-text theme="dark" size="x-small" align="center" class="max-w-[32ch] m-auto" color="contrast-medium">I’m an artificial intelligence, not a human, so please use my answers with care.</p-text>
-      </div>
+      </footer>
+
     </div>
   </template>
 
-
-
   <template id="template-intro" data-animation="true">
-    <div class="c-header sm:hidden">
-      <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
-        Some label
-      </p-button>
-    </div>
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
-      <div class="grid content-start m-static-md mt-static-md opacity-0 animate-slide-up-fade">
-        <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
-        <h2 class="prose-heading-xl font-normal" >Good to see you.<br />How can I assist you?</h2>
-      </div>
-      <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs">
-        <a href="#template-chat" class="text-md col-span-1 row-span-2 bg-frosted rounded-3xl p-static-md min-h-[280px] opacity-0 translate-y-[20px] animate-slide-up-fade delay-100 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          My car is not starting
-        </a>
-        <a href="#template-chat" class="text-sm bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-300 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          I lost my charging card
-        </a>
-        <a href="#template-chat" class="bg-frosted rounded-3xl p-static-md opacity-0 translate-y-[20px] animate-slide-up-fade delay-500 flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
-          <p-icon theme="dark" name="arrow-up" size="medium" class="self-end rotate-45"></p-icon>
-          I want to go on a trip to Switzerland
-        </a>
-      </div>
+    <div class="flex flex-col absolute inset-0 bg-gray-900 text-white">
 
-      <div class="c-footer dark:bg-surface rounded-3xl">
+      <header class="c-header sm:hidden flex-shrink-0 p-4">
+        <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost">
+          Close
+        </p-button>
+      </header>
 
-        <form class="c-form" action="#template-chat">
+      <main class="flex flex-col flex-grow min-h-0 overflow-y-auto p-static-sm gap-static-md">
+
+        <div class="grid content-start m-static-md mt-static-md animate-slide-up relative z-10 flex-shrink-0">
+          <p-icon class="mb-static-md" theme="dark" name="ai-spark-filled" size="x-large"></p-icon>
+          <h2 class="prose-heading-xl font-normal">Good to see you.<br />How can I assist you?</h2>
+        </div>
+
+        <div class="grid grid-cols-2 grid-rows-2 gap-static-sm m-static-xs relative z-1 flex-grow">
+
+          <a href="#template-chat" style="--i: 0;" class="animate-reveal-from-bottom text-md col-span-1 row-span-2 bg-frosted rounded-3xl p-[24px] min-h-[90px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end"> <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>My car is not starting</span> </a>
+
+          <a href="#template-chat" style="--i: 1;" class="animate-reveal-from-bottom text-sm bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end">
+              <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>I lost my charging card</span>
+          </a>
+
+          <a href="#template-chat" style="--i: 2;" class="animate-reveal-from-bottom bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-focus outline-offset-[-2px] hover:bg-frosted">
+            <div class="self-end">
+              <p-icon theme="dark" name="arrow-up" size="medium" class="rotate-45 bg-frosted p-static-xs rounded-[100%]"></p-icon>
+            </div>
+            <span>I want to go on a trip to Switzerland</span>
+          </a>
+        </div>
+
+      </main>
+
+      <div class="c-footer">
+
+        <form class="c-form px-static-md pt-static-md flex-shrink-0 pb-4" action="#template-chat">
           <p-scroller theme="dark" class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
             <div class="flex gap-static-sm">
               <p-tag theme="dark" icon="close" color="background-frosted">
@@ -119,10 +145,12 @@
         </div>
       </div>
     </div>
+
+
   </template>
 
   <template id="template-chat">
-    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-fluid-md min-h-full items-start">
+    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-fluid-md min-h-screen items-start">
       <div class="c-header">
         <p-link theme="dark" href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
         <p-button theme="dark" class="sm:hidden ms-auto js-close-popover" type="button" icon="close" hide-label="true" compact="true" variant="ghost" >
@@ -357,9 +385,9 @@
           </div>
         </div>
       </div>
-      <div class="c-footer dark:bg-surface rounded-3xl">
+      <div class="c-footer mr-[-8px] ml-[-8px] mb-[-8px]">
 
-        <form class="c-form" action="#template-chat">
+        <form class="c-form px-static-md pt-static-md flex-shrink-0 pb-4 " action="#template-chat">
           <p-scroller theme="dark" class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
             <div class="flex gap-static-sm">
               <p-tag theme="dark" icon="close" color="background-frosted">
