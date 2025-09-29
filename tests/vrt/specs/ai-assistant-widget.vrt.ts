@@ -4,12 +4,16 @@ import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils'
 const templates = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
 
 test.describe('has no visual regression', () => {
-  // Füge diesen Block hinzu, um die Animationsdauer global zu überschreiben
   test.beforeEach(async ({ page }) => {
     await page.addStyleTag({
       content: `
-        .c-popover.is-animated::before {
+        :root {
           --p-animation-duration: 0s !important;
+          --p-transition-duration: 0s !important;
+          --transition-duration-short: 0s !important;
+          --transition-duration-moderate: 0s !important;
+          --transition-duration-long: 0s !important;
+          --transition-duration-very-long: 0s !important;
         }
       `
     });
@@ -34,7 +38,6 @@ test.describe('has no visual regression', () => {
       });
 
       test('default', async ({ page }) => {
-        // Die animations: 'disabled' Eigenschaft ist nicht mehr nötig
         await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
       });
 
