@@ -1,12 +1,42 @@
 - main:
   - img "Porsche"
-  - heading "AI Assistant Widget" [level=1]
+  - heading "Template" [level=1]
+  - heading "AI Assistant Widget" [level=2]
+  - paragraph:
+    - text: Built with Porsche Design System
+    - link "Components":
+      - /url: https://designsystem.porsche.com/v3/components/introduction/
+    - text: and styled with
+    - link "Tailwind CSS":
+      - /url: https://designsystem.porsche.com/v3/tailwindcss/introduction/
+    - text: . First, get the Porsche Design System
+    - link "up & running":
+      - /url: https://designsystem.porsche.com/v3/developing/introduction/
+    - text: . Then, simply copy the provided markup and styles directly into your project. Only the necessary JavaScript logic requires custom implementation.
+  - paragraph: /© \d+ Dr\. Ing\. h\.c\. F\. Porsche AG\./
+  - heading "Source Code:" [level=3]
+  - list:
+    - listitem:
+      - link "HTML":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html
+    - listitem:
+      - link "CSS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css
+    - listitem:
+      - link "JS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
-  - link "Back to chat"
-  - link "Start new chat"
+  - link "Back to chat":
+    - /url: javascript:history.back()
+  - link "Start new chat":
+    - /url: "#template-intro"
   - heading "My inquiries" [level=2]
-  - link "What current Porsche models are there?"
-  - link /What are the differences between the Taycan and \d+\?/
-  - link /What customization options do I have for the \d+ Cayman\?/
-  - link "Is it possible to save my vehicle configurations and edit them later?"
+  - link "What current Porsche models are there?":
+    - /url: "#template-chat"
+  - link /What are the differences between the Taycan and \d+\?/:
+    - /url: "#template-chat"
+  - link /What customization options do I have for the \d+ Cayman\?/:
+    - /url: "#template-chat"
+  - link "Is it possible to save my vehicle configurations and edit them later?":
+    - /url: "#template-chat"
