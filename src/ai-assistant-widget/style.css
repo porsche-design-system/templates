@@ -1,170 +1,161 @@
 @import "tailwindcss";
 @import "@porsche-design-system/components-js/tailwindcss";
 
-@theme {
-  --animate-fade-in: fade-in var(--transition-duration-short) var(--ease-in) forwards;
-  --shadow-ai: 0px -15px 50px -2px rgba(0, 0, 0, 0.52);
-  --p-animation-duration: 20s;
-}
-
-@layer components {
-  @keyframes reveal-from-bottom {
-    from { clip-path: inset(100% 0 0 0); }
-    to { clip-path: inset(0 0 0 0); }
-  }
-
-  @keyframes slide-in-content {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-up-fade {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@layer utilities {
-  .animate-slide-up {
-    animation: slide-up-fade 0.7s cubic-bezier(0.25, 1, 0.5, 1) backwards;
-  }
-
-  .animate-reveal-from-bottom {
-    animation: reveal-from-bottom 0.8s cubic-bezier(0.25, 1, 0.5, 1) backwards;
-    animation-delay: calc(200ms + var(--i, 0) * 120ms);
-  }
-
-  .animate-reveal-from-bottom > * {
-    animation: slide-in-content 0.7s cubic-bezier(0.25, 1, 0.5, 1) backwards;
-    animation-delay: calc(200ms + var(--i, 0) * 120ms + 100ms);
-  }
-}
-
-@property --a {
+@property --ai-rotate-angle {
   syntax: "<angle>";
   inherits: false;
   initial-value: 90deg;
 }
 
-@property --l {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 10%;
-}
+@theme {
+  /* Animation */
+  --animate-ai: ai-rotate calc(var(--transition-duration-moderate) * 50) linear infinite, ai-blur calc(var(--transition-duration-moderate) * 25) var(--ease-in-out) infinite;
+  --animate-ai-fade-in: ai-fade-in var(--transition-duration-moderate) var(--ease-in) forwards;
+  --animate-ai-fade-in-slide-up: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up var(--transition-duration-long) var(--ease-in-out) backwards;
+  --animate-ai-reveal-to-t: ai-reveal-to-t var(--transition-duration-long) var(--ease-in-out) backwards;
+  --animate-ai-reveal-text: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up var(--transition-duration-long) var(--ease-in-out) backwards;
 
-@property --c1 {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #6495ed;
-}
-
-@property --c2 {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: #000;
-}
-
-@keyframes animate-gradient {
-  from {
-    --a: 0deg;
-    --l: 0%;
+  @keyframes ai-rotate {
+    from {
+      --ai-rotate-angle: 0deg;
+    }
+    to {
+      --ai-rotate-angle: 360deg;
+    }
   }
-  to {
-    --a: 360deg;
-    --l: 100%;
+
+  @keyframes ai-blur {
+    0%, 100% {
+      filter: blur(120px);
+    }
+    50% {
+      filter: blur(30px);
+    }
+  }
+
+  @keyframes ai-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-slide-up {
+    from {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ai-reveal-to-t {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
   }
 }
 
-@keyframes pulse-blur {
-  0%,
-  100% {
-    --blur-amount: 90px;
+@layer utilities {
+  .animation-delay-short {
+    animation-delay: calc(var(--transition-duration-short) + var(--i, 0) * 120ms);
   }
-  50% {
-    --blur-amount: 95px;
+
+  .animation-delay-moderate {
+    animation-delay: calc(var(--transition-duration-moderate) + var(--i, 0) * 120ms);
+  }
+
+  .animation-delay-long {
+    animation-delay: calc(var(--transition-duration-long) + var(--i, 0) * 120ms);
+  }
+
+  .animation-delay-very-long {
+    animation-delay: calc(var(--transition-duration-very-long) + var(--i, 0) * 120ms);
   }
 }
 
-.c-popover::before {
-  content: "";
-  @apply absolute inset-0 pointer-events-none z-0;
-  will-change: filter, background;
-  box-shadow: 0 0 0 transparent;
-  --a: 0deg;
-  --c1: #6495ed;
-  --c2: #000;
-}
+/*
+It's recommended to apply following Tailwind CSS styles directly in your markup instead of creating CSS classes.
 
-.c-popover.is-animated::before {
-  background: conic-gradient(from var(--a) at 50% 50%, var(--c1), var(--c2));
-  filter: blur(var(--blur-amount, 90px));
-  opacity: 0.7;
-  animation: animate-gradient var(--p-animation-duration) linear infinite, pulse-blur 10s ease-in-out infinite;
-  z-index: 1;
-}
+The core philosophy of Tailwind CSS is to use utility classes directly in your HTML markup (utility-first).
+
+This approach is generally preferred because:
+
+- Readability and Maintainability: You see the exact styles applied to an element right where the element is defined.
+- No Unused CSS: Since you're not writing custom CSS, there's less chance of accumulating unused style definitions.
+- Faster Development: You don't have to jump between an HTML file and a CSS file to make and see style changes.
+*/
 
 @layer components {
-  .c-button {
-    @apply fixed end-fluid-md bottom-fluid-md cursor-pointer shadow-medium p-[15px] rounded-[50%] bg-base transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2 forced-colors:border;
+  .ai-button {
+    @apply fixed end-fluid-md bottom-fluid-md cursor-pointer shadow-medium p-[15px] rounded-full bg-base transition-colors
+    hover:bg-hover focus-visible:outline outline-focus outline-offset-2 forced-colors:border;
   }
 
-  .c-popover {
-    @apply fixed inset-0 w-full h-full bg-base-dark overflow-y-auto prose-text-sm animate-fade-in forced-colors:border p-static-sm rounded-none shadow-none;
-    @apply sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
-    sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)] sm:p-static-sm
-    sm:rounded-[30px] sm:shadow-medium;
-    @apply sm:overflow-x-hidden;
+  .ai-popover {
+    @apply fixed inset-0 w-full h-full overflow-hidden bg-base prose-text-sm animate-ai-fade-in forced-colors:border
+    sm:inset-auto sm:bottom-[calc(var(--spacing-static-md)+var(--spacing-fluid-md)+15px*2+1.5rem)]
+    sm:end-fluid-md sm:w-[min(25rem,480px)] sm:h-[min(75vh,800px)]
+    sm:rounded-4xl sm:shadow-medium;
   }
 
-  .c-header {
-    @apply sticky left-0 top-0 flex items-center gap-static-sm z-1 p-static-md;
+  .ai-popover--animated::before {
+    @apply content-[""] absolute -inset-[50px] -z-1 pointer-events-none animate-ai
+    bg-[conic-gradient(from_var(--ai-rotate-angle)_at_50%_50%,#6495ed,#000)];
   }
 
-  .c-footer {
-    @apply shadow-ai bg-surface sticky -bottom-[8px] p-static-sm py-static-md mt-0 pt-static-sm z-2 grid gap-fluid-sm forced-colors:bg-base forced-colors:border-t forced-colors:pt-static-md rounded-t-3xl sm:rounded-3xl;
+  .ai-scroller {
+    @apply absolute inset-0 p-static-md overflow-y-auto overflow-x-hidden flex flex-col gap-static-md min-h-full;
   }
 
-  .c-form {
-    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-x-static-md gap-y-static-md items-center p-static-sm bg-surface rounded-2xl focus-within:outline outline-focus;
+  .ai-header {
+    @apply sticky top-static-md z-1 flex items-center gap-static-sm m-static-md;
   }
 
-  .c-input {
+  .ai-content {
+    @apply grow content-start;
+  }
+
+  .ai-footer {
+    @apply [box-shadow:0_-15px_50px_-2px_rgba(0,0,0,.52)] bg-surface sticky -bottom-static-md -mx-static-md
+    -mb-static-md p-static-md z-2 grid gap-fluid-sm justify-items-center rounded-t-3xl sm:rounded-3xl
+    forced-colors:bg-base forced-colors:border-t;
+  }
+
+  .ai-form {
+    @apply grid grid-cols-[auto_minmax(0,1fr)_repeat(2,auto)] gap-static-md items-center w-full p-static-sm
+    bg-surface rounded-2xl focus-within:outline outline-focus outline-offset-2;
+  }
+
+  .ai-input {
     @apply [field-sizing:content] py-[15px] [max-block-size:4.5rlh] [font:inherit] outline-none resize-none;
   }
 
-  .c-upload {
-    @apply p-[2px] cursor-pointer rounded-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-[-2px];
+  .ai-upload {
+    @apply p-static-xs cursor-pointer rounded-sm transition-colors hover:bg-hover focus-visible:outline outline-focus
+    outline-offset-2;
   }
 
-  .c-icon {
+  .ai-icon {
     @apply p-[6px] bg-primary rounded-md;
   }
 
-  .c-question {
-    @apply justify-self-end max-w-4/5 p-static-md bg-surface rounded-2xl rounded-ee-none grid gap-fluid-sm animate-fade-in;
+  .ai-question {
+    @apply justify-self-end max-w-4/5 p-static-md bg-surface rounded-2xl rounded-ee-none grid gap-fluid-sm
+    animate-ai-fade-in;
   }
 
-  .c-answer {
-    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)] animate-fade-in;
+  .ai-answer {
+    @apply grid gap-x-static-md grid-cols-[auto_minmax(0,1fr)] animate-ai-fade-in;
   }
 
-  .c-cta {
-    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-static-md items-center cursor-pointer text-start rounded-lg -m-static-xs p-static-xs transition hover:bg-frosted focus-visible:outline outline-focus;
-  }
-
-  .c-card {
-    @apply flex gap-static-md items-center border-thin border-contrast-low rounded-md p-fluid-sm transition hover:bg-hover focus-visible:outline outline-focus outline-offset-2;
+  .ai-cta {
+    @apply grid grid-cols-[auto_minmax(0,1fr)] gap-x-static-md items-center cursor-pointer text-start rounded-lg
+    -m-static-xs p-static-xs prose-text-sm transition hover:bg-frosted focus-visible:outline outline-focus;
   }
 }
