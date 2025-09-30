@@ -27,7 +27,7 @@
     "@playwright/test": "^1.52.0",
     "@tailwindcss/postcss": "^4.1.7",
     "@tailwindcss/vite": "^4.1.7",
-    "@types/node": "^22.15.21",
+    "@types/node": "^24.6.0",
     "get-port": "^7.1.0",
     "lighthouse": "^12.6.0",
     "postcss": "^8.5.3",
