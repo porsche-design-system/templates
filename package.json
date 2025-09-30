@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.30.0-rc.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
