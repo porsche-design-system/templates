@@ -1,13 +1,41 @@
 - main:
   - img "Porsche"
-  - heading "AI Assistant Widget" [level=1]
+  - heading "Template" [level=1]
+  - heading "AI Assistant Widget" [level=2]
+  - paragraph:
+    - text: Built with Porsche Design System
+    - link "Components":
+      - /url: https://designsystem.porsche.com/v3/components/introduction/
+    - text: and styled with
+    - link "Tailwind CSS":
+      - /url: https://designsystem.porsche.com/v3/tailwindcss/introduction/
+    - text: . First, get the Porsche Design System
+    - link "up & running":
+      - /url: https://designsystem.porsche.com/v3/developing/introduction/
+    - text: . Then, simply copy the provided markup and styles directly into your project. Only the necessary JavaScript logic requires custom implementation.
+  - paragraph: /© \d+ Dr\. Ing\. h\.c\. F\. Porsche AG\./
+  - heading "Source Code:" [level=3]
+  - list:
+    - listitem:
+      - link "HTML":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html
+    - listitem:
+      - link "CSS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css
+    - listitem:
+      - link "JS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
-  - link "Back to chat"
-  - link "Start new chat"
+  - link "Back to chat":
+    - /url: javascript:history.back()
+  - link "Start new chat":
+    - /url: "#template-intro"
   - heading "Porsche Experience Center Hockenheimring" [level=2]
   - paragraph: /Am Motodrom 9-\d+ \d+ Hockenheim/
-  - link /\+\d+ \(0\)\d+ \d+ \d+/
-  - link "info@porsche.de"
+  - link /\+\d+ \(0\)\d+ \d+ \d+/:
+    - /url: tel:+4971191132900
+  - link "info@porsche.de":
+    - /url: mailto:info@porsche.de
   - heading "Opening hours:" [level=3]
   - paragraph: "/November – March: Monday to Sunday: 8:\\d+ a[\\d,.]+[bkmBKM]+\\. – 6:\\d+ p[\\d,.]+[bkmBKM]+ April – October: Monday to Sunday: 8:\\d+ a[\\d,.]+[bkmBKM]+\\. – 7:\\d+ p[\\d,.]+[bkmBKM]+/"

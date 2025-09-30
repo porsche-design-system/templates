@@ -18,7 +18,7 @@
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
   "dependencies": {
-    "@porsche-design-system/components-js": "^3.29.0-rc.0",
+    "@porsche-design-system/components-js": "^3.30.0-rc.0",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
@@ -31,6 +31,7 @@
     "get-port": "^7.1.0",
     "lighthouse": "^12.6.0",
     "postcss": "^8.5.3",
+    "prettier": "^3.6.2",
     "sass": "^1.89.0",
     "tsx": "^4.19.4",
     "vite": "^6.3.5"
