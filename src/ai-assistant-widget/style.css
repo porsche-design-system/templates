@@ -114,7 +114,7 @@ This approach is generally preferred because:
   }
 
   .ai-header {
-    @apply sticky top-static-md z-1 flex items-center gap-static-sm m-static-md;
+    @apply sticky top-0 z-1 flex items-center gap-static-sm;
   }
 
   .ai-content {
