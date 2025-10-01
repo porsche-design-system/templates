@@ -8,15 +8,15 @@ jobs:
     name: 'Templates'
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout (GH Pages)'
+      - name: 'Checkout'
         uses: actions/checkout@v4
         with:
           ref: 'gh-pages'
-      - name: 'Clean up'
+      - name: 'Clean'
         run: |
           rm -rf "./${{ github.ref_name }}"
         shell: bash
-      - name: 'Download build artifact'
+      - name: 'Download'
         uses: actions/download-artifact@v4
         with:
           name: templates-prod

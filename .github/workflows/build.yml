@@ -4,6 +4,20 @@ on:
   workflow_call:
 
 jobs:
+  lint:
+    name: 'Lint'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.52.0
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Lint'
+        run: npm run lint
+        shell: bash
   build-development:
     name: 'Development'
     runs-on: ubuntu-latest
@@ -13,12 +27,12 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
+      - name: 'Install'
+        uses: ./.github/actions/install
       - name: 'Build'
-        run: yarn build
+        run: npm run build
         shell: bash
-      - name: 'Upload build artifact'
+      - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
           name: templates
@@ -32,12 +46,12 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
+      - name: 'Install'
+        uses: ./.github/actions/install
       - name: 'Build (Prod)'
-        run: BASE_PATH=/templates/${{ github.ref_name }}/ yarn build
+        run: BASE_PATH=/templates/${{ github.ref_name }}/ npm run build
         shell: bash
-      - name: 'Upload build artifact'
+      - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
           name: templates-prod
