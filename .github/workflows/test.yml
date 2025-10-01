@@ -64,7 +64,7 @@ jobs:
           name: templates
           path: ./dist
       - name: 'VRT'
-        run: npm run test:vrt --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: npm run test:vrt -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
         shell: bash
       - name: 'VRT Regression'
         if: failure()
@@ -94,7 +94,7 @@ jobs:
           name: templates
           path: ./dist
       - name: 'LH'
-        run: npm run test:lh --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: npm run test:lh -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
         shell: bash
       - name: 'LH Regression'
         if: failure()
