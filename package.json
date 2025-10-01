@@ -22,20 +22,20 @@
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.30.0-rc.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.1",
+    "@axe-core/playwright": "^4.10.2",
     "@biomejs/biome": "^2.2.4",
     "@playwright/test": "^1.52.0",
-    "@tailwindcss/vite": "^4.1.7",
-    "@types/node": "^22.15.21",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/node": "^22.18.8",
     "get-port": "^7.1.0",
-    "lighthouse": "^12.6.0",
+    "lighthouse": "^12.8.2",
     "prettier": "^3.6.2",
-    "sass": "^1.89.0",
-    "tsx": "^4.19.4",
-    "vite": "^6.3.5"
+    "sass": "^1.93.2",
+    "tsx": "^4.20.6",
+    "vite": "^6.3.6"
   },
   "volta": {
     "node": "22.12.0"
