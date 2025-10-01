@@ -3,6 +3,9 @@ name: 'Contribution'
 on:
   push:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: 'Build'
