@@ -1,414 +1,1178 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AI Assistant widget (Template)"/>
-  <title>AI Assistant widget (Template)</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Assistant widget (Template)" />
+    <title>AI Assistant widget (Template)</title>
+  </head>
+  <body>
+    <main class="m-fluid-md max-w-[80ch] grid gap-fluid-md">
+      <p-wordmark></p-wordmark>
+      <h1 class="prose-heading-md">Template</h1>
+      <h2 class="prose-display-sm">AI Assistant Widget</h2>
+      <p class="prose-text-sm">
+        Built with <b>Porsche Design System</b>
+        <a
+          class="underline focus-visible:outline outline-focus rounded-sm px-static-xs -mx-static-xs transition-colors hover:bg-hover"
+          href="https://designsystem.porsche.com/v3/components/introduction/"
+          >Components</a
+        >
+        and styled with
+        <a
+          class="underline focus-visible:outline outline-focus rounded-sm px-static-xs -mx-static-xs transition-colors hover:bg-hover"
+          href="https://designsystem.porsche.com/v3/tailwindcss/introduction/"
+          >Tailwind CSS</a
+        >. First, get the Porsche Design System
+        <a
+          class="underline focus-visible:outline outline-focus rounded-sm px-static-xs -mx-static-xs transition-colors hover:bg-hover"
+          href="https://designsystem.porsche.com/v3/developing/introduction/"
+          >up & running</a
+        >. Then, simply copy the provided markup and styles directly into your
+        project. Only the necessary JavaScript logic requires custom
+        implementation.
+      </p>
+      <p class="prose-text-sm">© 2025 Dr. Ing. h.c. F. Porsche AG.</p>
+      <h3 class="prose-heading-sm">Source Code:</h3>
+      <ul>
+        <li>
+          <p-link-pure
+            href="https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html"
+            icon="return"
+            >HTML</p-link-pure
+          >
+        </li>
+        <li>
+          <p-link-pure
+            href="https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css"
+            icon="return"
+            >CSS</p-link-pure
+          >
+        </li>
+        <li>
+          <p-link-pure
+            href="https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js"
+            icon="return"
+            >JS</p-link-pure
+          >
+        </li>
+      </ul>
+    </main>
 
-<main class="m-fluid-md">
-  <p-wordmark></p-wordmark>
-  <p-display tag="h1">AI Assistant Widget</p-display>
-</main>
+    <button
+      id="ai-button"
+      class="ai-button"
+      type="button"
+      aria-label="open / close ai assistant"
+      aria-expanded="false"
+      aria-controls="ai-popover"
+      onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';"
+    >
+      <p-icon name="ai-spark"></p-icon>
+      <p-icon name="close" hidden></p-icon>
+      <span
+        class="dark absolute -top-1 -right-1 bg-base prose-text-2xs w-5 h-5 rounded-full flex items-center justify-center pointer-events-none select-none"
+      >
+        2
+      </span>
+    </button>
 
-<button class="c-button" type="button" aria-label="open / close ai assistant" aria-expanded="false" aria-controls="ai-popover" onclick="this.nextElementSibling.togglePopover(); Array.from(this.children).forEach((el) => {el.hidden = !el.hidden}); this.ariaExpanded = this.ariaExpanded === 'false';">
-  <p-icon source="/templates/assets/chat-ai.svg"></p-icon>
-  <p-icon name="close" hidden></p-icon>
-</button>
-
-<aside id="ai-popover" class="c-popover" popover="manual" aria-label="AI Assistant">
-
-  <template id="template-login">
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
-      <div class="grid gap-fluid-sm content-center justify-items-center m-static-lg z-0">
-        <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
-        <p-heading size="large" align="center" tag="h2">Welcome to Ask Porsche</p-heading>
-      </div>
-      <p-text class="mx-static-2xl z-0" size="medium" align="center">Please sign in with your Porsche ID.</p-text>
-      <div class="c-footer">
-        <p-link class="mx-static-lg mb-static-lg" href="#template-intro">Sign in</p-link>
-      </div>
-    </div>
-  </template>
-
-  <template id="template-intro">
-    <div class="grid grid-rows-[minmax(0,1fr)_auto_auto] gap-fluid-md min-h-full">
-      <div class="grid gap-fluid-sm content-center justify-items-center m-static-lg z-0">
-        <p-icon source="/templates/assets/ai.svg" size="x-large"></p-icon>
-        <p-heading size="large" align="center" tag="h2">I'm the AI Assistant of Porsche.</p-heading>
-        <p-text size="medium" align="center">How can I help you?</p-text>
-      </div>
-      <div class="grid gap-fluid-sm z-0">
-        <a class="c-card" href="#template-chat">
-          <p-icon name="chat"></p-icon>
-          <p-text tag="span">How can I use Plug & Charge for my Macan Electric?</p-text>
-        </a>
-        <a class="c-card" href="#template-chat">
-          <p-icon name="chat"></p-icon>
-          <p-text tag="span">What is the Porsche Data Pass?</p-text>
-        </a>
-      </div>
-      <div class="c-footer">
-        <form class="c-form" action="#template-chat">
-          <p-scroller class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
-            <div class="flex gap-static-sm">
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">911-datasheet.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">718-color.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">taycan-specs.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">macan-specs.jpg</button>
-              </p-tag>
+    <aside
+      id="ai-popover"
+      class="dark scheme-dark ai-popover"
+      popover="manual"
+      aria-label="AI Assistant"
+    >
+      <div id="ai-scroller" class="ai-scroller">
+        <template id="template-login" data-animation="true">
+          <header class="ai-header sm:hidden">
+            <p-button
+              theme="dark"
+              class="ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Close
+            </p-button>
+          </header>
+          <div class="ai-content content-end grid gap-static-lg">
+            <div
+              class="grid gap-static-md mt-static-md mx-static-md animate-ai-fade-in-slide-up"
+            >
+              <p-icon
+                theme="dark"
+                name="ai-spark-filled"
+                size="x-large"
+              ></p-icon>
+              <h2 class="prose-heading-xl font-normal">
+                Good to see you.<br />How can I assist you?
+              </h2>
             </div>
-          </p-scroller>
-          <button type="button" class="c-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
-            <p-icon name="attachment"></p-icon>
-          </button>
-          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
-          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
-          <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
-          <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
-        </form>
-        <div class="flex gap-static-md justify-center">
-          <p-link-pure href="#template-my-inquiries" icon="none" size="x-small">My inquiries</p-link-pure>
-          <p-link-pure href="#template-contact" icon="none" size="x-small">Contact</p-link-pure>
-          <p-link-pure href="#template-terms-of-use" icon="none" size="x-small">Terms of Use</p-link-pure>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <template id="template-chat">
-    <div class="grid grid-rows-[auto_minmax(0,1fr)_auto] gap-fluid-md min-h-full items-start">
-      <div class="c-header">
-        <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-      </div>
-      <div class="grid gap-static-lg z-0" role="log" aria-label="AI chat log">
-        <div class="c-question">
-          <p-text>How does your loading indicator look like while computing answers?</p-text>
-        </div>
-
-        <div class="c-answer">
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="my-static-md grid col-start-2 gap-static-sm">
-            <span class="sr-only">Loading AI answer</span>
-            <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
-            <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
-            <span class="skeleton w-3/5 h-fluid-sm rounded-sm"></span>
-          </div>
-        </div>
-
-        <div class="c-question" hidden>
-          <p-text>Can you show me a sample table?</p-text>
-        </div>
-
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-
-            <p-table class="my-static-md" caption="Some caption" compact="true">
-              <p-table-head>
-                <p-table-head-row>
-                  <p-table-head-cell>Category</p-table-head-cell>
-                  <p-table-head-cell>Details</p-table-head-cell>
-                </p-table-head-row>
-              </p-table-head>
-              <p-table-body>
-                <p-table-row>
-                  <p-table-cell>Name</p-table-cell>
-                  <p-table-cell>John Doe</p-table-cell>
-                </p-table-row>
-                <p-table-row>
-                  <p-table-cell>Role</p-table-cell>
-                  <p-table-cell>Software Engineer</p-table-cell>
-                </p-table-row>
-                <p-table-row>
-                  <p-table-cell>Department</p-table-cell>
-                  <p-table-cell>Product Development</p-table-cell>
-                </p-table-row>
-                <p-table-row>
-                  <p-table-cell>Info</p-table-cell>
-                  <p-table-cell>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-table-cell>
-                </p-table-row>
-              </p-table-body>
-            </p-table>
-
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-question" hidden>
-          <p-text>Can you show me some sample PDF files and external links?</p-text>
-        </div>
-
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-
-            <div class="my-static-md me-static-xl grid gap-fluid-sm">
-              <a class="c-cta" href="/templates/assets/porsche-models.pdf" target="_blank" aria-label="Download Porsche Models PDF" aria-describedby="external-link">
-                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="document"></p-icon>
-                <span>
-                  <p-text>porsche-models.pdf</p-text>
-                  <p-text size="xx-small" color="contrast-medium" ellipsis>PDF file</p-text>
-                </span>
+            <div class="grid grid-cols-2 grid-rows-2 gap-static-sm">
+              <a
+                href="#template-chat"
+                class="[--i:0] animate-ai-reveal-to-t animation-delay-short text-md col-span-1 row-span-2 min-h-[90px] backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >My car is not starting</span
+                >
               </a>
-              <a class="c-cta" href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/" target="_blank" aria-label="Porsche 911 technical data" aria-describedby="external-link">
-                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="external"></p-icon>
-                <span>
-                  <p-text>Porsche 911 technical data</p-text>
-                  <p-text size="xx-small" color="contrast-medium" ellipsis>https://www.porsche.com/germany/models/911/carrera-models/911-carrera/</p-text>
-                </span>
+              <a
+                href="#template-chat"
+                class="[--i:1] animate-ai-reveal-to-t animation-delay-short text-sm backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >I lost my charging card</span
+                >
+              </a>
+              <a
+                href="#template-chat"
+                class="[--i:2] animate-ai-reveal-to-t animation-delay-short text-sm backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >I want to go on a trip to Switzerland</span
+                >
               </a>
             </div>
-
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
-            </div>
           </div>
-        </div>
+          <footer class="ai-footer">
+            <p-link
+              class="w-full"
+              theme="dark"
+              variant="primary"
+              href="#template-intro"
+              >Sign in</p-link
+            >
+            <p
+              class="max-w-[32ch] prose-text-xs text-contrast-medium text-center"
+            >
+              I’m an artificial intelligence, not a human, so please use my
+              answers with care.
+            </p>
+          </footer>
+        </template>
 
-        <div class="c-question" hidden>
-          <p-text>Can you show me a sample address?</p-text>
-        </div>
-
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-            <p-heading size="medium" tag="h3">Porsche customer service</p-heading>
-            <p-text>Postfach 41 42<br />73744 Ostfildern</p-text>
-            <p-text>Mon - Sun: 7:00 a.m. - 9:00 p.m</p-text>
-
-            <div class="my-static-md me-static-xl grid gap-fluid-sm">
-              <a class="c-cta" href="tel:+4971191132900">
-                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="phone"></p-icon>
-                <p-text>+49 711 91132900</p-text>
+        <template id="template-intro" data-animation="true">
+          <header class="ai-header sm:hidden">
+            <p-button
+              theme="dark"
+              class="ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Close
+            </p-button>
+          </header>
+          <div class="ai-content content-end grid gap-static-lg">
+            <div
+              class="grid gap-static-md my-static-md mx-static-md animate-ai-fade-in-slide-up"
+            >
+              <p-icon
+                theme="dark"
+                name="ai-spark-filled"
+                size="x-large"
+              ></p-icon>
+              <h2 class="prose-heading-xl font-normal">
+                Good to see you.<br />How can I assist you?
+              </h2>
+            </div>
+            <div class="grid grid-cols-2 grid-rows-2 gap-static-sm">
+              <a
+                href="#template-chat"
+                class="[--i:0] animate-ai-reveal-to-t animation-delay-short text-md col-span-1 row-span-2 min-h-[90px] backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >My car is not starting</span
+                >
               </a>
-              <a class="c-cta" href="https://wa.me/1XXXXXXXXXX">
-                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="logo-whatsapp"></p-icon>
-                <p-text>Launch WhatsApp Messenger</p-text>
+              <a
+                href="#template-chat"
+                class="[--i:1] animate-ai-reveal-to-t animation-delay-short text-sm backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >I lost my charging card</span
+                >
               </a>
-              <a class="c-cta" href="mailto:name@email.com">
-                <p-icon class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]" name="email"></p-icon>
-                <p-text>Send request</p-text>
+              <a
+                href="#template-chat"
+                class="[--i:2] animate-ai-reveal-to-t animation-delay-short text-sm backdrop-blur-frosted bg-frosted rounded-3xl p-[24px] flex flex-col justify-between focus-visible:outline outline-primary outline-offset-2 transition-colors hover:bg-frosted/50"
+              >
+                <p-icon
+                  theme="dark"
+                  name="arrow-up"
+                  size="medium"
+                  class="self-end rotate-45 bg-frosted p-static-xs rounded-full relative -top-[12px] -end-[12px]"
+                ></p-icon>
+                <span class="animate-ai-reveal-text animation-delay-moderate"
+                  >I want to go on a trip to Switzerland</span
+                >
               </a>
             </div>
-
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+          </div>
+          <div class="ai-footer">
+            <form class="ai-form" action="#template-chat">
+              <p-scroller theme="dark" class="col-span-full mt-[-4px]" hidden>
+                <div class="flex gap-static-sm">
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">911-datasheet.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">718-color.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">taycan-specs.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">macan-specs.jpg</button>
+                  </p-tag>
+                </div>
+              </p-scroller>
+              <p-button-pure
+                class="p-static-xs -m-static-xs"
+                theme="dark"
+                type="button"
+                icon="attachment"
+                hide-label="true"
+                onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();"
+                >Upload media</p-button-pure
+              >
+              <input
+                type="file"
+                name="media"
+                accept="image/png, image/jpeg"
+                hidden
+              />
+              <textarea
+                class="ai-input"
+                name="question"
+                rows="1"
+                placeholder="Message AI Assistant"
+                aria-label="Message AI Assistant"
+              ></textarea>
+              <p-button-pure
+                class="p-static-xs -m-static-xs"
+                theme="dark"
+                type="button"
+                icon="microphone"
+                hide-label="true"
+                >Use microphone</p-button-pure
+              >
+              <p-button
+                href="#"
+                type="submit"
+                variant="primary"
+                theme="dark"
+                hide-label="true"
+                icon="arrow-up"
+                >Ask AI Assistant</p-button
+              >
+            </form>
+            <div class="flex gap-static-md justify-center">
+              <p-link-pure
+                theme="dark"
+                href="#template-my-inquiries"
+                icon="none"
+                size="xx-small"
+                >My inquiries</p-link-pure
+              >
+              <p-link-pure
+                theme="dark"
+                href="#template-contact"
+                icon="none"
+                size="xx-small"
+                >Contact</p-link-pure
+              >
+              <p-link-pure
+                theme="dark"
+                href="#template-terms-of-use"
+                icon="none"
+                size="xx-small"
+                >Terms of Use</p-link-pure
+              >
             </div>
           </div>
-        </div>
+        </template>
 
-        <div class="c-question" hidden>
-          <p-text>Can you show me some sample images?</p-text>
-        </div>
-
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-
-            <div class="my-static-md me-static-xl grid gap-fluid-sm">
-              <img class="w-full h-auto rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
-              <img class="w-full h-auto rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image"/>
-              <img class="w-full h-auto rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image"/>
-            </div>
-
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
-            </div>
+        <template id="template-chat">
+          <div class="ai-header">
+            <p-link
+              theme="dark"
+              href="#template-intro"
+              variant="ghost"
+              compact="true"
+              hide-label="true"
+              icon="new-chat"
+              >Start new chat</p-link
+            >
+            <p-button
+              theme="dark"
+              class="sm:hidden ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Some label
+            </p-button>
           </div>
-        </div>
-
-        <div class="c-question" hidden>
-          <p-text>Can you show me a sample audio and video file?</p-text>
-        </div>
-
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
-
-            <div class="my-static-md me-static-xl flex flex-col gap-fluid-sm">
-              <audio class="w-full" src="/assets/gt3-sound.wav" controls></audio>
-              <video class="w-full aspect-video rounded-md" src="/assets/ocean.mp4" poster="/assets/ocean.jpg" controls></video>
+          <div
+            class="ai-content m-static-md grid gap-static-lg"
+            role="log"
+            aria-label="AI chat log"
+          >
+            <div class="ai-question">
+              <p class="prose-text-sm">
+                How does your loading indicator look like while computing
+                answers?
+              </p>
             </div>
 
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+            <div class="ai-answer">
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="my-static-md grid col-start-2 gap-static-sm">
+                <span class="sr-only">Loading AI answer</span>
+                <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
+                <span class="skeleton w-4/5 h-fluid-sm rounded-sm"></span>
+                <span class="skeleton w-3/5 h-fluid-sm rounded-sm"></span>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="c-question" hidden>
-          <div class="grid grid-cols-3 gap-fluid-xs">
-            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/partner-teaser.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/hero.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/accessories.webp" alt="Some alternative text for screen readers describing the image">
-            <img class="w-full aspect-square object-cover object-center rounded-md" src="/assets/women.webp" alt="Some alternative text for screen readers describing the image">
-          </div>
-          <p-text>Attached you'll find some images that I've shared with you to be analyzed. Can you summarize your analysis in a sample list?</p-text>
-        </div>
+            <div class="ai-question" hidden>
+              <p class="prose-text-sm">Can you show me a sample table?</p>
+            </div>
 
-        <div class="c-answer" hidden>
-          <p-icon class="c-icon" source="/templates/assets/ai.svg" theme="dark"></p-icon>
-          <p-heading class="self-center" size="small" tag="h2">Porsche AI</p-heading>
-          <div class="grid col-start-2 gap-fluid-sm">
-            <p-text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text>
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
 
-            <p-text-list class="my-static-md">
-              <p-text-list-item>Porsche</p-text-list-item>
-              <p-text-list-item>Martini Racing
-                <p-text-list>
-                  <p-text-list-item>Watch</p-text-list-item>
-                  <p-text-list-item>Hoodie</p-text-list-item>
-                  <p-text-list-item>Umbrella</p-text-list-item>
+                <p-table
+                  theme="dark"
+                  class="my-static-md"
+                  caption="Some caption"
+                  compact="true"
+                >
+                  <p-table-head>
+                    <p-table-head-row>
+                      <p-table-head-cell>Category</p-table-head-cell>
+                      <p-table-head-cell>Details</p-table-head-cell>
+                    </p-table-head-row>
+                  </p-table-head>
+                  <p-table-body>
+                    <p-table-row>
+                      <p-table-cell>Name</p-table-cell>
+                      <p-table-cell>John Doe</p-table-cell>
+                    </p-table-row>
+                    <p-table-row>
+                      <p-table-cell>Role</p-table-cell>
+                      <p-table-cell>Software Engineer</p-table-cell>
+                    </p-table-row>
+                    <p-table-row>
+                      <p-table-cell>Department</p-table-cell>
+                      <p-table-cell>Product Development</p-table-cell>
+                    </p-table-row>
+                    <p-table-row>
+                      <p-table-cell>Info</p-table-cell>
+                      <p-table-cell
+                        >Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                        et dolore magna aliquyam erat, sed diam
+                        voluptua.</p-table-cell
+                      >
+                    </p-table-row>
+                  </p-table-body>
+                </p-table>
+
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-question" hidden>
+              <p class="prose-text-sm">
+                Can you show me some sample PDF files and external links?
+              </p>
+            </div>
+
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
+
+                <div class="my-static-md me-static-xl grid gap-fluid-sm">
+                  <a
+                    class="ai-cta"
+                    href="/templates/assets/porsche-models.pdf"
+                    target="_blank"
+                    aria-label="Download Porsche Models PDF"
+                    aria-describedby="external-link"
+                  >
+                    <p-icon
+                      theme="dark"
+                      class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]"
+                      name="document"
+                    ></p-icon>
+                    <span>
+                      porsche-models.pdf
+                      <span
+                        class="text-2xs text-contrast-medium block overflow-hidden whitespace-nowrap text-ellipsis"
+                        >PDF file</span
+                      >
+                    </span>
+                  </a>
+                  <a
+                    class="ai-cta"
+                    href="https://www.porsche.com/germany/models/911/carrera-models/911-carrera/"
+                    target="_blank"
+                    aria-label="Porsche 911 technical data"
+                    aria-describedby="external-link"
+                  >
+                    <p-icon
+                      theme="dark"
+                      class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]"
+                      name="external"
+                    ></p-icon>
+                    <span>
+                      Porsche 911 technical data
+                      <span
+                        class="text-2xs text-contrast-medium block overflow-hidden whitespace-nowrap text-ellipsis"
+                        >https://www.porsche.com/germany/models/911/carrera-models/911-carrera/</span
+                      >
+                    </span>
+                  </a>
+                </div>
+
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-question" hidden>
+              <p class="prose-text-sm">Can you show me a sample address?</p>
+            </div>
+
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
+                <h3 class="prose-heading-md">Porsche customer service</h3>
+                <p class="prose-text-sm">
+                  Postfach 41 42<br />73744 Ostfildern
+                </p>
+                <p class="prose-text-sm">Mon - Sun: 7:00 a.m. - 9:00 p.m</p>
+
+                <div class="my-static-md me-static-xl grid gap-fluid-sm">
+                  <a class="ai-cta" href="tel:+4971191132900">
+                    <p-icon
+                      theme="dark"
+                      class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]"
+                      name="phone"
+                    ></p-icon>
+                    +49 711 91132900
+                  </a>
+                  <a class="ai-cta" href="https://wa.me/1XXXXXXXXXX">
+                    <p-icon
+                      theme="dark"
+                      class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]"
+                      name="logo-whatsapp"
+                    ></p-icon>
+                    Launch WhatsApp Messenger
+                  </a>
+                  <a class="ai-cta" href="mailto:name@email.com">
+                    <p-icon
+                      theme="dark"
+                      class="bg-frosted backdrop-blur-frosted rounded-md p-[10px]"
+                      name="email"
+                    ></p-icon>
+                    Send request
+                  </a>
+                </div>
+
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-question" hidden>
+              <p class="prose-text-sm">Can you show me some sample images?</p>
+            </div>
+
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
+
+                <div class="my-static-md me-static-xl grid gap-fluid-sm">
+                  <img
+                    class="w-full h-auto rounded-md"
+                    src="/assets/partner-teaser.webp"
+                    alt="Some alternative text for screen readers describing the image"
+                  />
+                  <img
+                    class="w-full h-auto rounded-md"
+                    src="/assets/hero.webp"
+                    alt="Some alternative text for screen readers describing the image"
+                  />
+                  <img
+                    class="w-full h-auto rounded-md"
+                    src="/assets/accessories.webp"
+                    alt="Some alternative text for screen readers describing the image"
+                  />
+                </div>
+
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-question" hidden>
+              <p class="prose-text-sm">
+                Can you show me a sample audio and video file?
+              </p>
+            </div>
+
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
+
+                <div
+                  class="my-static-md me-static-xl flex flex-col gap-fluid-sm"
+                >
+                  <audio
+                    class="w-full"
+                    src="/assets/gt3-sound.wav"
+                    controls
+                  ></audio>
+                  <video
+                    class="w-full aspect-video rounded-md"
+                    src="/assets/ocean.mp4"
+                    poster="/assets/ocean.jpg"
+                    controls
+                  ></video>
+                </div>
+
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-question" hidden>
+              <div class="grid grid-cols-3 gap-fluid-xs">
+                <img
+                  class="w-full aspect-square object-cover object-center rounded-md"
+                  src="/assets/partner-teaser.webp"
+                  alt="Some alternative text for screen readers describing the image"
+                />
+                <img
+                  class="w-full aspect-square object-cover object-center rounded-md"
+                  src="/assets/hero.webp"
+                  alt="Some alternative text for screen readers describing the image"
+                />
+                <img
+                  class="w-full aspect-square object-cover object-center rounded-md"
+                  src="/assets/accessories.webp"
+                  alt="Some alternative text for screen readers describing the image"
+                />
+                <img
+                  class="w-full aspect-square object-cover object-center rounded-md"
+                  src="/assets/women.webp"
+                  alt="Some alternative text for screen readers describing the image"
+                />
+              </div>
+              <p class="prose-text-sm">
+                Attached you'll find some images that I've shared with you to be
+                analyzed. Can you summarize your analysis in a sample list?
+              </p>
+            </div>
+
+            <div class="ai-answer" hidden>
+              <p-icon class="ai-icon" name="ai-spark-filled"></p-icon>
+              <h2 class="self-center prose-heading-sm">Porsche AI</h2>
+              <div class="grid col-start-2 gap-fluid-sm">
+                <p class="prose-text-sm">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua.
+                </p>
+
+                <p-text-list theme="dark" class="my-static-md">
+                  <p-text-list-item>Porsche</p-text-list-item>
+                  <p-text-list-item
+                    >Martini Racing
+                    <p-text-list theme="dark">
+                      <p-text-list-item>Watch</p-text-list-item>
+                      <p-text-list-item>Hoodie</p-text-list-item>
+                      <p-text-list-item>Umbrella</p-text-list-item>
+                    </p-text-list>
+                  </p-text-list-item>
+                  <p-text-list-item
+                    >Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                    magna aliquyam erat, sed diam voluptua.</p-text-list-item
+                  >
+                  <p-text-list-item>911</p-text-list-item>
                 </p-text-list>
-              </p-text-list-item>
-              <p-text-list-item>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p-text-list-item>
-              <p-text-list-item>911</p-text-list-item>
-            </p-text-list>
 
-            <p-text class="me-static-xl" size="xx-small" color="contrast-medium">Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.</p-text>
-            <div class="flex gap-static-sm">
-              <p-button-pure icon="copy" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);">Copy to clipboard</p-button-pure>
-              <p-button-pure icon="email" type="button" hide-label="true">Mail</p-button-pure>
-              <p-button-pure icon="like" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';">Like</p-button-pure>
-              <p-button-pure icon="dislike" type="button" hide-label="true" aria="{ 'aria-pressed': 'false'}" onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';">Dislike</p-button-pure>
+                <p class="me-static-xl prose-text-2xs text-contrast-medium">
+                  Porsche AI answers are AI generated and could be incorrect.
+                  Please check information for accuracy.
+                </p>
+                <div class="flex gap-static-sm">
+                  <p-button-pure
+                    theme="dark"
+                    icon="copy"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : 'true'}; this.icon = 'check'; setTimeout(() => {this.icon = 'copy'; this.aria = {'aria-pressed' : 'false'};}, 2000);"
+                    >Copy to clipboard</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="email"
+                    type="button"
+                    hide-label="true"
+                    >Mail</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="like"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'like' ? 'true' : 'false'}; this.icon = this.icon === 'like' ? 'like-filled' : 'like';  this.nextElementSibling.aria = {'aria-pressed' : 'false'}; this.nextElementSibling.icon = 'dislike';"
+                    >Like</p-button-pure
+                  >
+                  <p-button-pure
+                    theme="dark"
+                    icon="dislike"
+                    type="button"
+                    hide-label="true"
+                    aria="{ 'aria-pressed': 'false'}"
+                    onclick="this.aria = {'aria-pressed' : this.icon === 'dislike' ? 'true' : 'false'}; this.icon = this.icon === 'dislike' ? 'dislike-filled' : 'dislike'; this.previousElementSibling.aria = {'aria-pressed' : 'false'}; this.previousElementSibling.icon = 'like';"
+                    >Dislike</p-button-pure
+                  >
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="c-footer">
-        <form class="c-form" action="#template-chat">
-          <p-scroller class="col-span-full mt-[-4px]" gradient-color="background-surface" hidden>
-            <div class="flex gap-static-sm">
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">911-datasheet.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">718-color.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">taycan-specs.jpg</button>
-              </p-tag>
-              <p-tag icon="close" color="background-frosted">
-                <button type="button">macan-specs.jpg</button>
-              </p-tag>
+          <div class="ai-footer">
+            <form class="ai-form" action="#template-chat">
+              <p-scroller theme="dark" class="col-span-full mt-[-4px]" hidden>
+                <div class="flex gap-static-sm">
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">911-datasheet.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">718-color.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">taycan-specs.jpg</button>
+                  </p-tag>
+                  <p-tag theme="dark" icon="close" color="background-frosted">
+                    <button type="button">macan-specs.jpg</button>
+                  </p-tag>
+                </div>
+              </p-scroller>
+              <p-button-pure
+                class="p-static-xs -m-static-xs"
+                theme="dark"
+                type="button"
+                icon="attachment"
+                hide-label="true"
+                onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();"
+                >Upload media</p-button-pure
+              >
+              <input
+                type="file"
+                name="media"
+                accept="image/png, image/jpeg"
+                hidden
+              />
+              <textarea
+                class="ai-input"
+                name="question"
+                rows="1"
+                placeholder="Message AI Assistant"
+                aria-label="Message AI Assistant"
+              ></textarea>
+              <p-button-pure
+                class="p-static-xs -m-static-xs"
+                theme="dark"
+                type="button"
+                icon="microphone"
+                hide-label="true"
+                >Use microphone</p-button-pure
+              >
+              <p-button
+                href="#"
+                type="submit"
+                variant="primary"
+                theme="dark"
+                hide-label="true"
+                icon="arrow-up"
+                >Ask AI Assistant</p-button
+              >
+            </form>
+            <div class="flex gap-static-md justify-center">
+              <p-link-pure
+                theme="dark"
+                href="#template-my-inquiries"
+                icon="none"
+                size="xx-small"
+                >My inquiries</p-link-pure
+              >
+              <p-link-pure
+                theme="dark"
+                href="#template-contact"
+                icon="none"
+                size="xx-small"
+                >Contact</p-link-pure
+              >
+              <p-link-pure
+                theme="dark"
+                href="#template-terms-of-use"
+                icon="none"
+                size="xx-small"
+                >Terms of Use</p-link-pure
+              >
             </div>
-          </p-scroller>
-          <button type="button" class="c-upload" aria-label="Upload media" onclick="this.previousElementSibling.removeAttribute('hidden'); this.nextElementSibling.click();">
-            <p-icon name="attachment"></p-icon>
-          </button>
-          <input type="file" name="media" accept="image/png, image/jpeg" hidden />
-          <textarea class="c-input" name="question" rows="1" placeholder="Message AI Assistant" aria-label="Message AI Assistant"></textarea>
-          <p-button-pure type="button" icon="microphone" hide-label="true">Use microphone</p-button-pure>
-          <p-button href="#" type="submit" variant="primary" theme="dark" hide-label="true" icon="arrow-up">Ask AI Assistant</p-button>
-        </form>
-        <div class="flex gap-static-md justify-center">
-          <p-link-pure href="#template-my-inquiries" icon="none" size="x-small">My inquiries</p-link-pure>
-          <p-link-pure href="#template-contact" icon="none" size="x-small">Contact</p-link-pure>
-          <p-link-pure href="#template-terms-of-use" icon="none" size="x-small">Terms of Use</p-link-pure>
-        </div>
+          </div>
+          <span id="external-link" hidden aria-hidden="true"
+            >Opens in new window</span
+          >
+        </template>
+
+        <template id="template-my-inquiries">
+          <div class="ai-header">
+            <p-link
+              theme="dark"
+              href="javascript:history.back()"
+              icon="arrow-left"
+              hide-label="true"
+              variant="ghost"
+              compact="true"
+              >Back to chat</p-link
+            >
+            <p-link
+              theme="dark"
+              href="#template-intro"
+              variant="ghost"
+              compact="true"
+              hide-label="true"
+              icon="new-chat"
+              >Start new chat</p-link
+            >
+            <p-button
+              theme="dark"
+              class="sm:hidden ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Some label
+            </p-button>
+          </div>
+          <div class="ai-content m-static-lg grid gap-fluid-sm">
+            <h2 class="prose-heading-lg font-normal">My inquiries</h2>
+            <div class="my-static-md grid gap-static-md z-1">
+              <p-link-pure theme="dark" href="#template-chat" icon="chat"
+                >What current Porsche models are there?</p-link-pure
+              >
+              <p-link-pure theme="dark" href="#template-chat" icon="chat"
+                >What are the differences between the Taycan and
+                911?</p-link-pure
+              >
+              <p-link-pure theme="dark" href="#template-chat" icon="chat"
+                >What customization options do I have for the 718
+                Cayman?</p-link-pure
+              >
+              <p-link-pure theme="dark" href="#template-chat" icon="chat"
+                >Is it possible to save my vehicle configurations and edit them
+                later?</p-link-pure
+              >
+            </div>
+          </div>
+        </template>
+
+        <template id="template-contact">
+          <div class="ai-header">
+            <p-link
+              theme="dark"
+              href="javascript:history.back()"
+              icon="arrow-left"
+              hide-label="true"
+              variant="ghost"
+              compact="true"
+              >Back to chat</p-link
+            >
+            <p-link
+              theme="dark"
+              href="#template-intro"
+              variant="ghost"
+              compact="true"
+              hide-label="true"
+              icon="new-chat"
+              >Start new chat</p-link
+            >
+            <p-button
+              theme="dark"
+              class="sm:hidden ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Some label
+            </p-button>
+          </div>
+          <div class="ai-content m-static-lg grid gap-fluid-sm">
+            <h2 class="prose-heading-lg font-normal">
+              Porsche Experience Center<br />Hockenheimring
+            </h2>
+            <p class="prose-text-sm">Am Motodrom 9-11<br />68766 Hockenheim</p>
+            <div class="my-static-md grid gap-fluid-sm justify-items-start z-1">
+              <p-link-pure theme="dark" href="tel:+4971191132900" icon="phone"
+                >+49 (0)711 911 32900</p-link-pure
+              >
+              <p-link-pure
+                theme="dark"
+                href="mailto:info@porsche.de"
+                icon="email"
+                >info@porsche.de</p-link-pure
+              >
+            </div>
+            <h3 class="prose-heading-sm">Opening hours:</h3>
+            <p class="prose-text-sm">
+              November – March:<br />
+              Monday to Sunday: 8:30 a.m. – 6:00 p.m<br />
+              <br />
+              April – October:<br />
+              Monday to Sunday: 8:30 a.m. – 7:30 p.m
+            </p>
+          </div>
+        </template>
+
+        <template id="template-terms-of-use">
+          <div class="ai-header">
+            <p-link
+              theme="dark"
+              href="javascript:history.back()"
+              icon="arrow-left"
+              hide-label="true"
+              variant="ghost"
+              compact="true"
+              >Back to chat</p-link
+            >
+            <p-link
+              theme="dark"
+              href="#template-intro"
+              variant="ghost"
+              compact="true"
+              hide-label="true"
+              icon="new-chat"
+              >Start new chat</p-link
+            >
+            <p-button
+              theme="dark"
+              class="sm:hidden ms-auto js-close-popover"
+              type="button"
+              icon="close"
+              hide-label="true"
+              compact="true"
+              variant="ghost"
+            >
+              Some label
+            </p-button>
+          </div>
+          <div class="ai-content m-static-lg grid gap-fluid-sm">
+            <h2 class="prose-heading-lg font-normal">
+              AI Assistant Disclaimer
+            </h2>
+            <h3 class="prose-heading-sm">General Information:</h3>
+            <p class="prose-text-sm">
+              The AI chatbot is an automated system powered by OpenAI. It is
+              designed to provide information and assistance based on the public
+              Tamr documentation. While we strive to provide accurate
+              information through the AI chatbot, we cannot guarantee the
+              accuracy, completeness, or up-to-date nature of the information
+              provided. We recommend that you use responses as a starting point
+              and verify the information in the linked public documentation
+              sources.
+            </p>
+            <h3 class="prose-heading-sm">User Responsibility:</h3>
+            <p class="prose-text-sm">
+              Users of the AI chatbot bear sole responsibility for their
+              interactions and reliance on the information provided. It is
+              important to exercise caution and use your discretion while
+              interpreting and acting upon the chatbot's responses. We cannot be
+              held liable for any actions, losses, or damages resulting from the
+              use of the chatbot.
+            </p>
+            <h3 class="prose-heading-sm">Data Privacy and Security:</h3>
+            <p class="prose-text-sm">…</p>
+          </div>
+        </template>
       </div>
-    </div>
-    <span id="external-link" hidden aria-hidden="true">Opens in new window</span>
-  </template>
+    </aside>
 
-  <template id="template-my-inquiries">
-    <div class="c-header">
-      <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-    </div>
-    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
-      <p-heading size="medium" tag="h2">My inquiries</p-heading>
-      <div class="my-static-md grid gap-static-md">
-        <p-link-pure href="#template-chat" icon="chat">What current Porsche models are there?</p-link-pure>
-        <p-link-pure href="#template-chat" icon="chat">What are the differences between the Taycan and 911?</p-link-pure>
-        <p-link-pure href="#template-chat" icon="chat">What customization options do I have for the 718 Cayman?</p-link-pure>
-        <p-link-pure href="#template-chat" icon="chat">Is it possible to save my vehicle configurations and edit them later?</p-link-pure>
-      </div>
-    </div>
-  </template>
-
-  <template id="template-contact">
-    <div class="c-header">
-      <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-    </div>
-    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
-      <p-heading size="medium" tag="h2">Porsche Experience Center<br />Hockenheimring</p-heading>
-      <p-text>Am Motodrom 9-11<br />68766 Hockenheim</p-text>
-      <div class="my-static-md grid gap-fluid-sm justify-items-start">
-        <p-link-pure href="tel:+4971191132900" icon="phone">+49 (0)711 911 32900</p-link-pure>
-        <p-link-pure href="mailto:info@porsche.de" icon="email">info@porsche.de</p-link-pure>
-      </div>
-      <p-heading size="small" tag="h3">Opening hours:</p-heading>
-      <p-text>November – March:<br />
-        Monday to Sunday: 8:30 a.m. – 6:00 p.m<br />
-        <br />
-        April – October:<br />
-        Monday to Sunday: 8:30 a.m. – 7:30 p.m</p-text>
-    </div>
-  </template>
-
-  <template id="template-terms-of-use">
-    <div class="c-header">
-      <p-link href="javascript:history.back()" icon="arrow-left" hide-label="true" variant="ghost" compact="true">Back to chat</p-link>
-      <p-link href="#template-intro" variant="ghost" compact="true" hide-label="true" icon="new-chat">Start new chat</p-link>
-    </div>
-    <div class="my-static-xl mx-static-lg grid gap-fluid-sm z-0">
-      <p-heading size="medium" tag="h2">AI Assistant Disclaimer</p-heading>
-      <p-heading size="small" tag="h3">General Information:</p-heading>
-      <p-text>The AI chatbot is an automated system powered by OpenAI. It is designed to provide information and assistance based on the public Tamr documentation. While we strive to provide accurate information through the AI chatbot, we cannot guarantee the accuracy, completeness, or up-to-date nature of the information provided. We recommend that you use responses as a starting point and verify the information in the linked public documentation sources.</p-text>
-      <p-heading size="small" tag="h3">User Responsibility:</p-heading>
-      <p-text>Users of the AI chatbot bear sole responsibility for their interactions and reliance on the information provided. It is important to exercise caution and use your discretion while interpreting and acting upon the chatbot's responses. We cannot be held liable for any actions, losses, or damages resulting from the use of the chatbot.</p-text>
-      <p-heading size="small" tag="h3">Data Privacy and Security:</p-heading>
-      <p-text>…</p-text>
-    </div>
-  </template>
-
-</aside>
-
-<script type="module" src="main.js"></script>
-</body>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

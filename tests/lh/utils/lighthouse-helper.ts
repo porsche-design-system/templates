@@ -1,4 +1,4 @@
-import * as fs from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { type Browser, chromium, expect as playwrightExpect, test as playwrightTest } from '@playwright/test';
 import getPort from 'get-port';
 import lighthouse from 'lighthouse';
@@ -60,8 +60,8 @@ export const test = playwrightTest.extend<{
         }
       );
 
-      fs.mkdirSync(testInfo.outputDir, { recursive: true });
-      fs.writeFileSync(`${testInfo.outputDir}/lighthouse.html`, report as string);
+      mkdirSync(testInfo.outputDir, { recursive: true });
+      writeFileSync(`${testInfo.outputDir}/lighthouse.html`, report as string);
 
       return {
         performance: performance * 100,
@@ -115,8 +115,8 @@ export const test = playwrightTest.extend<{
         }
       );
 
-      fs.mkdirSync(testInfo.outputDir, { recursive: true });
-      fs.writeFileSync(`${testInfo.outputDir}/lighthouse.html`, report as string);
+      mkdirSync(testInfo.outputDir, { recursive: true });
+      writeFileSync(`${testInfo.outputDir}/lighthouse.html`, report as string);
 
       return {
         performance: performance * 100,

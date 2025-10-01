@@ -7,11 +7,9 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["./yarn.lock"]
+    "includes": ["**", "!package-lock.json"]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -26,12 +24,14 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
       "correctness": {
         "useImportExtensions": "off"
       },
       "style": {
         "noDefaultExport": "off"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off"
       }
     }
   },
@@ -53,7 +53,7 @@
   },
   "overrides": [
     {
-      "include": ["*.css", "*.scss"],
+      "includes": ["**/*.css", "**/*.scss"],
       "javascript": {
         "formatter": {
           "quoteStyle": "double"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "include": ["**/tests/*"],
+      "includes": ["**/tests/**/*"],
       "linter": {
         "rules": {
           "suspicious": {
@@ -75,7 +75,7 @@
       }
     },
     {
-      "include": ["vite.config.js", "playwright.config.ts"],
+      "includes": ["**/vite.config.js", "**/playwright.config.ts"],
       "linter": {
         "rules": {
           "correctness": {

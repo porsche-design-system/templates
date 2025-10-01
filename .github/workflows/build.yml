@@ -4,22 +4,55 @@ on:
   workflow_call:
 
 jobs:
-  templates:
-    name: 'Templates'
+  lint:
+    name: 'Lint'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.52.0
+      image: mcr.microsoft.com/playwright:v1.55.1
       options: --user 1001
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
-      - name: 'Setup and install'
-        uses: ./.github/actions/setup-and-install
-      - name: 'Build'
-        run: yarn build
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Lint'
+        run: npm run lint
         shell: bash
-      - name: 'Upload build artifact'
+  build-development:
+    name: 'Development'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.55.1
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build'
+        run: npm run build
+        shell: bash
+      - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
           name: templates
+          path: ./dist
+  build-production:
+    name: 'Production'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.55.1
+      options: --user 1001
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install'
+        uses: ./.github/actions/install
+      - name: 'Build (Prod)'
+        run: BASE_PATH=/templates/${{ github.ref_name }}/ npm run build
+        shell: bash
+      - name: 'Upload'
+        uses: actions/upload-artifact@v4
+        with:
+          name: templates-prod
           path: ./dist

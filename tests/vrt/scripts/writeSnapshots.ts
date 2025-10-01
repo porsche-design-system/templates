@@ -1,8 +1,8 @@
-import * as fs from 'node:fs';
-import * as path from 'node:path';
+import { copyFileSync, existsSync, readdir, stat } from 'node:fs';
+import { basename } from 'node:path';
 
 const walk = (dir, done): void => {
-  fs.readdir(dir, (error, list) => {
+  readdir(dir, (error, list) => {
     if (error) {
       return done(error);
     }
@@ -18,7 +18,7 @@ const walk = (dir, done): void => {
 
       file = `${dir}/${file}`;
 
-      fs.stat(file, (_error, stat) => {
+      stat(file, (_error, stat) => {
         if (stat?.isDirectory()) {
           walk(file, () => {
             next();
@@ -35,7 +35,7 @@ const walk = (dir, done): void => {
             file.endsWith('pixel-7.png') ||
             file.endsWith('pixel-7-landscape.png')
           ) {
-            fs.copyFileSync(file, `tests/vrt/specs/__screenshots__/${path.basename(file)}`);
+            copyFileSync(file, `tests/vrt/specs/__screenshots__/${basename(file)}`);
           }
 
           next();
@@ -46,7 +46,7 @@ const walk = (dir, done): void => {
 };
 
 const dir = 'tests/vrt/test-results';
-if (fs.existsSync(dir)) {
+if (existsSync(dir)) {
   walk(dir, (error: Error): void => {
     if (error) {
       throw error;

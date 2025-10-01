@@ -1,9 +1,34 @@
 - main:
   - img "Porsche"
-  - heading "AI Assistant Widget" [level=1]
+  - heading "Template" [level=1]
+  - heading "AI Assistant Widget" [level=2]
+  - paragraph:
+    - text: Built with Porsche Design System
+    - link "Components":
+      - /url: https://designsystem.porsche.com/v3/components/introduction/
+    - text: and styled with
+    - link "Tailwind CSS":
+      - /url: https://designsystem.porsche.com/v3/tailwindcss/introduction/
+    - text: . First, get the Porsche Design System
+    - link "up & running":
+      - /url: https://designsystem.porsche.com/v3/developing/introduction/
+    - text: . Then, simply copy the provided markup and styles directly into your project. Only the necessary JavaScript logic requires custom implementation.
+  - paragraph: /© \d+ Dr\. Ing\. h\.c\. F\. Porsche AG\./
+  - heading "Source Code:" [level=3]
+  - list:
+    - listitem:
+      - link "HTML":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html
+    - listitem:
+      - link "CSS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css
+    - listitem:
+      - link "JS":
+        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
-  - link "Start new chat"
+  - link "Start new chat":
+    - /url: "#template-intro"
   - log "AI chat log":
     - paragraph: How does your loading indicator look like while computing answers?
     - heading "Porsche AI" [level=2]
@@ -44,11 +69,11 @@
     - heading "Porsche AI" [level=2]
     - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
     - link "Download Porsche Models PDF":
-      - paragraph: porsche-models.pdf
-      - paragraph: PDF file
+      - /url: /templates/assets/porsche-models.pdf
+      - text: porsche-models.pdf PDF file
     - link /Porsche \d+ technical data/:
-      - paragraph: /Porsche \d+ technical data/
-      - paragraph: /https:\/\/www\.porsche\.com\/germany\/models\/\d+\/carrera-models\/\d+-carrera\//
+      - /url: https://www.porsche.com/germany/models/911/carrera-models/911-carrera/
+      - text: /Porsche \d+ technical data https:\/\/www\.porsche\.com\/germany\/models\/\d+\/carrera-models\/\d+-carrera\//
     - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
     - button "Copy to clipboard"
     - status
@@ -65,11 +90,11 @@
     - paragraph: /Postfach \d+ \d+ \d+ Ostfildern/
     - paragraph: "/Mon - Sun: 7:\\d+ a[\\d,.]+[bkmBKM]+\\. - 9:\\d+ p[\\d,.]+[bkmBKM]+/"
     - link /\+\d+ \d+ \d+/:
-      - paragraph: /\+\d+ \d+ \d+/
+      - /url: tel:+4971191132900
     - link "Launch WhatsApp Messenger":
-      - paragraph: Launch WhatsApp Messenger
+      - /url: https://wa.me/1XXXXXXXXXX
     - link "Send request":
-      - paragraph: Send request
+      - /url: mailto:name@email.com
     - paragraph: Porsche AI answers are AI generated and could be incorrect. Please check information for accuracy.
     - button "Copy to clipboard"
     - status
@@ -133,11 +158,15 @@
     - button "Dislike"
     - status
   - button "Upload media"
+  - status
   - textbox "Message AI Assistant"
   - button "Use microphone"
   - status
   - button "Ask AI Assistant"
   - status
-  - link "My inquiries"
-  - link "Contact"
-  - link "Terms of Use"
+  - link "My inquiries":
+    - /url: "#template-my-inquiries"
+  - link "Contact":
+    - /url: "#template-contact"
+  - link "Terms of Use":
+    - /url: "#template-terms-of-use"

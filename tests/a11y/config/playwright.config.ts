@@ -39,12 +39,12 @@ export default defineConfig({
       use: devices['Desktop Chrome'],
     },
     {
-      name: 'Mobile Chrome',
-      use: devices['Pixel 7'],
+      name: 'Mobile Safari',
+      use: devices['iPhone 15'],
     },
   ],
   webServer: {
-    command: 'yarn preview',
+    command: 'npm run preview',
     port: 4173,
   },
 });
