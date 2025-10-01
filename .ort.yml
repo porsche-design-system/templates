@@ -1,0 +1,9 @@
+analyzer:
+  enabled_package_managers:
+    - "NPM"
+  skip_excluded: true
+excludes:
+  scopes:
+    - pattern: "devDependencies"
+      reason: "DEV_DEPENDENCY_OF"
+      comment: "These are packages used for the development, testing and build process and are not required at runtime."
