@@ -15,6 +15,10 @@
     "test:vrt:rename-snapshots": "tsx tests/vrt/scripts/renameSnapshots.ts",
     "test:vrt:write-snapshots": "tsx tests/vrt/scripts/writeSnapshots.ts",
     "test:lh": "playwright test --config=tests/lh/config/playwright.config.ts",
+    "npm:outdated": "npm outdated",
+    "npm:upgrade": "npx npm-check-updates -u && npm install",
+    "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
+    "npm:clean": "npm cache clean --force",
     "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
   },
   "dependencies": {
@@ -37,7 +41,6 @@
     "vite": "^6.3.5"
   },
   "volta": {
-    "node": "22.12.0",
-    "yarn": "1.22.22"
+    "node": "22.12.0"
   }
 }
