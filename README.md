@@ -1,9 +1,7 @@
 # Templates
 
-Designed & developed by [Porsche Design System](https://designsystem.porsche.com/) team
-using [Porsche Corporate Identity](https://brand.porsche.com/) and [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/)
-compliant [components](https://designsystem.porsche.com/v3/components/introduction), [styles](https://designsystem.porsche.com/v3/styles/introduction)
-and [partials](https://designsystem.porsche.com/v3/partials/introduction).
+Designed and developed by the [Porsche Design System](https://designsystem.porsche.com/) team, this repository showcases a comprehensive archive of completed commissioned work.
+The templates are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) compliant [Porsche Design System Components](https://designsystem.porsche.com/v3/components/introduction), aligning with the [Porsche Corporate Identity](https://brand.porsche.com/) and leveraging [Tailwind CSS](https://designsystem.porsche.com/v3/tailwindcss/introduction).
 
 ## Co Driver
 
@@ -20,8 +18,8 @@ and [partials](https://designsystem.porsche.com/v3/partials/introduction).
   - [Terms of Use](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-terms-of-use)
 
 ## Admin Panel
-- [Admin Panel](https://porsche-design-system.github.io/templates/main/admin-panel/)
 
+- [Admin Panel](https://porsche-design-system.github.io/templates/main/admin-panel/)
 
 ## Shop Singapur
 
