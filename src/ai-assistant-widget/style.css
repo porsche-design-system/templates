@@ -9,11 +9,14 @@
 
 @theme {
   /* Animation */
-  --animate-ai: ai-rotate calc(var(--transition-duration-moderate) * 50) linear infinite, ai-blur calc(var(--transition-duration-moderate) * 25) var(--ease-in-out) infinite;
+  --animate-ai: ai-rotate calc(var(--transition-duration-moderate) * 50) linear infinite, ai-blur
+    calc(var(--transition-duration-moderate) * 25) var(--ease-in-out) infinite;
   --animate-ai-fade-in: ai-fade-in var(--transition-duration-moderate) var(--ease-in) forwards;
-  --animate-ai-fade-in-slide-up: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up var(--transition-duration-long) var(--ease-in-out) backwards;
+  --animate-ai-fade-in-slide-up: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up
+    var(--transition-duration-long) var(--ease-in-out) backwards;
   --animate-ai-reveal-to-t: ai-reveal-to-t var(--transition-duration-long) var(--ease-in-out) backwards;
-  --animate-ai-reveal-text: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up var(--transition-duration-long) var(--ease-in-out) backwards;
+  --animate-ai-reveal-text: ai-fade-in var(--transition-duration-long) var(--ease-in-out) backwards, ai-slide-up
+    var(--transition-duration-long) var(--ease-in-out) backwards;
 
   @keyframes ai-rotate {
     from {
@@ -25,7 +28,8 @@
   }
 
   @keyframes ai-blur {
-    0%, 100% {
+    0%,
+    100% {
       filter: blur(120px);
     }
     50% {
