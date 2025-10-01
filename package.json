@@ -18,8 +18,7 @@
     "npm:outdated": "npm outdated",
     "npm:upgrade": "npx npm-check-updates -u && npm install",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
-    "npm:clean": "npm cache clean --force",
-    "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
+    "npm:clean": "npm cache clean --force"
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.30.0-rc.0",
