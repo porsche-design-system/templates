@@ -1,10 +1,10 @@
 name: 'Contribution'
 
-on:
-  push:
-
 permissions:
   contents: read
+
+on:
+  push:
 
 jobs:
   build:
