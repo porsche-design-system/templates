@@ -18,7 +18,7 @@ const [reserveText, reserveAddress] = reserveImageContainer.querySelectorAll('p-
 for (const result of reserveResults) {
   result.addEventListener('mouseover', (e) => {
     reserveImg.src = e.target.dataset.img;
-    reserveText.innerHTML = e.target.textContent;
+    reserveText.textContent = e.target.textContent;
     reserveAddress.innerHTML = e.target.dataset.address;
   });
 }
