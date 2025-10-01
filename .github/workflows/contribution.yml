@@ -15,5 +15,6 @@ jobs:
   deploy:
     name: 'Deploy'
     uses: ./.github/workflows/deploy.yml
+    if: github.actor != 'dependabot[bot]'
     needs:
       - test
