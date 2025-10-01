@@ -4,11 +4,9 @@ permissions:
   contents: read
 
 on:
-  push:
-
-  # schedule:
-  #   - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
-  # workflow_dispatch: # enables manual run, - before manual run is triggered ensure step "Send ORT Analyzer Result to OSO" is disabled / commented out
+  schedule:
+    - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
+  workflow_dispatch: # enables manual run, - before manual run is triggered ensure step "Send ORT Analyzer Result to OSO" is disabled / commented out
 
 jobs:
   ort:
