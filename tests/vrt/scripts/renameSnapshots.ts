@@ -70,13 +70,11 @@ const walk = (dir, done): void => {
 };
 
 const deleteRetryDirectories = (source: string): void => {
-  readdirSync(source, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => {
-      if (/retry\d+$/.test(dirent.name)) {
-        rmSync(`./${dirent.path}/${dirent.name}`, { recursive: true, force: true });
-      }
-    });
+  for (const dirent of readdirSync(source, { withFileTypes: true }).filter((dirent) => dirent.isDirectory())) {
+    if (/retry\d+$/.test(dirent.name)) {
+      rmSync(`./${dirent.path}/${dirent.name}`, { recursive: true, force: true });
+    }
+  }
 };
 
 const dir = 'tests/vrt/test-results';
