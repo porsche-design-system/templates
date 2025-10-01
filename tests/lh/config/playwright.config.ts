@@ -37,7 +37,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn preview',
+    command: 'npm run preview',
     port: 4173,
   },
 });
