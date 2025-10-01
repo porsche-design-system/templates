@@ -7,8 +7,19 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      github-actions-updates:
+        patterns:
+          - "*"
+
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    ignore:
+      - dependency-name: "@playwright/test"
+    groups:
+      npm-updates:
+        patterns:
+          - "*"

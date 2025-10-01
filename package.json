@@ -15,29 +15,29 @@
     "test:vrt:rename-snapshots": "tsx tests/vrt/scripts/renameSnapshots.ts",
     "test:vrt:write-snapshots": "tsx tests/vrt/scripts/writeSnapshots.ts",
     "test:lh": "playwright test --config=tests/lh/config/playwright.config.ts",
-    "docker": "docker compose -f docker-compose.yml -p porsche-design-system-templates run --service-ports --rm repository yarn \"${@}\""
+    "npm:outdated": "npm outdated",
+    "npm:upgrade": "npx npm-check-updates -u && npm install",
+    "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
+    "npm:clean": "npm cache clean --force"
   },
   "dependencies": {
     "@porsche-design-system/components-js": "^3.30.0-rc.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.1",
-    "@biomejs/biome": "^1.9.4",
-    "@playwright/test": "^1.52.0",
-    "@tailwindcss/postcss": "^4.1.7",
-    "@tailwindcss/vite": "^4.1.7",
-    "@types/node": "^22.15.21",
+    "@axe-core/playwright": "^4.10.2",
+    "@biomejs/biome": "^2.2.4",
+    "@playwright/test": "^1.55.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/node": "^24.6.1",
     "get-port": "^7.1.0",
-    "lighthouse": "^12.6.0",
-    "postcss": "^8.5.3",
+    "lighthouse": "^12.8.2",
     "prettier": "^3.6.2",
-    "sass": "^1.89.0",
-    "tsx": "^4.19.4",
-    "vite": "^6.3.5"
+    "sass": "^1.93.2",
+    "tsx": "^4.20.6",
+    "vite": "^7.1.7"
   },
   "volta": {
-    "node": "22.12.0",
-    "yarn": "1.22.22"
+    "node": "22.12.0"
   }
 }
