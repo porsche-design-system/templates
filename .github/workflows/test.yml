@@ -8,7 +8,7 @@ jobs:
     name: 'E2E'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.52.0
+      image: mcr.microsoft.com/playwright:v1.55.1
       options: --user 1001
     steps:
       - name: 'Checkout'
@@ -27,7 +27,7 @@ jobs:
     name: 'A11y'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.52.0
+      image: mcr.microsoft.com/playwright:v1.55.1
       options: --user 1001
     steps:
       - name: 'Checkout'
@@ -46,7 +46,7 @@ jobs:
     name: 'VRT'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.52.0
+      image: mcr.microsoft.com/playwright:v1.55.1
       options: --user 1001
     strategy:
       fail-fast: false
@@ -76,7 +76,7 @@ jobs:
     name: 'LH'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.52.0
+      image: mcr.microsoft.com/playwright:v1.55.1
       options: --user 1001
     strategy:
       fail-fast: false
