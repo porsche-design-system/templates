@@ -2,7 +2,7 @@ import { expect, test } from '../utils';
 
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/templates/shop-checkout/');
+    await page.goto('/shop-checkout/');
   });
 
   test('when page is loaded initially', async ({ makeAxeBuilder }) => {

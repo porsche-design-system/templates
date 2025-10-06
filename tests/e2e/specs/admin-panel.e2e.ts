@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('has title', async ({ page }) => {
-  await page.goto('/templates/admin-panel/');
+  await page.goto('/admin-panel/');
 
   await expect(page).toHaveTitle('Porsche Admin Panel (Template)');
 });

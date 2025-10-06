@@ -7,7 +7,7 @@ test.describe('has no visual regression', () => {
   for (const template of templates) {
     test.describe(`for "${template}"`, () => {
       test.beforeEach(async ({ page }) => {
-        await page.goto(`/templates/ai-assistant-widget/#template-${template}`);
+        await page.goto(`/ai-assistant-widget/#template-${template}`);
 
         await page.addStyleTag({
           content: `

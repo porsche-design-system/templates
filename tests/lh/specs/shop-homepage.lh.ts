@@ -1,7 +1,7 @@
 import { expect, test } from '../utils';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/templates/shop-homepage/');
+  await page.goto('/shop-homepage/');
 });
 
 test.describe('has sufficient lighthouse score', () => {

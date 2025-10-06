@@ -1,7 +1,7 @@
 import { expect, test } from '../utils';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/templates/co-driver/');
+  await page.goto('/co-driver/');
 });
 
 test.describe('has sufficient lighthouse score', () => {

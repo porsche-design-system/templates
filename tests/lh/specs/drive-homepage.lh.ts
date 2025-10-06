@@ -1,7 +1,7 @@
 import { expect, test } from '../utils';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/templates/drive-homepage/');
+  await page.goto('/drive-homepage/');
 });
 
 test.describe('has sufficient lighthouse score', () => {
