@@ -1,10 +1,10 @@
 name: 'Deploy'
 
-permissions:
-  contents: write
-
 on:
   workflow_call:
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
