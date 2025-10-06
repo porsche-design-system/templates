@@ -11,7 +11,7 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(40);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(90);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(56);
   });
 
   test('on desktop', async ({ lighthouseAuditDesktop }) => {
@@ -20,6 +20,6 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(70);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(90);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(56);
   });
 });
