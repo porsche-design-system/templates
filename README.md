@@ -5,31 +5,31 @@ The templates are built using [WCAG 2.2 (AA)](https://www.w3.org/TR/WCAG22/) com
 
 ## Co Driver
 
-- [Co Driver](https://porsche-design-system.github.io/templates/main/co-driver/)
+- [Co Driver](https://porsche-design-system.github.io/commissions/main/co-driver/)
 
 ## AI Assistant Widget
 
-- [AI Assistant Widget](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/)
-  - [Login](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-login)
-  - [Intro](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-intro)
-  - [Chat](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-chat)
-  - [My Inquiries](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-my-inquiries)
-  - [Contact](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-contact)
-  - [Terms of Use](https://porsche-design-system.github.io/templates/main/ai-assistant-widget/#template-terms-of-use)
+- [AI Assistant Widget](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/)
+  - [Login](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-login)
+  - [Intro](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-intro)
+  - [Chat](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-chat)
+  - [My Inquiries](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-my-inquiries)
+  - [Contact](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-contact)
+  - [Terms of Use](https://porsche-design-system.github.io/commissions/main/ai-assistant-widget/#template-terms-of-use)
 
 ## Admin Panel
 
-- [Admin Panel](https://porsche-design-system.github.io/templates/main/admin-panel/)
+- [Admin Panel](https://porsche-design-system.github.io/commissions/main/admin-panel/)
 
 ## Shop Singapur
 
-- [Shop Homepage](https://porsche-design-system.github.io/templates/main/shop-homepage/)
-- [Shop Product List](https://porsche-design-system.github.io/templates/main/shop-product-list/)
-- [Shop Product Detail](https://porsche-design-system.github.io/templates/main/shop-product-detail/)
-- [Shop Shopping Cart](https://porsche-design-system.github.io/templates/main/shop-shopping-cart/)
-- [Shop Checkout](https://porsche-design-system.github.io/templates/main/shop-checkout/)
+- [Shop Homepage](https://porsche-design-system.github.io/commissions/main/shop-homepage/)
+- [Shop Product List](https://porsche-design-system.github.io/commissions/main/shop-product-list/)
+- [Shop Product Detail](https://porsche-design-system.github.io/commissions/main/shop-product-detail/)
+- [Shop Shopping Cart](https://porsche-design-system.github.io/commissions/main/shop-shopping-cart/)
+- [Shop Checkout](https://porsche-design-system.github.io/commissions/main/shop-checkout/)
 
 ## Drive Rental
 
-- [Drive Homepage](https://porsche-design-system.github.io/templates/main/drive-homepage/)
-- [Drive Voucher](https://porsche-design-system.github.io/templates/main/drive-voucher/)
+- [Drive Homepage](https://porsche-design-system.github.io/commissions/main/drive-homepage/)
+- [Drive Voucher](https://porsche-design-system.github.io/commissions/main/drive-voucher/)
