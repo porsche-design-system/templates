@@ -26,7 +26,7 @@ document.querySelector('p-select[name="accent"]').addEventListener('update', (e)
     document.documentElement.style.removeProperty('--accent');
   } else {
     document.documentElement.style.setProperty('--accent', e.target.value);
-    document.querySelector('img#vehicle').src = `/templates/assets/${vehicleMap[e.target.value]}`;
+    document.querySelector('img#vehicle').src = `/commissions/assets/${vehicleMap[e.target.value]}`;
   }
 });
 

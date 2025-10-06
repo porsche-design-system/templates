@@ -2,7 +2,7 @@ import { expect, test } from '../utils';
 
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/templates/drive-voucher/');
+    await page.goto('/drive-voucher/');
   });
 
   // TODO: test fails in CI for Mobile Safari only. Seems to be a Playwright issue: https://github.com/microsoft/playwright/issues/27701

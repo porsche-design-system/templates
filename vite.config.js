@@ -27,7 +27,7 @@ const transformIndexHtmlPlugin = () => {
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({
-          appTitle: 'Templates by Porsche Design System',
+          appTitle: 'Commissions by Porsche Design System',
         }),
       ].join('');
 
@@ -39,7 +39,7 @@ const transformIndexHtmlPlugin = () => {
 };
 
 export default defineConfig({
-  base: process.env.BASE_PATH || '/templates/',
+  base: process.env.BASE_PATH || '',
   root: 'src',
   publicDir: '../public',
   emptyOutDir: true,

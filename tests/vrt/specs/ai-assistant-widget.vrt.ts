@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { enableForcedColors, enableRightToLeft, enableTextZoom } from '../utils';
 
-const templates = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
+const views = ['login', 'intro', 'chat', 'my-inquiries', 'contact', 'terms-of-use'];
 
 test.describe('has no visual regression', () => {
-  for (const template of templates) {
-    test.describe(`for "${template}"`, () => {
+  for (const view of views) {
+    test.describe(`for "${view}"`, () => {
       test.beforeEach(async ({ page }) => {
-        await page.goto(`/templates/ai-assistant-widget/#template-${template}`);
+        await page.goto(`/ai-assistant-widget/#template-${view}`);
 
         await page.addStyleTag({
           content: `
@@ -31,7 +31,7 @@ test.describe('has no visual regression', () => {
           `,
         });
 
-        if (template === 'chat') {
+        if (view === 'chat') {
           // wait until simulated AI request has finished
           await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
 
@@ -48,7 +48,7 @@ test.describe('has no visual regression', () => {
       });
 
       test('default', async ({ page }) => {
-        await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}.png`, { fullPage: true });
+        await expect(page).toHaveScreenshot(`ai-assistant-widget-${view}.png`, { fullPage: true });
       });
 
       test.describe(() => {
@@ -56,17 +56,17 @@ test.describe('has no visual regression', () => {
 
         test('right to left', async ({ page }) => {
           await enableRightToLeft(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-rtl.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${view}-rtl.png`, { fullPage: true });
         });
 
         test('text zoom', async ({ page }) => {
           await enableTextZoom(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-zoom.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${view}-zoom.png`, { fullPage: true });
         });
 
         test('high contrast', async ({ page }) => {
           await enableForcedColors(page);
-          await expect(page).toHaveScreenshot(`ai-assistant-widget-${template}-hc.png`, { fullPage: true });
+          await expect(page).toHaveScreenshot(`ai-assistant-widget-${view}-hc.png`, { fullPage: true });
         });
       });
     });

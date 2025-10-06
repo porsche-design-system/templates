@@ -18,13 +18,13 @@
   - list:
     - listitem:
       - link "HTML":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/index.html
     - listitem:
       - link "CSS":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/style.css
     - listitem:
       - link "JS":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/main.js
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
   - link "Start new chat":
@@ -69,7 +69,7 @@
     - heading "Porsche AI" [level=2]
     - paragraph: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
     - link "Download Porsche Models PDF":
-      - /url: /templates/assets/porsche-models.pdf
+      - /url: /commissions/assets/porsche-models.pdf
       - text: porsche-models.pdf PDF file
     - link /Porsche \d+ technical data/:
       - /url: https://www.porsche.com/germany/models/911/carrera-models/911-carrera/

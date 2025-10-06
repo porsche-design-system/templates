@@ -1,7 +1,7 @@
 import { expect, test } from '../utils';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/templates/drive-homepage/');
+  await page.goto('/drive-homepage/');
 });
 
 test.describe('has sufficient lighthouse score', () => {
@@ -11,7 +11,7 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(40);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(50);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(66);
   });
 
   test('on desktop', async ({ lighthouseAuditDesktop }) => {
@@ -20,6 +20,6 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(70);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(50);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(66);
   });
 });

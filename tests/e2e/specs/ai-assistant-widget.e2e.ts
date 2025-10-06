@@ -4,13 +4,13 @@ const getAiWidget = (page: Page) => page.locator('#ai-popover');
 const getAiButton = (page: Page) => page.getByRole('button', { name: 'open / close ai assistant' });
 
 test('has title', async ({ page }) => {
-  await page.goto('/templates/ai-assistant-widget/');
+  await page.goto('/ai-assistant-widget/');
 
   await expect(page).toHaveTitle('AI Assistant widget (Template)');
 });
 
 test('ai button toggles ai widget visibility by mouse or keyboard interaction', async ({ page }) => {
-  await page.goto('/templates/ai-assistant-widget/');
+  await page.goto('/ai-assistant-widget/');
 
   await expect(getAiWidget(page)).toBeVisible();
 
@@ -28,7 +28,7 @@ test('ai button toggles ai widget visibility by mouse or keyboard interaction', 
 });
 
 test('navigates through the ai widget', async ({ page }) => {
-  await page.goto('/templates/ai-assistant-widget/');
+  await page.goto('/ai-assistant-widget/');
 
   await expect(page.getByText('Good to see you.')).toBeVisible();
 

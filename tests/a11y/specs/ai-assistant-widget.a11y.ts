@@ -9,7 +9,7 @@ const getCopyToClipboardButton = (page: Page) => page.getByRole('button', { name
 test.describe('has WCAG 2.2 (AA) compliance', () => {
   test.describe('for "login"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-login');
+      await page.goto('/ai-assistant-widget/#template-login');
       await expect(page.getByText('Good to see you.')).toBeVisible();
     });
 
@@ -37,7 +37,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test.describe('for "intro"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-intro');
+      await page.goto('/ai-assistant-widget/#template-intro');
       await expect(page.getByText('Good to see you.')).toBeVisible();
     });
 
@@ -54,7 +54,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test.describe('for "chat"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-chat');
+      await page.goto('/ai-assistant-widget/#template-chat');
       // wait until simulated AI request has finished
       await expect(page.getByText('Can you show me a sample table?')).toBeVisible();
     });
@@ -100,7 +100,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test.describe('for "my-inquiries"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-my-inquiries');
+      await page.goto('/ai-assistant-widget/#template-my-inquiries');
       await expect(page.getByText('My inquiries')).toBeVisible();
     });
 
@@ -117,7 +117,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test.describe('for "contact"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-contact');
+      await page.goto('/ai-assistant-widget/#template-contact');
       await expect(page.getByText('Porsche Experience Center')).toBeVisible();
     });
 
@@ -134,7 +134,7 @@ test.describe('has WCAG 2.2 (AA) compliance', () => {
 
   test.describe('for "terms-of-use"', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/templates/ai-assistant-widget/#template-terms-of-use');
+      await page.goto('/ai-assistant-widget/#template-terms-of-use');
       await expect(page.getByText('AI Assistant Disclaimer')).toBeVisible();
     });
 

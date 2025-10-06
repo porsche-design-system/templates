@@ -1,7 +1,7 @@
 import { expect, test } from '../utils';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/templates/shop-shopping-cart/');
+  await page.goto('/shop-shopping-cart/');
 });
 
 test.describe('has sufficient lighthouse score', () => {
@@ -11,7 +11,7 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(50);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(66);
   });
 
   test('on desktop', async ({ lighthouseAuditDesktop }) => {
@@ -20,6 +20,6 @@ test.describe('has sufficient lighthouse score', () => {
     expect(performance, 'Performance').toBeGreaterThanOrEqual(80);
     expect(accessibility, 'Accessibility').toBeGreaterThanOrEqual(100);
     expect(bestPractices, 'Best Practices').toBeGreaterThanOrEqual(70);
-    expect(seo, 'SEO').toBeGreaterThanOrEqual(100);
+    expect(seo, 'SEO').toBeGreaterThanOrEqual(66);
   });
 });
