@@ -6,7 +6,7 @@ set -o pipefail
 SCRIPT_DIR="$(cd `dirname ${0}` && pwd)"
 RUN_UID="$(id -u)"
 RUN_GID="$(id -g)"
-COMPOSE_PROJECT_NAME="porsche-design-system-templates"
+COMPOSE_PROJECT_NAME="porsche-design-system-commissions"
 DOCKER_DEFAULT_PLATFORM="linux/amd64"
 
 export RUN_UID

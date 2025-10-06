@@ -26,7 +26,7 @@ jobs:
       - name: 'Download'
         uses: actions/download-artifact@v5
         with:
-          name: templates
+          name: commissions
           path: ./dist
       - name: 'E2E'
         run: npm run test:e2e
@@ -45,7 +45,7 @@ jobs:
       - name: 'Download'
         uses: actions/download-artifact@v5
         with:
-          name: templates
+          name: commissions
           path: ./dist
       - name: 'A11y'
         run: npm run test:a11y
@@ -69,7 +69,7 @@ jobs:
       - name: 'Download'
         uses: actions/download-artifact@v5
         with:
-          name: templates
+          name: commissions
           path: ./dist
       - name: 'VRT'
         run: npm run test:vrt -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
@@ -99,7 +99,7 @@ jobs:
       - name: 'Download'
         uses: actions/download-artifact@v5
         with:
-          name: templates
+          name: commissions
           path: ./dist
       - name: 'LH'
         run: npm run test:lh -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}

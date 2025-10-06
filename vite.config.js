@@ -27,7 +27,7 @@ const transformIndexHtmlPlugin = () => {
         getFontLinks(),
         getIconLinks(),
         getMetaTagsAndIconLinks({
-          appTitle: 'Templates by Porsche Design System',
+          appTitle: 'Commissions by Porsche Design System',
         }),
       ].join('');
 

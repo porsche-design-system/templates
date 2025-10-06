@@ -43,7 +43,7 @@ jobs:
       - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
-          name: templates
+          name: commissions
           path: ./dist
   build-production:
     name: 'Production'
@@ -62,5 +62,5 @@ jobs:
       - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
-          name: templates-prod
+          name: commissions-prod
           path: ./dist
