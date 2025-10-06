@@ -2,11 +2,14 @@ name: 'OSS Review Toolkit'
 
 on:
   schedule:
-    - cron: "0 0 1 * *" # at 00:00 on day-of-month 1
-  workflow_dispatch: # enables manual run, - before manual run is triggered ensure step "Send ORT Analyzer Result to OSO" is disabled / commented out
+    - cron: "0 0 1 1 *" # at 00:00 on the first day of January
+  workflow_dispatch: # enables manual run (it won't send the ORT result to OSO Jenkins)
 
 permissions:
   contents: read
+
+env:
+  OSO_PROJECT_NAME: porsche_design_system_commissions
 
 jobs:
   ort:
@@ -14,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: 'Install'
         uses: ./.github/actions/install
       - name: "Login"
@@ -25,14 +28,43 @@ jobs:
           password: ${{ secrets.OSO_AWS_SECRET_ACCESS_KEY }}
       - name: "Analyze"
         run: |
-          docker run --user root -v "$PWD":/project ${{ vars.OSO_AWS_ECR_REGISTRY }}/ort:latest analyze -i /project -o /project/ort
+          docker run \
+            --user root \
+            -v "$PWD":/project \
+            ${{ vars.OSO_AWS_ECR_REGISTRY }}/ort:latest \
+            analyze \
+            -i /project \
+            -o /project/ort
         shell: bash
       - name: "Report"
         run: |
-          docker run --user root -v "$PWD":/project ${{ vars.OSO_AWS_ECR_REGISTRY }}/ort:latest report -i /project/ort/analyzer-result.yml -o /project/ort -f StaticHtml
+          docker run \
+            --user root \
+            -v "$PWD":/project \
+            ${{ vars.OSO_AWS_ECR_REGISTRY }}/ort:latest \
+            report \
+            -i /project/ort/analyzer-result.yml \
+            -o /project/ort \
+            -f StaticHtml
         shell: bash
       - name: 'Upload'
         uses: actions/upload-artifact@v4
         with:
           name: ort-analysis
           path: ./ort
+      - name: "Send"
+        if: github.event_name == 'schedule'
+        run: |
+          zip \
+            -j analyzer-result.zip ort/analyzer-result.yml
+          curl \
+            -u "${{ env.OSO_JENKINS_USER }}:${{ env.OSO_JENKINS_TOKEN }}" \
+            -X POST \
+            ${{ vars.OSO_JENKINS_URL }} \
+            --form ort/analyzer-result.zip=@analyzer-result.zip \
+            --form ProjectName=${{ env.OSO_PROJECT_NAME }} \
+            --fail
+        shell: bash
+        env:
+          OSO_JENKINS_USER: ${{ secrets.OSO_JENKINS_USER }}
+          OSO_JENKINS_TOKEN: ${{ secrets.OSO_JENKINS_TOKEN }}
