@@ -18,13 +18,13 @@
   - list:
     - listitem:
       - link "HTML":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/index.html
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/index.html
     - listitem:
       - link "CSS":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/style.css
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/style.css
     - listitem:
       - link "JS":
-        - /url: https://github.com/porsche-design-system/templates/blob/main/src/ai-assistant-widget/main.js
+        - /url: https://github.com/porsche-design-system/commissions/blob/main/src/ai-assistant-widget/main.js
 - button "open / close ai assistant" [expanded]
 - complementary "AI Assistant":
   - link "Back to chat":
