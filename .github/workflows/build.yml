@@ -57,7 +57,7 @@ jobs:
       - name: 'Install'
         uses: ./.github/actions/install
       - name: 'Build (Prod)'
-        run: BASE_PATH=/templates/${{ github.ref_name }}/ npm run build
+        run: BASE_PATH=/commissions/${{ github.ref_name }}/ npm run build
         shell: bash
       - name: 'Upload'
         uses: actions/upload-artifact@v4
