@@ -29,13 +29,13 @@
     "@biomejs/biome": "^2.2.5",
     "@playwright/test": "^1.55.1",
     "@tailwindcss/vite": "^4.1.14",
-    "@types/node": "^24.6.2",
+    "@types/node": "^24.7.0",
     "get-port": "^7.1.0",
     "lighthouse": "^12.8.2",
     "prettier": "^3.6.2",
     "sass": "^1.93.2",
     "tsx": "^4.20.6",
-    "vite": "^7.1.8"
+    "vite": "^7.1.9"
   },
   "volta": {
     "node": "22.12.0"
