@@ -5,3 +5,18 @@ import './style.css';
 for (const accordion of document.querySelectorAll('p-accordion')) {
   accordion.addEventListener('update', (e) => (e.target.open = e.detail.open));
 }
+
+const navDrilldown = document.getElementById('nav-drilldown');
+const navButton = document.getElementById('nav-button');
+
+navButton.addEventListener('click', () => {
+  navDrilldown.open = true;
+});
+
+navDrilldown.addEventListener('dismiss', (e) => {
+  e.target.open = false;
+});
+
+navDrilldown.addEventListener('update', (e) => {
+  e.target.activeIdentifier = e.detail.activeIdentifier;
+});

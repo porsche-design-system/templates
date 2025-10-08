@@ -7,7 +7,7 @@
     <title>Finder (Template)</title>
   </head>
   <body
-    class="grid-template bg-surface font-porsche-next font-normal text-sm text-primary"
+    class="grid-template gap-y-fluid-lg bg-surface font-porsche-next font-normal text-sm text-primary"
   >
     <header class="col-wide grid grid-cols-subgrid gap-y-0">
       <div
@@ -89,7 +89,7 @@
       </div>
     </header>
 
-    <main class="col-wide grid grid-cols-subgrid gap-y-fluid-lg">
+    <main class="col-wide grid grid-cols-subgrid gap-y-fluid-lg -mt-fluid-md">
       <div class="col-wide">
         <h1 class="prose-heading-xl">
           Porsche 911<br />
@@ -1421,6 +1421,16 @@
         </nav>
       </div>
     </main>
+
+    <p-divider class="col-full"></p-divider>
+
+    <aside class="col-wide grid gap-y-fluid-md justify-items-center">
+      <h2 class="font-semibold text-md text-center">
+        Overall, how satisfied are you with the information available on this
+        page?
+      </h2>
+      <p-button type="button" variant="secondary"> Give feedback now </p-button>
+    </aside>
 
     <footer
       class="dark col-full grid grid-cols-subgrid py-fluid-lg bg-base text-primary"
