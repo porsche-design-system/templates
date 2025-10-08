@@ -98,6 +98,31 @@
       </div>
       <div class="col-start-wide col-span-5">
         <aside class="bg-base rounded-lg p-fluid-md">
+          <p-fieldset class="space-y-static-md mb-fluid-md">
+            <span slot="label" class="prose-heading-sm">Location</span>
+            <p-input-search
+              label="Zipcode or City"
+              name="zip"
+              value="Zuffenhausen"
+              clear="true"
+            >
+              <p-button-pure
+                slot="end"
+                icon="search"
+                hide-label="true"
+                class="p-(--ref-p-input-slotted-padding) m-(--ref-p-input-slotted-margin)"
+              ></p-button-pure>
+            </p-input-search>
+            <p-select name="options" value="50" label="Radius">
+              <p-select-option value="50">50 mi (25+)</p-select-option>
+              <p-select-option value="100">100 mi (25+)</p-select-option>
+              <p-select-option value="200">200 mi (25+)</p-select-option>
+              <p-select-option value="500">500 mi (25+)</p-select-option>
+              <p-select-option value="nationwide"
+                >Nationwide (25+)</p-select-option
+              >
+            </p-select>
+          </p-fieldset>
           <p-accordion>
             <span slot="heading">Conditions</span>
             <p-fieldset class="space-y-static-md">
