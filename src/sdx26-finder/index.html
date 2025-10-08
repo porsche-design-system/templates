@@ -1393,9 +1393,31 @@
         </aside>
       </div>
       <div class="col-end-wide col-span-11 flex flex-col gap-fluid-md">
-        <div class="bg-base rounded-lg p-fluid-md">
-          <h2 class="prose-heading-md">Sidebar</h2>
-          <p-wordmark></p-wordmark>
+        <div class="bg-base rounded-lg p-fluid-md grid gap-static-md">
+          <p-scroller class="space-x-static-md whitespace-nowrap">
+            <p-tag-dismissible label="Model Lines">911</p-tag-dismissible>
+            <p-tag-dismissible label="Location">Zuffenhausen</p-tag-dismissible>
+          </p-scroller>
+          <div class="flex justify-between items-end gap-static-md">
+            <p-button type="button" variant="secondary" icon="bell">
+              E-Mail me new results
+            </p-button>
+            <p-select name="options" value="a" label="Sort by">
+              <p-select-option value="a">Closest to location</p-select-option>
+              <p-select-option value="b"
+                >Recently Added to Stock</p-select-option
+              >
+              <p-select-option value="c">Price - Low to High</p-select-option>
+              <p-select-option value="d">Price - High to Low</p-select-option>
+              <p-select-option value="e">Mileage - Low to High</p-select-option>
+              <p-select-option value="f"
+                >Model year - Low to High</p-select-option
+              >
+              <p-select-option value="g"
+                >Model year - High to Low</p-select-option
+              >
+            </p-select>
+          </div>
         </div>
         <ul class="grid gap-fluid-md">
           <li>
