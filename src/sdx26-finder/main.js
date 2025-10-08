@@ -3,7 +3,9 @@ import './style.css';
 // EXAMPLE CODE FOR DEMONSTRATION PURPOSE ONLY.
 
 for (const accordion of document.querySelectorAll('p-accordion')) {
-  accordion.addEventListener('update', (e) => (e.target.open = e.detail.open));
+  accordion.addEventListener('update', (e) => {
+    e.target.open = e.detail.open;
+  });
 }
 
 const navDrilldown = document.getElementById('nav-drilldown');
