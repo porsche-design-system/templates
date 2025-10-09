@@ -1,0 +1,47 @@
+---
+import {
+  getComponentChunkLinks,
+  getFontFaceStyles,
+  getFontLinks,
+  getIconLinks,
+  getInitialStyles,
+  getLoaderScript,
+  getMetaTagsAndIconLinks,
+} from '@porsche-design-system/components-js/partials';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+		<!-- injects stylesheet which defines visibility of pre-hydrated PDS components -->
+		<Fragment set:html={getInitialStyles()} />
+		<!-- injects stylesheet which defines Porsche Next CSS font-face definition (=> minimize FOUT) -->
+		<Fragment set:html={getFontFaceStyles()} />
+		<!-- preloads Porsche Next font (=> minimize FOUT) -->
+		<Fragment set:html={getFontLinks()} />
+		<!-- preloads PDS component core chunk from CDN for PDS component hydration (=> improve loading performance) -->
+		<Fragment set:html={getComponentChunkLinks()} />
+		<!-- preloads Porsche icons (=> minimize FOUC) -->
+		<Fragment set:html={getIconLinks()} />
+		<!-- injects favicon, apple touch icons, android touch icons, etc. -->
+		<Fragment set:html={getMetaTagsAndIconLinks({ appTitle: 'Porsche' })} />
+	</head>
+	<body>
+		<slot />
+		<Fragment set:html={getLoaderScript()} />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
