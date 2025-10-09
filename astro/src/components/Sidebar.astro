@@ -1,0 +1,1339 @@
+<aside class="bg-base rounded-lg p-fluid-md">
+  <p-fieldset class="space-y-static-md mb-fluid-md">
+    <span slot="label" class="prose-heading-sm">Location</span>
+    <p-input-search
+      label="Zipcode or City"
+      name="zip"
+      value="Zuffenhausen"
+      clear="true"
+    >
+      <p-button-pure
+        slot="end"
+        icon="search"
+        hide-label="true"
+        class="p-(--ref-p-input-slotted-padding) m-(--ref-p-input-slotted-margin)"
+      ></p-button-pure>
+    </p-input-search>
+    <p-select name="options" value="50" label="Radius">
+      <p-select-option value="50">50 mi (25+)</p-select-option>
+      <p-select-option value="100">100 mi (25+)</p-select-option>
+      <p-select-option value="200">200 mi (25+)</p-select-option>
+      <p-select-option value="500">500 mi (25+)</p-select-option>
+      <p-select-option value="nationwide"
+      >Nationwide (25+)
+      </p-select-option
+      >
+    </p-select>
+  </p-fieldset>
+  <p-accordion>
+    <span slot="heading">Conditions</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Conditions</span>
+      <p-checkbox name="some-name">
+            <span slot="label">
+              New <span class="text-contrast-medium text-xs">(25+)</span>
+            </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+            <span slot="label">
+              Pre-Owned
+              <span class="text-contrast-medium text-xs">(25+)</span>
+              <p-button-pure
+                type="button"
+                icon="information"
+                hide-label="true"
+                aria="{'aria-haspopup': 'dialog'}"
+              >
+                More information
+              </p-button-pure>
+            </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+            <span slot="label">
+              Certified Pre-Owned
+              <span class="text-contrast-medium text-xs">(25+)</span>
+              <p-button-pure
+                type="button"
+                icon="information"
+                hide-label="true"
+                aria="{'aria-haspopup': 'dialog'}"
+              >
+                More information
+              </p-button-pure>
+            </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+            <span slot="label">
+              Classic
+              <span class="text-contrast-medium text-xs">(25+)</span>
+              <p-button-pure
+                type="button"
+                icon="information"
+                hide-label="true"
+                aria="{'aria-haspopup': 'dialog'}"
+              >
+                More information
+              </p-button-pure>
+            </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+            <span slot="heading" class="flex gap-static-sm"
+            >Model Lines <p-tag compact="true">1</p-tag></span
+            >
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Conditions</span>
+      <p-select
+        name="options"
+        value="c"
+        label="Models"
+        hide-label="true"
+      >
+        <p-select-option value="a">All Models</p-select-option>
+        <p-select-option value="b"
+        >718/Boxster/Cayman (25+)
+        </p-select-option
+        >
+        <p-select-option value="c">911 (25+)</p-select-option>
+        <p-select-option value="d">Taycan (25+)</p-select-option>
+        <p-select-option value="e">Panamera (25+)</p-select-option>
+        <p-select-option value="f">Macan (25+)</p-select-option>
+        <p-select-option value="g">Cayenne (25+)</p-select-option>
+        <p-select-option value="h">918 (0)</p-select-option>
+        <p-select-option value="i">Carrera GT (0)</p-select-option>
+        <p-select-option value="j">959 (0)</p-select-option>
+        <p-select-option value="k">968 (0)</p-select-option>
+        <p-select-option value="l">944 (0)</p-select-option>
+        <p-select-option value="m">935 (0)</p-select-option>
+        <p-select-option value="n">924 (0)</p-select-option>
+        <p-select-option value="o">928 (0)</p-select-option>
+        <p-select-option value="p">914 (0)</p-select-option>
+        <p-select-option value="q">904 (0)</p-select-option>
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Trims</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Trims</span>
+      <button
+        class="grid w-full text-start bg-frosted backdrop-blur-frosted rounded-sm p-static-md cursor-pointer transition-colors outline-focus outline-offset-2 focus-visible:outline hover:bg-hover"
+      >
+        <b class="flex justify-between gap-static-xs"
+        >GT, S, 4 and Turbo
+          <p-icon name="information"></p-icon
+          >
+        </b>
+        <span>Do you know the iconic abbreviations?</span>
+      </button>
+      <p-input-search
+        label="Search for trims"
+        hide-label="true"
+        name="Some name"
+        clear="true"
+        indicator="true"
+        placeholder="Search"
+      ></p-input-search>
+      <h3 class="uppercase text-contrast-medium">Carrera</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera
+                  <span class="text-contrast-medium text-xs">(18)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera T
+                  <span class="text-contrast-medium text-xs">(9)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera 4
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera S
+                  <span class="text-contrast-medium text-xs">(22)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera 4S
+                  <span class="text-contrast-medium text-xs">(5)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera GTS
+                  <span class="text-contrast-medium text-xs">(23)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera 4 GTS
+                  <span class="text-contrast-medium text-xs">(10)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Carrera Cabriolet</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera Cabriolet
+                  <span class="text-contrast-medium text-xs">(16)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera T Cabriolet
+                  <span class="text-contrast-medium text-xs">(3)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Carrera 4 Cabriolet
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera S Cabriolet
+                  <span class="text-contrast-medium text-xs">(10)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera 4S Cabriolet
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera GTS Cabriolet
+                  <span class="text-contrast-medium text-xs">(13)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Carrera 4 GTS Cabriolet
+                  <span class="text-contrast-medium text-xs">(3)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 SC Cabriolet
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Targa</h3>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Targa
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Targa 4
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Targa 4S
+                  <span class="text-contrast-medium text-xs">(5)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Targa 4 GTS
+                  <span class="text-contrast-medium text-xs">(9)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 SC Targa
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Carrera Targa
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Carrera 4 Targa
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Turbo</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Turbo
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Turbo S
+                  <span class="text-contrast-medium text-xs">(13)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Turbo Cabriolet</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Turbo Cabriolet
+                  <span class="text-contrast-medium text-xs">(3)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Turbo S Cabriolet
+                  <span class="text-contrast-medium text-xs">(14)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Turbo Targa</h3>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Turbo Targa
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">GT</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 GT3
+                  <span class="text-contrast-medium text-xs">(12)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 GT3 Cup
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 GT3 Touring
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 GT3 RS
+                  <span class="text-contrast-medium text-xs">(12)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 GT3 R
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 GT2
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 GT2 RS
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Speedster</h3>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Speedster
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="uppercase text-contrast-medium">Special Editions</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 Spirit 70
+                  <span class="text-contrast-medium text-xs">(2)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Dakar
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  911 S/T
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 R
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  911 Sport Classic
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Model Generations</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Model Generations</span>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  992 II
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >since 2025</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  992 I
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >since 2020</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  991 II
+                  <span class="text-contrast-medium text-xs">(18)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >2017-2019</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  991 I
+                  <span class="text-contrast-medium text-xs">(9)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >2012-2016</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  997 II
+                  <span class="text-contrast-medium text-xs">(2)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >2009-2013</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  997 I
+                  <span class="text-contrast-medium text-xs">(2)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >2005-2009</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  996 II
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >2002-2007</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  996 I
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1998-2001</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  993 II
+                  <span class="text-contrast-medium text-xs">(2)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1996-1998</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  993 I
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1994-1995</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  964
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1989-1994</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  G-Model II
+                  <span class="text-contrast-medium text-xs">(1)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1984-1989</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex gap-static-xs items-end">
+                  G-Model I
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1957-1983</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" hidden>
+                <span slot="label" class="flex gap-static-xs items-end">
+                  F-Model
+                  <span class="text-contrast-medium text-xs">(2)</span>
+                  <span class="text-contrast-medium text-xs ms-auto"
+                  >1965-1973</span
+                  >
+                </span>
+      </p-checkbox>
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all 14 model generations
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Year</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Year</span>
+      <div
+        class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-static-sm after:col-start-2 after:row-start-1 after:w-static-sm after:border-b-1 after:mb-[22px]"
+      >
+        <p-select name="options" value="a" label="Min. Year">
+          <p-select-option value="a">Any</p-select-option>
+          <p-select-option value="b">2026 (25+)</p-select-option>
+          <p-select-option value="b">2025 (25+)</p-select-option>
+          <p-select-option value="b">2024 (25+)</p-select-option>
+          <p-select-option value="b">2023 (25+)</p-select-option>
+          <p-select-option value="b">2022 (25+)</p-select-option>
+          <p-select-option value="b">2021 (25+)</p-select-option>
+          <p-select-option value="b">2021 (25+)</p-select-option>
+          <p-select-option value="b">2020 (25+)</p-select-option>
+          <p-select-option value="b">2019 (25+)</p-select-option>
+          <p-select-option value="b">2018 (25+)</p-select-option>
+          <p-select-option value="b">2017 (25+)</p-select-option>
+          <p-select-option value="b">2016 (25+)</p-select-option>
+          <p-select-option value="b">2016 (25+)</p-select-option>
+          <p-select-option value="b">2014 (25+)</p-select-option>
+          <p-select-option value="b">1950 (25+)</p-select-option>
+        </p-select>
+        <p-select name="options" value="a" label="Max. Year">
+          <p-select-option value="a">Any</p-select-option>
+          <p-select-option value="b">2026 (25+)</p-select-option>
+          <p-select-option value="b">2025 (25+)</p-select-option>
+          <p-select-option value="b">2024 (25+)</p-select-option>
+          <p-select-option value="b">2023 (25+)</p-select-option>
+          <p-select-option value="b">2022 (25+)</p-select-option>
+          <p-select-option value="b">2021 (25+)</p-select-option>
+          <p-select-option value="b">2021 (25+)</p-select-option>
+          <p-select-option value="b">2020 (18)</p-select-option>
+          <p-select-option value="b">2019 (16)</p-select-option>
+          <p-select-option value="b">2018 (12)</p-select-option>
+          <p-select-option value="b">2017 (10)</p-select-option>
+          <p-select-option value="b">2016 (4)</p-select-option>
+          <p-select-option value="b">2016 (2)</p-select-option>
+          <p-select-option value="b">2014 (1)</p-select-option>
+          <p-select-option value="b">1950 (0)</p-select-option>
+        </p-select>
+      </div>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Body Style</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Body Style</span>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Coupe <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Cabriolet
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Targa
+                  <span class="text-contrast-medium text-xs">(18)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Speedster
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Engine and Transmission</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Engine and Transmission</span>
+      <h3 class="font-semibold">Power</h3>
+      <p-select name="options" value="a" label="Min. Power">
+        <p-select-option value="a">Any</p-select-option>
+        <p-select-option value="b">200 hp (25+)</p-select-option>
+        <p-select-option value="b">300 hp (25+)</p-select-option>
+        <p-select-option value="b">400 hp (25+)</p-select-option>
+        <p-select-option value="b">500 hp (25+)</p-select-option>
+      </p-select>
+      <h3 class="font-semibold">Transmission</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  PDK (Automatic)
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Automatic
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Manual
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="font-semibold">Drivetrain</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  All-wheel-drive
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Rear-wheel-drive
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="font-semibold">Fuel Type</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Gasoline
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Electric
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Diesel
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Plug-in hybrid
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Options</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Options</span>
+      <p-input-search
+        label="Search for options"
+        name="Some name"
+        clear="true"
+        indicator="true"
+        placeholder="Search"
+        hide-label="true"
+      ></p-input-search>
+      <h3 class="uppercase text-contrast-medium">
+        Frequently Selected
+      </h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  BOSE® Surround Sound System
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Burmester® 3D High-End Surround Sound System
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Sport Chrono Package
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Sports Exhaust System
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Front Axle Lift System
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Rear Axle Steering
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Porsche Active Suspension Management (PASM)
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Sunroof
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  ParkAssist (Front and Rear) incl. Surround View
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  ParkAssist (Front and Rear) incl. Reversing Camera
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Porsche InnoDrive incl. Adaptive Cruise Control
+                  <span class="text-contrast-medium text-xs">(13)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Adaptive Cruise Control
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" hidden>
+                <span slot="label">
+                  Premium Plus Package
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                  <p-button-pure
+                    type="button"
+                    icon="information"
+                    hide-label="true"
+                    aria="{'aria-haspopup': 'dialog'}"
+                  >
+                    More information
+                  </p-button-pure>
+                </span>
+      </p-checkbox>
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all 95 options
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Exterior Color</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Exterior Color</span>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(0,0,0)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Black
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(204,204,204)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  White
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(199,199,191)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Silver
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(239,239,239)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Chalk
+                  <span class="text-contrast-medium text-xs">(12)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(117,117,117)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Grey
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(0,75,128)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Blue
+                  <span class="text-contrast-medium text-xs">(24)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(251,26,8)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Red
+                  <span class="text-contrast-medium text-xs">(11)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(133,96,78)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Brown
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(255,204,0)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Yellow
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(37,148,92)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Green
+                  <span class="text-contrast-medium text-xs">(20)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(98,83,130)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Violet
+                  <span class="text-contrast-medium text-xs">(3)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(219,136,58)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Gold
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(244,121,32)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Orange
+                  <span class="text-contrast-medium text-xs">(4)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(200,69,115)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Pink
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-grid w-[16px] h-[16px] bg-[rgb(221,200,193)] rounded-sm after:bg-linear-(--paint)"
+                  ></span>
+                  Beige
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Interior Color</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Interior Color</span>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(0,0,0)] rounded-full"
+                  ></span>
+                  Black
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(204,153,102)] rounded-full"
+                  ></span>
+                  Beige
+                  <span class="text-contrast-medium text-xs">(11)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(115,53,31)] rounded-full"
+                  ></span>
+                  Brown
+                  <span class="text-contrast-medium text-xs">(21)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(102,102,102)] rounded-full"
+                  ></span>
+                  Gray
+                  <span class="text-contrast-medium text-xs">(15)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(43,58,71)] rounded-full"
+                  ></span>
+                  Blue
+                  <span class="text-contrast-medium text-xs">(6)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(191,38,38)] rounded-full"
+                  ></span>
+                  Red
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(130,76,110)] rounded-full"
+                  ></span>
+                  Purple
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(28,47,47)] rounded-full"
+                  ></span>
+                  Green
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label" class="flex items-center gap-static-xs">
+                  <span
+                    class="inline-block w-[16px] h-[16px] bg-[rgb(239,239,239)] rounded-full"
+                  ></span>
+                  White
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Price</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Price</span>
+      <p-select name="options" value="any" label="Max. Price">
+        <p-select-option value="any">Any</p-select-option>
+        <p-select-option value="40000">$40,000</p-select-option>
+        <p-select-option value="50000">$50,000</p-select-option>
+        <p-select-option value="60000">$60,000</p-select-option>
+        <p-select-option value="70000">$70,000</p-select-option>
+        <p-select-option value="80000">$80,000</p-select-option>
+        <p-select-option value="90000">$90,000</p-select-option>
+        <p-select-option value="100000">$100,000</p-select-option>
+        <p-select-option value="110000">$110,000</p-select-option>
+        <p-select-option value="120000">$120,000</p-select-option>
+        <p-select-option value="130000">$130,000</p-select-option>
+        <p-select-option value="140000">$140,000</p-select-option>
+        <p-select-option value="150000">$150,000</p-select-option>
+        <p-select-option value="175000">$175,000</p-select-option>
+        <p-select-option value="200000">$200,000</p-select-option>
+        <p-select-option value="225000">$225,000</p-select-option>
+        <p-select-option value="250000">$250,000</p-select-option>
+        <p-select-option value="275000">$275,000</p-select-option>
+        <p-select-option value="300000">$300,000</p-select-option>
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Availability</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Availability</span>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Immediately Available
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Mileage</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Mileage</span>
+      <p-select name="options" value="any" label="Max. Mileage">
+        <p-select-option value="any">Any</p-select-option>
+        <p-select-option value="5000">5,000 mi (25+)</p-select-option>
+        <p-select-option value="10000">10,000 mi (25+)</p-select-option>
+        <p-select-option value="20000">20,000 mi (25+)</p-select-option>
+        <p-select-option value="30000">30,000 mi (25+)</p-select-option>
+        <p-select-option value="40000">40,000 mi (25+)</p-select-option>
+        <p-select-option value="50000">50,000 mi (25+)</p-select-option>
+        <p-select-option value="60000">60,000 mi (25+)</p-select-option>
+        <p-select-option value="70000">70,000 mi (25+)</p-select-option>
+        <p-select-option value="80000">80,000 mi (25+)</p-select-option>
+        <p-select-option value="90000">90,000 mi (25+)</p-select-option>
+        <p-select-option value="100000"
+        >100,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="110000"
+        >110,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="120000"
+        >120,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="130000"
+        >130,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="140000"
+        >140,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="150000"
+        >150,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="160000"
+        >160,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="170000"
+        >170,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="180000"
+        >180,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="190000"
+        >190,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="200000"
+        >200,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="210000"
+        >210,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="220000"
+        >220,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="230000"
+        >230,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="240000"
+        >240,000 mi (25+)
+        </p-select-option
+        >
+        <p-select-option value="250000"
+        >250,000 mi (25+)
+        </p-select-option
+        >
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Previous Owners</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Previous Owners</span>
+      <p-select name="options" value="any" label="Max. Owners">
+        <p-select-option value="any">Any</p-select-option>
+        <p-select-option value="1">Max. 1 (25+)</p-select-option>
+        <p-select-option value="2">Max. 2 (25+)</p-select-option>
+        <p-select-option value="3">Max. 3 (25+)</p-select-option>
+        <p-select-option value="4">Max. 4 (25+)</p-select-option>
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Campaigns & Finance</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Campaigns & Finance</span>
+      <p-checkbox name="some-name" disabled="true">
+                <span slot="label">
+                  Available To Reserve Online
+                  <span class="text-contrast-medium text-xs">(0)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Demo cars & service loaners
+                  <span class="text-contrast-medium text-xs">(9)</span>
+                </span>
+      </p-checkbox>
+      <h3 class="font-semibold">Financing Products</h3>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Lease
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Retail Finance
+                  <span class="text-contrast-medium text-xs">(25+)</span>
+                </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+  <p-accordion>
+    <span slot="heading">Porsche Center</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Porsche Center</span>
+      <p-input-search
+        label="Search for Porsche Center"
+        name="Some name"
+        clear="true"
+        indicator="true"
+        placeholder="Search"
+        hide-label="true"
+      ></p-input-search>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Jack Daniels Motors
+                  <span class="text-contrast-medium text-xs">(5)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Manhattan Motorcars
+                  <span class="text-contrast-medium text-xs">(19)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Paul Miller Porsche
+                  <span class="text-contrast-medium text-xs">(24)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Porsche Amityville
+                  <span class="text-contrast-medium text-xs">(5)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name">
+                <span slot="label">
+                  Porsche Brooklyn
+                  <span class="text-contrast-medium text-xs">(12)</span>
+                </span>
+      </p-checkbox>
+      <p-checkbox name="some-name" hidden>
+                <span slot="label">
+                  Porsche Englewood
+                  <span class="text-contrast-medium text-xs">(10)</span>
+                </span>
+      </p-checkbox>
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all 207 Porsche Centers
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+  <p-button
+    class="w-full mt-fluid-md"
+    type="button"
+    variant="secondary"
+    icon="delete"
+  >
+    Reset all filters
+  </p-button>
+</aside>

@@ -14,10 +14,9 @@ import {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Porsche Finder (SDX26)</title>
 		<!-- injects stylesheet which defines visibility of pre-hydrated PDS components -->
 		<Fragment set:html={getInitialStyles()} />
 		<!-- injects stylesheet which defines Porsche Next CSS font-face definition (=> minimize FOUT) -->
@@ -31,17 +30,8 @@ import {
 		<!-- injects favicon, apple touch icons, android touch icons, etc. -->
 		<Fragment set:html={getMetaTagsAndIconLinks({ appTitle: 'Porsche' })} />
 	</head>
-	<body>
+	<body class="grid-template gap-y-fluid-lg bg-surface font-porsche-next font-normal text-sm text-primary">
 		<slot />
 		<Fragment set:html={getLoaderScript()} />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

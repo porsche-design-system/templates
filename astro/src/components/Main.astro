@@ -1,0 +1,24 @@
+---
+import CarListing from './CarListing.astro';
+import Feedback from './Feedback.astro';
+import Pagination from './Pagination.astro';
+import Sidebar from './Sidebar.astro';
+import ToolsBar from './ToolsBar.astro';
+import Welcome from './Welcome.astro';
+---
+
+<main class="col-wide grid grid-cols-subgrid gap-y-fluid-lg -mt-fluid-md">
+  <div class="col-wide">
+    <Welcome></Welcome>
+  </div>
+  <div class="col-start-wide col-span-5">
+    <Sidebar></Sidebar>
+  </div>
+  <div class="col-end-wide col-span-11 flex flex-col gap-fluid-md">
+    <ToolsBar></ToolsBar>
+    <CarListing></CarListing>
+    <Pagination></Pagination>
+  </div>
+  <p-divider class="col-span-full"></p-divider>
+  <Feedback></Feedback>
+</main>
