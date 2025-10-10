@@ -1,0 +1,21 @@
+{
+  "name": "@porsche-design-system/astro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@porsche-design-system/components-js": "^3.29.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.1",
+    "tailwindcss": "^4.1.14"
+  },
+  "volta": {
+    "extends": "../package.json"
+  }
+}

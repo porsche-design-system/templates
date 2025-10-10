@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import appStoreBadge from '../assets/app-store-badge.svg';
+---
+
+<footer class="dark col-full grid grid-cols-subgrid py-fluid-lg bg-base text-primary">
+  <div class="col-extended grid gap-fluid-lg">
+    <a
+      class="justify-self-start rounded-[10px] outline-focus outline-offset-2 focus-visible:outline"
+      target="_blank"
+      href="#"
+    >
+      <Image src={appStoreBadge} alt="Download on the App Store"/>
+    </a>
+    <div class="grid gap-static-md">
+      <p>
+        © 2025 Porsche Sales &amp; Marketplace, Inc.
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Imprint and Legal Notice.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Terms and Conditions.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Privacy Notice.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          California Privacy.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Do Not Sell or Share My Personal Information.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Open Source Software Notice.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Business &amp; Human Rights.
+        </p-link-pure>
+        <p-link-pure
+          theme="dark"
+          icon="none"
+          underline="true"
+          href="#"
+        >
+          Accessibility Statement.
+        </p-link-pure>
+      </p>
+      <p>
+        Total Retail Price is the Manufacturer's Suggested Retail Price
+        (MSRP) plus options and manufacturer charges and taxes. It excludes
+        tax, title, registration, dealer charges, and potential tariffs.
+        Dealer sets actual selling price.
+      </p>
+      <p>
+        These images are configurator-generated and may not accurately
+        represent the vehicle. Please contact your Porsche Center for more
+        details.
+      </p>
+    </div>
+    <p-wordmark class="justify-self-center" theme="dark"></p-wordmark>
+  </div>
+</footer>

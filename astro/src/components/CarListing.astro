@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import gallery from '../assets/911-rs-1973.webp';
+import gallery1 from '../assets/911-rs-1973-1.webp';
+import gallery2 from '../assets/911-rs-1973-2.webp';
+import gallery3 from '../assets/911-rs-1973-3.webp';
+import { cars } from '../data/cars.ts';
+---
+
+<ul class="grid gap-fluid-md">
+  {cars.map((car) => (
+    <li>
+      <article class="bg-base rounded-lg grid grid-cols-[4fr_5fr] items-start">
+        <div class="rounded-s-lg overflow-hidden grid grid-cols-3 grid-rows-[3fr_1fr] gap-static-xs">
+          <Image class="aspect-4/3 object-cover col-span-full" src={gallery} alt={car.title} />
+          <Image class="w-full h-full object-cover" src={gallery1} alt={car.title} />
+          <Image class="w-full h-full object-cover" src={gallery2} alt={car.title} />
+          <Image class="w-full h-full object-cover" src={gallery3} alt={car.title} />
+        </div>
+        <div class="p-fluid-md">
+          <h2 class="prose-heading-lg">{car.title}</h2>
+          <p>{car.condition}</p>
+          <p-divider class="my-fluid-sm"></p-divider>
+          <ul class="flex flex-wrap gap-x-static-md">
+            <li>{car.color1}</li>
+            <li>{car.color2}</li>
+          </ul>
+          <ul class="flex flex-wrap gap-x-static-md">
+            {car.details.map((detail) => (
+              <li>{detail}</li>
+            ))}
+          </ul>
+          <p-divider class="my-fluid-sm"></p-divider>
+          <h3 class="prose-heading-lg">{car.price}</h3>
+          <div class="flex flex-wrap gap-static-md my-fluid-sm">
+            <p-link href="#"> Show details</p-link>
+            <p-button type="button" variant="secondary" icon="bookmark">Save</p-button>
+          </div>
+          <ul class="flex flex-wrap gap-x-static-md">
+            <li class="font-semibold">{car.dealer}</li>
+            <li>{car.location}</li>
+            <li class="text-contrast-medium">{car.distance}</li>
+          </ul>
+        </div>
+      </article>
+    </li>
+  ))}
+</ul>

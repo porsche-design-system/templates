@@ -1,0 +1,54 @@
+---
+import {
+  getComponentChunkLinks,
+  getFontFaceStyles,
+  getFontLinks,
+  getIconLinks,
+  getInitialStyles,
+  getLoaderScript,
+  getMetaTagsAndIconLinks,
+} from '@porsche-design-system/components-js/partials';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Porsche Finder (SDX26)</title>
+		<!-- injects stylesheet which defines visibility of pre-hydrated PDS components -->
+		<Fragment set:html={getInitialStyles()} />
+		<!-- injects stylesheet which defines Porsche Next CSS font-face definition (=> minimize FOUT) -->
+		<Fragment set:html={getFontFaceStyles()} />
+		<!-- preloads Porsche Next font (=> minimize FOUT) -->
+		<Fragment set:html={getFontLinks()} />
+		<!-- preloads PDS component core chunk from CDN for PDS component hydration (=> improve loading performance) -->
+		<Fragment set:html={getComponentChunkLinks()} />
+		<!-- preloads Porsche icons (=> minimize FOUC) -->
+		<Fragment set:html={getIconLinks()} />
+		<!-- injects favicon, apple touch icons, android touch icons, etc. -->
+		<Fragment set:html={getMetaTagsAndIconLinks({ appTitle: 'Porsche' })} />
+	</head>
+	<body class="grid-template gap-y-fluid-lg bg-surface font-porsche-next font-normal text-sm text-primary">
+		<slot />
+		<Fragment set:html={getLoaderScript()} />
+    <script>
+      for (const accordion of document.querySelectorAll('p-accordion')) {
+        accordion.addEventListener('update', (e) => {
+          e.target.open = e.detail.open;
+        });
+      }
+
+      for (const drilldown of document.querySelectorAll('p-drilldown')) {
+        drilldown?.addEventListener('dismiss', (e) => {
+          e.target.open = false;
+        });
+
+        drilldown?.addEventListener('update', (e) => {
+          e.target.activeIdentifier = e.detail.activeIdentifier;
+        });
+      }
+    </script>
+	</body>
+</html>

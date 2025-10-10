@@ -1,0 +1,407 @@
+---
+import { bodyStyles } from '../data/bodyStyles.ts';
+import { campaignOptions, financingOptions } from '../data/campaignsAndFinance.ts';
+import { conditions } from '../data/conditions.ts';
+import { engineAndTransmission } from '../data/engineAndTransmission.ts';
+import { exteriorColors } from '../data/exteriorColors.ts';
+import { generations } from '../data/generations.ts';
+import { interiorColors } from '../data/interiorColors.ts';
+import { mileage } from '../data/mileage.ts';
+import { models } from '../data/models.ts';
+import { options } from '../data/options.ts';
+import { owners } from '../data/owners.ts';
+import { porscheCenterOptions } from '../data/porscheCenters.ts';
+import { prices } from '../data/prices.ts';
+import { trims } from '../data/trims.ts';
+import { maxYears, minYears } from '../data/years.ts';
+---
+
+<aside class="bg-base rounded-lg p-fluid-md">
+
+  <!-- Location -->
+  <p-fieldset class="space-y-static-md mb-fluid-md">
+    <span slot="label" class="prose-heading-sm">Location</span>
+    <p-input-search label="Zipcode or City" name="zip" value="Zuffenhausen" clear="true">
+      <p-button-pure slot="end" icon="search" hide-label="true" class="p-(--ref-p-input-slotted-padding) m-(--ref-p-input-slotted-margin)">Search</p-button-pure>
+    </p-input-search>
+    <p-select name="options" value="50" label="Radius">
+      <p-select-option value="50">50 mi (25+)</p-select-option>
+      <p-select-option value="100">100 mi (25+)</p-select-option>
+      <p-select-option value="200">200 mi (25+)</p-select-option>
+      <p-select-option value="500">500 mi (25+)</p-select-option>
+      <p-select-option value="nationwide">Nationwide (25+)</p-select-option>
+    </p-select>
+  </p-fieldset>
+
+  <!-- Conditions -->
+  <p-accordion>
+    <span slot="heading">Conditions</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Conditions</span>
+      {conditions.map((condition) => (
+        <p-checkbox name="some-name">
+          <span slot="label">
+            {condition.label}
+            <span class="text-contrast-medium text-xs">({condition.count})</span>
+            {condition.info && (
+              <p-button-pure type="button" icon="information" hide-label="true" aria="{'aria-haspopup': 'dialog'}">
+                More information
+              </p-button-pure>
+            )}
+          </span>
+        </p-checkbox>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Models -->
+  <p-accordion>
+    <span slot="heading" class="flex gap-static-sm">
+      Model Lines <p-tag compact="true">1</p-tag>
+    </span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Model Lines</span>
+      <p-select name="some-name" value="c" label="Models" hide-label="true">
+        {models.map((model) => (
+          <p-select-option value={model.value}>
+            {model.label}
+            {model.count && ` (${model.count})`}
+          </p-select-option>
+        ))}
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Trims -->
+  <p-accordion>
+    <span slot="heading">Trims</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Trims</span>
+      {trims.map((group) => (
+        <>
+          <h3 class="uppercase text-contrast-medium">{group.name}</h3>
+          {group.trims.map((trim) => (
+            <p-checkbox name="some-name" disabled={trim.count === 0 ? true : undefined}>
+            <span slot="label">
+              {trim.label}
+              <span class="text-contrast-medium text-xs">({trim.count})</span>
+            </span>
+            </p-checkbox>
+          ))}
+        </>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Generations -->
+  <p-accordion>
+    <span slot="heading">Model Generations</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Model Generations</span>
+      {generations.map((generation, index) => (
+        <p-checkbox
+          name="some-name"
+          disabled={generation.count === 0 ? true : undefined}
+          hidden={index === generations.length - 1 ? true : undefined}
+        >
+          <span slot="label" class="flex gap-static-xs items-end">
+            {generation.label}
+            <span class="text-contrast-medium text-xs">
+              ({generation.count})
+            </span>
+            <span class="text-contrast-medium text-xs ms-auto">
+              {generation.years}
+            </span>
+          </span>
+        </p-checkbox>
+      ))}
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all {generations.length} model generations
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Years -->
+  <p-accordion>
+    <span slot="heading">Year</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Year</span>
+      <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-static-sm after:col-start-2 after:row-start-1 after:w-static-sm after:border-b-1 after:mb-[22px]">
+        <p-select name="some-name" value="a" label="Min. Year">
+          {minYears.map((option) => (
+            <p-select-option value={option.value}>
+              {option.year}
+              {option.count && ` (${option.count})`}
+            </p-select-option>
+          ))}
+        </p-select>
+        <p-select name="some-name" value="a" label="Max. Year">
+          {maxYears.map((option) => (
+            <p-select-option value={option.value}>
+              {option.year}
+              {option.count && ` (${option.count})`}
+            </p-select-option>
+          ))}
+        </p-select>
+      </div>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Body Styles -->
+  <p-accordion>
+    <span slot="heading">Body Style</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Body Style</span>
+      {bodyStyles.map((bodyStyle) => (
+        <p-checkbox name="some-name" disabled={bodyStyle.count === '0' ? true : undefined}>
+          <span slot="label">
+            {bodyStyle.label}
+            {bodyStyle.count && (
+              <span class="text-contrast-medium text-xs">
+                ({bodyStyle.count})
+              </span>
+            )}
+          </span>
+        </p-checkbox>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Engine and Transmission -->
+  <p-accordion>
+    <span slot="heading">Engine and Transmission</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Engine and Transmission</span>
+      <h3 class="font-semibold">Power</h3>
+      <p-select name="min-power" value="a" label="Min. Power">
+        {engineAndTransmission.minPowerOptions.map((option) => (
+          <p-select-option value={option.value}>
+            {option.hp}
+            {option.count && ` (${option.count})`}
+          </p-select-option>
+        ))}
+      </p-select>
+      {engineAndTransmission.checkboxGroups.map((group) => (
+        <>
+          <h3 class="font-semibold">{group.heading}</h3>
+          {group.options.map((option) => (
+            <p-checkbox name="some-name" disabled={option.count === '0' ? true : undefined}>
+              <span slot="label">
+                {option.label}
+                {option.count && <span class="text-contrast-medium text-xs">({option.count})</span>}
+              </span>
+            </p-checkbox>
+          ))}
+        </>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Options -->
+  <p-accordion>
+    <span slot="heading">Options</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Options</span>
+      <p-input-search
+        label="Search for options"
+        name="Some name"
+        clear="true"
+        indicator="true"
+        placeholder="Search"
+        hide-label="true"
+      ></p-input-search>
+      <h3 class="uppercase text-contrast-medium">Frequently Selected</h3>
+      {options.map((option, index) => (
+        <p-checkbox
+          name="some-option"
+          disabled={option.count === '0' ? true : undefined}
+          hidden={index === options.length - 1 ? true : undefined}
+        >
+          <span slot="label">
+            {option.label}
+            <span class="text-contrast-medium text-xs">({option.count})</span>
+            <p-button-pure type="button" icon="information" hide-label="true" aria="{'aria-haspopup': 'dialog'}">
+              More information
+            </p-button-pure>
+          </span>
+        </p-checkbox>
+      ))}
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all {options.length} options
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Exterior Colors -->
+  <p-accordion>
+    <span slot="heading">Exterior Color</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Exterior Color</span>
+      {exteriorColors.map((exteriorColor) => (
+        <p-checkbox name="some-name" disabled={exteriorColor.count === '0' ? true : undefined}>
+          <span slot="label" class="flex items-center gap-static-xs">
+            <span class={`inline-grid w-[16px] h-[16px] rounded-sm after:bg-linear-(--paint) bg-[${exteriorColor.rgb}]`}></span>
+            {exteriorColor.label}
+            <span class="text-contrast-medium text-xs">({exteriorColor.count})</span>
+          </span>
+        </p-checkbox>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Interior Colors -->
+  <p-accordion>
+    <span slot="heading">Interior Color</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Interior Color</span>
+      {interiorColors.map((interiorColor) => (
+        <p-checkbox name="some-name" disabled={interiorColor.count === '0' ? true : undefined}>
+          <span slot="label" class="flex items-center gap-static-xs">
+            <span class={`inline-block w-[16px] h-[16px] rounded-full bg-[${interiorColor.rgb}]`}></span>
+            {interiorColor.label}
+            <span class="text-contrast-medium text-xs">
+              ({interiorColor.count})
+            </span>
+          </span>
+        </p-checkbox>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Price -->
+  <p-accordion>
+    <span slot="heading">Price</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Price</span>
+      <p-select name="max-price" value="any" label="Max. Price">
+        {prices.map((option) => (
+          <p-select-option value={option.value}>
+            {option.label}
+          </p-select-option>
+        ))}
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Availability -->
+  <p-accordion>
+    <span slot="heading">Availability</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Availability</span>
+      <p-checkbox name="some-name">
+        <span slot="label">
+          Immediately Available
+          <span class="text-contrast-medium text-xs">(25+)</span>
+        </span>
+      </p-checkbox>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Mileage -->
+  <p-accordion>
+    <span slot="heading">Mileage</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Mileage</span>
+      <p-select name="max-mileage" value="any" label="Max. Mileage">
+        {mileage.map((option) => (
+          <p-select-option value={option.value}>
+            {option.label}
+            {option.count && ` (${option.count})`}
+          </p-select-option>
+        ))}
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Previous Owners -->
+  <p-accordion>
+    <span slot="heading">Previous Owners</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Previous Owners</span>
+      <p-select name="max-owners" value="any" label="Max. Owners">
+        {owners.map((option) => (
+          <p-select-option value={option.value}>
+            {option.label}
+            {option.count && ` (${option.count})`}
+          </p-select-option>
+        ))}
+      </p-select>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Campaigns & Finance -->
+  <p-accordion>
+    <span slot="heading">Campaigns & Finance</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Campaigns & Finance</span>
+      {campaignOptions.map((option) => (
+        <p-checkbox name="some-campaign" disabled={option.count === '0' ? true : undefined}>
+          <span slot="label">
+            {option.label}
+            {option.count && <span class="text-contrast-medium text-xs">({option.count})</span>}
+          </span>
+        </p-checkbox>
+      ))}
+      <h3 class="font-semibold">Financing Products</h3>
+      {financingOptions.map((option) => (
+        <p-checkbox name="some-financing" disabled={option.count === '0' ? true : undefined}>
+          <span slot="label">
+            {option.label}
+            {option.count && (
+              <span class="text-contrast-medium text-xs">({option.count})</span>
+            )}
+          </span>
+        </p-checkbox>
+      ))}
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Porsche Center -->
+  <p-accordion>
+    <span slot="heading">Porsche Center</span>
+    <p-fieldset class="space-y-static-md">
+      <span slot="label" class="sr-only">Porsche Center</span>
+      <p-input-search
+        label="Search for Porsche Center"
+        name="some-name"
+        clear="true"
+        indicator="true"
+        placeholder="Search"
+        hide-label="true"
+      ></p-input-search>
+      {porscheCenterOptions.map((option, index) => (
+        <p-checkbox name="some-name" hidden={index === porscheCenterOptions.length - 1 ? true : undefined}>
+        <span slot="label">
+          {option.label}
+          {option.count && <span class="text-contrast-medium text-xs">({option.count})</span>}
+        </span>
+        </p-checkbox>
+      ))}
+      <p-button-pure
+        underline="true"
+        icon="plus"
+        onclick="this.previousElementSibling.hidden = false; this.textContent = 'Show less'"
+      >
+        Show all {porscheCenterOptions.length} Porsche Centers
+      </p-button-pure>
+    </p-fieldset>
+  </p-accordion>
+
+  <!-- Reset Button -->
+  <p-button
+    class="w-full mt-fluid-md"
+    type="button"
+    variant="secondary"
+    icon="delete"
+  >
+    Reset all filters
+  </p-button>
+</aside>
